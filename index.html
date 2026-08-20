@@ -2,20 +2,32 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fff7fb">
-
-<title>สมุดบัญชีของฉัน</title>
+<title>สมุดบัญชีร้าน</title>
 
 <style>
-*{
-  box-sizing:border-box;
+:root{
+  --bg:#fff7fb;
+  --card:#fff;
+  --ink:#302a30;
+  --muted:#99919a;
+  --line:#eee4ea;
+  --pink:#d96d98;
+  --pink2:#f5d8e5;
+  --green:#59a878;
+  --greenbg:#eaf7ef;
+  --red:#d86f7e;
+  --redbg:#fcecef;
+  --shadow:0 8px 25px rgba(90,40,65,.08);
 }
+
+*{box-sizing:border-box}
 
 body{
   margin:0;
-  background:#fff7fb;
-  color:#332d33;
+  background:var(--bg);
+  color:var(--ink);
   font-family:-apple-system,BlinkMacSystemFont,
   "Segoe UI","Noto Sans Thai",sans-serif;
 }
@@ -28,73 +40,61 @@ button{
   cursor:pointer;
 }
 
-.app{
-  width:min(1000px,100%);
+.wrap{
+  width:min(900px,100%);
   margin:auto;
-  padding:15px;
+  padding:15px 15px 90px;
 }
-
-/* HEADER */
 
 .header{
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
   margin-bottom:15px;
 }
 
 .brand{
   display:flex;
   align-items:center;
-  gap:11px;
+  gap:10px;
 }
 
 .logo{
-  width:50px;
-  height:50px;
-  border-radius:17px;
-  background:#f4d7e4;
+  width:48px;
+  height:48px;
+  border-radius:16px;
+  background:var(--pink2);
   display:grid;
   place-items:center;
-  font-size:25px;
+  font-size:24px;
 }
 
 .brand h1{
+  font-size:20px;
   margin:0;
-  font-size:21px;
 }
 
 .brand p{
-  margin:3px 0 0;
+  margin:2px 0 0;
   font-size:12px;
-  color:#91878e;
+  color:var(--muted);
 }
-
-.setting{
-  width:43px;
-  height:43px;
-  border:1px solid #eee4e9;
-  border-radius:14px;
-  background:white;
-}
-
-/* CARD */
 
 .card{
-  background:white;
-  border-radius:23px;
+  background:var(--card);
+  border-radius:22px;
   padding:18px;
+  box-shadow:var(--shadow);
   margin-bottom:15px;
-  box-shadow:0 8px 28px rgba(100,55,75,.07);
 }
 
 .hero{
-  background:linear-gradient(135deg,#f6dce7,#fff);
+  background:linear-gradient(135deg,#f8dce8,#fff);
 }
 
-.small{
-  color:#91878e;
-  font-size:12px;
+.muted{
+  color:var(--muted);
+  font-size:13px;
 }
 
 .balance{
@@ -103,278 +103,339 @@ button{
   margin:5px 0 15px;
 }
 
-.money-grid{
+.money{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:9px;
 }
 
-.money-box{
-  padding:13px;
-  background:#ffffffcc;
+.moneyBox{
+  background:#ffffffc9;
   border-radius:16px;
+  padding:13px;
 }
 
-.money-box span{
+.moneyBox span{
   display:block;
+  color:var(--muted);
   font-size:12px;
-  color:#91878e;
-  margin-bottom:4px;
 }
 
 .in{
-  color:#4d9c70;
+  color:var(--green);
 }
 
 .out{
-  color:#d06b7b;
+  color:var(--red);
 }
 
-/* MENU */
-
-.menu{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:7px;
-}
-
-.menu button{
-  border:1px solid #eee4e9;
-  background:white;
-  border-radius:14px;
-  padding:11px 6px;
-  font-size:12px;
-}
-
-.menu button.active{
-  background:#f5dce7;
-  border-color:#e6a8c1;
-  color:#bd5d88;
-  font-weight:700;
-}
-
-/* FILTER */
-
-.filters{
-  display:flex;
-  gap:7px;
-  flex-wrap:wrap;
-  margin-top:13px;
-}
-
-.filter{
-  border:1px solid #eee4e9;
-  background:white;
-  border-radius:12px;
-  padding:8px 12px;
-  font-size:12px;
-}
-
-.filter.active{
-  background:#f6e3eb;
-  border-color:#e4aac1;
-  color:#b85b84;
-}
-
-/* TITLE */
-
-.title-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
+.moneyBox b{
+  font-size:17px;
 }
 
 h2{
-  margin:0 0 14px;
   font-size:18px;
+  margin:0 0 14px;
 }
 
-/* FORM */
-
-.type-buttons{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-bottom:13px;
-}
-
-.type-btn{
-  border:1px solid #eee4e9;
-  background:white;
-  padding:12px;
-  border-radius:14px;
-}
-
-.type-btn.active-income{
-  background:#e8f5ed;
-  border-color:#a8d5b8;
-}
-
-.type-btn.active-expense{
-  background:#fbe9ed;
-  border-color:#e4aeb8;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:11px;
+.field{
+  margin-bottom:11px;
 }
 
 .field label{
   display:block;
+  color:var(--muted);
   font-size:12px;
-  color:#91878e;
   margin-bottom:5px;
 }
 
-.field input,
-.field select{
+input,select{
   width:100%;
-  border:1px solid #eee4e9;
+  border:1px solid var(--line);
   border-radius:13px;
   padding:12px;
   outline:none;
-  background:white;
+  background:#fff;
 }
 
-.field input:focus,
-.field select:focus{
-  border-color:#dfa0bb;
+input:focus,select:focus{
+  border-color:var(--pink);
+}
+
+.typeGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:14px;
+}
+
+.typeBtn{
+  border:1px solid var(--line);
+  background:#fff;
+  padding:12px;
+  border-radius:13px;
+}
+
+.typeBtn.activeIncome{
+  background:var(--greenbg);
+  border-color:#9bd0ad;
+  color:var(--green);
+  font-weight:700;
+}
+
+.typeBtn.activeExpense{
+  background:var(--redbg);
+  border-color:#e3aab4;
+  color:var(--red);
+  font-weight:700;
+}
+
+.formGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
 }
 
 .full{
   grid-column:1/-1;
 }
 
-.total-box{
-  margin-top:12px;
-  padding:13px;
+.totalBox{
+  background:#fff7fa;
+  border:1px dashed #dfa0ba;
   border-radius:14px;
-  background:#fff6fa;
-  border:1px dashed #dfa0bb;
+  padding:12px;
+  margin:10px 0;
 }
 
-.total-box span{
-  color:#91878e;
-  font-size:12px;
-}
-
-.total-box strong{
+.totalBox strong{
   display:block;
-  font-size:22px;
+  font-size:23px;
   margin-top:3px;
 }
 
 .actions{
   display:flex;
   gap:8px;
-  margin-top:12px;
 }
 
 .primary{
   flex:1;
   border:0;
-  background:#c9658f;
+  border-radius:13px;
+  background:var(--pink);
   color:white;
   padding:13px;
-  border-radius:14px;
   font-weight:700;
 }
 
 .secondary{
   flex:1;
   border:0;
+  border-radius:13px;
   background:#f2eef0;
   padding:13px;
-  border-radius:14px;
+}
+
+.hidden{
+  display:none!important;
+}
+
+/* NAV */
+
+.nav{
+  position:fixed;
+  z-index:10;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#fff;
+  border-top:1px solid var(--line);
+  box-shadow:0 -5px 20px rgba(0,0,0,.05);
+}
+
+.navInner{
+  width:min(900px,100%);
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+}
+
+.navBtn{
+  border:0;
+  background:#fff;
+  padding:10px 5px 9px;
+  color:#999;
+  font-size:11px;
+}
+
+.navBtn span{
+  display:block;
+  font-size:21px;
+  margin-bottom:2px;
+}
+
+.navBtn.active{
+  color:var(--pink);
+  font-weight:700;
+}
+
+/* PAGE */
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
 }
 
 /* SUMMARY */
 
-.summary-grid{
+.periodGrid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
 }
 
-.summary-box{
-  background:#faf7f9;
-  border-radius:15px;
-  padding:13px;
+.periodBtn{
+  border:1px solid var(--line);
+  background:white;
+  border-radius:12px;
+  padding:10px 5px;
 }
 
-.summary-box span{
-  display:block;
-  font-size:11px;
-  color:#91878e;
-}
-
-.summary-box strong{
-  display:block;
-  margin-top:4px;
-  font-size:17px;
-}
-
-/* ITEM SUMMARY */
-
-.item-summary{
-  border:1px solid #eee5e9;
-  border-radius:16px;
-  padding:13px;
-  margin-bottom:8px;
-}
-
-.item-top{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-}
-
-.item-name{
+.periodBtn.active{
+  background:var(--pink2);
+  border-color:var(--pink);
+  color:var(--pink);
   font-weight:700;
 }
 
-.item-info{
-  color:#91878e;
-  font-size:12px;
-  margin-top:5px;
+.statsGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-top:12px;
 }
 
-.item-money{
-  font-weight:800;
+.stat{
+  background:#faf7f9;
+  border-radius:14px;
+  padding:12px;
+}
+
+.stat span{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.stat strong{
+  display:block;
+  margin-top:4px;
+}
+
+.chart{
+  height:240px;
+  display:flex;
+  align-items:flex-end;
+  gap:6px;
+  overflow-x:auto;
+  border-bottom:1px solid var(--line);
+  padding:20px 5px 30px;
+}
+
+.chartCol{
+  min-width:32px;
+  flex:1;
+  height:100%;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:3px;
+  position:relative;
+}
+
+.bar{
+  width:13px;
+  min-height:3px;
+  border-radius:7px 7px 2px 2px;
+  position:relative;
+}
+
+.bar.in{
+  background:#91c6a3;
+}
+
+.bar.out{
+  background:#e3a0aa;
+}
+
+.bar small{
+  position:absolute;
+  top:-17px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:8px;
+  color:#888;
+  white-space:nowrap;
+}
+
+.x{
+  position:absolute;
+  bottom:-24px;
+  font-size:9px;
+  color:#999;
+}
+
+.legend{
+  font-size:12px;
+  color:#888;
+  margin-top:10px;
+}
+
+.dot{
+  display:inline-block;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  margin-right:3px;
+}
+
+.dot.in{
+  background:#91c6a3;
+}
+
+.dot.out{
+  background:#e3a0aa;
 }
 
 /* LIST */
 
 .row{
   display:flex;
-  align-items:center;
-  gap:10px;
+  align-items:flex-start;
+  gap:9px;
   padding:13px 0;
-  border-bottom:1px solid #eee7eb;
-}
-
-.row:last-child{
-  border-bottom:0;
+  border-bottom:1px solid var(--line);
 }
 
 .icon{
-  width:42px;
-  height:42px;
-  border-radius:14px;
+  width:40px;
+  height:40px;
+  flex:none;
   display:grid;
   place-items:center;
-  flex:none;
+  border-radius:13px;
 }
 
-.icon.income{
-  background:#e8f5ed;
+.icon.in{
+  background:var(--greenbg);
 }
 
-.icon.expense{
-  background:#fbe9ed;
+.icon.out{
+  background:var(--redbg);
 }
 
 .info{
@@ -393,117 +454,91 @@ h2{
   display:block;
   color:#999;
   margin-top:3px;
-  font-size:11px;
 }
 
-.qty-price{
+.meta{
   color:#999;
   font-size:11px;
   margin-top:3px;
 }
 
 .amount{
-  min-width:90px;
   text-align:right;
+  min-width:85px;
   font-weight:700;
 }
 
-.row-actions{
-  display:flex;
-  gap:2px;
-}
-
-.icon-btn{
+.iconBtn{
   border:0;
   background:transparent;
-  padding:5px;
+  padding:3px;
+  font-size:16px;
 }
 
 .empty{
   text-align:center;
-  padding:35px 10px;
-  color:#999;
+  padding:30px 10px;
+  color:#aaa;
 }
 
-/* GRAPH */
+/* DATE */
 
-.graph{
-  height:220px;
-  display:flex;
-  align-items:flex-end;
-  gap:6px;
-  overflow-x:auto;
-  padding:25px 5px 30px;
-  border-bottom:1px solid #eee7eb;
+.dateBox{
+  background:#fff7fa;
+  padding:14px;
+  border-radius:16px;
 }
 
-.graph-col{
-  min-width:34px;
-  height:100%;
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-  flex-direction:column;
-  position:relative;
+.dateTitle{
+  font-weight:700;
+  margin-bottom:8px;
 }
 
-.bars{
-  height:170px;
-  display:flex;
-  align-items:flex-end;
-  gap:3px;
+.daySummary{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-top:12px;
 }
 
-.bar{
-  width:11px;
-  min-height:3px;
-  border-radius:7px 7px 2px 2px;
+.dayBox{
+  border-radius:14px;
+  padding:12px;
+  background:#faf7f9;
 }
 
-.bar-income{
-  background:#9acbaa;
-}
-
-.bar-expense{
-  background:#e4a0aa;
-}
-
-.graph-label{
-  position:absolute;
-  bottom:-23px;
-  font-size:9px;
-  color:#999;
-}
-
-.legend{
-  margin-top:10px;
-  color:#888;
+.dayBox span{
+  display:block;
   font-size:11px;
+  color:#999;
+}
+
+.dayBox strong{
+  display:block;
+  margin-top:4px;
 }
 
 /* MODAL */
 
 .modal{
   position:fixed;
+  z-index:20;
   inset:0;
-  background:#332d3355;
+  background:#2c273055;
   display:flex;
   align-items:flex-end;
   justify-content:center;
   padding:10px;
-  z-index:20;
 }
 
-.modal-box{
-  width:min(560px,100%);
-  background:white;
-  border-radius:24px;
+.modalBox{
+  width:min(550px,100%);
+  background:#fff;
+  border-radius:22px;
   padding:18px;
-  max-height:90vh;
-  overflow:auto;
 }
 
-.modal-head{
+.modalHead{
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -511,29 +546,14 @@ h2{
 
 .close{
   border:0;
-  background:#f3eef1;
-  border-radius:12px;
+  background:#f2eef0;
+  border-radius:10px;
   padding:8px 11px;
 }
 
-.hidden{
-  display:none!important;
-}
+@media(max-width:600px){
 
-.footer{
-  text-align:center;
-  color:#aaa;
-  font-size:11px;
-  padding:5px 0 20px;
-}
-
-@media(max-width:700px){
-
-  .menu{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .form-grid{
+  .formGrid{
     grid-template-columns:1fr;
   }
 
@@ -541,25 +561,13 @@ h2{
     grid-column:auto;
   }
 
-  .summary-grid{
+  .statsGrid,
+  .daySummary{
     grid-template-columns:1fr;
   }
 
-}
-
-@media(max-width:430px){
-
-  .menu{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .row{
-    align-items:flex-start;
-  }
-
-  .amount{
-    min-width:70px;
-    font-size:12px;
+  .periodGrid{
+    grid-template-columns:1fr 1fr;
   }
 
 }
@@ -568,427 +576,444 @@ h2{
 
 <body>
 
-<div class="app">
+<div class="wrap">
 
 <header class="header">
-
   <div class="brand">
-
     <div class="logo">📒</div>
-
     <div>
-      <h1 id="shopName">สมุดบัญชีของฉัน</h1>
-      <p id="shopDesc">
-        บันทึกรายรับ–รายจ่ายง่าย ๆ
-      </p>
+      <h1 id="shopName">สมุดบัญชี</h1>
+      <p id="shopDesc">บันทึกรายรับ–รายจ่ายของเรา</p>
     </div>
-
   </div>
 
-  <button class="setting" onclick="openSettings()">
-    ⚙️
-  </button>
-
+  <button class="secondary" style="flex:none;padding:9px 11px"
+    onclick="openSettings()">⚙️</button>
 </header>
 
 
-<!-- ภาพรวม -->
+<!-- =====================================================
+     หน้า 1
+===================================================== -->
 
-<section class="card hero">
+<section id="pageHome" class="page active">
 
-  <div class="small" id="balanceLabel">
-    คงเหลือวันนี้
-  </div>
+  <div class="card hero">
 
-  <div class="balance" id="balance">
-    ฿0.00
-  </div>
+    <div class="muted">คงเหลือวันนี้</div>
 
-  <div class="money-grid">
-
-    <div class="money-box">
-      <span>💚 รายรับ</span>
-      <strong class="in" id="income">
-        ฿0.00
-      </strong>
-    </div>
-
-    <div class="money-box">
-      <span>❤️ รายจ่าย</span>
-      <strong class="out" id="expense">
-        ฿0.00
-      </strong>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- เมนู -->
-
-<section class="card">
-
-  <h2>📊 ดูบัญชี</h2>
-
-  <div class="menu">
-
-    <button
-      class="active"
-      data-menu="overview"
-      onclick="changeMenu('overview')">
-      📊<br>ภาพรวม
-    </button>
-
-    <button
-      data-menu="income"
-      onclick="changeMenu('income')">
-      💚<br>รายรับ
-    </button>
-
-    <button
-      data-menu="expense"
-      onclick="changeMenu('expense')">
-      ❤️<br>รายจ่าย
-    </button>
-
-    <button
-      data-menu="items"
-      onclick="changeMenu('items')">
-      📦<br>ตามรายการ
-    </button>
-
-    <button
-      data-menu="all"
-      onclick="changeMenu('all')">
-      📋<br>ทั้งหมด
-    </button>
-
-  </div>
-
-
-  <div class="filters">
-
-    <button
-      class="filter active"
-      data-period="day"
-      onclick="changePeriod('day')">
-      วันนี้
-    </button>
-
-    <button
-      class="filter"
-      data-period="week"
-      onclick="changePeriod('week')">
-      สัปดาห์นี้
-    </button>
-
-    <button
-      class="filter"
-      data-period="month"
-      onclick="changePeriod('month')">
-      เดือนนี้
-    </button>
-
-    <button
-      class="filter"
-      data-period="year"
-      onclick="changePeriod('year')">
-      ปีนี้
-    </button>
-
-    <button
-      class="filter"
-      data-period="all"
-      onclick="changePeriod('all')">
-      ทั้งหมด
-    </button>
-
-  </div>
-
-</section>
-
-
-<!-- สรุป -->
-
-<section class="card">
-
-  <div class="title-row">
-
-    <h2 id="viewTitle">
-      📊 ภาพรวม
-    </h2>
-
-    <span
-      class="small"
-      id="viewCount">
-      0 รายการ
-    </span>
-
-  </div>
-
-
-  <div
-    id="overviewContent">
-
-    <div class="summary-grid">
-
-      <div class="summary-box">
-        <span>💚 รายรับรวม</span>
-        <strong
-          class="in"
-          id="summaryIncome">
-          ฿0.00
-        </strong>
-      </div>
-
-      <div class="summary-box">
-        <span>❤️ รายจ่ายรวม</span>
-        <strong
-          class="out"
-          id="summaryExpense">
-          ฿0.00
-        </strong>
-      </div>
-
-      <div class="summary-box">
-        <span>💰 คงเหลือ</span>
-        <strong id="summaryBalance">
-          ฿0.00
-        </strong>
-      </div>
-
-    </div>
-
-
-    <div
-      style="margin-top:15px"
-      class="graph"
-      id="graph">
-    </div>
-
-    <div class="legend">
-      🟢 รายรับ &nbsp;&nbsp; 🔴 รายจ่าย
-    </div>
-
-  </div>
-
-
-  <!-- สรุปรายรับ/รายจ่าย -->
-
-  <div
-    id="typeContent"
-    class="hidden">
-  </div>
-
-
-  <!-- สรุปตามรายการ -->
-
-  <div
-    id="itemsContent"
-    class="hidden">
-  </div>
-
-
-  <!-- รายการทั้งหมด -->
-
-  <div
-    id="allContent"
-    class="hidden">
-  </div>
-
-</section>
-
-
-<!-- เพิ่มรายการ -->
-
-<section class="card">
-
-  <h2 id="formTitle">
-    ➕ เพิ่มรายการ
-  </h2>
-
-
-  <div class="type-buttons">
-
-    <button
-      id="incomeBtn"
-      class="type-btn active-income"
-      onclick="setType('income')">
-      💚 รายรับ
-    </button>
-
-    <button
-      id="expenseBtn"
-      class="type-btn"
-      onclick="setType('expense')">
-      ❤️ รายจ่าย
-    </button>
-
-  </div>
-
-
-  <div class="form-grid">
-
-    <div class="field">
-
-      <label>รายการ</label>
-
-      <input
-        id="item"
-        placeholder="เช่น ข้าวเหนียวไก่ทอด">
-
-    </div>
-
-
-    <div class="field">
-
-      <label>จำนวน</label>
-
-      <input
-        id="quantity"
-        type="number"
-        min="0.01"
-        step="0.01"
-        value="1"
-        oninput="calculate()">
-
-    </div>
-
-
-    <div class="field">
-
-      <label>ราคา / หน่วย</label>
-
-      <input
-        id="price"
-        type="number"
-        min="0"
-        step="0.01"
-        placeholder="เช่น 25"
-        oninput="calculate()">
-
-    </div>
-
-
-    <div class="field">
-
-      <label>วันที่</label>
-
-      <input
-        id="date"
-        type="date">
-
-    </div>
-
-
-    <div class="field full">
-
-      <label>หมายเหตุ</label>
-
-      <input
-        id="note"
-        placeholder="ใส่หรือไม่ใส่ก็ได้">
-
-    </div>
-
-  </div>
-
-
-  <div class="total-box">
-
-    <span>
-      ยอดรวม = จำนวน × ราคา
-    </span>
-
-    <strong id="total">
+    <div class="balance" id="todayBalance">
       ฿0.00
-    </strong>
+    </div>
+
+    <div class="money">
+
+      <div class="moneyBox">
+        <span>รายรับวันนี้</span>
+        <b class="in" id="todayIncome">฿0.00</b>
+      </div>
+
+      <div class="moneyBox">
+        <span>รายจ่ายวันนี้</span>
+        <b class="out" id="todayExpense">฿0.00</b>
+      </div>
+
+    </div>
 
   </div>
 
 
-  <div class="actions">
+  <div class="card">
 
-    <button
-      id="cancelBtn"
-      class="secondary hidden"
-      onclick="cancelEdit()">
-      ยกเลิก
-    </button>
+    <h2 id="formTitle">➕ เพิ่มรายการ</h2>
 
-    <button
-      id="saveBtn"
-      class="primary"
-      onclick="saveTransaction()">
-      💾 บันทึกรายการ
-    </button>
+    <div class="typeGrid">
 
-  </div>
+      <button id="incomeBtn"
+        class="typeBtn activeIncome"
+        onclick="setType('income')">
+        💚 รายรับ
+      </button>
 
-</section>
-
-
-<div class="footer">
-  ข้อมูลถูกเก็บไว้ในอุปกรณ์ของผู้ใช้แต่ละคน 💗
-</div>
-
-</div>
-
-
-<!-- SETTINGS -->
-
-<div
-  id="settingsModal"
-  class="modal hidden">
-
-  <div class="modal-box">
-
-    <div class="modal-head">
-
-      <h2>⚙️ ตั้งค่าร้าน</h2>
-
-      <button
-        class="close"
-        onclick="closeSettings()">
-        ✕
+      <button id="expenseBtn"
+        class="typeBtn"
+        onclick="setType('expense')">
+        ❤️ รายจ่าย
       </button>
 
     </div>
 
 
-    <div class="field">
+    <div class="formGrid">
 
-      <label>ชื่อร้าน</label>
+      <div class="field">
 
-      <input id="shopInput">
+        <label>รายการ</label>
+
+        <input id="item"
+          placeholder="เช่น ข้าวเหนียวไก่ทอด">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>จำนวน</label>
+
+        <input id="qty"
+          type="number"
+          min="0.01"
+          step="0.01"
+          value="1"
+          oninput="calculate()">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>ราคา / หน่วย (บาท)</label>
+
+        <input id="price"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="เช่น 25"
+          oninput="calculate()">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>วันที่</label>
+
+        <input id="date"
+          type="date">
+
+      </div>
+
+
+      <div class="field full">
+
+        <label>หมายเหตุ</label>
+
+        <input id="note"
+          placeholder="ใส่หรือไม่ใส่ก็ได้">
+
+      </div>
 
     </div>
 
 
-    <div
-      class="field"
-      style="margin-top:10px">
+    <div class="totalBox">
 
-      <label>คำอธิบาย</label>
+      <span class="muted">
+        จำนวน × ราคา / หน่วย
+      </span>
 
-      <input id="descInput">
+      <strong id="total">
+        ฿0.00
+      </strong>
 
     </div>
 
 
     <div class="actions">
 
-      <button
-        class="secondary"
+      <button id="cancelBtn"
+        class="secondary hidden"
+        onclick="cancelEdit()">
+        ยกเลิก
+      </button>
+
+      <button id="saveBtn"
+        class="primary"
+        onclick="saveTransaction()">
+        บันทึกรายการ
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="card">
+
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h2>📋 รายการล่าสุด</h2>
+      <span class="muted" id="allCount">0 รายการ</span>
+    </div>
+
+    <div id="homeList"></div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     หน้า 2 แผนผัง
+===================================================== -->
+
+<section id="pageChart" class="page">
+
+  <div class="card">
+
+    <h2>📊 แผนผังบัญชี</h2>
+
+    <div class="periodGrid">
+
+      <button class="periodBtn active"
+        data-period="day"
+        onclick="changePeriod('day')">
+        รายวัน
+      </button>
+
+      <button class="periodBtn"
+        data-period="week"
+        onclick="changePeriod('week')">
+        รายสัปดาห์
+      </button>
+
+      <button class="periodBtn"
+        data-period="month"
+        onclick="changePeriod('month')">
+        รายเดือน
+      </button>
+
+      <button class="periodBtn"
+        data-period="year"
+        onclick="changePeriod('year')">
+        รายปี
+      </button>
+
+    </div>
+
+    <p class="muted" id="chartNote">
+      วันนี้
+    </p>
+
+    <div class="chart" id="chart"></div>
+
+    <div class="legend">
+      <span class="dot in"></span> รายรับ
+      &nbsp;&nbsp;
+      <span class="dot out"></span> รายจ่าย
+    </div>
+
+    <div class="statsGrid">
+
+      <div class="stat">
+        <span>รายการ</span>
+        <strong id="chartCount">0</strong>
+      </div>
+
+      <div class="stat">
+        <span>จำนวน</span>
+        <strong id="chartQty">0</strong>
+      </div>
+
+      <div class="stat">
+        <span>คงเหลือ</span>
+        <strong id="chartBalance">฿0.00</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2>💰 สรุปยอด</h2>
+
+    <div class="money">
+
+      <div class="moneyBox">
+        <span>รายรับ</span>
+        <b class="in" id="chartIncome">฿0.00</b>
+      </div>
+
+      <div class="moneyBox">
+        <span>รายจ่าย</span>
+        <b class="out" id="chartExpense">฿0.00</b>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     หน้า 3 ย้อนหลัง
+===================================================== -->
+
+<section id="pageHistory" class="page">
+
+  <div class="card">
+
+    <h2>📅 สรุปย้อนหลัง</h2>
+
+    <div class="dateBox">
+
+      <div class="dateTitle">
+        เลือกวันที่ที่ต้องการดู
+      </div>
+
+      <input id="historyDate"
+        type="date"
+        onchange="renderHistory()">
+
+    </div>
+
+
+    <div class="daySummary">
+
+      <div class="dayBox">
+        <span>💚 รายรับ</span>
+        <strong class="in" id="historyIncome">
+          ฿0.00
+        </strong>
+      </div>
+
+      <div class="dayBox">
+        <span>❤️ รายจ่าย</span>
+        <strong class="out" id="historyExpense">
+          ฿0.00
+        </strong>
+      </div>
+
+      <div class="dayBox">
+        <span>💰 คงเหลือ</span>
+        <strong id="historyBalance">
+          ฿0.00
+        </strong>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="card">
+
+    <h2 id="historyTitle">
+      รายการของวันนี้
+    </h2>
+
+    <div id="historyList"></div>
+
+  </div>
+
+</section>
+
+</div>
+
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="nav">
+
+  <div class="navInner">
+
+    <button id="navHome"
+      class="navBtn active"
+      onclick="showPage('home')">
+
+      <span>🏠</span>
+      บันทึก
+
+    </button>
+
+
+    <button id="navChart"
+      class="navBtn"
+      onclick="showPage('chart')">
+
+      <span>📊</span>
+      แผนผัง
+
+    </button>
+
+
+    <button id="navHistory"
+      class="navBtn"
+      onclick="showPage('history')">
+
+      <span>📅</span>
+      ย้อนหลัง
+
+    </button>
+
+  </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     SETTINGS
+===================================================== -->
+
+<div id="settingsModal"
+  class="modal hidden">
+
+  <div class="modalBox">
+
+    <div class="modalHead">
+
+      <h2>⚙️ ตั้งค่าร้าน</h2>
+
+      <button class="close"
+        onclick="closeSettings()">
+        ✕
+      </button>
+
+    </div>
+
+    <p class="muted">
+      เปลี่ยนชื่อร้านและคำอธิบายได้ตามต้องการ
+    </p>
+
+
+    <div class="field">
+
+      <label>ชื่อร้าน</label>
+
+      <input id="shopInput"
+        placeholder="ชื่อร้าน">
+
+    </div>
+
+
+    <div class="field">
+
+      <label>คำอธิบาย</label>
+
+      <input id="descInput"
+        placeholder="คำอธิบายร้าน">
+
+    </div>
+
+
+    <div class="actions">
+
+      <button class="secondary"
         onclick="closeSettings()">
         ปิด
       </button>
 
-      <button
-        class="primary"
+      <button class="primary"
         onclick="saveSettings()">
-        💾 บันทึก
+        บันทึก
       </button>
 
     </div>
@@ -998,33 +1023,58 @@ h2{
 </div>
 
 
+
 <script>
 
-/* ==================================================
+/* =====================================================
    DATABASE
-================================================== */
+===================================================== */
 
-const DB_KEY = "myAccountBook_v2";
+const DATA_KEY = "myAccountBook_v3_data";
+const SHOP_KEY = "myAccountBook_v3_shop";
 
-const SHOP_KEY = "myAccountBookShop_v2";
+let transactions = [];
+
+try{
+  transactions =
+    JSON.parse(
+      localStorage.getItem(DATA_KEY) || "[]"
+    );
+}catch(e){
+  transactions = [];
+}
 
 
-let transactions = loadTransactions();
+let shop = {
+  name:"สมุดบัญชี",
+  desc:"บันทึกรายรับ–รายจ่ายของเรา"
+};
 
-let shop = loadShop();
+try{
+
+  const saved =
+    JSON.parse(
+      localStorage.getItem(SHOP_KEY) || "null"
+    );
+
+  if(saved){
+    shop = {
+      ...shop,
+      ...saved
+    };
+  }
+
+}catch(e){}
+
 
 let currentType = "income";
-
-let currentMenu = "overview";
-
+let editingId = null;
 let currentPeriod = "day";
 
-let editingId = null;
 
-
-/* ==================================================
-   BASIC
-================================================== */
+/* =====================================================
+   HELPERS
+===================================================== */
 
 function $(id){
   return document.getElementById(id);
@@ -1035,24 +1085,27 @@ function today(){
 
   const d = new Date();
 
-  return [
-    d.getFullYear(),
-    String(d.getMonth()+1).padStart(2,"0"),
+  return (
+    d.getFullYear() +
+    "-" +
+    String(d.getMonth()+1).padStart(2,"0") +
+    "-" +
     String(d.getDate()).padStart(2,"0")
-  ].join("-");
+  );
 
 }
 
 
-function money(value){
+function money(n){
 
-  return "฿" + Number(value || 0).toLocaleString(
-    "th-TH",
-    {
-      minimumFractionDigits:2,
-      maximumFractionDigits:2
-    }
-  );
+  return "฿" +
+    Number(n || 0).toLocaleString(
+      "th-TH",
+      {
+        minimumFractionDigits:2,
+        maximumFractionDigits:2
+      }
+    );
 
 }
 
@@ -1063,150 +1116,19 @@ function escapeHTML(text){
     document.createElement("div");
 
   div.textContent =
-    text || "";
+    text == null ? "" : String(text);
 
   return div.innerHTML;
 
 }
 
 
-/* ==================================================
-   LOAD / SAVE
-================================================== */
-
-function loadTransactions(){
-
-  try{
-
-    const data =
-      JSON.parse(
-        localStorage.getItem(DB_KEY) || "[]"
-      );
-
-    if(!Array.isArray(data)){
-      return [];
-    }
-
-    return data.map(t => {
-
-      const quantity =
-        Number(
-          t.quantity ??
-          t.qty ??
-          1
-        );
-
-      const price =
-        Number(
-          t.price ??
-          t.unitPrice ??
-          0
-        );
-
-      return {
-
-        id:
-          Number(t.id) ||
-          Date.now() +
-          Math.random(),
-
-        type:
-          t.type === "expense"
-            ? "expense"
-            : "income",
-
-        item:
-          String(
-            t.item ||
-            t.description ||
-            "รายการ"
-          ),
-
-        quantity:
-          quantity > 0
-            ? quantity
-            : 1,
-
-        price:
-          price >= 0
-            ? price
-            : 0,
-
-        total:
-          quantity * price,
-
-        date:
-          t.date || today(),
-
-        note:
-          String(t.note || "")
-
-      };
-
-    });
-
-  }catch(error){
-
-    console.error(error);
-
-    return [];
-
-  }
-
-}
-
-
 function saveData(){
 
-  try{
-
-    localStorage.setItem(
-      DB_KEY,
-      JSON.stringify(transactions)
-    );
-
-    return true;
-
-  }catch(error){
-
-    alert(
-      "ไม่สามารถบันทึกข้อมูลในเครื่องได้"
-    );
-
-    return false;
-
-  }
-
-}
-
-
-function loadShop(){
-
-  try{
-
-    return JSON.parse(
-      localStorage.getItem(SHOP_KEY)
-    ) || {
-
-      name:"สมุดบัญชีของฉัน",
-
-      desc:
-        "บันทึกรายรับ–รายจ่ายง่าย ๆ"
-
-    };
-
-  }catch{
-
-    return {
-
-      name:"สมุดบัญชีของฉัน",
-
-      desc:
-        "บันทึกรายรับ–รายจ่ายง่าย ๆ"
-
-    };
-
-  }
+  localStorage.setItem(
+    DATA_KEY,
+    JSON.stringify(transactions)
+  );
 
 }
 
@@ -1221,72 +1143,120 @@ function saveShopData(){
 }
 
 
-/* ==================================================
+/* =====================================================
+   NORMALIZE DATA
+===================================================== */
+
+transactions =
+  transactions.map(t => {
+
+    const qty =
+      Number(t.qty ?? t.quantity ?? 1);
+
+    const price =
+      Number(
+        t.price ??
+        t.unitPrice ??
+        t.amount ??
+        0
+      );
+
+    return {
+
+      id:
+        t.id || Date.now() + Math.random(),
+
+      type:
+        t.type === "expense"
+          ? "expense"
+          : "income",
+
+      item:
+        t.item ||
+        t.description ||
+        "รายการ",
+
+      qty:
+        qty > 0 ? qty : 1,
+
+      price:
+        price >= 0 ? price : 0,
+
+      total:
+        Number(
+          t.total ??
+          qty * price
+        ),
+
+      date:
+        t.date || today(),
+
+      note:
+        t.note || ""
+
+    };
+
+  });
+
+saveData();
+
+
+/* =====================================================
    TYPE
-================================================== */
+===================================================== */
 
 function setType(type){
 
   currentType = type;
 
   $("incomeBtn")
-    .classList
-    .toggle(
-      "active-income",
+    .classList.toggle(
+      "activeIncome",
       type === "income"
     );
 
   $("expenseBtn")
-    .classList
-    .toggle(
-      "active-expense",
+    .classList.toggle(
+      "activeExpense",
       type === "expense"
     );
 
 }
 
 
-/* ==================================================
+/* =====================================================
    CALCULATE
-================================================== */
+===================================================== */
 
 function calculate(){
 
-  const quantity =
-    Number(
-      $("quantity").value
-    ) || 0;
+  const qty =
+    Number($("qty").value) || 0;
 
   const price =
-    Number(
-      $("price").value
-    ) || 0;
+    Number($("price").value) || 0;
 
   $("total")
     .textContent =
-    money(quantity * price);
+    money(qty * price);
 
 }
 
 
-/* ==================================================
+/* =====================================================
    SAVE TRANSACTION
-================================================== */
+===================================================== */
 
 function saveTransaction(){
 
   const item =
     $("item").value.trim();
 
-  const quantity =
-    Number(
-      $("quantity").value
-    );
+  const qty =
+    Number($("qty").value);
 
   const price =
-    Number(
-      $("price").value
-    );
+    Number($("price").value);
 
   const date =
     $("date").value;
@@ -1306,23 +1276,20 @@ function saveTransaction(){
   }
 
 
-  if(!quantity || quantity <= 0){
+  if(!qty || qty <= 0){
 
-    alert("กรุณาใส่จำนวน");
+    alert("กรุณาใส่จำนวนให้ถูกต้อง");
 
-    $("quantity").focus();
+    $("qty").focus();
 
     return;
 
   }
 
 
-  if(
-    price < 0 ||
-    !Number.isFinite(price)
-  ){
+  if(isNaN(price) || price < 0){
 
-    alert("กรุณาใส่ราคา");
+    alert("กรุณาใส่ราคาให้ถูกต้อง");
 
     $("price").focus();
 
@@ -1345,8 +1312,7 @@ function saveTransaction(){
     id:
       editingId !== null
         ? editingId
-        : Date.now() +
-          Math.random(),
+        : Date.now() + Math.random(),
 
     type:
       currentType,
@@ -1354,14 +1320,14 @@ function saveTransaction(){
     item:
       item,
 
-    quantity:
-      quantity,
+    qty:
+      qty,
 
     price:
       price,
 
     total:
-      quantity * price,
+      qty * price,
 
     date:
       date,
@@ -1376,20 +1342,15 @@ function saveTransaction(){
 
     const index =
       transactions.findIndex(
-        t =>
-          t.id === editingId
+        t => t.id === editingId
       );
 
-    if(index === -1){
+    if(index !== -1){
 
-      alert("ไม่พบรายการที่ต้องการแก้ไข");
-
-      return;
+      transactions[index] =
+        transaction;
 
     }
-
-    transactions[index] =
-      transaction;
 
   }else{
 
@@ -1400,19 +1361,13 @@ function saveTransaction(){
   }
 
 
-  if(!saveData()){
-
-    return;
-
-  }
-
+  saveData();
 
   alert(
     editingId !== null
       ? "แก้ไขรายการเรียบร้อยแล้ว 💗"
       : "บันทึกรายการเรียบร้อยแล้ว 💗"
   );
-
 
   resetForm();
 
@@ -1421,9 +1376,9 @@ function saveTransaction(){
 }
 
 
-/* ==================================================
+/* =====================================================
    RESET
-================================================== */
+===================================================== */
 
 function resetForm(){
 
@@ -1435,7 +1390,7 @@ function resetForm(){
 
   $("saveBtn")
     .textContent =
-    "💾 บันทึกรายการ";
+    "บันทึกรายการ";
 
   $("cancelBtn")
     .classList
@@ -1443,12 +1398,11 @@ function resetForm(){
 
   $("item").value = "";
 
-  $("quantity").value = 1;
+  $("qty").value = "1";
 
   $("price").value = "";
 
-  $("date").value =
-    today();
+  $("date").value = today();
 
   $("note").value = "";
 
@@ -1466,9 +1420,9 @@ function cancelEdit(){
 }
 
 
-/* ==================================================
+/* =====================================================
    EDIT
-================================================== */
+===================================================== */
 
 function editTransaction(id){
 
@@ -1477,27 +1431,18 @@ function editTransaction(id){
       x => x.id === id
     );
 
-  if(!t){
-
-    alert("ไม่พบรายการ");
-
-    return;
-
-  }
+  if(!t) return;
 
 
   editingId = id;
-
 
   $("formTitle")
     .textContent =
     "✏️ แก้ไขรายการ";
 
-
   $("saveBtn")
     .textContent =
-    "💾 บันทึกการแก้ไข";
-
+    "บันทึกการแก้ไข";
 
   $("cancelBtn")
     .classList
@@ -1507,8 +1452,8 @@ function editTransaction(id){
   $("item").value =
     t.item;
 
-  $("quantity").value =
-    t.quantity;
+  $("qty").value =
+    t.qty;
 
   $("price").value =
     t.price;
@@ -1517,12 +1462,111 @@ function editTransaction(id){
     t.date;
 
   $("note").value =
-    t.note;
+    t.note || "";
 
 
   setType(t.type);
 
   calculate();
+
+  showPage("home");
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =====================================================
+   DELETE
+===================================================== */
+
+function deleteTransaction(id){
+
+  if(
+    !confirm(
+      "ลบรายการนี้ใช่ไหม?"
+    )
+  ){
+    return;
+  }
+
+
+  transactions =
+    transactions.filter(
+      t => t.id !== id
+    );
+
+  saveData();
+
+  if(editingId === id){
+
+    resetForm();
+
+  }
+
+  renderAll();
+
+}
+
+
+/* =====================================================
+   PAGE NAV
+===================================================== */
+
+function showPage(page){
+
+  document
+    .querySelectorAll(".page")
+    .forEach(p =>
+      p.classList.remove("active")
+    );
+
+
+  document
+    .querySelectorAll(".navBtn")
+    .forEach(b =>
+      b.classList.remove("active")
+    );
+
+
+  if(page === "home"){
+
+    $("pageHome")
+      .classList.add("active");
+
+    $("navHome")
+      .classList.add("active");
+
+  }
+
+
+  if(page === "chart"){
+
+    $("pageChart")
+      .classList.add("active");
+
+    $("navChart")
+      .classList.add("active");
+
+    renderChartPage();
+
+  }
+
+
+  if(page === "history"){
+
+    $("pageHistory")
+      .classList.add("active");
+
+    $("navHistory")
+      .classList.add("active");
+
+    renderHistory();
+
+  }
 
 
   window.scrollTo({
@@ -1533,51 +1577,231 @@ function editTransaction(id){
 }
 
 
-/* ==================================================
-   DELETE
-================================================== */
+/* =====================================================
+   TODAY
+===================================================== */
 
-function deleteTransaction(id){
+function getDayData(date){
 
-  const t =
-    transactions.find(
-      x => x.id === id
-    );
-
-  if(!t){
-    return;
-  }
-
-
-  if(
-    !confirm(
-      `ต้องการลบ "${t.item}" ใช่ไหม?`
-    )
-  ){
-
-    return;
-
-  }
-
-
-  transactions =
-    transactions.filter(
-      x => x.id !== id
-    );
-
-
-  saveData();
-
-  renderAll();
+  return transactions.filter(
+    t => t.date === date
+  );
 
 }
 
 
-/* ==================================================
-   PERIOD
-================================================== */
+function totals(data){
 
-function getWeekStart(date){
+  let income = 0;
+  let expense = 0;
+  let qty = 0;
+
+  data.forEach(t => {
+
+    if(t.type === "income"){
+      income += Number(t.total || 0);
+    }else{
+      expense += Number(t.total || 0);
+    }
+
+    qty += Number(t.qty || 0);
+
+  });
+
+  return {
+    income,
+    expense,
+    balance:income-expense,
+    qty
+  };
+
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+function renderHome(){
+
+  const data =
+    getDayData(today());
+
+  const t =
+    totals(data);
+
+
+  $("todayIncome")
+    .textContent =
+    money(t.income);
+
+  $("todayExpense")
+    .textContent =
+    money(t.expense);
+
+  $("todayBalance")
+    .textContent =
+    money(t.balance);
+
+
+  $("allCount")
+    .textContent =
+    transactions.length +
+    " รายการ";
+
+
+  const latest =
+    [...transactions]
+    .sort(
+      (a,b) =>
+        new Date(b.date) -
+        new Date(a.date) ||
+        b.id-a.id
+    )
+    .slice(0,10);
+
+
+  renderList(
+    latest,
+    $("homeList")
+  );
+
+}
+
+
+/* =====================================================
+   LIST
+===================================================== */
+
+function renderList(data, container){
+
+  if(!data.length){
+
+    container.innerHTML =
+      `<div class="empty">
+        📝<br>
+        ยังไม่มีรายการ
+      </div>`;
+
+    return;
+
+  }
+
+
+  container.innerHTML =
+    data.map(t => {
+
+      const cls =
+        t.type === "income"
+          ? "in"
+          : "out";
+
+      const sign =
+        t.type === "income"
+          ? "+"
+          : "-";
+
+      const icon =
+        t.type === "income"
+          ? "💚"
+          : "❤️";
+
+
+      return `
+
+      <div class="row">
+
+        <div class="icon ${cls}">
+          ${icon}
+        </div>
+
+
+        <div class="info">
+
+          <strong>
+            ${escapeHTML(t.item)}
+          </strong>
+
+          <small>
+            ${escapeHTML(t.date)}
+            ${t.note
+              ? " · " +
+                escapeHTML(t.note)
+              : ""}
+          </small>
+
+          <div class="meta">
+
+            ${Number(t.qty).toLocaleString("th-TH")}
+            ×
+            ${money(t.price)}
+
+          </div>
+
+        </div>
+
+
+        <div class="amount ${cls}">
+
+          ${sign}${money(t.total)}
+
+        </div>
+
+
+        <button
+          class="iconBtn"
+          onclick="editTransaction(${t.id})">
+          ✏️
+        </button>
+
+
+        <button
+          class="iconBtn"
+          onclick="deleteTransaction(${t.id})">
+          🗑️
+        </button>
+
+      </div>
+
+      `;
+
+    }).join("");
+
+}
+
+
+/* =====================================================
+   PERIOD
+===================================================== */
+
+function changePeriod(period){
+
+  currentPeriod =
+    period;
+
+
+  document
+    .querySelectorAll(".periodBtn")
+    .forEach(btn => {
+
+      btn.classList.toggle(
+        "active",
+        btn.dataset.period === period
+      );
+
+    });
+
+
+  renderChartPage();
+
+}
+
+
+/* =====================================================
+   WEEK START
+===================================================== */
+
+function weekStart(date){
 
   const d =
     new Date(date);
@@ -1588,49 +1812,66 @@ function getWeekStart(date){
   const diff =
     day === 0
       ? -6
-      : 1 - day;
+      : 1-day;
 
   d.setDate(
-    d.getDate() + diff
+    d.getDate()+diff
   );
 
-  d.setHours(
-    0,0,0,0
-  );
+  d.setHours(0,0,0,0);
 
   return d;
 
 }
 
 
-function isInPeriod(t){
+/* =====================================================
+   CHART DATA
+===================================================== */
 
-  if(currentPeriod === "all"){
-    return true;
-  }
-
-
-  const d =
-    new Date(
-      t.date + "T00:00:00"
-    );
+function getChartData(){
 
   const now =
     new Date();
 
+  const result = [];
+
 
   if(currentPeriod === "day"){
 
-    return (
-      d.getFullYear() ===
-      now.getFullYear() &&
+    for(let h=0;h<24;h++){
 
-      d.getMonth() ===
-      now.getMonth() &&
+      result.push({
+        label:h+"น.",
+        income:0,
+        expense:0,
+        key:h
+      });
 
-      d.getDate() ===
-      now.getDate()
-    );
+    }
+
+    transactions.forEach(t => {
+
+      if(t.date !== today())
+        return;
+
+      const hour =
+        new Date().getHours();
+
+      /* 
+         รายการไม่มีเวลาในระบบ
+         จึงรวมรายการวันนี้ไว้ที่ช่วง 00 น.
+      */
+
+      const target =
+        result[0];
+
+      if(t.type === "income")
+        target.income += Number(t.total);
+      else
+        target.expense += Number(t.total);
+
+    });
 
   }
 
@@ -1638,862 +1879,9 @@ function isInPeriod(t){
   if(currentPeriod === "week"){
 
     const start =
-      getWeekStart(now);
+      weekStart(now);
 
-    const end =
-      new Date(start);
-
-    end.setDate(
-      end.getDate() + 7
-    );
-
-    return (
-      d >= start &&
-      d < end
-    );
-
-  }
-
-
-  if(currentPeriod === "month"){
-
-    return (
-      d.getFullYear() ===
-      now.getFullYear() &&
-
-      d.getMonth() ===
-      now.getMonth()
-    );
-
-  }
-
-
-  if(currentPeriod === "year"){
-
-    return (
-      d.getFullYear() ===
-      now.getFullYear()
-    );
-
-  }
-
-
-  return true;
-
-}
-
-
-function getFiltered(){
-
-  return transactions.filter(
-    isInPeriod
-  );
-
-}
-
-
-/* ==================================================
-   CHANGE MENU
-================================================== */
-
-function changeMenu(menu){
-
-  currentMenu = menu;
-
-
-  document
-    .querySelectorAll(
-      ".menu button"
-    )
-    .forEach(button => {
-
-      button.classList.toggle(
-        "active",
-        button.dataset.menu === menu
-      );
-
-    });
-
-
-  renderContent();
-
-}
-
-
-function changePeriod(period){
-
-  currentPeriod =
-    period;
-
-
-  document
-    .querySelectorAll(
-      ".filter"
-    )
-    .forEach(button => {
-
-      button.classList.toggle(
-        "active",
-        button.dataset.period === period
-      );
-
-    });
-
-
-  renderAll();
-
-}
-
-
-/* ==================================================
-   MAIN RENDER
-================================================== */
-
-function renderAll(){
-
-  renderHeader();
-
-  renderTopSummary();
-
-  renderContent();
-
-}
-
-
-function renderHeader(){
-
-  $("shopName")
-    .textContent =
-    shop.name;
-
-  $("shopDesc")
-    .textContent =
-    shop.desc;
-
-}
-
-
-function renderTopSummary(){
-
-  const data =
-    getFiltered();
-
-  let income = 0;
-
-  let expense = 0;
-
-
-  data.forEach(t => {
-
-    if(t.type === "income"){
-
-      income += t.total;
-
-    }else{
-
-      expense += t.total;
-
-    }
-
-  });
-
-
-  const balance =
-    income - expense;
-
-
-  $("income")
-    .textContent =
-    money(income);
-
-  $("expense")
-    .textContent =
-    money(expense);
-
-  $("balance")
-    .textContent =
-    money(balance);
-
-
-  const labels = {
-
-    day:"คงเหลือวันนี้",
-
-    week:"คงเหลือสัปดาห์นี้",
-
-    month:"คงเหลือเดือนนี้",
-
-    year:"คงเหลือปีนี้",
-
-    all:"คงเหลือทั้งหมด"
-
-  };
-
-
-  $("balanceLabel")
-    .textContent =
-    labels[currentPeriod];
-
-}
-
-
-/* ==================================================
-   CONTENT
-================================================== */
-
-function renderContent(){
-
-  $("overviewContent")
-    .classList
-    .toggle(
-      "hidden",
-      currentMenu !== "overview"
-    );
-
-  $("typeContent")
-    .classList
-    .toggle(
-      "hidden",
-      currentMenu !== "income" &&
-      currentMenu !== "expense"
-    );
-
-  $("itemsContent")
-    .classList
-    .toggle(
-      "hidden",
-      currentMenu !== "items"
-    );
-
-  $("allContent")
-    .classList
-    .toggle(
-      "hidden",
-      currentMenu !== "all"
-    );
-
-
-  if(currentMenu === "overview"){
-
-    $("viewTitle")
-      .textContent =
-      "📊 ภาพรวม";
-
-    renderOverview();
-
-  }
-
-
-  if(
-    currentMenu === "income"
-  ){
-
-    $("viewTitle")
-      .textContent =
-      "💚 รายรับ";
-
-    renderType("income");
-
-  }
-
-
-  if(
-    currentMenu === "expense"
-  ){
-
-    $("viewTitle")
-      .textContent =
-      "❤️ รายจ่าย";
-
-    renderType("expense");
-
-  }
-
-
-  if(currentMenu === "items"){
-
-    $("viewTitle")
-      .textContent =
-      "📦 สรุปตามรายการ";
-
-    renderItems();
-
-  }
-
-
-  if(currentMenu === "all"){
-
-    $("viewTitle")
-      .textContent =
-      "📋 รายการทั้งหมด";
-
-    renderAllList();
-
-  }
-
-}
-
-
-/* ==================================================
-   OVERVIEW
-================================================== */
-
-function renderOverview(){
-
-  const data =
-    getFiltered();
-
-
-  let income = 0;
-
-  let expense = 0;
-
-
-  data.forEach(t => {
-
-    if(t.type === "income"){
-
-      income += t.total;
-
-    }else{
-
-      expense += t.total;
-
-    }
-
-  });
-
-
-  $("summaryIncome")
-    .textContent =
-    money(income);
-
-  $("summaryExpense")
-    .textContent =
-    money(expense);
-
-  $("summaryBalance")
-    .textContent =
-    money(income - expense);
-
-
-  $("viewCount")
-    .textContent =
-    data.length + " รายการ";
-
-
-  renderGraph(data);
-
-}
-
-
-/* ==================================================
-   TYPE VIEW
-================================================== */
-
-function renderType(type){
-
-  const data =
-    getFiltered()
-    .filter(
-      t => t.type === type
-    );
-
-
-  let total = 0;
-
-  let quantity = 0;
-
-
-  data.forEach(t => {
-
-    total += t.total;
-
-    quantity += t.quantity;
-
-  });
-
-
-  $("viewCount")
-    .textContent =
-    data.length + " รายการ";
-
-
-  let html = `
-
-    <div class="summary-grid">
-
-      <div class="summary-box">
-
-        <span>
-          ${type === "income"
-            ? "💚 รายรับรวม"
-            : "❤️ รายจ่ายรวม"}
-        </span>
-
-        <strong
-          class="${type === "income"
-            ? "in"
-            : "out"}">
-
-          ${money(total)}
-
-        </strong>
-
-      </div>
-
-
-      <div class="summary-box">
-
-        <span>
-          จำนวนรวม
-        </span>
-
-        <strong>
-          ${quantity.toLocaleString("th-TH")}
-        </strong>
-
-      </div>
-
-
-      <div class="summary-box">
-
-        <span>
-          จำนวนรายการ
-        </span>
-
-        <strong>
-          ${data.length}
-        </strong>
-
-      </div>
-
-    </div>
-
-
-    <div style="margin-top:15px">
-
-  `;
-
-
-  if(!data.length){
-
-    html += `
-      <div class="empty">
-        📝<br>
-        ยังไม่มีข้อมูลในช่วงเวลานี้
-      </div>
-    `;
-
-  }else{
-
-    data
-      .sort(
-        (a,b) =>
-          new Date(b.date) -
-          new Date(a.date)
-      )
-      .forEach(t => {
-
-        html += transactionHTML(t);
-
-      });
-
-  }
-
-
-  html += "</div>";
-
-  $("typeContent")
-    .innerHTML =
-    html;
-
-}
-
-
-/* ==================================================
-   ITEM SUMMARY
-================================================== */
-
-function renderItems(){
-
-  const data =
-    getFiltered();
-
-
-  const groups = {};
-
-
-  data.forEach(t => {
-
-    const key =
-      t.item.trim().toLowerCase();
-
-
-    if(!groups[key]){
-
-      groups[key] = {
-
-        name:t.item,
-
-        income:0,
-
-        expense:0,
-
-        quantity:0,
-
-        count:0
-
-      };
-
-    }
-
-
-    groups[key].quantity +=
-      t.quantity;
-
-    groups[key].count++;
-
-
-    if(t.type === "income"){
-
-      groups[key].income +=
-        t.total;
-
-    }else{
-
-      groups[key].expense +=
-        t.total;
-
-    }
-
-  });
-
-
-  const items =
-    Object.values(groups)
-    .sort(
-      (a,b) =>
-        (
-          b.income +
-          b.expense
-        ) -
-        (
-          a.income +
-          a.expense
-        )
-    );
-
-
-  $("viewCount")
-    .textContent =
-    items.length +
-    " รายการ";
-
-
-  if(!items.length){
-
-    $("itemsContent").innerHTML = `
-      <div class="empty">
-        📦<br>
-        ยังไม่มีข้อมูล
-      </div>
-    `;
-
-    return;
-
-  }
-
-
-  let html = "";
-
-
-  items.forEach(item => {
-
-    const net =
-      item.income -
-      item.expense;
-
-
-    html += `
-
-      <div class="item-summary">
-
-        <div class="item-top">
-
-          <div>
-
-            <div class="item-name">
-              ${escapeHTML(item.name)}
-            </div>
-
-            <div class="item-info">
-
-              ${item.count} ครั้ง
-              · จำนวน
-              ${item.quantity.toLocaleString("th-TH")}
-
-            </div>
-
-          </div>
-
-          <div
-            class="item-money
-            ${net >= 0 ? "in" : "out"}">
-
-            ${money(net)}
-
-          </div>
-
-        </div>
-
-
-        <div
-          class="item-info"
-          style="margin-top:10px">
-
-          💚 รับ
-          <b class="in">
-            ${money(item.income)}
-          </b>
-
-          &nbsp;&nbsp;
-
-          ❤️ จ่าย
-          <b class="out">
-            ${money(item.expense)}
-          </b>
-
-        </div>
-
-      </div>
-
-    `;
-
-  });
-
-
-  $("itemsContent")
-    .innerHTML =
-    html;
-
-}
-
-
-/* ==================================================
-   ALL LIST
-================================================== */
-
-function renderAllList(){
-
-  const data =
-    getFiltered()
-    .sort(
-      (a,b) =>
-        new Date(b.date) -
-        new Date(a.date)
-    );
-
-
-  $("viewCount")
-    .textContent =
-    data.length +
-    " รายการ";
-
-
-  if(!data.length){
-
-    $("allContent").innerHTML = `
-      <div class="empty">
-        📋<br>
-        ยังไม่มีรายการ
-      </div>
-    `;
-
-    return;
-
-  }
-
-
-  $("allContent")
-    .innerHTML =
-    data
-      .map(
-        t => transactionHTML(t)
-      )
-      .join("");
-
-}
-
-
-/* ==================================================
-   TRANSACTION HTML
-================================================== */
-
-function transactionHTML(t){
-
-  const isIncome =
-    t.type === "income";
-
-
-  return `
-
-    <div class="row">
-
-      <div
-        class="icon
-        ${isIncome
-          ? "income"
-          : "expense"}">
-
-        ${isIncome
-          ? "💚"
-          : "❤️"}
-
-      </div>
-
-
-      <div class="info">
-
-        <strong>
-          ${escapeHTML(t.item)}
-        </strong>
-
-        <small>
-          ${t.date}
-
-          ${
-            t.note
-              ? " · " +
-                escapeHTML(t.note)
-              : ""
-          }
-
-        </small>
-
-        <div class="qty-price">
-
-          จำนวน
-          ${Number(t.quantity)
-            .toLocaleString("th-TH")}
-
-          ×
-
-          ${money(t.price)}
-
-        </div>
-
-      </div>
-
-
-      <div
-        class="amount
-        ${isIncome
-          ? "in"
-          : "out"}">
-
-        ${isIncome ? "+" : "-"}
-
-        ${money(t.total)}
-
-      </div>
-
-
-      <div class="row-actions">
-
-        <button
-          class="icon-btn"
-          onclick="editTransaction(${t.id})">
-          ✏️
-        </button>
-
-        <button
-          class="icon-btn"
-          onclick="deleteTransaction(${t.id})">
-          🗑️
-        </button>
-
-      </div>
-
-    </div>
-
-  `;
-
-}
-
-
-/* ==================================================
-   GRAPH
-================================================== */
-
-function renderGraph(data){
-
-  const now =
-    new Date();
-
-  let points = [];
-
-
-  if(currentPeriod === "day"){
-
-    for(let i=0;i<24;i++){
-
-      points.push({
-
-        label:i + "น.",
-
-        income:0,
-
-        expense:0
-
-      });
-
-    }
-
-
-    data.forEach(t => {
-
-      const d =
-        new Date(
-          t.date + "T00:00:00"
-        );
-
-      const hour =
-        t.createdHour ??
-        (
-          t.date === today()
-            ? new Date().getHours()
-            : 0
-        );
-
-
-      if(
-        t.type === "income"
-      ){
-
-        points[hour].income +=
-          t.total;
-
-      }else{
-
-        points[hour].expense +=
-          t.total;
-
-      }
-
-    });
-
-  }
-
-
-  else if(
-    currentPeriod === "week"
-  ){
-
-    const start =
-      getWeekStart(now);
-
-    const labels =
+    const names =
       ["จ.","อ.","พ.","พฤ.","ศ.","ส.","อา."];
 
 
@@ -2503,255 +1891,434 @@ function renderGraph(data){
         new Date(start);
 
       d.setDate(
-        start.getDate() + i
+        start.getDate()+i
       );
 
+      const key =
+        d.getFullYear() +
+        "-" +
+        String(d.getMonth()+1).padStart(2,"0") +
+        "-" +
+        String(d.getDate()).padStart(2,"0");
 
-      points.push({
 
-        label:labels[i],
-
-        date:
-          d.toISOString()
-          .slice(0,10),
-
+      result.push({
+        label:names[i],
         income:0,
-
-        expense:0
-
+        expense:0,
+        key:key
       });
 
     }
 
 
-    data.forEach(t => {
+    transactions.forEach(t => {
 
-      const p =
-        points.find(
-          x => x.date === t.date
+      const target =
+        result.find(
+          x => x.key === t.date
         );
 
-      if(!p) return;
+      if(!target) return;
 
-
-      if(t.type === "income"){
-
-        p.income += t.total;
-
-      }else{
-
-        p.expense += t.total;
-
-      }
+      if(t.type === "income")
+        target.income += Number(t.total);
+      else
+        target.expense += Number(t.total);
 
     });
 
   }
 
 
-  else if(
-    currentPeriod === "month"
-  ){
+  if(currentPeriod === "month"){
+
+    const year =
+      now.getFullYear();
+
+    const month =
+      now.getMonth();
 
     const days =
       new Date(
-        now.getFullYear(),
-        now.getMonth()+1,
+        year,
+        month+1,
         0
       ).getDate();
 
 
     for(let i=1;i<=days;i++){
 
-      points.push({
-
+      result.push({
         label:i,
-
-        day:i,
-
         income:0,
-
-        expense:0
-
+        expense:0,
+        key:i
       });
 
     }
 
 
-    data.forEach(t => {
+    transactions.forEach(t => {
 
       const d =
-        new Date(
-          t.date + "T00:00:00"
-        );
+        new Date(t.date+"T00:00:00");
 
-      const p =
-        points[d.getDate()-1];
-
-      if(!p) return;
-
-
-      if(t.type === "income"){
-
-        p.income += t.total;
-
-      }else{
-
-        p.expense += t.total;
-
+      if(
+        d.getFullYear() !== year ||
+        d.getMonth() !== month
+      ){
+        return;
       }
+
+      const target =
+        result[d.getDate()-1];
+
+      if(t.type === "income")
+        target.income += Number(t.total);
+      else
+        target.expense += Number(t.total);
 
     });
 
   }
 
 
-  else if(
-    currentPeriod === "year"
-  ){
+  if(currentPeriod === "year"){
+
+    const year =
+      now.getFullYear();
+
 
     for(let i=0;i<12;i++){
 
-      points.push({
-
+      result.push({
         label:i+1,
-
-        month:i,
-
         income:0,
-
-        expense:0
-
+        expense:0,
+        key:i
       });
 
     }
 
 
-    data.forEach(t => {
+    transactions.forEach(t => {
 
       const d =
-        new Date(
-          t.date + "T00:00:00"
-        );
+        new Date(t.date+"T00:00:00");
 
-      const p =
-        points[d.getMonth()];
+      if(d.getFullYear() !== year)
+        return;
 
-      if(!p) return;
+      const target =
+        result[d.getMonth()];
 
-
-      if(t.type === "income"){
-
-        p.income += t.total;
-
-      }else{
-
-        p.expense += t.total;
-
-      }
+      if(t.type === "income")
+        target.income += Number(t.total);
+      else
+        target.expense += Number(t.total);
 
     });
 
   }
 
 
-  else{
+  return result;
 
-    $("graph").innerHTML = `
-      <div class="empty">
-        📊 เลือก วันนี้ / สัปดาห์ / เดือน / ปี
-        เพื่อดูกราฟ
-      </div>
-    `;
+}
 
-    return;
 
-  }
+/* =====================================================
+   CHART PAGE
+===================================================== */
+
+function renderChartPage(){
+
+  const data =
+    getChartData();
+
+
+  let income = 0;
+  let expense = 0;
+  let qty = 0;
+  let count = 0;
+
+
+  data.forEach(x => {
+
+    income += x.income;
+    expense += x.expense;
+
+  });
+
+
+  const filtered =
+    getPeriodTransactions();
+
+  const tt =
+    totals(filtered);
+
+
+  count =
+    filtered.length;
+
+  qty =
+    tt.qty;
+
+
+  $("chartIncome")
+    .textContent =
+    money(income);
+
+  $("chartExpense")
+    .textContent =
+    money(expense);
+
+  $("chartBalance")
+    .textContent =
+    money(income-expense);
+
+  $("chartCount")
+    .textContent =
+    count;
+
+  $("chartQty")
+    .textContent =
+    qty;
 
 
   const max =
     Math.max(
       1,
-      ...points.map(
-        p =>
+      ...data.map(
+        x =>
           Math.max(
-            p.income,
-            p.expense
+            x.income,
+            x.expense
           )
       )
     );
 
 
-  $("graph").innerHTML =
-    points.map(p => {
+  $("chart").innerHTML =
+    data.map(x => {
 
       const ih =
-        p.income > 0
+        x.income
           ? Math.max(
               3,
-              p.income / max * 160
+              x.income/max*170
             )
           : 0;
 
-      const eh =
-        p.expense > 0
+      const oh =
+        x.expense
           ? Math.max(
               3,
-              p.expense / max * 160
+              x.expense/max*170
             )
           : 0;
 
 
       return `
 
-        <div class="graph-col">
+      <div class="chartCol">
 
-          <div class="bars">
-
-            ${
-              ih
-              ? `
-                <div
-                  class="bar bar-income"
-                  style="height:${ih}px"
-                  title="${money(p.income)}">
-                </div>
-              `
-              : ""
-            }
-
-
-            ${
-              eh
-              ? `
-                <div
-                  class="bar bar-expense"
-                  style="height:${eh}px"
-                  title="${money(p.expense)}">
-                </div>
-              `
-              : ""
-            }
-
+        ${
+          x.income
+          ? `
+          <div
+            class="bar in"
+            style="height:${ih}px">
+            <small>
+              ${shortMoney(x.income)}
+            </small>
           </div>
+          `
+          : ""
+        }
 
+        ${
+          x.expense
+          ? `
+          <div
+            class="bar out"
+            style="height:${oh}px">
+            <small>
+              ${shortMoney(x.expense)}
+            </small>
+          </div>
+          `
+          : ""
+        }
 
-          <span class="graph-label">
-            ${p.label}
-          </span>
+        <span class="x">
+          ${x.label}
+        </span>
 
-        </div>
+      </div>
 
       `;
 
     }).join("");
 
+
+  const notes = {
+
+    day:"สรุปของวันนี้",
+
+    week:"สรุปสัปดาห์นี้",
+
+    month:"สรุปเดือนนี้",
+
+    year:"สรุปปีนี้"
+
+  };
+
+  $("chartNote")
+    .textContent =
+    notes[currentPeriod];
+
 }
 
 
-/* ==================================================
+function getPeriodTransactions(){
+
+  const now =
+    new Date();
+
+
+  return transactions.filter(t => {
+
+    const d =
+      new Date(t.date+"T00:00:00");
+
+
+    if(currentPeriod === "day"){
+
+      return t.date === today();
+
+    }
+
+
+    if(currentPeriod === "week"){
+
+      const start =
+        weekStart(now);
+
+      const end =
+        new Date(start);
+
+      end.setDate(
+        end.getDate()+7
+      );
+
+      return d>=start && d<end;
+
+    }
+
+
+    if(currentPeriod === "month"){
+
+      return (
+        d.getFullYear() ===
+        now.getFullYear() &&
+
+        d.getMonth() ===
+        now.getMonth()
+      );
+
+    }
+
+
+    return (
+      d.getFullYear() ===
+      now.getFullYear()
+    );
+
+  });
+
+}
+
+
+function shortMoney(n){
+
+  if(n>=1000000)
+    return (n/1000000).toFixed(1)+"ล.";
+
+  if(n>=1000)
+    return (n/1000).toFixed(1)+"k";
+
+  return Math.round(n);
+
+}
+
+
+/* =====================================================
+   HISTORY
+===================================================== */
+
+function renderHistory(){
+
+  const date =
+    $("historyDate").value ||
+    today();
+
+  $("historyDate").value =
+    date;
+
+
+  const data =
+    getDayData(date);
+
+  const t =
+    totals(data);
+
+
+  $("historyIncome")
+    .textContent =
+    money(t.income);
+
+  $("historyExpense")
+    .textContent =
+    money(t.expense);
+
+  $("historyBalance")
+    .textContent =
+    money(t.balance);
+
+
+  const formatted =
+    new Date(
+      date+"T00:00:00"
+    ).toLocaleDateString(
+      "th-TH",
+      {
+        weekday:"long",
+        day:"numeric",
+        month:"long",
+        year:"numeric"
+      }
+    );
+
+
+  $("historyTitle")
+    .textContent =
+    "รายการวันที่ " +
+    formatted;
+
+
+  renderList(
+    data,
+    $("historyList")
+  );
+
+}
+
+
+/* =====================================================
    SETTINGS
-================================================== */
+===================================================== */
 
 function openSettings(){
 
@@ -2785,13 +2352,13 @@ function saveSettings(){
       $("shopInput")
         .value
         .trim() ||
-      "สมุดบัญชีของฉัน",
+      "สมุดบัญชี",
 
     desc:
       $("descInput")
         .value
         .trim() ||
-      "บันทึกรายรับ–รายจ่ายง่าย ๆ"
+      "บันทึกรายรับ–รายจ่ายของเรา"
 
   };
 
@@ -2805,11 +2372,37 @@ function saveSettings(){
 }
 
 
-/* ==================================================
+/* =====================================================
+   RENDER ALL
+===================================================== */
+
+function renderAll(){
+
+  $("shopName")
+    .textContent =
+    shop.name;
+
+  $("shopDesc")
+    .textContent =
+    shop.desc;
+
+  renderHome();
+
+  renderChartPage();
+
+  renderHistory();
+
+}
+
+
+/* =====================================================
    START
-================================================== */
+===================================================== */
 
 $("date").value =
+  today();
+
+$("historyDate").value =
   today();
 
 calculate();
