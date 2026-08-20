@@ -47,7 +47,7 @@ button{
   padding:14px;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 
 .nav{
   position:sticky;
@@ -87,7 +87,7 @@ button{
   font-size:11px;
 }
 
-/* PAGE */
+/* ================= PAGE ================= */
 
 .page{
   display:none;
@@ -97,7 +97,7 @@ button{
   display:block;
 }
 
-/* COMMON */
+/* ================= COMMON ================= */
 
 .card{
   background:#fff;
@@ -178,10 +178,87 @@ label{
   margin-bottom:12px;
 }
 
-/* ACCOUNT */
+/* ================= COVER ================= */
+
+.cover{
+  width:48px;
+  height:48px;
+  border-radius:15px;
+  background:#faf4f7;
+  border:1px solid var(--line);
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  font-size:24px;
+  overflow:hidden;
+}
+
+.cover.empty{
+  font-size:0;
+}
+
+.coverButton{
+  border:0;
+  padding:0;
+  background:transparent;
+}
+
+.coverTools{
+  display:flex;
+  gap:5px;
+  margin-top:6px;
+}
+
+.tinyBtn{
+  border:0;
+  background:#f7f0f4;
+  color:#8b7580;
+  border-radius:8px;
+  padding:4px 7px;
+  font-size:10px;
+}
+
+.tinyBtn.delete{
+  background:#fff0f2;
+  color:#c75c6c;
+}
+
+/* ================= INLINE EDIT ================= */
+
+.inlineEdit{
+  display:flex;
+  gap:5px;
+  align-items:center;
+}
+
+.inlineEdit input{
+  padding:7px 9px;
+  border-radius:10px;
+}
+
+.smallEdit{
+  border:0;
+  background:#f5edf1;
+  color:#9a7e8b;
+  border-radius:8px;
+  padding:4px 7px;
+  font-size:10px;
+}
+
+/* ================= ACCOUNT ================= */
 
 .hero{
   background:linear-gradient(135deg,#f8dce8,#fff);
+}
+
+.accountTitle{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.accountTitle h2{
+  margin:0;
 }
 
 .balance{
@@ -291,23 +368,38 @@ label{
   font-weight:700;
 }
 
-.txButtons{
+.txActions{
   display:flex;
-  gap:5px;
-  margin-top:5px;
   justify-content:flex-end;
+  gap:4px;
+  margin-top:5px;
 }
 
-.editBtn{
+.txEdit{
   border:0;
-  background:#f1ebff;
-  color:#7656a8;
-  border-radius:9px;
-  padding:6px 8px;
-  font-size:11px;
+  background:#f5edf1;
+  color:#947886;
+  border-radius:8px;
+  padding:3px 7px;
+  font-size:10px;
 }
 
-/* SUMMARY */
+.txDelete{
+  border:0;
+  background:#fff0f2;
+  color:#c75c6c;
+  border-radius:8px;
+  padding:3px 7px;
+  font-size:10px;
+}
+
+.txFormula{
+  color:#999;
+  font-size:11px;
+  margin-top:4px;
+}
+
+/* ================= SUMMARY ================= */
 
 .periods{
   display:grid;
@@ -323,6 +415,28 @@ label{
 }
 
 .period.active{
+  background:var(--pink2);
+  border-color:#e7a5bf;
+  color:var(--pink);
+  font-weight:700;
+}
+
+.viewMode{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px;
+  margin-top:12px;
+}
+
+.viewMode button{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:12px;
+  padding:10px;
+  color:#777;
+}
+
+.viewMode button.active{
   background:var(--pink2);
   border-color:#e7a5bf;
   color:var(--pink);
@@ -357,37 +471,35 @@ label{
   gap:8px;
 }
 
-.summaryMode{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-top:12px;
-}
-
-.modeBtn{
-  border:1px solid var(--line);
-  background:#fff;
-  border-radius:13px;
-  padding:11px;
-}
-
-.modeBtn.active{
-  background:var(--pink2);
-  border-color:#e7a5bf;
-  color:var(--pink);
-  font-weight:700;
-}
-
-.weekRange{
-  background:#f8f3f6;
-  border-radius:13px;
-  padding:11px;
+.weekInfo{
+  background:#faf7f9;
+  border-radius:14px;
+  padding:12px;
   margin-top:10px;
-  color:#777;
-  font-size:13px;
 }
 
-/* CHART */
+.summaryNumberRow{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:8px;
+  align-items:center;
+  padding:12px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.summaryNumberRow:last-child{
+  border:0;
+}
+
+.summaryNumberRow small{
+  color:#999;
+}
+
+.summaryNumberRow strong{
+  text-align:right;
+}
+
+/* ================= CHART ================= */
 
 .chart{
   height:220px;
@@ -431,7 +543,7 @@ label{
   color:#999;
 }
 
-/* MAP */
+/* ================= MAP ================= */
 
 .mapGrid{
   display:grid;
@@ -456,7 +568,7 @@ label{
   font-size:20px;
 }
 
-/* COST MENU */
+/* ================= COST ================= */
 
 .costHeader{
   background:linear-gradient(135deg,#f8e1ea,#fff);
@@ -473,17 +585,18 @@ label{
   border-radius:18px;
   padding:15px;
   cursor:pointer;
-  transition:.15s;
-}
-
-.menuCard:active{
-  transform:scale(.99);
 }
 
 .menuTop{
   display:flex;
   justify-content:space-between;
   gap:10px;
+}
+
+.menuTopLeft{
+  display:flex;
+  gap:10px;
+  min-width:0;
 }
 
 .menuTop h3{
@@ -513,31 +626,22 @@ label{
   font-size:16px;
 }
 
-/* INGREDIENT PAGE */
+/* ================= INGREDIENT ================= */
 
 .ingredientCard{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
   border:1px solid var(--line);
   border-radius:17px;
-  padding:14px;
+  padding:12px;
   margin-bottom:9px;
   cursor:pointer;
 }
 
-.ingredientIcon{
-  width:48px;
-  height:48px;
-  border-radius:15px;
-  background:#fff0f5;
-  display:grid;
-  place-items:center;
-  font-size:25px;
-}
-
 .ingredientInfo{
   flex:1;
+  min-width:0;
 }
 
 .ingredientInfo strong{
@@ -546,25 +650,54 @@ label{
 
 .ingredientInfo small{
   color:#999;
+  display:block;
+  margin-top:3px;
 }
 
-.includeBadge{
-  padding:7px 9px;
+.ingredientActions{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  flex-shrink:0;
+}
+
+.includeToggle{
+  border:0;
   border-radius:10px;
+  padding:7px 9px;
   font-size:11px;
 }
 
-.includeBadge.yes{
+.includeToggle.yes{
   background:#e6f6ed;
   color:#529b70;
 }
 
-.includeBadge.no{
+.includeToggle.no{
   background:#f4f0f2;
   color:#999;
 }
 
-/* DETAIL */
+.nameEditRow{
+  display:none;
+  margin-top:7px;
+}
+
+.nameEditRow.show{
+  display:flex;
+  gap:5px;
+}
+
+.nameEditRow input{
+  padding:7px 9px;
+  border-radius:9px;
+  font-size:13px;
+}
+
+.ingredientFormula{
+  color:#999;
+  font-size:11px;
+}
 
 .detail{
   display:none;
@@ -672,7 +805,7 @@ label{
   flex:1;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:650px){
 
@@ -683,10 +816,6 @@ label{
 
   .stats{
     grid-template-columns:1fr;
-  }
-
-  .mapGrid{
-    grid-template-columns:1fr 1fr;
   }
 
 }
@@ -704,6 +833,14 @@ label{
 
   .nav span{
     font-size:18px;
+  }
+
+  .ingredientCard{
+    align-items:flex-start;
+  }
+
+  .ingredientActions{
+    flex-direction:column;
   }
 
 }
@@ -742,14 +879,26 @@ label{
 
 
 <!-- =====================================================
-     PAGE 1 ACCOUNT
+     ACCOUNT
 ===================================================== -->
 
 <section id="page-account" class="page active">
 
 <div class="card hero">
 
-<h2>📒 สมุดบัญชี</h2>
+<div class="accountTitle">
+
+<div id="accountTitleArea">
+<h2 style="margin:0">สมุดบัญชี</h2>
+</div>
+
+<button
+class="smallEdit"
+onclick="editStoreName()">
+แก้
+</button>
+
+</div>
 
 <div class="muted">
 คงเหลือตามรายการทั้งหมด
@@ -763,16 +912,12 @@ label{
 
 <div class="moneyBox">
 <small>รายรับ</small>
-<b class="in" id="income">
-฿0.00
-</b>
+<b class="in" id="income">฿0.00</b>
 </div>
 
 <div class="moneyBox">
 <small>รายจ่าย</small>
-<b class="out" id="expense">
-฿0.00
-</b>
+<b class="out" id="expense">฿0.00</b>
 </div>
 
 </div>
@@ -802,17 +947,8 @@ onclick="setTxType('expense')">
 
 </div>
 
+
 <div class="grid2">
-
-<div class="field">
-
-<label>ชื่อร้าน</label>
-
-<input
-id="txShop"
-placeholder="เช่น ตลาด / Makro / ร้านค้า">
-
-</div>
 
 <div class="field">
 
@@ -824,10 +960,6 @@ placeholder="เช่น ข้าวเหนียวไก่ทอด">
 
 </div>
 
-</div>
-
-
-<div class="grid2">
 
 <div class="field">
 
@@ -843,6 +975,8 @@ oninput="calcTxTotal()">
 
 </div>
 
+</div>
+
 
 <div class="field">
 
@@ -850,9 +984,7 @@ oninput="calcTxTotal()">
 
 <div class="qtyControl">
 
-<button onclick="changeTxQty(-1)">
-−
-</button>
+<button onclick="changeTxQty(-1)">−</button>
 
 <input
 id="txQty"
@@ -862,11 +994,7 @@ step=".01"
 value="1"
 oninput="calcTxTotal()">
 
-<button onclick="changeTxQty(1)">
-+
-</button>
-
-</div>
+<button onclick="changeTxQty(1)">+</button>
 
 </div>
 
@@ -879,9 +1007,7 @@ oninput="calcTxTotal()">
 
 <label>วันที่</label>
 
-<input
-id="txDate"
-type="date">
+<input id="txDate" type="date">
 
 </div>
 
@@ -889,9 +1015,7 @@ type="date">
 
 <label>หมายเหตุ</label>
 
-<input
-id="txNote"
-placeholder="ถ้ามี">
+<input id="txNote" placeholder="ถ้ามี">
 
 </div>
 
@@ -905,9 +1029,7 @@ style="background:#fff8fb;margin:0 0 12px">
 ยอดรวม
 </div>
 
-<strong
-id="txTotal"
-style="font-size:22px">
+<strong id="txTotal" style="font-size:22px">
 ฿0.00
 </strong>
 
@@ -939,7 +1061,7 @@ onclick="saveTx()">
 
 
 <!-- =====================================================
-     PAGE 2 SUMMARY
+     SUMMARY
 ===================================================== -->
 
 <section id="page-summary" class="page">
@@ -980,108 +1102,36 @@ onclick="setPeriod('year')">
 
 </div>
 
-</div>
+<div class="viewMode">
 
+<button
+id="viewNamesBtn"
+class="active"
+onclick="setSummaryView('names')">
+มีชื่อรายการ
+</button>
 
-<!-- DAY -->
+<button
+id="viewNumbersBtn"
+onclick="setSummaryView('numbers')">
+เฉพาะตัวเลข
+</button>
 
-<div
-id="summaryDay"
-class="card">
-
-<h3>📅 เลือกวันที่</h3>
-
-<input
-id="summaryDate"
-type="date"
-onchange="renderSummary()">
-
-</div>
-
-
-<!-- WEEK -->
-
-<div
-id="summaryWeek"
-class="card"
-style="display:none">
-
-<h3>📅 เลือกวันที่ในสัปดาห์</h3>
-
-<input
-id="summaryWeekDate"
-type="date"
-onchange="renderSummary()">
-
-<div
-id="weekRange"
-class="weekRange">
 </div>
 
 </div>
 
-
-<!-- MONTH -->
-
-<div
-id="summaryMonth"
-class="card"
-style="display:none">
-
-<h3>🗓️ เลือกเดือน</h3>
-
-<input
-id="summaryMonthValue"
-type="month"
-onchange="renderSummary()">
-
-</div>
-
-
-<!-- YEAR -->
-
-<div
-id="summaryYear"
-class="card"
-style="display:none">
-
-<h3>📆 เลือกปี</h3>
-
-<select
-id="summaryYearValue"
-onchange="renderSummary()">
-</select>
-
-</div>
-
-
-<!-- VIEW MODE -->
 
 <div class="card">
 
-<h3>👀 รูปแบบการดู</h3>
+<h3 id="summarySelectTitle">📅 เลือกวันที่</h3>
 
-<div class="summaryMode">
+<div id="summarySelector"></div>
 
-<button
-id="modeDetail"
-class="modeBtn active"
-onclick="setSummaryMode('detail')">
-
-📋 มีชื่อรายการ
-
-</button>
-
-<button
-id="modeNumber"
-class="modeBtn"
-onclick="setSummaryMode('number')">
-
-🔢 แค่ตัวเลข
-
-</button>
-
-</div>
+<p
+class="muted"
+id="summaryText">
+</p>
 
 </div>
 
@@ -1091,51 +1141,21 @@ onclick="setSummaryMode('number')">
 <div class="stats">
 
 <div class="stat">
-
 <small>รายรับ</small>
-
-<strong
-class="in"
-id="sumIncome">
-฿0.00
-</strong>
-
+<strong class="in" id="sumIncome">฿0.00</strong>
 </div>
 
 <div class="stat">
-
 <small>รายจ่าย</small>
-
-<strong
-class="out"
-id="sumExpense">
-฿0.00
-</strong>
-
+<strong class="out" id="sumExpense">฿0.00</strong>
 </div>
 
 <div class="stat">
-
 <small>คงเหลือ</small>
-
-<strong id="sumBalance">
-฿0.00
-</strong>
-
+<strong id="sumBalance">฿0.00</strong>
 </div>
 
 </div>
-
-</div>
-
-
-<div
-id="summaryDetailCard"
-class="card">
-
-<h3>📋 รายการของช่วงนี้</h3>
-
-<div id="summaryList"></div>
 
 </div>
 
@@ -1144,10 +1164,16 @@ class="card">
 
 <h3>📈 กราฟ</h3>
 
-<div
-class="chart"
-id="summaryChart">
+<div class="chart" id="summaryChart"></div>
+
 </div>
+
+
+<div class="card">
+
+<h3>📋 รายการของช่วงนี้</h3>
+
+<div id="summaryList"></div>
 
 </div>
 
@@ -1156,7 +1182,7 @@ id="summaryChart">
 
 
 <!-- =====================================================
-     PAGE 3 MAP
+     MAP
 ===================================================== -->
 
 <section id="page-map" class="page">
@@ -1180,9 +1206,7 @@ id="summaryChart">
 
 <small>รายรับ</small>
 
-<strong
-class="in"
-id="mapIncome">
+<strong class="in" id="mapIncome">
 ฿0.00
 </strong>
 
@@ -1195,9 +1219,7 @@ id="mapIncome">
 
 <small>รายจ่าย</small>
 
-<strong
-class="out"
-id="mapExpense">
+<strong class="out" id="mapExpense">
 ฿0.00
 </strong>
 
@@ -1210,9 +1232,7 @@ id="mapExpense">
 
 <small>เมนู</small>
 
-<strong id="mapMenus">
-0
-</strong>
+<strong id="mapMenus">0</strong>
 
 </div>
 
@@ -1223,9 +1243,7 @@ id="mapExpense">
 
 <small>วัตถุดิบ</small>
 
-<strong id="mapIngredients">
-0
-</strong>
+<strong id="mapIngredients">0</strong>
 
 </div>
 
@@ -1247,7 +1265,7 @@ id="mapExpense">
 
 
 <!-- =====================================================
-     PAGE 4 COST
+     COST
 ===================================================== -->
 
 <section id="page-cost" class="page">
@@ -1311,6 +1329,7 @@ id="menuList">
 </div>
 
 
+
 <!-- MENU DETAIL -->
 
 <div id="menuDetail" class="detail">
@@ -1318,13 +1337,17 @@ id="menuList">
 <button
 class="back"
 onclick="backToMenus()">
-
-← กลับไปรายการเมนู
-
+← กลับไปรายการขาย
 </button>
 
 
 <div class="card detailHero">
+
+<div style="display:flex;gap:10px;align-items:center">
+
+<div id="menuDetailCover"></div>
+
+<div>
 
 <h2 id="detailMenuName"></h2>
 
@@ -1333,14 +1356,16 @@ class="muted"
 id="detailMenuUnit">
 </p>
 
+</div>
+
+</div>
+
 
 <div class="grid2">
 
 <div class="field">
 
-<label>
-ราคาขาย / หน่วย
-</label>
+<label>ราคาขาย / หน่วย</label>
 
 <input
 id="menuSellPrice"
@@ -1353,9 +1378,7 @@ oninput="renderMenuDetail()">
 
 <div class="field">
 
-<label>
-กำไรเป้าหมาย %
-</label>
+<label>กำไรเป้าหมาย %</label>
 
 <input
 id="menuProfitTarget"
@@ -1377,7 +1400,7 @@ oninput="renderMenuDetail()">
 <h3>🥕 วัตถุดิบ</h3>
 
 <p class="muted">
-กดเข้าไปดูรายละเอียดแต่ละวัตถุดิบ
+กดเปิด/ปิดได้จากหน้านี้เลย หรือกดชื่อเพื่อดูรายละเอียด
 </p>
 
 <div id="ingredientList"></div>
@@ -1403,12 +1426,9 @@ onclick="openIngredientModal()">
 
 <div class="calcBox">
 
-<small>ต้นทุน / หน่วย</small>
+<small>ต้นทุน / หน่วยขาย</small>
 
-<strong
-id="menuCost">
-฿0.00
-</strong>
+<strong id="menuCost">฿0.00</strong>
 
 </div>
 
@@ -1416,11 +1436,7 @@ id="menuCost">
 
 <small>กำไร / หน่วย</small>
 
-<strong
-class="in"
-id="menuProfit">
-฿0.00
-</strong>
+<strong class="in" id="menuProfit">฿0.00</strong>
 
 </div>
 
@@ -1428,9 +1444,7 @@ id="menuProfit">
 
 <small>กำไร %</small>
 
-<strong
-class="in"
-id="menuProfitPercent">
+<strong class="in" id="menuProfitPercent">
 0.0%
 </strong>
 
@@ -1450,6 +1464,7 @@ id="priceRecommendation">
 </div>
 
 
+
 <!-- INGREDIENT DETAIL -->
 
 <div id="ingredientDetail" class="detail">
@@ -1457,9 +1472,7 @@ id="priceRecommendation">
 <button
 class="back"
 onclick="backToMenuDetail()">
-
 ← กลับไปวัตถุดิบ
-
 </button>
 
 
@@ -1493,7 +1506,7 @@ id="ingredientDetailSub">
 
 <div class="field">
 
-<label>ปริมาณที่ซื้อ</label>
+<label>จำนวนที่ซื้อ</label>
 
 <input
 id="editIngAmount"
@@ -1529,7 +1542,7 @@ oninput="renderIngredientDetail()">
 
 <div class="field">
 
-<label>ราคาซื้อทั้งหมด (บาท)</label>
+<label>ราคาต่อหน่วย (บาท)</label>
 
 <input
 id="editIngPrice"
@@ -1543,43 +1556,11 @@ oninput="renderIngredientDetail()">
 
 <div class="field">
 
-<label>
-🧺 จำนวนที่ซื้อ / จำนวนชิ้น
-</label>
+<label>🍓 วัตถุดิบนี้ใช้ทำขายได้กี่ชิ้น</label>
 
 <div class="qtyControl">
 
-<button onclick="changeIngredientPurchase(-1)">
-−
-</button>
-
-<input
-id="editIngPieces"
-type="number"
-min="0"
-step=".01"
-oninput="renderIngredientDetail()">
-
-<button onclick="changeIngredientPurchase(1)">
-+
-</button>
-
-</div>
-
-</div>
-
-
-<div class="field">
-
-<label>
-🍓 วัตถุดิบนี้ใช้ทำขายได้กี่ชิ้น
-</label>
-
-<div class="qtyControl">
-
-<button onclick="changeUsable(-1)">
-−
-</button>
+<button onclick="changeUsable(-1)">−</button>
 
 <input
 id="editIngUsable"
@@ -1588,9 +1569,7 @@ min="0"
 step=".01"
 oninput="renderIngredientDetail()">
 
-<button onclick="changeUsable(1)">
-+
-</button>
+<button onclick="changeUsable(1)">+</button>
 
 </div>
 
@@ -1610,12 +1589,9 @@ style="margin-top:6px">
 </div>
 
 
-<div class="field"
-style="margin-top:14px">
+<div class="field" style="margin-top:14px">
 
-<label>
-วัตถุดิบนี้เอาไปคิดต้นทุนไหม?
-</label>
+<label>วัตถุดิบนี้เอาไปคิดต้นทุนไหม?</label>
 
 <select
 id="editIngInclude"
@@ -1644,10 +1620,9 @@ onchange="renderIngredientDetail()">
 
 <div class="calcBox">
 
-<small>ราคาซื้อต่อหน่วย</small>
+<small>ซื้อทั้งหมด</small>
 
-<strong
-id="ingUnitPrice">
+<strong id="ingPurchaseTotal">
 ฿0.00
 </strong>
 
@@ -1657,8 +1632,7 @@ id="ingUnitPrice">
 
 <small>ต้นทุน / ชิ้น</small>
 
-<strong
-id="ingCostPerPiece">
+<strong id="ingCostPerPiece">
 ฿0.00
 </strong>
 
@@ -1668,8 +1642,7 @@ id="ingCostPerPiece">
 
 <small>ทำได้</small>
 
-<strong
-id="ingYield">
+<strong id="ingYield">
 0 ชิ้น
 </strong>
 
@@ -1709,6 +1682,7 @@ onclick="saveIngredientDetail()">
 </div>
 
 
+
 <!-- =====================================================
      INGREDIENT MODAL
 ===================================================== -->
@@ -1733,7 +1707,7 @@ onclick="closeIngredientModal()">
 
 
 <p class="muted">
-ใส่แค่ชื่อก่อนก็ได้ แล้วค่อยเข้าไปกรอกรายละเอียดทีหลัง
+ใส่ชื่อก่อนก็ได้ แล้วค่อยกรอกจำนวนและราคา
 </p>
 
 
@@ -1769,172 +1743,6 @@ onclick="createIngredient()">
 </div>
 
 
-<!-- =====================================================
-     EDIT TRANSACTION MODAL
-===================================================== -->
-
-<div
-id="editTxModal"
-class="modal hidden">
-
-<div class="modalBox">
-
-<div class="modalHead">
-
-<h2>✏️ แก้ไขรายการ</h2>
-
-<button
-class="btn"
-onclick="closeEditTx()">
-✕
-</button>
-
-</div>
-
-
-<div class="typeButtons">
-
-<button
-id="editIncomeBtn"
-class="typeBtn active in"
-onclick="setEditTxType('income')">
-💚 รายรับ
-</button>
-
-<button
-id="editExpenseBtn"
-class="typeBtn out"
-onclick="setEditTxType('expense')">
-❤️ รายจ่าย
-</button>
-
-</div>
-
-
-<div class="grid2">
-
-<div class="field">
-
-<label>ชื่อร้าน</label>
-
-<input id="editTxShop">
-
-</div>
-
-<div class="field">
-
-<label>รายการ</label>
-
-<input id="editTxItem">
-
-</div>
-
-</div>
-
-
-<div class="grid2">
-
-<div class="field">
-
-<label>ราคา / หน่วย</label>
-
-<input
-id="editTxPrice"
-type="number"
-min="0"
-step=".01"
-oninput="calcEditTxTotal()">
-
-</div>
-
-<div class="field">
-
-<label>จำนวน</label>
-
-<div class="qtyControl">
-
-<button onclick="changeEditTxQty(-1)">
-−
-</button>
-
-<input
-id="editTxQty"
-type="number"
-min="0.01"
-step=".01"
-oninput="calcEditTxTotal()">
-
-<button onclick="changeEditTxQty(1)">
-+
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="grid2">
-
-<div class="field">
-
-<label>วันที่</label>
-
-<input
-id="editTxDate"
-type="date">
-
-</div>
-
-<div class="field">
-
-<label>หมายเหตุ</label>
-
-<input id="editTxNote">
-
-</div>
-
-</div>
-
-
-<div class="card"
-style="background:#fff8fb;margin:0">
-
-<div class="muted">
-ยอดรวม
-</div>
-
-<strong
-id="editTxTotal"
-style="font-size:22px">
-฿0.00
-</strong>
-
-</div>
-
-
-<div class="modalActions">
-
-<button
-class="btn"
-onclick="closeEditTx()">
-ยกเลิก
-</button>
-
-<button
-class="primary"
-onclick="saveEditedTx()">
-💾 บันทึกการแก้ไข
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
 
 <script>
 
@@ -1944,26 +1752,25 @@ onclick="saveEditedTx()">
 
 const TX_KEY = "myAccountTransactions_v5";
 const MENU_KEY = "myAccountMenus_v5";
+const SETTING_KEY = "myAccountSettings_v1";
 
 let transactions =
-JSON.parse(
-localStorage.getItem(TX_KEY) || "[]"
-);
+JSON.parse(localStorage.getItem(TX_KEY) || "[]");
 
 let menus =
-JSON.parse(
-localStorage.getItem(MENU_KEY) || "[]"
-);
+JSON.parse(localStorage.getItem(MENU_KEY) || "[]");
+
+let settings =
+JSON.parse(localStorage.getItem(SETTING_KEY) || "{}");
 
 let txType = "income";
-let editTxTypeValue = "income";
-
 let currentPeriod = "day";
-let summaryMode = "detail";
+let summaryView = "names";
 
 let currentMenuId = null;
 let currentIngredientId = null;
-let currentEditTxId = null;
+
+let editingTxId = null;
 
 
 /* =====================================================
@@ -1971,78 +1778,265 @@ let currentEditTxId = null;
 ===================================================== */
 
 function $(id){
-return document.getElementById(id);
+  return document.getElementById(id);
 }
-
 
 function money(n){
-
-return "฿" +
-Number(n || 0).toLocaleString(
-"th-TH",
-{
-minimumFractionDigits:2,
-maximumFractionDigits:2
-}
-);
-
+  return "฿" + Number(n || 0).toLocaleString(
+    "th-TH",
+    {
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    }
+  );
 }
 
+function num(n){
+  return Number(n || 0);
+}
 
 function today(){
 
-const d = new Date();
+  const d = new Date();
 
-return d.getFullYear() +
-"-" +
-String(d.getMonth()+1).padStart(2,"0") +
-"-" +
-String(d.getDate()).padStart(2,"0");
+  return d.getFullYear() +
+    "-" +
+    String(d.getMonth()+1).padStart(2,"0") +
+    "-" +
+    String(d.getDate()).padStart(2,"0");
 
 }
-
 
 function saveAll(){
 
-localStorage.setItem(
-TX_KEY,
-JSON.stringify(transactions)
-);
+  localStorage.setItem(
+    TX_KEY,
+    JSON.stringify(transactions)
+  );
 
-localStorage.setItem(
-MENU_KEY,
-JSON.stringify(menus)
-);
+  localStorage.setItem(
+    MENU_KEY,
+    JSON.stringify(menus)
+  );
+
+  localStorage.setItem(
+    SETTING_KEY,
+    JSON.stringify(settings)
+  );
 
 }
-
 
 function uid(){
 
-return Date.now() +
-Math.random()
-.toString(36)
-.slice(2);
+  return Date.now() +
+    Math.random().toString(36).slice(2);
 
 }
-
 
 function escapeHTML(s){
 
-const div =
-document.createElement("div");
+  const div = document.createElement("div");
 
-div.textContent = s || "";
+  div.textContent = s || "";
 
-return div.innerHTML;
+  return div.innerHTML;
+
+}
+
+function formatNumber(n){
+
+  return Number(n || 0).toLocaleString(
+    "th-TH",
+    {
+      maximumFractionDigits:2
+    }
+  );
 
 }
 
 
-function formatAmount(n){
+/* =====================================================
+   COVER SYSTEM
+   ชื่อเดียวกัน = รูปเดียวกัน
+===================================================== */
 
-return Number(n || 0)
-.toLocaleString("th-TH");
+if(!settings.covers){
+  settings.covers = {};
+}
+
+function coverFor(name){
+
+  const key = String(name || "")
+    .trim()
+    .toLowerCase();
+
+  return settings.covers[key] || "";
+
+}
+
+function setCover(name){
+
+  const cleanName =
+    String(name || "").trim();
+
+  if(!cleanName)
+    return;
+
+  const current =
+    coverFor(cleanName);
+
+  const value =
+    prompt(
+      "ใส่อิโมจิสำหรับรายการนี้\n\nเช่น 🍓 🥤 🍗 หรือใส่หลายตัวก็ได้",
+      current
+    );
+
+  if(value === null)
+    return;
+
+  const emoji = value.trim();
+
+  const key =
+    cleanName.toLowerCase();
+
+  if(emoji){
+
+    settings.covers[key] = emoji;
+
+  }else{
+
+    delete settings.covers[key];
+
+  }
+
+  saveAll();
+
+  renderAccount();
+  renderMenus();
+  renderMap();
+
+  if(currentMenuId)
+    renderMenuDetail();
+
+}
+
+function removeCover(name){
+
+  const key =
+    String(name || "")
+      .trim()
+      .toLowerCase();
+
+  delete settings.covers[key];
+
+  saveAll();
+
+  renderAccount();
+  renderMenus();
+  renderMenuDetail();
+
+}
+
+function coverHTML(name){
+
+  const emoji = coverFor(name);
+
+  return `
+    <button
+      class="coverButton"
+      onclick="event.stopPropagation();setCover('${escapeAttr(name)}')">
+
+      <div class="cover ${emoji ? "" : "empty"}">
+        ${escapeHTML(emoji)}
+      </div>
+
+    </button>
+  `;
+
+}
+
+function escapeAttr(s){
+
+  return String(s || "")
+    .replace(/\\/g,"\\\\")
+    .replace(/'/g,"\\'")
+    .replace(/\n/g," ");
+
+}
+
+
+/* =====================================================
+   STORE NAME
+===================================================== */
+
+function getStoreName(){
+
+  return settings.storeName ||
+    "สมุดบัญชี";
+
+}
+
+function editStoreName(){
+
+  const area =
+    $("accountTitleArea");
+
+  const current =
+    getStoreName();
+
+  area.innerHTML = `
+    <div class="inlineEdit">
+
+      <input
+        id="storeNameInput"
+        value="${escapeAttr(current)}"
+        maxlength="40">
+
+      <button
+        class="smallEdit"
+        onclick="saveStoreName()">
+        ✓
+      </button>
+
+      <button
+        class="smallEdit"
+        onclick="cancelStoreName()">
+        ×
+      </button>
+
+    </div>
+  `;
+
+  $("storeNameInput").focus();
+
+}
+
+function saveStoreName(){
+
+  const value =
+    $("storeNameInput").value.trim();
+
+  settings.storeName =
+    value || "สมุดบัญชี";
+
+  saveAll();
+
+  renderAccountTitle();
+
+}
+
+function cancelStoreName(){
+
+  renderAccountTitle();
+
+}
+
+function renderAccountTitle(){
+
+  $("accountTitleArea").innerHTML =
+    `<h2 style="margin:0">
+      ${escapeHTML(getStoreName())}
+    </h2>`;
 
 }
 
@@ -2053,36 +2047,31 @@ return Number(n || 0)
 
 function showPage(page,button){
 
-document
-.querySelectorAll(".page")
-.forEach(x =>
-x.classList.remove("active")
-);
+  document
+    .querySelectorAll(".page")
+    .forEach(x =>
+      x.classList.remove("active")
+    );
 
-$("page-"+page)
-.classList.add("active");
+  $("page-"+page)
+    .classList.add("active");
 
+  document
+    .querySelectorAll(".nav button")
+    .forEach(x =>
+      x.classList.remove("active")
+    );
 
-document
-.querySelectorAll(".nav button")
-.forEach(x =>
-x.classList.remove("active")
-);
+  button.classList.add("active");
 
-button.classList.add("active");
+  if(page === "summary")
+    renderSummary();
 
+  if(page === "map")
+    renderMap();
 
-if(page === "summary"){
-renderSummary();
-}
-
-if(page === "map"){
-renderMap();
-}
-
-if(page === "cost"){
-showCostHome();
-}
+  if(page === "cost")
+    showCostHome();
 
 }
 
@@ -2093,470 +2082,433 @@ showCostHome();
 
 function setTxType(type){
 
-txType = type;
+  txType = type;
 
-$("incomeBtn")
-.classList.toggle(
-"active",
-type === "income"
-);
+  $("incomeBtn")
+    .classList.toggle(
+      "active",
+      type === "income"
+    );
 
-$("expenseBtn")
-.classList.toggle(
-"active",
-type === "expense"
-);
+  $("expenseBtn")
+    .classList.toggle(
+      "active",
+      type === "expense"
+    );
 
 }
-
 
 function changeTxQty(amount){
 
-const input = $("txQty");
+  const input =
+    $("txQty");
 
-let value =
-Number(input.value) || 0;
+  let value =
+    Number(input.value) || 0;
 
-value += amount;
+  value += amount;
 
-if(value < .01)
-value = .01;
+  if(value < .01)
+    value = .01;
 
-input.value = value;
+  input.value = value;
 
-calcTxTotal();
+  calcTxTotal();
 
 }
-
 
 function calcTxTotal(){
 
-const q =
-Number($("txQty").value) || 0;
+  const q =
+    Number($("txQty").value) || 0;
 
-const p =
-Number($("txPrice").value) || 0;
+  const p =
+    Number($("txPrice").value) || 0;
 
-$("txTotal").textContent =
-money(q*p);
+  $("txTotal").textContent =
+    money(q*p);
 
 }
-
 
 function saveTx(){
 
-const shop =
-$("txShop").value.trim();
+  const item =
+    $("txItem").value.trim();
 
-const item =
-$("txItem").value.trim();
+  const qty =
+    Number($("txQty").value);
 
-const qty =
-Number($("txQty").value);
+  const price =
+    Number($("txPrice").value);
 
-const price =
-Number($("txPrice").value);
+  const date =
+    $("txDate").value;
 
-const date =
-$("txDate").value;
+  if(!item){
+    alert("กรุณาใส่รายการ");
+    return;
+  }
 
+  if(!qty || qty <= 0){
+    alert("กรุณาใส่จำนวน");
+    return;
+  }
 
-if(!item){
+  if(price < 0 || isNaN(price)){
+    alert("กรุณาใส่ราคา");
+    return;
+  }
 
-alert("กรุณาใส่ชื่อรายการ");
+  if(!date){
+    alert("กรุณาเลือกวันที่");
+    return;
+  }
 
-return;
+  transactions.push({
 
-}
+    id:uid(),
 
-if(!qty || qty <= 0){
+    type:txType,
 
-alert("กรุณาใส่จำนวน");
+    item,
 
-return;
+    qty,
 
-}
+    price,
 
-if(price < 0 || isNaN(price)){
+    total:qty*price,
 
-alert("กรุณาใส่ราคา");
+    date,
 
-return;
+    note:$("txNote").value.trim()
 
-}
+  });
 
-if(!date){
+  saveAll();
 
-alert("กรุณาเลือกวันที่");
+  $("txItem").value="";
+  $("txQty").value=1;
+  $("txPrice").value="";
+  $("txNote").value="";
+  $("txDate").value=today();
 
-return;
+  calcTxTotal();
 
-}
-
-
-transactions.push({
-
-id:uid(),
-
-type:txType,
-
-shop,
-
-item,
-
-qty,
-
-price,
-
-total:qty*price,
-
-date,
-
-note:$("txNote").value.trim()
-
-});
-
-
-saveAll();
-
-$("txShop").value="";
-$("txItem").value="";
-$("txQty").value=1;
-$("txPrice").value="";
-$("txNote").value="";
-$("txDate").value=today();
-
-calcTxTotal();
-
-renderAccount();
-renderSummary();
-renderMap();
+  renderAccount();
+  renderSummary();
+  renderMap();
 
 }
 
+function startEditTx(id){
+
+  const t =
+    transactions.find(
+      x => x.id === id
+    );
+
+  if(!t)
+    return;
+
+  editingTxId=id;
+
+  renderAccount();
+
+}
+
+function cancelEditTx(){
+
+  editingTxId=null;
+
+  renderAccount();
+
+}
+
+function saveEditTx(id){
+
+  const t =
+    transactions.find(
+      x => x.id === id
+    );
+
+  if(!t)
+    return;
+
+  const item =
+    $("editTxItem_"+id)
+      .value.trim();
+
+  const qty =
+    Number(
+      $("editTxQty_"+id).value
+    );
+
+  const price =
+    Number(
+      $("editTxPrice_"+id).value
+    );
+
+  const date =
+    $("editTxDate_"+id).value;
+
+  const note =
+    $("editTxNote_"+id).value.trim();
+
+  if(!item || qty<=0 || price<0 || !date){
+
+    alert("กรุณาตรวจสอบข้อมูล");
+
+    return;
+
+  }
+
+  t.item=item;
+  t.qty=qty;
+  t.price=price;
+  t.total=qty*price;
+  t.date=date;
+  t.note=note;
+
+  saveAll();
+
+  editingTxId=null;
+
+  renderAccount();
+  renderSummary();
+  renderMap();
+
+}
 
 function deleteTx(id){
 
-if(!confirm("ลบรายการนี้ใช่ไหม?"))
-return;
+  if(!confirm("ลบรายการนี้ใช่ไหม?"))
+    return;
 
-transactions =
-transactions.filter(
-x => x.id !== id
-);
+  transactions =
+    transactions.filter(
+      x => x.id !== id
+    );
 
-saveAll();
+  saveAll();
 
-renderAccount();
-renderSummary();
-renderMap();
-
-}
-
-
-/* =====================================================
-   EDIT TRANSACTION
-===================================================== */
-
-function openEditTx(id){
-
-const tx =
-transactions.find(x => x.id === id);
-
-if(!tx)
-return;
-
-currentEditTxId = id;
-
-editTxTypeValue =
-tx.type || "income";
-
-$("editTxShop").value =
-tx.shop || "";
-
-$("editTxItem").value =
-tx.item || "";
-
-$("editTxQty").value =
-tx.qty || 1;
-
-$("editTxPrice").value =
-tx.price || 0;
-
-$("editTxDate").value =
-tx.date || today();
-
-$("editTxNote").value =
-tx.note || "";
-
-setEditTxType(editTxTypeValue);
-
-calcEditTxTotal();
-
-$("editTxModal")
-.classList.remove("hidden");
+  renderAccount();
+  renderSummary();
+  renderMap();
 
 }
-
-
-function closeEditTx(){
-
-currentEditTxId = null;
-
-$("editTxModal")
-.classList.add("hidden");
-
-}
-
-
-function setEditTxType(type){
-
-editTxTypeValue = type;
-
-$("editIncomeBtn")
-.classList.toggle(
-"active",
-type === "income"
-);
-
-$("editExpenseBtn")
-.classList.toggle(
-"active",
-type === "expense"
-);
-
-}
-
-
-function changeEditTxQty(amount){
-
-const input =
-$("editTxQty");
-
-let value =
-Number(input.value) || 0;
-
-value += amount;
-
-if(value < .01)
-value = .01;
-
-input.value = value;
-
-calcEditTxTotal();
-
-}
-
-
-function calcEditTxTotal(){
-
-const q =
-Number($("editTxQty").value) || 0;
-
-const p =
-Number($("editTxPrice").value) || 0;
-
-$("editTxTotal").textContent =
-money(q*p);
-
-}
-
-
-function saveEditedTx(){
-
-const tx =
-transactions.find(
-x => x.id === currentEditTxId
-);
-
-if(!tx)
-return;
-
-
-const item =
-$("editTxItem").value.trim();
-
-const qty =
-Number($("editTxQty").value);
-
-const price =
-Number($("editTxPrice").value);
-
-const date =
-$("editTxDate").value;
-
-
-if(!item){
-
-alert("กรุณาใส่ชื่อรายการ");
-
-return;
-
-}
-
-if(!qty || qty <= 0){
-
-alert("กรุณาใส่จำนวน");
-
-return;
-
-}
-
-if(price < 0 || isNaN(price)){
-
-alert("กรุณาใส่ราคา");
-
-return;
-
-}
-
-if(!date){
-
-alert("กรุณาเลือกวันที่");
-
-return;
-
-}
-
-
-tx.type =
-editTxTypeValue;
-
-tx.shop =
-$("editTxShop").value.trim();
-
-tx.item =
-item;
-
-tx.qty =
-qty;
-
-tx.price =
-price;
-
-tx.total =
-qty * price;
-
-tx.date =
-date;
-
-tx.note =
-$("editTxNote").value.trim();
-
-
-saveAll();
-
-closeEditTx();
-
-renderAccount();
-renderSummary();
-renderMap();
-
-}
-
-
-/* =====================================================
-   ACCOUNT RENDER
-===================================================== */
 
 function renderAccount(){
 
-let income=0;
-let expense=0;
+  let income=0;
+  let expense=0;
 
-transactions.forEach(t=>{
+  transactions.forEach(t=>{
 
-if(t.type==="income")
-income += Number(t.total||0);
+    if(t.type==="income")
+      income += num(t.total);
 
-else
-expense += Number(t.total||0);
+    else
+      expense += num(t.total);
 
-});
+  });
 
+  $("income").textContent=money(income);
+  $("expense").textContent=money(expense);
+  $("balance").textContent=money(income-expense);
 
-$("income").textContent =
-money(income);
+  const list =
+    [...transactions]
+      .sort(
+        (a,b) =>
+          new Date(b.date)-new Date(a.date)
+      );
 
-$("expense").textContent =
-money(expense);
+  $("txList").innerHTML =
+    list.length
+    ?
+    list.map(t => {
 
-$("balance").textContent =
-money(income-expense);
+      if(editingTxId === t.id){
 
+        return `
 
-const list =
-[...transactions]
-.sort(
-(a,b) =>
-new Date(b.date)-new Date(a.date)
-);
+        <div
+          class="tx"
+          style="display:block">
 
+          <div
+            style="display:flex;gap:8px;align-items:center">
 
-$("txList").innerHTML =
-list.length
-?
-list.map(t=>`
+            ${coverHTML(t.item)}
 
-<div class="tx">
+            <div style="flex:1">
 
-<div class="ingredientIcon">
-${t.type==="income"?"💚":"❤️"}
-</div>
+              <input
+                id="editTxItem_${t.id}"
+                value="${escapeAttr(t.item)}"
+                placeholder="ชื่อรายการ">
 
-<div class="txInfo">
+            </div>
 
-<strong>
-${escapeHTML(t.item)}
-</strong>
+          </div>
 
-<small>
-${t.shop ? escapeHTML(t.shop)+" · " : ""}
-${t.date}
-</small>
+          <div
+            class="grid2"
+            style="margin-top:8px">
 
-<small>
-${Number(t.qty).toLocaleString("th-TH")}
-× ${money(t.price)}
-</small>
+            <div>
 
-</div>
+              <label>จำนวน</label>
 
-<div>
+              <input
+                id="editTxQty_${t.id}"
+                type="number"
+                min=".01"
+                step=".01"
+                value="${t.qty}">
 
-<div
-class="txAmount ${t.type==="income"?"in":"out"}">
+            </div>
 
-${t.type==="income"?"+":"-"}
-${money(t.total)}
+            <div>
 
-</div>
+              <label>ราคา</label>
 
-<div class="txButtons">
+              <input
+                id="editTxPrice_${t.id}"
+                type="number"
+                min="0"
+                step=".01"
+                value="${t.price}">
 
-<button
-class="editBtn"
-onclick="openEditTx('${t.id}')">
-✏️ แก้ไข
-</button>
+            </div>
 
-<button
-class="danger"
-onclick="deleteTx('${t.id}')">
-ลบ
-</button>
+          </div>
 
-</div>
+          <div
+            class="grid2">
 
-</div>
+            <div>
 
-</div>
+              <label>วันที่</label>
 
-`).join("")
-:
-`<div class="muted">
-ยังไม่มีรายการ
-</div>`;
+              <input
+                id="editTxDate_${t.id}"
+                type="date"
+                value="${t.date}">
+
+            </div>
+
+            <div>
+
+              <label>หมายเหตุ</label>
+
+              <input
+                id="editTxNote_${t.id}"
+                value="${escapeAttr(t.note || "")}">
+
+            </div>
+
+          </div>
+
+          <div
+            style="display:flex;gap:5px;margin-top:5px">
+
+            <button
+              class="tinyBtn"
+              onclick="setCover(document.getElementById('editTxItem_${t.id}').value)">
+              ปก
+            </button>
+
+            <button
+              class="tinyBtn delete"
+              onclick="removeCover(document.getElementById('editTxItem_${t.id}').value)">
+              ลบปก
+            </button>
+
+            <div style="flex:1"></div>
+
+            <button
+              class="smallEdit"
+              onclick="saveEditTx('${t.id}')">
+              บันทึก
+            </button>
+
+            <button
+              class="smallEdit"
+              onclick="cancelEditTx()">
+              ยกเลิก
+            </button>
+
+          </div>
+
+        </div>
+
+        `;
+
+      }
+
+      return `
+
+      <div class="tx">
+
+        ${coverHTML(t.item)}
+
+        <div class="txInfo">
+
+          <strong>
+            ${escapeHTML(t.item)}
+          </strong>
+
+          <small>
+            ${escapeHTML(t.date)}
+            ${t.note ? " · "+escapeHTML(t.note) : ""}
+          </small>
+
+          <div class="txFormula">
+            ${formatNumber(t.qty)}
+            ×
+            ${money(t.price)}
+            =
+            ${money(t.total)}
+          </div>
+
+        </div>
+
+        <div>
+
+          <div
+            class="txAmount ${t.type==="income"?"in":"out"}">
+
+            ${t.type==="income"?"+":"-"}
+            ${money(t.total)}
+
+          </div>
+
+          <div class="txActions">
+
+            <button
+              class="txEdit"
+              onclick="startEditTx('${t.id}')">
+              แก้
+            </button>
+
+            <button
+              class="txDelete"
+              onclick="deleteTx('${t.id}')">
+              ลบ
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      `;
+
+    }).join("")
+    :
+    `<div class="muted">ยังไม่มีรายการ</div>`;
 
 }
 
@@ -2567,537 +2519,678 @@ onclick="deleteTx('${t.id}')">
 
 function setPeriod(p){
 
-currentPeriod = p;
+  currentPeriod=p;
 
-document
-.querySelectorAll(".period")
-.forEach(x =>
-x.classList.toggle(
-"active",
-x.dataset.period === p
-)
-);
+  document
+    .querySelectorAll(".period")
+    .forEach(x =>
+      x.classList.toggle(
+        "active",
+        x.dataset.period===p
+      )
+    );
 
-
-$("summaryDay").style.display =
-p === "day" ? "block" : "none";
-
-$("summaryWeek").style.display =
-p === "week" ? "block" : "none";
-
-$("summaryMonth").style.display =
-p === "month" ? "block" : "none";
-
-$("summaryYear").style.display =
-p === "year" ? "block" : "none";
-
-
-renderSummary();
+  renderSummary();
 
 }
 
+function setSummaryView(view){
 
-function setSummaryMode(mode){
+  summaryView=view;
 
-summaryMode = mode;
+  $("viewNamesBtn")
+    .classList.toggle(
+      "active",
+      view==="names"
+    );
 
-$("modeDetail")
-.classList.toggle(
-"active",
-mode === "detail"
-);
+  $("viewNumbersBtn")
+    .classList.toggle(
+      "active",
+      view==="numbers"
+    );
 
-$("modeNumber")
-.classList.toggle(
-"active",
-mode === "number"
-);
-
-$("summaryDetailCard").style.display =
-mode === "detail"
-? "block"
-: "none";
-
-renderSummary();
+  renderSummary();
 
 }
-
-
-/* =====================================================
-   DATE HELPERS
-===================================================== */
 
 function dateOnly(s){
 
-return new Date(
-s+"T00:00:00"
-);
+  return new Date(
+    s+"T00:00:00"
+  );
 
 }
 
+function getWeekStart(date){
 
-function getSunday(date){
+  const d =
+    new Date(date);
 
-const d =
-new Date(date);
+  const day=d.getDay();
 
-d.setHours(0,0,0,0);
+  d.setDate(
+    d.getDate() -
+    day
+  );
 
-const day =
-d.getDay();
+  d.setHours(0,0,0,0);
 
-d.setDate(
-d.getDate()-day
-);
-
-return d;
-
-}
-
-
-function formatDateThai(date){
-
-return date.getDate()
-+
-"/"
-+
-String(date.getMonth()+1)
-.padStart(2,"0")
-+
-"/"
-+
-date.getFullYear();
+  return d;
 
 }
 
+function dateString(d){
 
-function getWeekData(){
-
-const value =
-$("summaryWeekDate").value ||
-today();
-
-const selected =
-dateOnly(value);
-
-const sunday =
-getSunday(selected);
-
-const saturday =
-new Date(sunday);
-
-saturday.setDate(
-saturday.getDate()+6
-);
-
-return {
-start:sunday,
-end:saturday
-};
+  return d.getFullYear() +
+    "-" +
+    String(d.getMonth()+1)
+      .padStart(2,"0") +
+    "-" +
+    String(d.getDate())
+      .padStart(2,"0");
 
 }
 
+function renderSummarySelector(){
 
-/* =====================================================
-   SUMMARY FILTER
-===================================================== */
+  const box =
+    $("summarySelector");
+
+  if(currentPeriod==="day"){
+
+    $("summarySelectTitle")
+      .textContent="📅 เลือกวันที่";
+
+    box.innerHTML=`
+
+      <div class="dateSelect">
+
+        <input
+          id="summaryDate"
+          type="date"
+          value="${settings.summaryDate || today()}"
+          onchange="saveSummarySelection()">
+
+        <button
+          class="btn"
+          onclick="summaryToday()">
+          วันนี้
+        </button>
+
+      </div>
+    `;
+
+  }
+
+  else if(currentPeriod==="week"){
+
+    $("summarySelectTitle")
+      .textContent="📅 เลือกวันที่ในสัปดาห์";
+
+    const d =
+      settings.summaryWeekDate ||
+      today();
+
+    const start =
+      getWeekStart(
+        dateOnly(d)
+      );
+
+    const end =
+      new Date(start);
+
+    end.setDate(
+      end.getDate()+6
+    );
+
+    box.innerHTML=`
+
+      <input
+        id="summaryWeekDate"
+        type="date"
+        value="${d}"
+        onchange="saveSummarySelection()">
+
+      <div class="weekInfo">
+
+        สัปดาห์นี้
+
+        <b>
+          ${dateString(start)}
+        </b>
+
+        ถึง
+
+        <b>
+          ${dateString(end)}
+        </b>
+
+        <br>
+        <small>
+          อาทิตย์ – เสาร์
+        </small>
+
+      </div>
+    `;
+
+  }
+
+  else if(currentPeriod==="month"){
+
+    $("summarySelectTitle")
+      .textContent="📅 เลือกเดือน";
+
+    const now =
+      new Date();
+
+    const defaultMonth =
+      settings.summaryMonth ||
+      (
+        now.getFullYear() +
+        "-" +
+        String(now.getMonth()+1)
+          .padStart(2,"0")
+      );
+
+    box.innerHTML=`
+
+      <input
+        id="summaryMonth"
+        type="month"
+        value="${defaultMonth}"
+        onchange="saveSummarySelection()">
+
+    `;
+
+  }
+
+  else{
+
+    $("summarySelectTitle")
+      .textContent="📅 เลือกปี";
+
+    const year =
+      Number(
+        settings.summaryYear ||
+        new Date().getFullYear()
+      );
+
+    let options="";
+
+    for(let y=2026;y<=2035;y++){
+
+      options += `
+        <option
+          value="${y}"
+          ${y===year?"selected":""}>
+          ${y}
+        </option>
+      `;
+
+    }
+
+    box.innerHTML=`
+
+      <select
+        id="summaryYear"
+        onchange="saveSummarySelection()">
+
+        ${options}
+
+      </select>
+
+    `;
+
+  }
+
+}
+
+function saveSummarySelection(){
+
+  if(currentPeriod==="day"){
+
+    settings.summaryDate =
+      $("summaryDate").value;
+
+  }
+
+  if(currentPeriod==="week"){
+
+    settings.summaryWeekDate =
+      $("summaryWeekDate").value;
+
+  }
+
+  if(currentPeriod==="month"){
+
+    settings.summaryMonth =
+      $("summaryMonth").value;
+
+  }
+
+  if(currentPeriod==="year"){
+
+    settings.summaryYear =
+      Number(
+        $("summaryYear").value
+      );
+
+  }
+
+  saveAll();
+
+  renderSummary();
+
+}
+
+function summaryToday(){
+
+  if(currentPeriod==="day"){
+
+    settings.summaryDate=today();
+
+  }
+
+  if(currentPeriod==="week"){
+
+    settings.summaryWeekDate=today();
+
+  }
+
+  if(currentPeriod==="month"){
+
+    const d=new Date();
+
+    settings.summaryMonth =
+      d.getFullYear() +
+      "-" +
+      String(d.getMonth()+1)
+        .padStart(2,"0");
+
+  }
+
+  if(currentPeriod==="year"){
+
+    settings.summaryYear =
+      new Date().getFullYear();
+
+  }
+
+  saveAll();
+
+  renderSummary();
+
+}
+
+function getSummaryRange(){
+
+  if(currentPeriod==="day"){
+
+    const date =
+      settings.summaryDate ||
+      today();
+
+    return {
+      start:date,
+      end:date,
+      dates:[date]
+    };
+
+  }
+
+  if(currentPeriod==="week"){
+
+    const selected =
+      settings.summaryWeekDate ||
+      today();
+
+    const start =
+      getWeekStart(
+        dateOnly(selected)
+      );
+
+    const dates=[];
+
+    for(let i=0;i<7;i++){
+
+      const d =
+        new Date(start);
+
+      d.setDate(
+        start.getDate()+i
+      );
+
+      dates.push(
+        dateString(d)
+      );
+
+    }
+
+    return {
+      start:dates[0],
+      end:dates[6],
+      dates
+    };
+
+  }
+
+  if(currentPeriod==="month"){
+
+    const value =
+      settings.summaryMonth ||
+      today().slice(0,7);
+
+    const [y,m] =
+      value.split("-")
+        .map(Number);
+
+    const days =
+      new Date(y,m,0)
+        .getDate();
+
+    const dates=[];
+
+    for(let i=1;i<=days;i++){
+
+      dates.push(
+        y+"-"+String(m)
+          .padStart(2,"0")+
+        "-"+
+        String(i).padStart(2,"0")
+      );
+
+    }
+
+    return {
+      start:dates[0],
+      end:dates[dates.length-1],
+      dates
+    };
+
+  }
+
+  const y =
+    Number(
+      settings.summaryYear ||
+      new Date().getFullYear()
+    );
+
+  const dates=[];
+
+  for(let m=1;m<=12;m++){
+
+    const days =
+      new Date(y,m,0)
+        .getDate();
+
+    for(let d=1;d<=days;d++){
+
+      dates.push(
+        y+"-"+String(m).padStart(2,"0")+
+        "-"+String(d).padStart(2,"0")
+      );
+
+    }
+
+  }
+
+  return {
+    start:dates[0],
+    end:dates[dates.length-1],
+    dates
+  };
+
+}
 
 function filteredSummary(){
 
-let start;
-let end;
+  const range =
+    getSummaryRange();
 
-
-if(currentPeriod === "day"){
-
-const value =
-$("summaryDate").value ||
-today();
-
-start =
-dateOnly(value);
-
-end =
-new Date(start);
-
-end.setDate(
-end.getDate()+1
-);
+  return transactions.filter(
+    t =>
+      t.date >= range.start &&
+      t.date <= range.end
+  );
 
 }
-
-
-else if(currentPeriod === "week"){
-
-const week =
-getWeekData();
-
-start =
-week.start;
-
-end =
-new Date(week.end);
-
-end.setDate(
-end.getDate()+1
-);
-
-}
-
-
-else if(currentPeriod === "month"){
-
-const value =
-$("summaryMonthValue").value;
-
-if(!value)
-return [];
-
-const parts =
-value.split("-");
-
-start =
-new Date(
-Number(parts[0]),
-Number(parts[1])-1,
-1
-);
-
-end =
-new Date(
-Number(parts[0]),
-Number(parts[1]),
-1
-);
-
-}
-
-
-else{
-
-const year =
-Number($("summaryYearValue").value);
-
-if(!year)
-return [];
-
-start =
-new Date(year,0,1);
-
-end =
-new Date(year+1,0,1);
-
-}
-
-
-return transactions.filter(t=>{
-
-const td =
-dateOnly(t.date);
-
-return td >= start && td < end;
-
-});
-
-}
-
-
-/* =====================================================
-   SUMMARY RENDER
-===================================================== */
 
 function renderSummary(){
 
-if(!$("summaryDate"))
-return;
+  renderSummarySelector();
 
+  const data =
+    filteredSummary();
 
-if(!$("summaryDate").value)
-$("summaryDate").value=today();
+  let income=0;
+  let expense=0;
 
-if(!$("summaryWeekDate").value)
-$("summaryWeekDate").value=today();
+  data.forEach(t=>{
 
-if(!$("summaryMonthValue").value)
-$("summaryMonthValue").value=
-today().slice(0,7);
+    if(t.type==="income")
+      income+=num(t.total);
+    else
+      expense+=num(t.total);
 
+  });
 
-setupYearOptions();
+  $("sumIncome").textContent=
+    money(income);
 
+  $("sumExpense").textContent=
+    money(expense);
 
-$("summaryDay").style.display =
-currentPeriod === "day"
-? "block"
-: "none";
+  $("sumBalance").textContent=
+    money(income-expense);
 
-$("summaryWeek").style.display =
-currentPeriod === "week"
-? "block"
-: "none";
+  const labels={
 
-$("summaryMonth").style.display =
-currentPeriod === "month"
-? "block"
-: "none";
+    day:"รายการของวันที่เลือก",
 
-$("summaryYear").style.display =
-currentPeriod === "year"
-? "block"
-: "none";
+    week:"รายการของสัปดาห์ อาทิตย์–เสาร์",
 
+    month:"รายการของเดือนที่เลือก",
 
-if(currentPeriod === "week"){
+    year:"รายการของปีที่เลือก"
 
-const week =
-getWeekData();
+  };
 
-$("weekRange").textContent =
-"อาทิตย์ "
-+
-formatDateThai(week.start)
-+
-" – เสาร์ "
-+
-formatDateThai(week.end);
+  $("summaryText").textContent =
+    labels[currentPeriod];
+
+  renderSummaryList(data);
+
+  renderSummaryChart(data);
 
 }
-
-
-const data =
-filteredSummary();
-
-
-let income=0;
-let expense=0;
-
-data.forEach(t=>{
-
-if(t.type==="income")
-income += Number(t.total||0);
-
-else
-expense += Number(t.total||0);
-
-});
-
-
-$("sumIncome").textContent =
-money(income);
-
-$("sumExpense").textContent =
-money(expense);
-
-$("sumBalance").textContent =
-money(income-expense);
-
-
-renderSummaryList(data);
-
-renderSummaryChart(data);
-
-}
-
 
 function renderSummaryList(data){
 
-if(summaryMode !== "detail")
-return;
+  if(summaryView==="names"){
 
+    $("summaryList").innerHTML =
+      data.length
+      ?
+      data
+        .sort(
+          (a,b)=>
+            new Date(b.date)-
+            new Date(a.date)
+        )
+        .map(t=>`
 
-$("summaryList").innerHTML =
-data.length
-?
-data
-.sort(
-(a,b)=>
-new Date(b.date)-new Date(a.date)
-)
-.map(t=>`
+          <div class="tx">
 
-<div class="tx">
+            ${coverHTML(t.item)}
 
-<div class="ingredientIcon">
-${t.type==="income"?"💚":"❤️"}
-</div>
+            <div class="txInfo">
 
-<div class="txInfo">
+              <strong>
+                ${escapeHTML(t.item)}
+              </strong>
 
-<strong>
-${escapeHTML(t.item)}
-</strong>
+              <small>
+                ${t.date}
+              </small>
 
-<small>
-${t.shop ? escapeHTML(t.shop)+" · " : ""}
-${t.date}
-</small>
+              <div class="txFormula">
+                ${formatNumber(t.qty)}
+                ×
+                ${money(t.price)}
+                =
+                ${money(t.total)}
+              </div>
 
-<small>
-${Number(t.qty).toLocaleString("th-TH")}
-× ${money(t.price)}
-</small>
+            </div>
 
-</div>
+            <div
+              class="txAmount ${
+                t.type==="income"
+                ?"in"
+                :"out"
+              }">
 
-<div
-class="txAmount ${t.type==="income"?"in":"out"}">
+              ${t.type==="income"?"+":"-"}
+              ${money(t.total)}
 
-${t.type==="income"?"+":"-"}
-${money(t.total)}
+            </div>
 
-</div>
+          </div>
 
-</div>
+        `).join("")
+      :
+      `<div class="muted">
+        ไม่มีรายการในช่วงนี้
+      </div>`;
 
-`).join("")
-:
-`<div class="muted">
-ไม่มีรายการในช่วงนี้
-</div>`;
+    return;
 
-}
+  }
 
+  const range =
+    getSummaryRange();
 
-/* =====================================================
-   YEAR OPTIONS
-===================================================== */
+  const rows =
+    range.dates.map(date=>{
 
-function setupYearOptions(){
+      let income=0;
+      let expense=0;
 
-const select =
-$("summaryYearValue");
+      data
+        .filter(t=>t.date===date)
+        .forEach(t=>{
 
-if(!select)
-return;
+          if(t.type==="income")
+            income+=num(t.total);
+          else
+            expense+=num(t.total);
 
+        });
 
-const years = new Set();
+      return {
+        date,
+        income,
+        expense
+      };
 
-transactions.forEach(t=>{
+    });
 
-if(t.date){
+  $("summaryList").innerHTML =
+    rows.map(r=>`
 
-years.add(
-Number(
-String(t.date).slice(0,4)
-)
-);
+      <div class="summaryNumberRow">
 
-}
+        <small>
+          ${r.date}
+        </small>
 
-});
+        <strong class="in">
+          +${money(r.income)}
+        </strong>
 
+        <strong class="out">
+          -${money(r.expense)}
+        </strong>
 
-years.add(
-new Date().getFullYear()
-);
+      </div>
 
-
-const sorted =
-[...years].sort((a,b)=>b-a);
-
-
-const old =
-Number(select.value)
-|| new Date().getFullYear();
-
-
-select.innerHTML =
-sorted.map(y=>`
-
-<option value="${y}">
-${y}
-</option>
-
-`).join("");
-
-
-if(sorted.includes(old))
-select.value=old;
+    `).join("");
 
 }
-
-
-/* =====================================================
-   SUMMARY CHART
-===================================================== */
 
 function renderSummaryChart(data){
 
-const groups={};
+  const groups={};
 
+  data.forEach(t=>{
 
-data.forEach(t=>{
+    if(!groups[t.date]){
 
-if(!groups[t.date])
-groups[t.date]={
-income:0,
-expense:0
-};
+      groups[t.date]={
+        income:0,
+        expense:0
+      };
 
-if(t.type==="income")
-groups[t.date].income +=
-Number(t.total||0);
+    }
 
-else
-groups[t.date].expense +=
-Number(t.total||0);
+    if(t.type==="income")
+      groups[t.date].income+=num(t.total);
+    else
+      groups[t.date].expense+=num(t.total);
 
-});
+  });
 
+  const keys =
+    Object.keys(groups).sort();
 
-const keys =
-Object.keys(groups).sort();
+  const max =
+    Math.max(
+      1,
+      ...keys.map(k =>
+        Math.max(
+          groups[k].income,
+          groups[k].expense
+        )
+      )
+    );
 
+  $("summaryChart").innerHTML =
+    keys.length
+    ?
+    keys.map(k=>`
 
-const max =
-Math.max(
-1,
-...keys.map(k =>
-Math.max(
-groups[k].income,
-groups[k].expense
-)
-)
-);
+      <div class="chartCol">
 
+        <div
+          class="bar i"
+          style="
+          height:${Math.max(
+            3,
+            groups[k].income/max*170
+          )}px">
+        </div>
 
-$("summaryChart").innerHTML =
-keys.length
-?
-keys.map(k=>`
+        <div
+          class="bar o"
+          style="
+          height:${Math.max(
+            3,
+            groups[k].expense/max*170
+          )}px">
+        </div>
 
-<div class="chartCol">
+        <span class="chartLabel">
+          ${k.slice(5)}
+        </span>
 
-<div
-class="bar i"
-style="
-height:${Math.max(
-3,
-groups[k].income/max*170
-)}px">
-</div>
+      </div>
 
-<div
-class="bar o"
-style="
-height:${Math.max(
-3,
-groups[k].expense/max*170
-)}px">
-</div>
-
-<span class="chartLabel">
-${k.slice(5)}
-</span>
-
-</div>
-
-`).join("")
-:
-`<div class="muted">
-ไม่มีข้อมูลสำหรับกราฟ
-</div>`;
+    `).join("")
+    :
+    `<div class="muted">
+      ไม่มีข้อมูลสำหรับกราฟ
+    </div>`;
 
 }
 
@@ -3108,52 +3201,47 @@ ${k.slice(5)}
 
 function renderMap(){
 
-let income=0;
-let expense=0;
+  let income=0;
+  let expense=0;
 
-transactions.forEach(t=>{
+  transactions.forEach(t=>{
 
-if(t.type==="income")
-income += Number(t.total||0);
+    if(t.type==="income")
+      income+=num(t.total);
+    else
+      expense+=num(t.total);
 
-else
-expense += Number(t.total||0);
+  });
 
-});
+  $("mapIncome").textContent=
+    money(income);
 
+  $("mapExpense").textContent=
+    money(expense);
 
-$("mapIncome").textContent=
-money(income);
+  $("mapMenus").textContent=
+    menus.length;
 
-$("mapExpense").textContent=
-money(expense);
+  let ingredients=0;
 
-$("mapMenus").textContent=
-menus.length;
+  menus.forEach(m=>{
+    ingredients +=
+      (m.ingredients||[]).length;
+  });
 
+  $("mapIngredients").textContent=
+    ingredients;
 
-let ingredients=0;
-
-menus.forEach(m=>{
-ingredients +=
-(m.ingredients||[]).length;
-});
-
-
-$("mapIngredients").textContent=
-ingredients;
-
-
-$("mapMessage").innerHTML =
-menus.length
-?
-`
-มีเมนูทั้งหมด <b>${menus.length}</b> เมนู
-<br>
-มีวัตถุดิบทั้งหมด <b>${ingredients}</b> รายการ
-`
-:
-`ยังไม่มีข้อมูลต้นทุน`;
+  $("mapMessage").innerHTML =
+    menus.length
+    ?
+    `
+      มีเมนูทั้งหมด <b>${menus.length}</b> เมนู
+      <br>
+      มีวัตถุดิบทั้งหมด <b>${ingredients}</b> รายการ
+    `
+    :
+    `ยังไม่มีข้อมูลต้นทุน`;
 
 }
 
@@ -3162,234 +3250,256 @@ menus.length
    COST HOME
 ===================================================== */
 
-function showCostHome(){
-
-$("costHome").style.display="block";
-
-$("menuDetail")
-.classList.remove("active");
-
-$("ingredientDetail")
-.classList.remove("active");
-
-renderMenus();
-
-}
-
-
 function addMenu(){
 
-const name =
-$("newMenuName")
-.value.trim();
+  const name =
+    $("newMenuName")
+      .value.trim();
 
-const unit =
-$("newMenuUnit")
-.value.trim()
-|| "ชิ้น";
+  const unit =
+    $("newMenuUnit")
+      .value.trim() ||
+    "ชิ้น";
 
+  if(!name){
 
-if(!name){
+    alert("กรุณาใส่ชื่อเมนู");
 
-alert("กรุณาใส่ชื่อเมนู");
+    return;
 
-return;
+  }
 
-}
+  menus.push({
 
+    id:uid(),
 
-menus.push({
+    name,
 
-id:uid(),
+    unit,
 
-name,
+    sellPrice:0,
 
-unit,
+    profitTarget:30,
 
-sellPrice:0,
+    ingredients:[]
 
-profitTarget:30,
+  });
 
-ingredients:[]
+  saveAll();
 
-});
+  $("newMenuName").value="";
+  $("newMenuUnit").value="";
 
-
-saveAll();
-
-$("newMenuName").value="";
-$("newMenuUnit").value="";
-
-renderMenus();
-renderMap();
+  renderMenus();
+  renderMap();
 
 }
-
 
 function renderMenus(){
 
-$("menuList").innerHTML =
-menus.length
-?
-menus.map(m=>{
+  $("menuList").innerHTML =
+    menus.length
+    ?
+    menus.map(m=>{
 
-const cost =
-menuCost(m);
+      const cost =
+        menuCost(m);
 
-const sell =
-Number(m.sellPrice||0);
+      const sell =
+        num(m.sellPrice);
 
-const profit =
-sell-cost;
+      const profit =
+        sell-cost;
 
-return `
+      return `
 
-<div
-class="menuCard"
-onclick="openMenu('${m.id}')">
+      <div
+        class="menuCard"
+        onclick="openMenu('${m.id}')">
 
-<div class="menuTop">
+        <div class="menuTop">
 
-<div>
+          <div class="menuTopLeft">
 
-<h3>
-🍓 ${escapeHTML(m.name)}
-</h3>
+            ${coverHTML(m.name)}
 
-<span class="muted">
-หน่วยขาย: ${escapeHTML(m.unit)}
-</span>
+            <div>
 
-</div>
+              <h3>
+                ${escapeHTML(m.name)}
+              </h3>
 
-<button
-class="danger"
-onclick="event.stopPropagation();deleteMenu('${m.id}')">
-🗑️
-</button>
+              <span class="muted">
+                หน่วยขาย:
+                ${escapeHTML(m.unit)}
+              </span>
 
-</div>
+              <div class="coverTools">
+
+                <button
+                  class="tinyBtn"
+                  onclick="
+                    event.stopPropagation();
+                    setCover('${escapeAttr(m.name)}')
+                  ">
+                  เปลี่ยนปก
+                </button>
+
+                ${
+                  coverFor(m.name)
+                  ?
+                  `<button
+                    class="tinyBtn delete"
+                    onclick="
+                      event.stopPropagation();
+                      removeCover('${escapeAttr(m.name)}')
+                    ">
+                    ลบปก
+                  </button>`
+                  :
+                  ""
+                }
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <button
+            class="danger"
+            onclick="
+              event.stopPropagation();
+              deleteMenu('${m.id}')
+            ">
+            🗑️
+          </button>
+
+        </div>
 
 
-<div class="menuStats">
+        <div class="menuStats">
 
-<div class="menuStat">
+          <div class="menuStat">
+            <small>วัตถุดิบ</small>
+            <b>
+              ${(m.ingredients||[]).length}
+            </b>
+          </div>
 
-<small>วัตถุดิบ</small>
+          <div class="menuStat">
+            <small>ต้นทุน</small>
+            <b>${money(cost)}</b>
+          </div>
 
-<b>
-${(m.ingredients||[]).length}
-</b>
+          <div class="menuStat">
+            <small>กำไร</small>
+            <b class="in">
+              ${money(profit)}
+            </b>
+          </div>
 
-</div>
+        </div>
 
-<div class="menuStat">
+      </div>
 
-<small>ต้นทุน</small>
+      `;
 
-<b>
-${money(cost)}
-</b>
-
-</div>
-
-<div class="menuStat">
-
-<small>กำไร</small>
-
-<b class="in">
-${money(profit)}
-</b>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-}).join("")
-:
-`
-<div class="muted">
-ยังไม่มีเมนู กด “เพิ่มเมนู” ด้านบนได้เลย
-</div>
-`;
+    }).join("")
+    :
+    `
+    <div class="muted">
+      ยังไม่มีเมนู กด “เพิ่มเมนู” ด้านบนได้เลย
+    </div>
+    `;
 
 }
-
 
 function deleteMenu(id){
 
-if(!confirm("ลบเมนูนี้และวัตถุดิบทั้งหมดใช่ไหม?"))
-return;
+  if(!confirm(
+    "ลบเมนูนี้และวัตถุดิบทั้งหมดใช่ไหม?"
+  ))
+    return;
 
-menus =
-menus.filter(m=>m.id!==id);
+  menus =
+    menus.filter(
+      m=>m.id!==id
+    );
 
-saveAll();
+  saveAll();
 
-renderMenus();
-renderMap();
+  renderMenus();
+  renderMap();
 
 }
 
+function showCostHome(){
+
+  $("costHome").style.display="block";
+
+  $("menuDetail")
+    .classList.remove("active");
+
+  $("ingredientDetail")
+    .classList.remove("active");
+
+  renderMenus();
+
+}
 
 function openMenu(id){
 
-currentMenuId=id;
+  currentMenuId=id;
 
-const menu =
-menus.find(m=>m.id===id);
+  const menu =
+    menus.find(m=>m.id===id);
 
-if(!menu)
-return;
+  if(!menu)
+    return;
 
+  $("costHome").style.display="none";
 
-$("costHome").style.display="none";
+  $("menuDetail")
+    .classList.add("active");
 
-$("menuDetail")
-.classList.add("active");
+  $("ingredientDetail")
+    .classList.remove("active");
 
-$("ingredientDetail")
-.classList.remove("active");
+  $("detailMenuName").textContent=
+    menu.name;
 
+  $("detailMenuUnit").textContent=
+    "หน่วยขาย: "+menu.unit;
 
-$("detailMenuName").textContent=
-"🍓 "+menu.name;
+  $("menuDetailCover").innerHTML =
+    coverHTML(menu.name);
 
-$("detailMenuUnit").textContent=
-"หน่วยขาย: "+menu.unit;
+  $("menuSellPrice").value=
+    menu.sellPrice || "";
 
-$("menuSellPrice").value=
-menu.sellPrice || "";
+  $("menuProfitTarget").value=
+    menu.profitTarget ?? 30;
 
-$("menuProfitTarget").value=
-menu.profitTarget ?? 30;
-
-
-renderMenuDetail();
+  renderMenuDetail();
 
 }
-
 
 function backToMenus(){
 
-showCostHome();
+  showCostHome();
 
 }
 
-
 function menuCost(menu){
 
-return (menu.ingredients||[])
-.filter(i=>i.include!=="no")
-.reduce(
-(sum,i)=>
-sum+ingredientCost(i),
-0
-);
+  return (menu.ingredients||[])
+    .filter(i=>i.include!=="no")
+    .reduce(
+      (sum,i)=>
+        sum+ingredientCost(i),
+      0
+    );
 
 }
 
@@ -3400,143 +3510,315 @@ sum+ingredientCost(i),
 
 function renderMenuDetail(){
 
-const menu =
-menus.find(m=>m.id===currentMenuId);
+  const menu =
+    menus.find(
+      m=>m.id===currentMenuId
+    );
 
-if(!menu)
-return;
+  if(!menu)
+    return;
 
+  menu.sellPrice =
+    num($("menuSellPrice").value);
 
-menu.sellPrice =
-Number($("menuSellPrice").value)||0;
+  menu.profitTarget =
+    num($("menuProfitTarget").value);
 
-menu.profitTarget =
-Number($("menuProfitTarget").value)||0;
+  saveAll();
 
-saveAll();
+  $("detailMenuName").textContent=
+    menu.name;
 
+  $("detailMenuUnit").textContent=
+    "หน่วยขาย: "+menu.unit;
 
-const cost =
-menuCost(menu);
+  $("menuDetailCover").innerHTML =
+    coverHTML(menu.name);
 
-const sell =
-Number(menu.sellPrice||0);
+  const cost =
+    menuCost(menu);
 
-const profit =
-sell-cost;
+  const sell =
+    num(menu.sellPrice);
 
-const percent =
-sell>0
-?
-profit/sell*100
-:
-0;
+  const profit =
+    sell-cost;
 
+  const percent =
+    sell>0
+    ?
+    profit/sell*100
+    :
+    0;
 
-$("menuCost").textContent=
-money(cost);
+  $("menuCost").textContent=
+    money(cost);
 
-$("menuProfit").textContent=
-money(profit);
+  $("menuProfit").textContent=
+    money(profit);
 
-$("menuProfitPercent").textContent=
-percent.toFixed(1)+"%";
+  $("menuProfitPercent").textContent=
+    percent.toFixed(1)+"%";
 
+  const target =
+    num(menu.profitTarget);
 
-const target =
-Number(menu.profitTarget||0);
+  const recommended =
+    cost*(1+target/100);
 
-const recommended =
-cost*(1+target/100);
+  $("priceRecommendation").innerHTML =
+    cost>0
+    ?
+    `
+      💡 <strong>ราคาขายแนะนำ</strong>
+      <br><br>
+      ถ้าต้องการกำไรประมาณ
+      <b>${target}% ของต้นทุน</b>
+      <br>
+      ควรขายอย่างน้อยประมาณ
+      <strong style="font-size:24px">
+        ${money(recommended)}
+      </strong>
+      / ${escapeHTML(menu.unit)}
+      <br><br>
+      ถ้าขาย ${money(sell)}
+      จะเหลือกำไร
+      <b>${money(profit)}</b>
+      ต่อ ${escapeHTML(menu.unit)}
+    `
+    :
+    `
+      💡 เพิ่มวัตถุดิบและกรอกข้อมูลก่อน
+      ระบบจะคำนวณต้นทุน
+    `;
 
+  $("ingredientList").innerHTML =
+    (menu.ingredients||[]).length
+    ?
+    menu.ingredients.map(i=>{
 
-$("priceRecommendation").innerHTML=
-cost>0
-?
-`
-💡 <strong>ราคาขายแนะนำ</strong>
-<br><br>
-ถ้าต้องการกำไรประมาณ
-<b>${target}% ของต้นทุน</b>
-<br>
-ควรขายอย่างน้อยประมาณ
-<strong style="font-size:24px">
-${money(recommended)}
-</strong>
- / ${escapeHTML(menu.unit)}
-<br><br>
-ถ้าขาย ${money(sell)}
-จะเหลือกำไร
-<b>${money(profit)}</b>
-ต่อ ${escapeHTML(menu.unit)}
-`
-:
-`💡 เพิ่มวัตถุดิบและกรอกราคาก่อน ระบบจะคำนวณต้นทุน`;
+      const total =
+        ingredientPurchaseTotal(i);
 
+      const qty =
+        ingredientPurchaseQty(i);
 
-$("ingredientList").innerHTML =
-(menu.ingredients||[]).length
-?
-menu.ingredients.map(i=>`
+      const price =
+        ingredientUnitPrice(i);
 
-<div
-class="ingredientCard"
-onclick="openIngredient('${i.id}')">
+      return `
 
-<div class="ingredientIcon">
-${ingredientEmoji(i.name)}
-</div>
+      <div
+        class="ingredientCard"
+        onclick="openIngredient('${i.id}')">
 
-<div class="ingredientInfo">
+        ${coverHTML(i.name)}
 
-<strong>
-${escapeHTML(i.name)}
-</strong>
+        <div class="ingredientInfo">
 
-<small>
-${formatAmount(i.amount)}
-${i.unit}
-·
-${money(i.price)}
-·
-ทำได้ ${i.usable || 0} ชิ้น
-</small>
+          <strong>
+            ${escapeHTML(i.name)}
+          </strong>
 
-</div>
+          <small>
+            ${formatNumber(qty)}
+            ×
+            ${money(price)}
+            =
+            ${money(total)}
+          </small>
 
-<span
-class="includeBadge ${
-i.include==="no"
-?"no"
-:"yes"
-}">
+          <div class="ingredientFormula">
 
-${i.include==="no"
-?"⭕ ไม่ใส่"
-:"✅ ใส่"}
+            ทำได้
+            ${formatNumber(i.usable)}
+            ชิ้น
 
-</span>
+          </div>
 
-</div>
+          <div
+            class="nameEditRow"
+            id="nameEdit_${i.id}">
 
-`).join("")
-:
-`<div class="muted">
-ยังไม่มีวัตถุดิบ
-</div>`;
+            <input
+              id="nameInput_${i.id}"
+              value="${escapeAttr(i.name)}"
+              onclick="event.stopPropagation()">
+
+            <button
+              class="smallEdit"
+              onclick="
+                event.stopPropagation();
+                saveIngredientName('${i.id}')
+              ">
+              ✓
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="ingredientActions">
+
+          <button
+            class="smallEdit"
+            onclick="
+              event.stopPropagation();
+              toggleIngredientNameEdit('${i.id}')
+            ">
+            แก้ชื่อ
+          </button>
+
+          <button
+            class="includeToggle ${
+              i.include==="no"
+              ?"no"
+              :"yes"
+            }"
+            onclick="
+              event.stopPropagation();
+              toggleIngredientInclude('${i.id}')
+            ">
+
+            ${
+              i.include==="no"
+              ?"⭕ ไม่ใส่"
+              :"✅ ใส่"
+            }
+
+          </button>
+
+        </div>
+
+      </div>
+
+      `;
+
+    }).join("")
+    :
+    `
+    <div class="muted">
+      ยังไม่มีวัตถุดิบ
+    </div>
+    `;
 
 }
 
+function toggleIngredientInclude(id){
+
+  const menu =
+    menus.find(
+      m=>m.id===currentMenuId
+    );
+
+  if(!menu)
+    return;
+
+  const ingredient =
+    menu.ingredients.find(
+      i=>i.id===id
+    );
+
+  if(!ingredient)
+    return;
+
+  ingredient.include =
+    ingredient.include==="no"
+    ?"yes"
+    :"no";
+
+  saveAll();
+
+  renderMenuDetail();
+
+}
+
+function toggleIngredientNameEdit(id){
+
+  const row =
+    $("nameEdit_"+id);
+
+  if(!row)
+    return;
+
+  row.classList.toggle("show");
+
+  if(row.classList.contains("show")){
+
+    const input =
+      $("nameInput_"+id);
+
+    input.focus();
+    input.select();
+
+  }
+
+}
+
+function saveIngredientName(id){
+
+  const menu =
+    menus.find(
+      m=>m.id===currentMenuId
+    );
+
+  if(!menu)
+    return;
+
+  const ingredient =
+    menu.ingredients.find(
+      i=>i.id===id
+    );
+
+  if(!ingredient)
+    return;
+
+  const oldName =
+    ingredient.name;
+
+  const input =
+    $("nameInput_"+id);
+
+  const newName =
+    input.value.trim();
+
+  if(!newName)
+    return;
+
+  ingredient.name=newName;
+
+  /* รูปของชื่อเดิมย้ายตามชื่อใหม่ ถ้าชื่อใหม่ยังไม่มี */
+  const oldKey =
+    oldName.trim().toLowerCase();
+
+  const newKey =
+    newName.trim().toLowerCase();
+
+  if(
+    settings.covers[oldKey] &&
+    !settings.covers[newKey]
+  ){
+
+    settings.covers[newKey] =
+      settings.covers[oldKey];
+
+  }
+
+  saveAll();
+
+  renderMenuDetail();
+
+}
 
 function backToMenuDetail(){
 
-$("ingredientDetail")
-.classList.remove("active");
+  $("ingredientDetail")
+    .classList.remove("active");
 
-$("menuDetail")
-.classList.add("active");
+  $("menuDetail")
+    .classList.add("active");
 
-renderMenuDetail();
+  renderMenuDetail();
 
 }
 
@@ -3545,170 +3827,112 @@ renderMenuDetail();
    INGREDIENT
 ===================================================== */
 
-function ingredientEmoji(name){
-
-const n=(name||"").toLowerCase();
-
-if(n.includes("ซอส")||
-n.includes("sauce"))
-return "🥫";
-
-if(n.includes("ไก่"))
-return "🍗";
-
-if(n.includes("หมู"))
-return "🥩";
-
-if(n.includes("ไข่"))
-return "🥚";
-
-if(n.includes("นม"))
-return "🥛";
-
-if(n.includes("โยเกิร์ต")||
-n.includes("yogurt"))
-return "🥛";
-
-if(n.includes("สตรอว์")||
-n.includes("สตรอเบอร์รี่")||
-n.includes("straw"))
-return "🍓";
-
-if(n.includes("ขนมปัง"))
-return "🍞";
-
-if(n.includes("ชีส"))
-return "🧀";
-
-if(n.includes("น้ำตาล"))
-return "🍚";
-
-return "🥕";
-
-}
-
-
 function ingredientAdvice(name){
 
-const n=(name||"").toLowerCase();
+  const n =
+    (name||"").toLowerCase();
 
+  if(
+    n.includes("ซอส") ||
+    n.includes("sauce")
+  ){
 
-if(
-n.includes("ซอส")||
-n.includes("sauce")
-){
+    return `
+      <strong>ซอส</strong><br>
+      ลองเริ่มประมาณ
+      <b>5–15 กรัม/ชิ้น</b>
+      แล้วปรับตามสูตรจริง
+    `;
 
-return `
-<strong>ซอส</strong><br>
-ลองเริ่มที่ประมาณ <b>5–15 กรัม/ชิ้น</b>
-สำหรับซอสที่ใช้ราด/บีบทั่วไป
-<br>
-<small>
-ค่าจริงขึ้นกับชนิดซอสและเมนู
-สามารถแก้เองได้
-</small>
-`;
+  }
 
-}
+  if(
+    n.includes("มายอง") ||
+    n.includes("mayonnaise")
+  ){
 
+    return `
+      <strong>มายองเนส</strong><br>
+      ลองเริ่มประมาณ
+      <b>5–15 กรัม/ชิ้น</b>
+    `;
 
-if(
-n.includes("มายอง")||
-n.includes("mayonnaise")
-){
+  }
 
-return `
-<strong>มายองเนส</strong><br>
-ลองเริ่มประมาณ <b>5–15 กรัม/ชิ้น</b>
-<br>
-ปรับตามปริมาณที่ใช้จริงได้
-`;
+  if(
+    n.includes("ชีส") ||
+    n.includes("cheese")
+  ){
 
-}
+    return `
+      <strong>ชีส</strong><br>
+      ถ้าเป็นแผ่น
+      <b>1 แผ่น/ชิ้น</b>
+      หรือชีสขูดประมาณ
+      <b>10–20 กรัม</b>
+    `;
 
+  }
 
-if(
-n.includes("ชีส")||
-n.includes("cheese")
-){
+  if(
+    n.includes("ไข่") ||
+    n.includes("egg")
+  ){
 
-return `
-<strong>ชีส</strong><br>
-ถ้าเป็นแผ่น ลองเริ่มที่
-<b>1 แผ่น/ชิ้นขาย</b>
-หรือถ้าเป็นชีสขูดประมาณ
-<b>10–20 กรัม</b>
-`;
+    return `
+      <strong>ไข่</strong><br>
+      เมนูทั่วไปอาจเริ่ม
+      <b>1 ฟอง/หน่วยขาย</b>
+    `;
 
-}
+  }
 
+  if(
+    n.includes("นม") ||
+    n.includes("milk")
+  ){
 
-if(
-n.includes("ไข่")||
-n.includes("egg")
-){
+    return `
+      <strong>นม</strong><br>
+      เครื่องดื่มอาจเริ่ม
+      <b>100–200 มล./แก้ว</b>
+    `;
 
-return `
-<strong>ไข่</strong><br>
-เมนูทั่วไปอาจเริ่มที่
-<b>1 ฟอง/หน่วยขาย</b>
-แล้วปรับตามสูตรจริง
-`;
+  }
 
-}
+  if(
+    n.includes("โยเกิร์ต") ||
+    n.includes("yogurt")
+  ){
 
+    return `
+      <strong>โยเกิร์ต</strong><br>
+      ลองเริ่มประมาณ
+      <b>50–150 กรัม/หน่วย</b>
+    `;
 
-if(
-n.includes("นม")||
-n.includes("milk")
-){
+  }
 
-return `
-<strong>นม</strong><br>
-ถ้าเป็นเครื่องดื่ม ลองเริ่ม
-ประมาณ <b>100–200 มล./แก้ว</b>
-แล้วปรับตามสูตร
-`;
+  if(
+    n.includes("สตรอว์") ||
+    n.includes("สตรอเบอร์รี่") ||
+    n.includes("straw")
+  ){
 
-}
+    return `
+      <strong>สตรอว์เบอร์รี</strong><br>
+      ลองเริ่มประมาณ
+      <b>50–100 กรัม/แก้ว</b>
+    `;
 
+  }
 
-if(
-n.includes("โยเกิร์ต")||
-n.includes("yogurt")
-){
-
-return `
-<strong>โยเกิร์ต</strong><br>
-สำหรับเครื่องดื่ม/ของหวาน
-ลองเริ่มประมาณ <b>50–150 กรัม/หน่วย</b>
-`;
-
-}
-
-
-if(
-n.includes("สตรอว์")||
-n.includes("สตรอเบอร์รี่")||
-n.includes("straw")
-){
-
-return `
-<strong>สตรอว์เบอร์รี</strong><br>
-ถ้าเป็นเครื่องดื่ม/ของหวาน
-ลองเริ่มประมาณ <b>50–100 กรัม/แก้ว</b>
-`;
-
-}
-
-
-return `
-ยังไม่มีคำแนะนำเฉพาะสำหรับ
-<b>${escapeHTML(name||"วัตถุดิบนี้")}</b>
-<br>
-💡 ใส่จำนวนที่ใช้จริงเองได้เลย
-ระบบจะคำนวณต้นทุนให้อัตโนมัติ
-`;
+  return `
+    ยังไม่มีคำแนะนำเฉพาะสำหรับ
+    <b>${escapeHTML(name||"วัตถุดิบนี้")}</b>
+    <br>
+    💡 ใส่จำนวนที่ใช้จริงได้เลย
+  `;
 
 }
 
@@ -3719,69 +3943,67 @@ return `
 
 function openIngredientModal(){
 
-$("newIngName").value="";
+  $("newIngName").value="";
 
-$("ingredientModal")
-.classList.remove("hidden");
+  $("ingredientModal")
+    .classList.remove("hidden");
 
 }
-
 
 function closeIngredientModal(){
 
-$("ingredientModal")
-.classList.add("hidden");
+  $("ingredientModal")
+    .classList.add("hidden");
 
 }
-
 
 function createIngredient(){
 
-const menu =
-menus.find(m=>m.id===currentMenuId);
+  const menu =
+    menus.find(
+      m=>m.id===currentMenuId
+    );
 
-if(!menu)
-return;
+  if(!menu)
+    return;
 
+  const name =
+    $("newIngName")
+      .value.trim();
 
-const name =
-$("newIngName").value.trim();
+  if(!name){
 
-if(!name){
+    alert("กรุณาใส่ชื่อวัตถุดิบ");
 
-alert("กรุณาใส่ชื่อวัตถุดิบ");
+    return;
 
-return;
+  }
 
-}
+  menu.ingredients.push({
 
+    id:uid(),
 
-menu.ingredients.push({
+    name,
 
-id:uid(),
+    amount:0,
 
-name,
+    unit:"กรัม",
 
-amount:0,
+    price:0,
 
-unit:"กรัม",
+    usable:0,
 
-price:0,
+    include:"yes"
 
-pieces:0,
+  });
 
-usable:0,
+  saveAll();
 
-include:"yes"
+  closeIngredientModal();
 
-});
+  renderMenuDetail();
 
-
-saveAll();
-
-closeIngredientModal();
-
-renderMenuDetail();
+  renderMap();
 
 }
 
@@ -3792,198 +4014,249 @@ renderMenuDetail();
 
 function openIngredient(id){
 
-const menu =
-menus.find(m=>m.id===currentMenuId);
+  const menu =
+    menus.find(
+      m=>m.id===currentMenuId
+    );
 
-if(!menu)
-return;
+  if(!menu)
+    return;
 
+  const ingredient =
+    menu.ingredients.find(
+      i=>i.id===id
+    );
 
-const ingredient =
-menu.ingredients.find(i=>i.id===id);
+  if(!ingredient)
+    return;
 
-if(!ingredient)
-return;
+  currentIngredientId=id;
 
+  $("menuDetail")
+    .classList.remove("active");
 
-currentIngredientId=id;
+  $("ingredientDetail")
+    .classList.add("active");
 
+  $("editIngName").value =
+    ingredient.name || "";
 
-$("menuDetail")
-.classList.remove("active");
+  $("editIngAmount").value =
+    ingredientPurchaseQty(ingredient) || "";
 
-$("ingredientDetail")
-.classList.add("active");
+  $("editIngUnit").value =
+    ingredient.unit || "กรัม";
 
+  $("editIngPrice").value =
+    ingredientUnitPrice(ingredient) || "";
 
-$("editIngName").value=
-ingredient.name || "";
+  $("editIngUsable").value =
+    ingredient.usable || "";
 
-$("editIngAmount").value=
-ingredient.amount || "";
+  $("editIngInclude").value =
+    ingredient.include==="no"
+    ?"no"
+    :"yes";
 
-$("editIngUnit").value=
-ingredient.unit || "กรัม";
-
-$("editIngPrice").value=
-ingredient.price || "";
-
-$("editIngPieces").value=
-ingredient.pieces || "";
-
-$("editIngUsable").value=
-ingredient.usable || "";
-
-$("editIngInclude").value=
-ingredient.include==="no"
-?"no"
-:"yes";
-
-
-renderIngredientDetail();
+  renderIngredientDetail();
 
 }
 
 
 /* =====================================================
-   INGREDIENT DETAIL
+   INGREDIENT CALCULATIONS
 ===================================================== */
 
 function getCurrentIngredient(){
 
-const menu =
-menus.find(m=>m.id===currentMenuId);
+  const menu =
+    menus.find(
+      m=>m.id===currentMenuId
+    );
 
-if(!menu)
-return null;
+  if(!menu)
+    return null;
 
-return menu.ingredients.find(
-i=>i.id===currentIngredientId
-);
+  return menu.ingredients.find(
+    i=>i.id===currentIngredientId
+  );
 
 }
 
+
+/*
+รองรับข้อมูลเก่าด้วย
+*/
+
+function ingredientPurchaseQty(i){
+
+  if(
+    i.amount !== undefined &&
+    Number(i.amount)>0
+  )
+    return Number(i.amount);
+
+  if(
+    i.pieces !== undefined &&
+    Number(i.pieces)>0
+  )
+    return Number(i.pieces);
+
+  return 0;
+
+}
+
+function ingredientUnitPrice(i){
+
+  /*
+  ถ้าเป็นข้อมูลใหม่
+  price = ราคาต่อหน่วย
+  */
+
+  if(i.purchaseUnitPrice !== undefined)
+    return Number(i.purchaseUnitPrice)||0;
+
+  /*
+  ข้อมูลเก่า:
+  price เดิมเป็น "ราคาซื้อทั้งหมด"
+  */
+
+  const qty =
+    ingredientPurchaseQty(i);
+
+  if(
+    i.pieces &&
+    Number(i.pieces)>0 &&
+    i.price
+  ){
+
+    return Number(i.price) /
+      Number(i.pieces);
+
+  }
+
+  return Number(i.price)||0;
+
+}
+
+function ingredientPurchaseTotal(i){
+
+  return ingredientPurchaseQty(i) *
+    ingredientUnitPrice(i);
+
+}
+
+function ingredientCost(i){
+
+  if(i.include==="no")
+    return 0;
+
+  const total =
+    ingredientPurchaseTotal(i);
+
+  const usable =
+    Number(i.usable)||0;
+
+  if(!total || !usable)
+    return 0;
+
+  return total / usable;
+
+}
 
 function renderIngredientDetail(){
 
-const ingredient =
-getCurrentIngredient();
+  const ingredient =
+    getCurrentIngredient();
 
-if(!ingredient)
-return;
+  if(!ingredient)
+    return;
 
+  const name =
+    $("editIngName")
+      .value.trim();
 
-const name =
-$("editIngName").value.trim();
+  const amount =
+    Number(
+      $("editIngAmount").value
+    ) || 0;
 
-const amount =
-Number($("editIngAmount").value)||0;
+  const unit =
+    $("editIngUnit").value;
 
-const unit =
-$("editIngUnit").value;
+  const price =
+    Number(
+      $("editIngPrice").value
+    ) || 0;
 
-const price =
-Number($("editIngPrice").value)||0;
+  const usable =
+    Number(
+      $("editIngUsable").value
+    ) || 0;
 
-const pieces =
-Number($("editIngPieces").value)||0;
+  const total =
+    amount*price;
 
-const usable =
-Number($("editIngUsable").value)||0;
+  const costPerSale =
+    usable>0
+    ?
+    total/usable
+    :
+    0;
 
+  $("ingredientDetailName")
+    .textContent =
+      name ||
+      "วัตถุดิบ";
 
-$("ingredientDetailName").textContent=
-ingredientEmoji(name)
-+" "
-+(name||"วัตถุดิบ");
+  $("ingredientDetailSub")
+    .textContent =
+      "จำนวน × ราคา = เงินที่ซื้อมา";
 
+  $("ingPurchaseTotal")
+    .textContent =
+      money(total);
 
-$("ingredientDetailSub").textContent=
-"แก้ไขรายละเอียดวัตถุดิบ";
+  $("ingCostPerPiece")
+    .textContent =
+      money(costPerSale);
 
+  $("ingYield")
+    .textContent =
+      formatNumber(usable)+" ชิ้น";
 
-const pricePerPurchasedPiece =
-pieces>0
-?
-price/pieces
-:
-0;
+  $("ingFormula")
+    .textContent =
+      `${formatNumber(amount)} × ${money(price)} = ${money(total)}
+      · ${money(total)} ÷ ${formatNumber(usable)} ชิ้น = ${money(costPerSale)}/ชิ้น`;
 
-
-const costPerSalePiece =
-usable>0
-?
-price/usable
-:
-0;
-
-
-$("ingUnitPrice").textContent=
-money(pricePerPurchasedPiece);
-
-$("ingCostPerPiece").textContent=
-money(costPerSalePiece);
-
-$("ingYield").textContent=
-usable.toLocaleString("th-TH")
-+" ชิ้น";
-
-
-if(usable>0){
-
-$("ingFormula").textContent=
-`${money(price)} ÷ ${usable.toLocaleString("th-TH")} ชิ้น = ${money(costPerSalePiece)} / ชิ้น`;
-
-}else{
-
-$("ingFormula").textContent=
-"ใส่จำนวนที่วัตถุดิบนี้สามารถใช้ขายได้กี่ชิ้น ระบบจะคำนวณต้นทุนต่อชิ้นให้";
+  $("ingredientSuggestion")
+    .innerHTML =
+      ingredientAdvice(name);
 
 }
 
 
-$("ingredientSuggestion").innerHTML=
-ingredientAdvice(name);
-
-}
-
-
-function changeIngredientPurchase(delta){
-
-const input =
-$("editIngPieces");
-
-let value =
-Number(input.value)||0;
-
-value += delta;
-
-if(value<0)
-value=0;
-
-input.value=value;
-
-renderIngredientDetail();
-
-}
-
+/* =====================================================
+   INGREDIENT +/- 
+===================================================== */
 
 function changeUsable(delta){
 
-const input =
-$("editIngUsable");
+  const input =
+    $("editIngUsable");
 
-let value =
-Number(input.value)||0;
+  let value =
+    Number(input.value)||0;
 
-value += delta;
+  value+=delta;
 
-if(value<0)
-value=0;
+  if(value<0)
+    value=0;
 
-input.value=value;
+  input.value=value;
 
-renderIngredientDetail();
+  renderIngredientDetail();
 
 }
 
@@ -3994,64 +4267,72 @@ renderIngredientDetail();
 
 function saveIngredientDetail(){
 
-const ingredient =
-getCurrentIngredient();
+  const ingredient =
+    getCurrentIngredient();
 
-if(!ingredient)
-return;
+  if(!ingredient)
+    return;
 
+  const oldName =
+    ingredient.name;
 
-ingredient.name =
-$("editIngName").value.trim()
-|| "วัตถุดิบ";
+  const newName =
+    $("editIngName")
+      .value.trim() ||
+    "วัตถุดิบ";
 
-ingredient.amount =
-Number($("editIngAmount").value)||0;
+  ingredient.name =
+    newName;
 
-ingredient.unit =
-$("editIngUnit").value;
+  ingredient.amount =
+    Number(
+      $("editIngAmount").value
+    ) || 0;
 
-ingredient.price =
-Number($("editIngPrice").value)||0;
+  ingredient.unit =
+    $("editIngUnit").value;
 
-ingredient.pieces =
-Number($("editIngPieces").value)||0;
+  ingredient.price =
+    Number(
+      $("editIngPrice").value
+    ) || 0;
 
-ingredient.usable =
-Number($("editIngUsable").value)||0;
+  ingredient.purchaseUnitPrice =
+    ingredient.price;
 
-ingredient.include =
-$("editIngInclude").value;
+  ingredient.usable =
+    Number(
+      $("editIngUsable").value
+    ) || 0;
 
+  ingredient.include =
+    $("editIngInclude").value;
 
-saveAll();
+  /*
+  ชื่อเดียวกันใช้ปกเดียวกัน
+  */
 
-alert("บันทึกวัตถุดิบแล้ว 💗");
+  const oldKey =
+    oldName.trim().toLowerCase();
 
-backToMenuDetail();
+  const newKey =
+    newName.trim().toLowerCase();
 
-}
+  if(
+    settings.covers[oldKey] &&
+    !settings.covers[newKey]
+  ){
 
+    settings.covers[newKey] =
+      settings.covers[oldKey];
 
-/* =====================================================
-   INGREDIENT COST
-===================================================== */
+  }
 
-function ingredientCost(i){
+  saveAll();
 
-if(i.include==="no")
-return 0;
+  alert("บันทึกวัตถุดิบแล้ว 💗");
 
-const price =
-Number(i.price)||0;
-
-const usable =
-Number(i.usable)||0;
-
-if(!price || !usable)
-return 0;
-
-return price/usable;
+  backToMenuDetail();
 
 }
 
@@ -4060,25 +4341,37 @@ return price/usable;
    INITIAL
 ===================================================== */
 
+if(!settings.summaryDate)
+  settings.summaryDate=today();
+
+if(!settings.summaryWeekDate)
+  settings.summaryWeekDate=today();
+
+if(!settings.summaryMonth){
+
+  const d=new Date();
+
+  settings.summaryMonth =
+    d.getFullYear() +
+    "-" +
+    String(d.getMonth()+1)
+      .padStart(2,"0");
+
+}
+
+if(!settings.summaryYear)
+  settings.summaryYear =
+    new Date().getFullYear();
+
+saveAll();
+
 $("txDate").value=today();
 
-$("summaryDate").value=today();
-
-$("summaryWeekDate").value=today();
-
-$("summaryMonthValue").value=
-today().slice(0,7);
-
-setupYearOptions();
-
+renderAccountTitle();
 renderAccount();
-
 renderSummary();
-
 renderMap();
-
 renderMenus();
-
 calcTxTotal();
 
 </script>
