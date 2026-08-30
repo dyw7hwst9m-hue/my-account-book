@@ -12,7 +12,7 @@
   --bg:#fff7fb;
   --card:#fff;
   --ink:#29252b;
-  --muted:#8f8790;
+  --muted:#918991;
   --line:#eee5eb;
   --pink:#cc6792;
   --pink2:#f8e1eb;
@@ -120,12 +120,13 @@ input,select{
   width:100%;
   border:1px solid var(--line);
   border-radius:14px;
-  padding:12px;
+  padding:11px 12px;
   background:#fff;
   outline:none;
 }
 
-input:focus,select:focus{
+input:focus,
+select:focus{
   border-color:#e5a0bc;
 }
 
@@ -150,7 +151,7 @@ label{
   border:1px solid var(--line);
   background:#fff;
   border-radius:13px;
-  padding:10px 14px;
+  padding:9px 13px;
 }
 
 .primary{
@@ -158,7 +159,7 @@ label{
   background:var(--pink);
   color:white;
   border-radius:14px;
-  padding:12px 17px;
+  padding:11px 16px;
   font-weight:700;
 }
 
@@ -166,8 +167,16 @@ label{
   border:0;
   background:#fff0f2;
   color:#c75c6c;
-  border-radius:12px;
-  padding:8px 10px;
+  border-radius:11px;
+  padding:8px 11px;
+}
+
+.smallBtn{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:9px;
+  padding:5px 8px;
+  font-size:11px;
 }
 
 .back{
@@ -182,6 +191,24 @@ label{
 
 .hero{
   background:linear-gradient(135deg,#f8dce8,#fff);
+}
+
+.shopTitle{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.shopTitle input{
+  font-size:24px;
+  font-weight:800;
+  border:0;
+  background:transparent;
+  padding:2px 0;
+}
+
+.shopTitle input:focus{
+  background:#ffffff99;
 }
 
 .balance{
@@ -291,6 +318,25 @@ label{
   font-weight:700;
 }
 
+.txEdit{
+  margin-top:6px;
+  display:flex;
+  justify-content:flex-end;
+  gap:4px;
+}
+
+.txEdit input{
+  width:65px;
+  padding:5px 7px;
+  border-radius:9px;
+  font-size:11px;
+}
+
+.txEdit button{
+  font-size:11px;
+  padding:5px 8px;
+}
+
 /* ================= SUMMARY ================= */
 
 .periods{
@@ -307,6 +353,26 @@ label{
 }
 
 .period.active{
+  background:var(--pink2);
+  border-color:#e7a5bf;
+  color:var(--pink);
+  font-weight:700;
+}
+
+.viewMode{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+
+.viewBtn{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:12px;
+  padding:10px;
+}
+
+.viewBtn.active{
   background:var(--pink2);
   border-color:#e7a5bf;
   color:var(--pink);
@@ -333,12 +399,6 @@ label{
   display:block;
   font-size:18px;
   margin-top:4px;
-}
-
-.dateSelect{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:8px;
 }
 
 .chart{
@@ -383,32 +443,37 @@ label{
   color:#999;
 }
 
-/* ================= MAP / รวมรายการ ================= */
+/* ================= ALL LIST ================= */
 
-.mapGrid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
+.searchBox{
+  margin-bottom:12px;
+}
+
+.allListItem{
+  display:flex;
+  align-items:center;
   gap:10px;
+  padding:12px 0;
+  border-bottom:1px solid var(--line);
 }
 
-.mapBox{
-  background:#faf7f9;
-  border-radius:18px;
-  padding:16px;
-  text-align:center;
+.allListItem:last-child{
+  border:0;
 }
 
-.mapBox span{
+.allInfo{
+  flex:1;
+}
+
+.allInfo strong{
   display:block;
-  font-size:28px;
 }
 
-.mapBox strong{
-  display:block;
-  font-size:20px;
+.allInfo small{
+  color:#999;
 }
 
-/* ================= COST ================= */
+/* ================= COST HOME ================= */
 
 .costHeader{
   background:linear-gradient(135deg,#f8e1ea,#fff);
@@ -424,32 +489,37 @@ label{
   border:1px solid var(--line);
   border-radius:18px;
   padding:15px;
+  cursor:pointer;
+  transition:.15s;
 }
 
-.menuRow{
+.menuCard:active{
+  transform:scale(.99);
+}
+
+.menuTop{
   display:flex;
-  align-items:center;
   justify-content:space-between;
   gap:12px;
 }
 
 .menuLeft{
-  display:flex;
-  align-items:center;
-  gap:12px;
   min-width:0;
   flex:1;
+  display:flex;
+  gap:11px;
+  align-items:center;
 }
 
 .menuCover{
-  width:55px;
-  height:55px;
-  min-width:55px;
+  width:52px;
+  height:52px;
+  min-width:52px;
   border-radius:16px;
   background:#fff0f5;
   display:grid;
   place-items:center;
-  font-size:27px;
+  font-size:28px;
   overflow:hidden;
 }
 
@@ -462,32 +532,45 @@ label{
 .menuName{
   font-size:23px;
   font-weight:800;
-  line-height:1.15;
+  line-height:1.1;
   word-break:break-word;
 }
 
 .menuRight{
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:6px;
+  flex-shrink:0;
 }
 
 .menuCost{
   text-align:right;
+}
+
+.menuCostLabel{
+  font-size:20px;
+  font-weight:800;
   white-space:nowrap;
 }
 
-.menuCost strong{
-  display:block;
-  font-size:18px;
+.menuIngCount{
+  color:#999;
+  font-size:12px;
+  margin-top:2px;
 }
 
-.menuCost small{
-  color:#999;
+.menuActions{
+  display:flex;
+  gap:5px;
+  margin-top:12px;
+  justify-content:flex-end;
+}
+
+.menuActions button{
   font-size:11px;
 }
 
-/* ================= MENU DETAIL ================= */
+/* ================= DETAIL ================= */
 
 .detail{
   display:none;
@@ -501,28 +584,170 @@ label{
   background:linear-gradient(135deg,#f8e3ec,#fff);
 }
 
-.menuDetailTitle{
+.detailTitleRow{
   display:flex;
   align-items:center;
   gap:12px;
 }
 
-.menuDetailCover{
-  width:60px;
-  height:60px;
-  border-radius:17px;
+.detailCover{
+  width:64px;
+  height:64px;
+  min-width:64px;
+  border-radius:18px;
   background:#fff0f5;
   display:grid;
   place-items:center;
-  font-size:30px;
+  font-size:34px;
   overflow:hidden;
 }
 
-.menuDetailCover img{
+.detailCover img{
   width:100%;
   height:100%;
   object-fit:cover;
 }
+
+.detailTitle{
+  font-size:27px;
+  font-weight:800;
+  flex:1;
+  word-break:break-word;
+}
+
+.detailActions{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+/* ================= INGREDIENT ================= */
+
+.ingredientCard{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:11px;
+  margin-bottom:9px;
+  background:#fff;
+}
+
+.ingredientCard.dragging{
+  opacity:.45;
+}
+
+.dragHandle{
+  cursor:grab;
+  color:#aaa;
+  font-size:18px;
+  padding:2px;
+}
+
+.ingredientInfo{
+  flex:1;
+  min-width:0;
+}
+
+.ingredientName{
+  font-size:19px;
+  font-weight:800;
+  line-height:1.1;
+  word-break:break-word;
+}
+
+.ingredientEquation{
+  color:#888;
+  font-size:12px;
+  margin-top:3px;
+}
+
+.ingredientActions{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  flex-shrink:0;
+}
+
+.ingSmallBtn{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:9px;
+  padding:6px 8px;
+  font-size:11px;
+  white-space:nowrap;
+}
+
+.ingQty{
+  display:flex;
+  align-items:center;
+  gap:3px;
+}
+
+.ingQty button{
+  width:27px;
+  height:27px;
+  border:0;
+  background:#f5edf1;
+  border-radius:8px;
+  font-weight:700;
+}
+
+.ingQty input{
+  width:48px;
+  height:27px;
+  padding:3px;
+  border-radius:8px;
+  text-align:center;
+  font-size:11px;
+}
+
+.switch{
+  position:relative;
+  width:42px;
+  height:24px;
+  flex-shrink:0;
+}
+
+.switch input{
+  opacity:0;
+  width:0;
+  height:0;
+}
+
+.slider{
+  position:absolute;
+  inset:0;
+  cursor:pointer;
+  background:#ddd;
+  border-radius:20px;
+  transition:.2s;
+}
+
+.slider:before{
+  content:"";
+  position:absolute;
+  width:18px;
+  height:18px;
+  left:3px;
+  top:3px;
+  background:#fff;
+  border-radius:50%;
+  transition:.2s;
+  box-shadow:0 1px 4px #0002;
+}
+
+.switch input:checked + .slider{
+  background:#67b284;
+}
+
+.switch input:checked + .slider:before{
+  transform:translateX(18px);
+}
+
+/* ================= CALC ================= */
 
 .calcGrid{
   display:grid;
@@ -547,195 +772,7 @@ label{
   margin-top:4px;
 }
 
-/* ================= INGREDIENT LIST ================= */
-
-.ingredientCard{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  border:1px solid var(--line);
-  border-radius:17px;
-  padding:11px;
-  margin-bottom:9px;
-  background:#fff;
-  transition:.15s;
-}
-
-.ingredientCard.dragging{
-  opacity:.45;
-  transform:scale(.98);
-}
-
-.ingredientCard.dragOver{
-  border-color:#d98aaa;
-  background:#fff5f9;
-}
-
-.dragHandle{
-  width:30px;
-  min-width:30px;
-  height:42px;
-  border:0;
-  background:#f6eef2;
-  border-radius:10px;
-  color:#aaa;
-  font-size:17px;
-  cursor:grab;
-  touch-action:none;
-}
-
-.dragHandle:active{
-  cursor:grabbing;
-}
-
-.ingredientIcon{
-  width:48px;
-  height:48px;
-  min-width:48px;
-  border-radius:15px;
-  background:#fff0f5;
-  display:grid;
-  place-items:center;
-  font-size:25px;
-  overflow:hidden;
-}
-
-.ingredientIcon img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.ingredientInfo{
-  flex:1;
-  min-width:0;
-}
-
-.ingredientName{
-  font-size:20px;
-  font-weight:800;
-  line-height:1.1;
-  word-break:break-word;
-}
-
-.ingredientFormula{
-  color:#999;
-  font-size:11px;
-  margin-top:5px;
-  white-space:nowrap;
-}
-
-.ingredientActions{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:5px;
-  flex-shrink:0;
-}
-
-.smallAction{
-  border:0;
-  background:#f6eef2;
-  color:#777;
-  border-radius:9px;
-  padding:7px 8px;
-  font-size:11px;
-  white-space:nowrap;
-}
-
-.smallDelete{
-  border:0;
-  background:#fff0f2;
-  color:#c75c6c;
-  border-radius:9px;
-  padding:7px 8px;
-  font-size:11px;
-}
-
-.miniQty{
-  display:flex;
-  align-items:center;
-  gap:3px;
-}
-
-.miniQty button{
-  width:29px;
-  height:30px;
-  border:0;
-  background:#f5edf1;
-  border-radius:8px;
-  font-size:17px;
-}
-
-.miniQty input{
-  width:48px;
-  padding:6px 3px;
-  text-align:center;
-  border-radius:8px;
-  font-size:12px;
-}
-
-.switch{
-  position:relative;
-  width:42px;
-  height:24px;
-  flex-shrink:0;
-}
-
-.switch input{
-  opacity:0;
-  width:0;
-  height:0;
-}
-
-.slider{
-  position:absolute;
-  inset:0;
-  background:#ddd;
-  border-radius:20px;
-  transition:.2s;
-}
-
-.slider:before{
-  content:"";
-  position:absolute;
-  width:18px;
-  height:18px;
-  left:3px;
-  top:3px;
-  background:white;
-  border-radius:50%;
-  transition:.2s;
-  box-shadow:0 1px 4px #9995;
-}
-
-.switch input:checked + .slider{
-  background:#72b78b;
-}
-
-.switch input:checked + .slider:before{
-  transform:translateX(18px);
-}
-
-/* ================= INGREDIENT DETAIL ================= */
-
-.suggest{
-  background:#fff5da;
-  border:1px solid #f0d28b;
-  border-radius:16px;
-  padding:13px;
-  margin-top:10px;
-}
-
-.modalActions{
-  display:flex;
-  gap:8px;
-  margin-top:15px;
-}
-
-.modalActions>*{
-  flex:1;
-}
+/* ================= MODAL ================= */
 
 .modal{
   position:fixed;
@@ -771,6 +808,40 @@ label{
   margin:0;
 }
 
+.modalActions{
+  display:flex;
+  gap:8px;
+  margin-top:15px;
+}
+
+.modalActions>*{
+  flex:1;
+}
+
+.coverInput{
+  display:grid;
+  grid-template-columns:70px 1fr;
+  gap:10px;
+  align-items:center;
+}
+
+.coverPreview{
+  width:70px;
+  height:70px;
+  border-radius:18px;
+  background:#fff0f5;
+  display:grid;
+  place-items:center;
+  font-size:30px;
+  overflow:hidden;
+}
+
+.coverPreview img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media(max-width:700px){
@@ -779,58 +850,58 @@ label{
     align-items:center;
   }
 
-  .ingredientInfo{
-    min-width:100px;
-  }
-
   .ingredientActions{
     flex-wrap:nowrap;
   }
 
+  .ingSmallBtn{
+    padding:6px;
+  }
+
 }
 
-@media(max-width:600px){
+@media(max-width:580px){
+
+  .menuTop{
+    align-items:flex-start;
+  }
+
+  .menuRight{
+    flex-direction:column;
+    align-items:flex-end;
+  }
+
+  .menuCostLabel{
+    font-size:16px;
+  }
+
+  .menuName{
+    font-size:21px;
+  }
 
   .ingredientCard{
     gap:6px;
-    padding:9px;
-  }
-
-  .dragHandle{
-    width:25px;
-    min-width:25px;
-  }
-
-  .ingredientIcon{
-    width:42px;
-    min-width:42px;
-    height:42px;
   }
 
   .ingredientName{
     font-size:17px;
   }
 
-  .smallAction{
-    padding:6px;
-    font-size:10px;
+  .ingredientEquation{
+    font-size:11px;
   }
 
-  .smallDelete{
-    padding:6px;
-    font-size:10px;
+  .ingredientActions{
+    gap:3px;
   }
 
-  .miniQty input{
+  .ingSmallBtn{
+    font-size:10px;
+    padding:5px;
+  }
+
+  .ingQty input{
     width:40px;
-  }
-
-  .miniQty button{
-    width:25px;
-  }
-
-  .menuName{
-    font-size:20px;
   }
 
 }
@@ -838,12 +909,13 @@ label{
 @media(max-width:450px){
 
   .grid2,
-  .calcGrid{
+  .calcGrid,
+  .stats{
     grid-template-columns:1fr;
   }
 
-  .stats{
-    grid-template-columns:1fr;
+  .money{
+    grid-template-columns:1fr 1fr;
   }
 
   .nav small{
@@ -854,24 +926,30 @@ label{
     font-size:18px;
   }
 
+  .menuCover{
+    width:45px;
+    height:45px;
+    min-width:45px;
+  }
+
+  .menuName{
+    font-size:19px;
+  }
+
+  .ingredientCard{
+    flex-wrap:wrap;
+  }
+
   .ingredientInfo{
-    min-width:0;
+    min-width:calc(100% - 35px);
   }
 
-  .ingredientFormula{
-    font-size:10px;
-  }
-
-  .menuRight{
-    gap:4px;
-  }
-
-  .menuCost strong{
-    font-size:15px;
+  .ingredientActions{
+    width:100%;
+    justify-content:flex-end;
   }
 
 }
-
 </style>
 </head>
 
@@ -879,7 +957,9 @@ label{
 
 <div class="wrap">
 
-<!-- ================= NAV ================= -->
+<!-- =====================================================
+     NAV
+===================================================== -->
 
 <nav class="nav">
 
@@ -893,7 +973,7 @@ label{
 <small>สรุป</small>
 </button>
 
-<button onclick="showPage('map',this)">
+<button onclick="showPage('all',this)">
 <span>📋</span>
 <small>รวมรายการ</small>
 </button>
@@ -907,22 +987,36 @@ label{
 
 
 <!-- =====================================================
- PAGE 1 ACCOUNT
+     PAGE 1 ACCOUNT
 ===================================================== -->
 
 <section id="page-account" class="page active">
 
 <div class="card hero">
 
-<h2 id="accountTitle">
-📒 สมุดบัญชี
-</h2>
+<div class="shopTitle">
 
-<div class="muted">
-แตะชื่อด้านบนเพื่อแก้ชื่อได้
+<input
+id="shopTitle"
+value="สมุดบัญชี"
+onchange="saveShopTitle()"
+aria-label="ชื่อร้าน">
+
+<button
+class="smallBtn"
+onclick="editShopTitle()">
+แก้
+</button>
+
 </div>
 
-<div class="balance" id="balance">฿0.00</div>
+<div class="muted">
+แตะ "แก้" เพื่อเปลี่ยนชื่อด้านบน
+</div>
+
+<div class="balance" id="balance">
+฿0.00
+</div>
 
 <div class="money">
 
@@ -947,13 +1041,15 @@ label{
 
 <div class="typeButtons">
 
-<button id="incomeBtn"
+<button
+id="incomeBtn"
 class="typeBtn active in"
 onclick="setTxType('income')">
 💚 รายรับ
 </button>
 
-<button id="expenseBtn"
+<button
+id="expenseBtn"
 class="typeBtn out"
 onclick="setTxType('expense')">
 ❤️ รายจ่าย
@@ -961,24 +1057,35 @@ onclick="setTxType('expense')">
 
 </div>
 
+
 <div class="grid2">
 
 <div class="field">
+
 <label>รายการ</label>
-<input id="txItem" placeholder="เช่น ข้าวเหนียวไก่ทอด">
+
+<input
+id="txItem"
+placeholder="เช่น ข้าวเหนียวไก่ทอด">
+
 </div>
 
 <div class="field">
-<label>ราคา / หน่วย</label>
-<input id="txPrice"
+
+<label>ราคา</label>
+
+<input
+id="txPrice"
 type="number"
 min="0"
 step=".01"
 placeholder="25"
 oninput="calcTxTotal()">
+
 </div>
 
 </div>
+
 
 <div class="field">
 
@@ -986,52 +1093,75 @@ oninput="calcTxTotal()">
 
 <div class="qtyControl">
 
-<button onclick="changeTxQty(-1)">−</button>
+<button onclick="changeTxQty(-1)">
+−
+</button>
 
-<input id="txQty"
+<input
+id="txQty"
 type="number"
 min="0.01"
 step=".01"
 value="1"
 oninput="calcTxTotal()">
 
-<button onclick="changeTxQty(1)">+</button>
+<button onclick="changeTxQty(1)">
++
+</button>
 
 </div>
 
 </div>
+
 
 <div class="grid2">
 
 <div class="field">
+
 <label>วันที่</label>
-<input id="txDate" type="date">
+
+<input
+id="txDate"
+type="date">
+
 </div>
 
 <div class="field">
+
 <label>หมายเหตุ</label>
-<input id="txNote" placeholder="ถ้ามี">
+
+<input
+id="txNote"
+placeholder="ถ้ามี">
+
 </div>
 
 </div>
+
 
 <div class="card"
 style="background:#fff8fb;margin:0 0 12px">
 
 <div class="muted">
-ยอดรวม
+จำนวน × ราคา = ยอดขาย
 </div>
 
-<strong id="txTotal" style="font-size:22px">
+<strong
+id="txTotal"
+style="font-size:22px">
 ฿0.00
 </strong>
 
 </div>
 
-<button class="primary"
+
+<button
+class="primary"
 style="width:100%"
 onclick="saveTx()">
+
 💾 บันทึกรายการ
+
 </button>
 
 </div>
@@ -1048,9 +1178,8 @@ onclick="saveTx()">
 </section>
 
 
-
 <!-- =====================================================
- PAGE 2 SUMMARY
+     PAGE 2 SUMMARY
 ===================================================== -->
 
 <section id="page-summary" class="page">
@@ -1064,7 +1193,7 @@ onclick="saveTx()">
 <button class="period active"
 data-period="day"
 onclick="setPeriod('day')">
-รายวัน
+วัน
 </button>
 
 <button class="period"
@@ -1092,31 +1221,30 @@ onclick="setPeriod('year')">
 
 <div class="card">
 
-<h3>📅 เลือกช่วงเวลา</h3>
-
-<div id="summaryPicker"></div>
+<div id="summarySelector"></div>
 
 </div>
 
 
 <div class="card">
 
-<div class="field">
+<h3>รูปแบบการแสดง</h3>
 
-<label>รูปแบบการแสดงรายการ</label>
+<div class="viewMode">
 
-<select id="summaryDisplay"
-onchange="renderSummary()">
+<button
+class="viewBtn active"
+data-view="detail"
+onclick="setSummaryView('detail')">
+📋 มีชื่อรายการ
+</button>
 
-<option value="detail">
-แสดงชื่อรายการ
-</option>
-
-<option value="number">
-แสดงเฉพาะตัวเลขรายรับรายจ่าย
-</option>
-
-</select>
+<button
+class="viewBtn"
+data-view="numbers"
+onclick="setSummaryView('numbers')">
+🔢 ตัวเลขอย่างเดียว
+</button>
 
 </div>
 
@@ -1158,7 +1286,7 @@ onchange="renderSummary()">
 
 <div class="card">
 
-<h3>📋 รายการของช่วงนี้</h3>
+<h3>📋 รายการ</h3>
 
 <div id="summaryList"></div>
 
@@ -1167,51 +1295,38 @@ onchange="renderSummary()">
 </section>
 
 
-
 <!-- =====================================================
- PAGE 3 รวมรายการ
+     PAGE 3 ALL
 ===================================================== -->
 
-<section id="page-map" class="page">
+<section id="page-all" class="page">
 
-<div class="card hero">
+<div class="card">
 
 <h2>📋 รวมรายการ</h2>
 
 <p class="muted">
-ค้นหาและดูรายการบัญชีทั้งหมด
+รวมรายการบัญชีทั้งหมด ค้นหาชื่อรายการได้
 </p>
 
-<div class="field">
+<input
+class="searchBox"
+id="allSearch"
+placeholder="🔎 ค้นหารายการ..."
+oninput="renderAllList()">
 
-<label>🔎 กรองคำค้นหา</label>
-
-<input id="allSearch"
-placeholder="ค้นหาชื่อรายการ..."
-oninput="renderAllTransactions()">
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<div id="allTransactionList"></div>
+<div id="allList"></div>
 
 </div>
 
 </section>
 
 
-
 <!-- =====================================================
- PAGE 4 COST
+     PAGE 4 COST
 ===================================================== -->
 
 <section id="page-cost" class="page">
-
-<!-- COST HOME -->
 
 <div id="costHome">
 
@@ -1220,7 +1335,7 @@ oninput="renderAllTransactions()">
 <h2>🧮 ต้นทุนต่อรายการขาย</h2>
 
 <p class="muted">
-สร้างรายการขาย แล้วกดเข้าไปดูวัตถุดิบด้านใน
+สร้างรายการขาย แล้วเข้าไปจัดการวัตถุดิบด้านใน
 </p>
 
 <div class="grid2">
@@ -1229,7 +1344,8 @@ oninput="renderAllTransactions()">
 
 <label>ชื่อรายการขาย</label>
 
-<input id="newMenuName"
+<input
+id="newMenuName"
 placeholder="เช่น สตรอว์เบอร์รี">
 
 </div>
@@ -1238,16 +1354,20 @@ placeholder="เช่น สตรอว์เบอร์รี">
 
 <label>สัญลักษณ์ / รูปปก</label>
 
-<input id="newMenuCover"
+<input
+id="newMenuCover"
 placeholder="เช่น 🍓">
 
 </div>
 
 </div>
 
-<button class="primary"
+<button
+class="primary"
 onclick="addMenu()">
+
 ＋ เพิ่มรายการขาย
+
 </button>
 
 </div>
@@ -1255,20 +1375,26 @@ onclick="addMenu()">
 
 <div class="card">
 
-<h2>🛍️ รายการขาย</h2>
+<h2>🍓 รายการขาย</h2>
 
-<div class="menuList" id="menuList"></div>
-
+<div
+class="menuList"
+id="menuList">
 </div>
 
 </div>
 
+</div>
 
-<!-- MENU DETAIL -->
+
+<!-- =====================================================
+     MENU DETAIL
+===================================================== -->
 
 <div id="menuDetail" class="detail">
 
-<button class="back"
+<button
+class="back"
 onclick="backToMenus()">
 ← กลับไปรายการขาย
 </button>
@@ -1276,54 +1402,43 @@ onclick="backToMenus()">
 
 <div class="card detailHero">
 
-<div class="menuDetailTitle">
+<div class="detailTitleRow">
 
-<div class="menuDetailCover"
+<div
+class="detailCover"
 id="detailMenuCover">
+🍓
 </div>
 
-<div style="flex:1">
-
-<h2 id="detailMenuName"></h2>
-
-<p class="muted">
-แก้ไขชื่อหรือรูปปกได้
-</p>
-
+<div
+class="detailTitle"
+id="detailMenuName">
 </div>
 
 </div>
 
 
-<div class="grid2"
-style="margin-top:15px">
+<div class="detailActions">
 
-<div class="field">
-
-<label>ชื่อรายการขาย</label>
-
-<input id="editMenuName"
-oninput="updateMenuHeader()">
-
-</div>
-
-<div class="field">
-
-<label>รูปปก / สัญลักษณ์</label>
-
-<input id="editMenuCover"
-placeholder="เช่น 🍓"
-oninput="updateMenuHeader()">
-
-</div>
-
-</div>
-
-<button class="primary"
-style="width:100%"
-onclick="saveMenuInfo()">
-💾 บันทึกชื่อและรูป
+<button
+class="btn"
+onclick="editMenuName()">
+✏️ แก้ชื่อ
 </button>
+
+<button
+class="btn"
+onclick="editMenuCover()">
+🖼️ เปลี่ยนรูป/สัญลักษณ์
+</button>
+
+<button
+class="btn"
+onclick="duplicateCurrentMenu()">
+📋 ทำสำเนา
+</button>
+
+</div>
 
 </div>
 
@@ -1333,16 +1448,19 @@ onclick="saveMenuInfo()">
 <h3>🥕 วัตถุดิบ</h3>
 
 <p class="muted">
-เปิด/ปิดวัตถุดิบได้จากหน้านี้ และลากเพื่อเปลี่ยนอันดับ
+ลาก ☰ เพื่อเปลี่ยนอันดับวัตถุดิบ
 </p>
 
 <div id="ingredientList"></div>
 
 
-<button class="primary"
+<button
+class="primary"
 style="width:100%;margin-top:8px"
 onclick="openIngredientModal()">
+
 ＋ เพิ่มวัตถุดิบ
+
 </button>
 
 </div>
@@ -1350,7 +1468,7 @@ onclick="openIngredientModal()">
 
 <div class="card">
 
-<h3>📊 รวมต้นทุน</h3>
+<h3>📊 สรุปต้นทุน</h3>
 
 <div class="calcGrid">
 
@@ -1366,7 +1484,7 @@ onclick="openIngredientModal()">
 
 <div class="calcBox">
 
-<small>ต้นทุนรวมทั้งหมด</small>
+<small>รวมต้นทุนทั้งหมด</small>
 
 <strong id="menuCost">
 ฿0.00
@@ -1376,10 +1494,10 @@ onclick="openIngredientModal()">
 
 <div class="calcBox">
 
-<small>สถานะ</small>
+<small>รายการขาย</small>
 
-<strong id="menuCostStatus">
-ยังไม่มี
+<strong id="menuNameSmall">
+-
 </strong>
 
 </div>
@@ -1391,12 +1509,14 @@ onclick="openIngredientModal()">
 </div>
 
 
-
-<!-- INGREDIENT DETAIL -->
+<!-- =====================================================
+     INGREDIENT DETAIL
+===================================================== -->
 
 <div id="ingredientDetail" class="detail">
 
-<button class="back"
+<button
+class="back"
 onclick="backToMenuDetail()">
 ← กลับไปวัตถุดิบ
 </button>
@@ -1404,11 +1524,9 @@ onclick="backToMenuDetail()">
 
 <div class="card detailHero">
 
-<h2 id="ingredientDetailName"></h2>
-
-<p class="muted">
-รายละเอียดวัตถุดิบ
-</p>
+<h2 id="ingredientDetailName">
+วัตถุดิบ
+</h2>
 
 </div>
 
@@ -1429,28 +1547,27 @@ onclick="backToMenuDetail()">
 
 <div class="field">
 
-<label>รูปปก / สัญลักษณ์</label>
+<label>รูป / สัญลักษณ์วัตถุดิบ</label>
 
-<input id="editIngCover"
-placeholder="เช่น 🥫 หรือ 🌭">
+<div class="coverInput">
+
+<div
+class="coverPreview"
+id="ingCoverPreview">
+🥕
+</div>
+
+<input
+id="editIngCover"
+placeholder="เช่น 🥫"
+oninput="previewIngredientCover()">
+
+</div>
 
 </div>
 
 
 <div class="grid2">
-
-<div class="field">
-
-<label>ราคาซื้อต่อชิ้น</label>
-
-<input id="editIngPrice"
-type="number"
-min="0"
-step=".01"
-oninput="renderIngredientDetail()">
-
-</div>
-
 
 <div class="field">
 
@@ -1462,10 +1579,11 @@ oninput="renderIngredientDetail()">
 −
 </button>
 
-<input id="editIngPieces"
+<input
+id="editIngPieces"
 type="number"
 min="0"
-step="1"
+step=".01"
 oninput="renderIngredientDetail()">
 
 <button onclick="changeIngredientPurchase(1)">
@@ -1476,34 +1594,71 @@ oninput="renderIngredientDetail()">
 
 </div>
 
+
+<div class="field">
+
+<label>ราคาซื้อต่อชิ้น</label>
+
+<input
+id="editIngPrice"
+type="number"
+min="0"
+step=".01"
+oninput="renderIngredientDetail()">
+
+</div>
+
 </div>
 
 
-<div class="suggest">
+<div class="card"
+style="background:#fff8fb;margin:0">
 
-<strong>💡 ระบบคำนวณ</strong>
-
-<div id="ingredientSuggestion"
-style="margin-top:6px">
+<div class="muted">
+จำนวนที่ซื้อ × ราคาซื้อต่อชิ้น
 </div>
 
+<strong
+id="ingredientEquation"
+style="font-size:24px">
+0 × ฿0.00 = ฿0.00
+</strong>
+
 </div>
 
 
-<div class="field"
-style="margin-top:14px">
+<div class="card"
+style="background:#f8f3ff;margin-top:12px;margin-bottom:0">
 
-<label>วัตถุดิบนี้เอาไปคิดต้นทุนไหม?</label>
+<div class="muted">
+ต้นทุนวัตถุดิบ
+</div>
 
-<select id="editIngInclude"
+<strong
+id="ingredientTotalCost"
+style="font-size:28px">
+฿0.00
+</strong>
+
+</div>
+
+
+<div class="field" style="margin-top:14px">
+
+<label>
+วัตถุดิบนี้ใช้คิดต้นทุนหรือไม่?
+</label>
+
+<select
+id="editIngInclude"
 onchange="renderIngredientDetail()">
 
 <option value="yes">
-✅ ใส่ — รวมต้นทุน
+เปิด — รวมต้นทุน
 </option>
 
 <option value="no">
-⭕ ไม่ใส่ — ไม่รวมต้นทุน
+ปิด — ไม่รวมต้นทุน
 </option>
 
 </select>
@@ -1513,60 +1668,16 @@ onchange="renderIngredientDetail()">
 </div>
 
 
-<div class="card">
-
-<h3>🧮 ต้นทุนอัตโนมัติ</h3>
-
-<div class="calcGrid">
-
-<div class="calcBox">
-
-<small>จำนวนซื้อ</small>
-
-<strong id="ingPiecesShow">
-0 ชิ้น
-</strong>
-
-</div>
-
-<div class="calcBox">
-
-<small>ราคาต่อชิ้น</small>
-
-<strong id="ingPriceShow">
-฿0.00
-</strong>
-
-</div>
-
-<div class="calcBox">
-
-<small>ต้นทุนรวม</small>
-
-<strong id="ingCostTotal">
-฿0.00
-</strong>
-
-</div>
-
-</div>
-
-<p class="muted"
-id="ingFormula"
-style="margin-top:12px">
-</p>
-
-</div>
-
-
 <div class="modalActions">
 
-<button class="btn"
+<button
+class="btn"
 onclick="backToMenuDetail()">
 ยกเลิก
 </button>
 
-<button class="primary"
+<button
+class="primary"
 onclick="saveIngredientDetail()">
 💾 บันทึกวัตถุดิบ
 </button>
@@ -1580,12 +1691,12 @@ onclick="saveIngredientDetail()">
 </div>
 
 
-
 <!-- =====================================================
- INGREDIENT MODAL
+     INGREDIENT MODAL
 ===================================================== -->
 
-<div id="ingredientModal"
+<div
+id="ingredientModal"
 class="modal hidden">
 
 <div class="modalBox">
@@ -1594,15 +1705,17 @@ class="modal hidden">
 
 <h2>🥕 เพิ่มวัตถุดิบ</h2>
 
-<button class="btn"
+<button
+class="btn"
 onclick="closeIngredientModal()">
 ✕
 </button>
 
 </div>
 
+
 <p class="muted">
-กรอกรายละเอียดให้เสร็จ แล้วกดบันทึก วัตถุดิบจะขึ้นในรายการทันที
+กรอกรายละเอียดให้เสร็จแล้วกดบันทึกได้เลย
 </p>
 
 
@@ -1610,7 +1723,8 @@ onclick="closeIngredientModal()">
 
 <label>ชื่อวัตถุดิบ</label>
 
-<input id="newIngName"
+<input
+id="newIngName"
 placeholder="เช่น ซอส">
 
 </div>
@@ -1618,27 +1732,16 @@ placeholder="เช่น ซอส">
 
 <div class="field">
 
-<label>รูปปก / สัญลักษณ์</label>
+<label>รูป / สัญลักษณ์</label>
 
-<input id="newIngCover"
+<input
+id="newIngCover"
 placeholder="เช่น 🥫">
 
 </div>
 
 
 <div class="grid2">
-
-<div class="field">
-
-<label>ราคาซื้อต่อชิ้น</label>
-
-<input id="newIngPrice"
-type="number"
-min="0"
-step=".01"
-placeholder="50">
-
-</div>
 
 <div class="field">
 
@@ -1650,11 +1753,13 @@ placeholder="50">
 −
 </button>
 
-<input id="newIngPieces"
+<input
+id="newIngPieces"
 type="number"
 min="0"
-step="1"
-value="1">
+step=".01"
+value="1"
+oninput="calcNewIngredient()">
 
 <button onclick="changeNewIngQty(1)">
 +
@@ -1664,21 +1769,52 @@ value="1">
 
 </div>
 
-</div>
-
 
 <div class="field">
 
-<label>คิดต้นทุนไหม?</label>
+<label>ราคาซื้อต่อชิ้น</label>
+
+<input
+id="newIngPrice"
+type="number"
+min="0"
+step=".01"
+value="0"
+oninput="calcNewIngredient()">
+
+</div>
+
+</div>
+
+
+<div class="card"
+style="background:#fff8fb;margin:0">
+
+<div class="muted">
+จำนวน × ราคาซื้อต่อชิ้น = ต้นทุน
+</div>
+
+<strong
+id="newIngEquation"
+style="font-size:22px">
+1 × ฿0.00 = ฿0.00
+</strong>
+
+</div>
+
+
+<div class="field" style="margin-top:12px">
+
+<label>เปิดใช้ในต้นทุนไหม?</label>
 
 <select id="newIngInclude">
 
 <option value="yes">
-✅ ใส่ — รวมต้นทุน
+เปิด — รวมต้นทุน
 </option>
 
 <option value="no">
-⭕ ไม่ใส่ — ไม่รวมต้นทุน
+ปิด — ไม่รวมต้นทุน
 </option>
 
 </select>
@@ -1688,12 +1824,14 @@ value="1">
 
 <div class="modalActions">
 
-<button class="btn"
+<button
+class="btn"
 onclick="closeIngredientModal()">
 ยกเลิก
 </button>
 
-<button class="primary"
+<button
+class="primary"
 onclick="createIngredient()">
 💾 บันทึกวัตถุดิบ
 </button>
@@ -1705,11 +1843,10 @@ onclick="createIngredient()">
 </div>
 
 
-
 <script>
 
 /* =====================================================
- STORAGE
+   STORAGE
 ===================================================== */
 
 const TX_KEY = "myAccountTransactions_v8";
@@ -1717,25 +1854,30 @@ const MENU_KEY = "myAccountMenus_v8";
 const SHOP_KEY = "myAccountShop_v8";
 
 let transactions =
-JSON.parse(localStorage.getItem(TX_KEY) || "[]");
+JSON.parse(
+localStorage.getItem(TX_KEY) || "[]"
+);
 
 let menus =
-JSON.parse(localStorage.getItem(MENU_KEY) || "[]");
+JSON.parse(
+localStorage.getItem(MENU_KEY) || "[]"
+);
 
 let shop =
-JSON.parse(localStorage.getItem(SHOP_KEY) || '{"title":"📒 สมุดบัญชี"}');
+JSON.parse(
+localStorage.getItem(SHOP_KEY) || '{"title":"สมุดบัญชี"}'
+);
 
 let txType = "income";
 let currentPeriod = "day";
+let summaryView = "detail";
 
 let currentMenuId = null;
 let currentIngredientId = null;
 
-let draggedIngredientId = null;
-
 
 /* =====================================================
- HELPERS
+   HELPERS
 ===================================================== */
 
 function $(id){
@@ -1745,10 +1887,23 @@ function $(id){
 
 function money(n){
   return "฿" +
-  Number(n || 0).toLocaleString("th-TH",{
-    minimumFractionDigits:2,
-    maximumFractionDigits:2
-  });
+  Number(n || 0).toLocaleString(
+    "th-TH",
+    {
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    }
+  );
+}
+
+
+function num(n){
+  return Number(n || 0).toLocaleString(
+    "th-TH",
+    {
+      maximumFractionDigits:2
+    }
+  );
 }
 
 
@@ -1762,6 +1917,16 @@ function today(){
   "-" +
   String(d.getDate()).padStart(2,"0");
 
+}
+
+
+function uid(){
+
+  return Date.now() +
+  "_" +
+  Math.random()
+  .toString(36)
+  .slice(2);
 }
 
 
@@ -1785,38 +1950,57 @@ function saveAll(){
 }
 
 
-function uid(){
-
-  return Date.now() +
-  Math.random()
-  .toString(36)
-  .slice(2);
-
-}
-
-
 function escapeHTML(s){
 
   const div =
   document.createElement("div");
 
-  div.textContent = s || "";
+  div.textContent =
+  s == null ? "" : String(s);
 
   return div.innerHTML;
 
 }
 
 
-function safeCover(value){
+function escapeAttr(s){
 
-  if(!value) return "";
+  return escapeHTML(s)
+  .replace(/"/g,"&quot;")
+  .replace(/'/g,"&#039;");
 
-  return escapeHTML(value);
 }
 
 
 /* =====================================================
- PAGE NAV
+   SHOP TITLE
+===================================================== */
+
+function saveShopTitle(){
+
+  const value =
+  $("shopTitle").value.trim();
+
+  shop.title =
+  value || "สมุดบัญชี";
+
+  $("shopTitle").value =
+  shop.title;
+
+  saveAll();
+
+}
+
+
+function editShopTitle(){
+
+  $("shopTitle").focus();
+
+}
+
+
+/* =====================================================
+   PAGE NAV
 ===================================================== */
 
 function showPage(page,button){
@@ -1830,6 +2014,7 @@ function showPage(page,button){
   $("page-"+page)
   .classList.add("active");
 
+
   document
   .querySelectorAll(".nav button")
   .forEach(x =>
@@ -1838,65 +2023,40 @@ function showPage(page,button){
 
   button.classList.add("active");
 
-  if(page==="summary")
+
+  if(page === "summary"){
     renderSummary();
+  }
 
-  if(page==="map")
-    renderAllTransactions();
+  if(page === "all"){
+    renderAllList();
+  }
 
-  if(page==="cost")
+  if(page === "cost"){
     showCostHome();
+  }
 
 }
 
 
 /* =====================================================
- ACCOUNT
+   ACCOUNT
 ===================================================== */
-
-function editShopTitle(){
-
-  const value =
-  prompt(
-    "แก้ชื่อที่มุมซ้ายบน",
-    shop.title || "📒 สมุดบัญชี"
-  );
-
-  if(value===null)
-    return;
-
-  shop.title =
-  value.trim() || "📒 สมุดบัญชี";
-
-  $("accountTitle").textContent =
-  shop.title;
-
-  saveAll();
-
-}
-
-
-$("accountTitle")
-.addEventListener(
-  "click",
-  editShopTitle
-);
-
 
 function setTxType(type){
 
-  txType=type;
+  txType = type;
 
   $("incomeBtn")
   .classList.toggle(
     "active",
-    type==="income"
+    type === "income"
   );
 
   $("expenseBtn")
   .classList.toggle(
     "active",
-    type==="expense"
+    type === "expense"
   );
 
 }
@@ -1904,17 +2064,18 @@ function setTxType(type){
 
 function changeTxQty(amount){
 
-  const input=$("txQty");
+  const input =
+  $("txQty");
 
   let value =
-  Number(input.value)||0;
+  Number(input.value) || 0;
 
   value += amount;
 
-  if(value<.01)
-    value=.01;
+  if(value < .01)
+    value = .01;
 
-  input.value=value;
+  input.value = value;
 
   calcTxTotal();
 
@@ -1924,13 +2085,13 @@ function changeTxQty(amount){
 function calcTxTotal(){
 
   const q =
-  Number($("txQty").value)||0;
+  Number($("txQty").value) || 0;
 
   const p =
-  Number($("txPrice").value)||0;
+  Number($("txPrice").value) || 0;
 
   $("txTotal").textContent =
-  money(q*p);
+  `${num(q)} × ${money(p)} = ${money(q*p)}`;
 
 }
 
@@ -1949,38 +2110,56 @@ function saveTx(){
   const date =
   $("txDate").value;
 
+
   if(!item){
+
     alert("กรุณาใส่รายการ");
     return;
+
   }
 
-  if(!qty || qty<=0){
+  if(!qty || qty <= 0){
+
     alert("กรุณาใส่จำนวน");
     return;
+
   }
 
-  if(price<0 || isNaN(price)){
+  if(price < 0 || isNaN(price)){
+
     alert("กรุณาใส่ราคา");
     return;
+
   }
 
   if(!date){
+
     alert("กรุณาเลือกวันที่");
     return;
+
   }
+
 
   transactions.push({
 
     id:uid(),
+
     type:txType,
+
     item,
+
     qty,
+
     price,
+
     total:qty*price,
+
     date,
+
     note:$("txNote").value.trim()
 
   });
+
 
   saveAll();
 
@@ -1994,7 +2173,7 @@ function saveTx(){
 
   renderAccount();
   renderSummary();
-  renderAllTransactions();
+  renderAllList();
 
 }
 
@@ -2006,124 +2185,93 @@ function deleteTx(id){
 
   transactions =
   transactions.filter(
-    x=>x.id!==id
+    x => x.id !== id
   );
 
   saveAll();
 
   renderAccount();
   renderSummary();
-  renderAllTransactions();
+  renderAllList();
 
 }
 
 
-function editTransaction(id){
+function updateTx(id,field,value){
 
-  const t =
+  const tx =
   transactions.find(
-    x=>x.id===id
+    x => x.id === id
   );
 
-  if(!t)
+  if(!tx)
     return;
+
+  if(field === "item"){
+
+    tx.item =
+    value.trim() || "รายการ";
+
+  }
+
+  if(field === "qty"){
+
+    tx.qty =
+    Math.max(.01,Number(value)||.01);
+
+  }
+
+  if(field === "price"){
+
+    tx.price =
+    Math.max(0,Number(value)||0);
+
+  }
+
+  tx.total =
+  Number(tx.qty) *
+  Number(tx.price);
+
+  saveAll();
+
+  renderAccount();
+  renderSummary();
+  renderAllList();
+
+}
+
+
+function editTxRow(id){
 
   const item =
-  prompt("แก้ชื่อรายการ",t.item);
-
-  if(item===null)
-    return;
+  $("editItem_"+id);
 
   const qty =
-  Number(
-    prompt("แก้จำนวน",t.qty)
-  );
-
-  if(!qty || qty<=0)
-    return;
+  $("editQty_"+id);
 
   const price =
-  Number(
-    prompt("แก้ราคา / หน่วย",t.price)
+  $("editPrice_"+id);
+
+  if(!item)
+    return;
+
+  updateTx(
+    id,
+    "item",
+    item.value
   );
 
-  if(isNaN(price) || price<0)
-    return;
-
-  const date =
-  prompt("แก้วันที่ YYYY-MM-DD",t.date);
-
-  if(!date)
-    return;
-
-  t.item=item.trim() || t.item;
-  t.qty=qty;
-  t.price=price;
-  t.total=qty*price;
-  t.date=date;
-
-  saveAll();
-
-  renderAccount();
-  renderSummary();
-  renderAllTransactions();
-
-}
-
-
-function changeExistingTxQty(id,delta){
-
-  const t =
-  transactions.find(
-    x=>x.id===id
+  updateTx(
+    id,
+    "qty",
+    qty.value
   );
 
-  if(!t)
-    return;
-
-  let q =
-  Number(t.qty)||0;
-
-  q+=delta;
-
-  if(q<.01)
-    q=.01;
-
-  t.qty=q;
-  t.total=q*Number(t.price||0);
-
-  saveAll();
-
-  renderAccount();
-  renderSummary();
-  renderAllTransactions();
-
-}
-
-
-function editTxQtyInput(id,value){
-
-  const t =
-  transactions.find(
-    x=>x.id===id
+  updateTx(
+    id,
+    "price",
+    price.value
   );
-
-  if(!t)
-    return;
-
-  let q=Number(value);
-
-  if(!q || q<.01)
-    q=.01;
-
-  t.qty=q;
-  t.total=q*Number(t.price||0);
-
-  saveAll();
-
-  renderAccount();
-  renderSummary();
-  renderAllTransactions();
 
 }
 
@@ -2133,88 +2281,129 @@ function renderAccount(){
   let income=0;
   let expense=0;
 
+
   transactions.forEach(t=>{
 
     if(t.type==="income")
-      income+=Number(t.total||0);
+      income += Number(t.total||0);
 
     else
-      expense+=Number(t.total||0);
+      expense += Number(t.total||0);
 
   });
 
-  $("income").textContent=money(income);
-  $("expense").textContent=money(expense);
-  $("balance").textContent=
+
+  $("income").textContent =
+  money(income);
+
+  $("expense").textContent =
+  money(expense);
+
+  $("balance").textContent =
   money(income-expense);
+
 
   const list =
   [...transactions]
   .sort(
     (a,b)=>
-      new Date(b.date)-new Date(a.date)
+    new Date(b.date)-new Date(a.date)
   );
+
 
   $("txList").innerHTML =
   list.length
+
   ?
+
   list.map(t=>`
 
-    <div class="tx">
+  <div class="tx">
 
-      <div class="ingredientIcon">
-        ${t.type==="income"?"💚":"❤️"}
-      </div>
+    <div class="menuCover">
+      ${t.type==="income"?"💚":"❤️"}
+    </div>
 
-      <div class="txInfo">
+    <div class="txInfo">
 
-        <strong>
-          ${escapeHTML(t.item)}
-        </strong>
+      <strong>
+        ${escapeHTML(t.item)}
+      </strong>
 
-        <small>
-          ${t.date}
-          ·
-          ${money(t.price)}
-          ×
-          ${Number(t.qty).toLocaleString("th-TH")}
-          =
-          ${money(t.total)}
-        </small>
+      <small>
+        ${t.date}
+        ·
+        ${num(t.qty)} × ${money(t.price)}
+        =
+        ${money(t.total)}
+      </small>
 
-      </div>
+      <div class="txEdit">
 
-      <div>
+        <input
+          id="editItem_${t.id}"
+          value="${escapeAttr(t.item)}"
+          title="แก้ชื่อรายการ">
 
-        <div class="txAmount ${t.type==="income"?"in":"out"}">
-          ${t.type==="income"?"+":"-"}${money(t.total)}
-        </div>
+        <input
+          id="editQty_${t.id}"
+          type="number"
+          min=".01"
+          step=".01"
+          value="${t.qty}"
+          title="แก้จำนวน">
+
+        <input
+          id="editPrice_${t.id}"
+          type="number"
+          min="0"
+          step=".01"
+          value="${t.price}"
+          title="แก้ราคา">
 
         <button
-          class="smallAction"
-          onclick="editTransaction('${t.id}')">
-          แก้ไข
-        </button>
-
-        <button
-          class="danger"
-          onclick="deleteTx('${t.id}')">
-          ลบ
+          class="smallBtn"
+          onclick="editTxRow('${t.id}')">
+          บันทึก
         </button>
 
       </div>
 
     </div>
 
+    <div>
+
+      <div
+        class="txAmount ${t.type==="income"?"in":"out"}">
+
+        ${t.type==="income"?"+":"-"}
+        ${money(t.total)}
+
+      </div>
+
+      <button
+        class="danger"
+        onclick="deleteTx('${t.id}')">
+        ลบ
+      </button>
+
+    </div>
+
+  </div>
+
   `).join("")
+
   :
-  `<div class="muted">ยังไม่มีรายการ</div>`;
+
+  `<div class="muted">
+    ยังไม่มีรายการ
+  </div>`;
 
 }
 
 
 /* =====================================================
- SUMMARY
+   SUMMARY
 ===================================================== */
 
 function setPeriod(p){
@@ -2235,6 +2424,242 @@ function setPeriod(p){
 }
 
 
+function setSummaryView(v){
+
+  summaryView=v;
+
+  document
+  .querySelectorAll(".viewBtn")
+  .forEach(x =>
+    x.classList.toggle(
+      "active",
+      x.dataset.view===v
+    )
+  );
+
+  renderSummary();
+
+}
+
+
+function renderSummarySelector(){
+
+  if(currentPeriod==="day"){
+
+    $("summarySelector").innerHTML=`
+
+      <label>เลือกวันที่</label>
+
+      <input
+        id="summaryDay"
+        type="date"
+        value="${getSummaryDate()}"
+        onchange="renderSummary()">
+
+      <p class="muted">
+        แสดงเฉพาะวันเดียว
+      </p>
+
+    `;
+
+  }
+
+
+  if(currentPeriod==="week"){
+
+    const d =
+    getSummaryDate();
+
+    $("summarySelector").innerHTML=`
+
+      <label>เลือกวันที่ในสัปดาห์</label>
+
+      <input
+        id="summaryWeek"
+        type="date"
+        value="${d}"
+        onchange="renderSummary()">
+
+      <p class="muted">
+        ระบบจะแสดง อาทิตย์ – เสาร์
+        ของสัปดาห์นั้น
+      </p>
+
+    `;
+
+  }
+
+
+  if(currentPeriod==="month"){
+
+    const d =
+    getSummaryDate()
+    .split("-");
+
+    $("summarySelector").innerHTML=`
+
+      <label>เลือกเดือน / ปี</label>
+
+      <select
+        id="summaryMonth"
+        onchange="renderSummary()">
+
+        ${makeMonthOptions(
+          Number(d[1]),
+          Number(d[0])
+        )}
+
+      </select>
+
+    `;
+
+  }
+
+
+  if(currentPeriod==="year"){
+
+    const year =
+    Number(
+      getSummaryDate().slice(0,4)
+    );
+
+    $("summarySelector").innerHTML=`
+
+      <label>เลือกปี</label>
+
+      <select
+        id="summaryYear"
+        onchange="renderSummary()">
+
+        ${makeYearOptions(year)}
+
+      </select>
+
+    `;
+
+  }
+
+}
+
+
+function getSummaryDate(){
+
+  const saved =
+  localStorage.getItem(
+    "summaryDate_v8"
+  );
+
+  return saved || today();
+
+}
+
+
+function saveSummaryDate(){
+
+  let value=today();
+
+  if(currentPeriod==="day")
+    value=$("summaryDay")?.value || today();
+
+  if(currentPeriod==="week")
+    value=$("summaryWeek")?.value || today();
+
+  if(currentPeriod==="month"){
+
+    const v=
+    $("summaryMonth")?.value;
+
+    if(v)
+      value=v+"-01";
+
+  }
+
+  if(currentPeriod==="year"){
+
+    const y=
+    $("summaryYear")?.value;
+
+    if(y)
+      value=y+"-01-01";
+
+  }
+
+  localStorage.setItem(
+    "summaryDate_v8",
+    value
+  );
+
+  return value;
+
+}
+
+
+function makeMonthOptions(month,year){
+
+  const names=[
+    "มกราคม",
+    "กุมภาพันธ์",
+    "มีนาคม",
+    "เมษายน",
+    "พฤษภาคม",
+    "มิถุนายน",
+    "กรกฎาคม",
+    "สิงหาคม",
+    "กันยายน",
+    "ตุลาคม",
+    "พฤศจิกายน",
+    "ธันวาคม"
+  ];
+
+  let html="";
+
+  for(let y=2026;y<=2035;y++){
+
+    for(let m=1;m<=12;m++){
+
+      const value =
+      `${y}-${String(m).padStart(2,"0")}`;
+
+      html += `
+        <option
+          value="${value}"
+          ${(m===month && y===year)?"selected":""}>
+          ${names[m-1]} ${y+543}
+        </option>
+      `;
+
+    }
+
+  }
+
+  return html;
+
+}
+
+
+function makeYearOptions(selected){
+
+  let html="";
+
+  for(let y=2026;y<=2035;y++){
+
+    html+=`
+
+      <option
+        value="${y}"
+        ${y===selected?"selected":""}>
+        ${y+543}
+      </option>
+
+    `;
+
+  }
+
+  return html;
+
+}
+
+
 function dateOnly(s){
 
   return new Date(
@@ -2246,12 +2671,14 @@ function dateOnly(s){
 
 function getWeekStart(date){
 
-  const d=new Date(date);
+  const d =
+  new Date(date);
 
-  const day=d.getDay();
+  const day =
+  d.getDay();
 
   const diff =
-  day===0 ? -6 : 1-day;
+  day===0 ? 0 : -day;
 
   d.setDate(
     d.getDate()+diff
@@ -2264,144 +2691,19 @@ function getWeekStart(date){
 }
 
 
-function renderSummaryPicker(){
-
-  const picker=$("summaryPicker");
-
-  if(currentPeriod==="day"){
-
-    picker.innerHTML=`
-
-      <div class="dateSelect">
-
-        <input
-          id="summaryDate"
-          type="date"
-          value="${today()}"
-          onchange="renderSummary()">
-
-        <button
-          class="btn"
-          onclick="summaryToday()">
-          วันนี้
-        </button>
-
-      </div>
-
-    `;
-
-  }
-
-
-  if(currentPeriod==="week"){
-
-    picker.innerHTML=`
-
-      <label>เลือกวันที่ในสัปดาห์</label>
-
-      <input
-        id="summaryWeekDate"
-        type="date"
-        value="${today()}"
-        onchange="renderSummary()">
-
-      <p class="muted">
-        ระบบจะแสดงเฉพาะวันจันทร์–อาทิตย์
-        ของสัปดาห์นั้น
-      </p>
-
-    `;
-
-  }
-
-
-  if(currentPeriod==="month"){
-
-    const d=new Date();
-
-    const value =
-    d.getFullYear()+
-    "-"+
-    String(d.getMonth()+1)
-    .padStart(2,"0");
-
-    picker.innerHTML=`
-
-      <label>เลือกเดือน / ปี</label>
-
-      <input
-        id="summaryMonth"
-        type="month"
-        value="${value}"
-        onchange="renderSummary()">
-
-    `;
-
-  }
-
-
-  if(currentPeriod==="year"){
-
-    const year =
-    new Date().getFullYear();
-
-    let options="";
-
-    for(
-      let y=2026;
-      y<=2035;
-      y++
-    ){
-
-      options +=
-      `<option value="${y}"
-      ${y===year?"selected":""}>
-      ${y}
-      </option>`;
-
-    }
-
-    picker.innerHTML=`
-
-      <label>เลือกปี</label>
-
-      <select
-        id="summaryYear"
-        onchange="renderSummary()">
-
-        ${options}
-
-      </select>
-
-    `;
-
-  }
-
-}
-
-
-function summaryToday(){
-
-  if($("summaryDate"))
-    $("summaryDate").value=today();
-
-  renderSummary();
-
-}
-
-
 function filteredSummary(){
 
-  let date;
+  const selected =
+  saveSummaryDate();
+
+  const d =
+  dateOnly(selected);
+
 
   if(currentPeriod==="day"){
 
-    const value =
-    $("summaryDate")?.value ||
-    today();
-
     return transactions.filter(
-      t=>t.date===value
+      t => t.date === selected
     );
 
   }
@@ -2409,15 +2711,11 @@ function filteredSummary(){
 
   if(currentPeriod==="week"){
 
-    const value =
-    $("summaryWeekDate")?.value ||
-    today();
+    const start =
+    getWeekStart(d);
 
-    date=dateOnly(value);
-
-    const start=getWeekStart(date);
-
-    const end=new Date(start);
+    const end =
+    new Date(start);
 
     end.setDate(
       end.getDate()+7
@@ -2425,7 +2723,8 @@ function filteredSummary(){
 
     return transactions.filter(t=>{
 
-      const td=dateOnly(t.date);
+      const td =
+      dateOnly(t.date);
 
       return td>=start && td<end;
 
@@ -2436,48 +2735,46 @@ function filteredSummary(){
 
   if(currentPeriod==="month"){
 
-    const value =
-    $("summaryMonth")?.value;
-
-    if(!value)
-      return [];
-
-    const [y,m]=value.split("-");
-
     return transactions.filter(t=>{
 
-      const d=dateOnly(t.date);
+      const td =
+      dateOnly(t.date);
 
-      return d.getFullYear()===Number(y)
+      return
+      td.getFullYear()===d.getFullYear()
       &&
-      d.getMonth()+1===Number(m);
+      td.getMonth()===d.getMonth();
 
     });
 
   }
 
 
-  const y =
-  Number(
-    $("summaryYear")?.value ||
-    new Date().getFullYear()
-  );
+  return transactions.filter(t=>{
 
-  return transactions.filter(t=>
-    dateOnly(t.date).getFullYear()===y
-  );
+    const td =
+    dateOnly(t.date);
+
+    return
+    td.getFullYear()===d.getFullYear();
+
+  });
 
 }
 
 
 function renderSummary(){
 
-  renderSummaryPicker();
+  renderSummarySelector();
 
-  const data=filteredSummary();
+
+  const data =
+  filteredSummary();
+
 
   let income=0;
   let expense=0;
+
 
   data.forEach(t=>{
 
@@ -2489,18 +2786,18 @@ function renderSummary(){
 
   });
 
-  $("sumIncome").textContent=money(income);
-  $("sumExpense").textContent=money(expense);
-  $("sumBalance").textContent=
+
+  $("sumIncome").textContent =
+  money(income);
+
+  $("sumExpense").textContent =
+  money(expense);
+
+  $("sumBalance").textContent =
   money(income-expense);
 
 
-  const display =
-  $("summaryDisplay")?.value ||
-  "detail";
-
-
-  if(display==="number"){
+  if(summaryView==="numbers"){
 
     $("summaryList").innerHTML=`
 
@@ -2536,15 +2833,12 @@ function renderSummary(){
     $("summaryList").innerHTML =
     data.length
     ?
+
     data.map(t=>`
 
-      <div class="tx">
+      <div class="allListItem">
 
-        <div class="ingredientIcon">
-          ${t.type==="income"?"💚":"❤️"}
-        </div>
-
-        <div class="txInfo">
+        <div class="allInfo">
 
           <strong>
             ${escapeHTML(t.item)}
@@ -2553,31 +2847,31 @@ function renderSummary(){
           <small>
             ${t.date}
             ·
-            ${money(t.price)}
-            ×
-            ${Number(t.qty).toLocaleString("th-TH")}
-            =
-            ${money(t.total)}
+            ${num(t.qty)} × ${money(t.price)}
           </small>
 
         </div>
 
-        <div class="txAmount ${t.type==="income"?"in":"out"}">
+        <strong
+          class="${t.type==="income"?"in":"out"}">
 
           ${t.type==="income"?"+":"-"}
           ${money(t.total)}
 
-        </div>
+        </strong>
 
       </div>
 
     `).join("")
+
     :
+
     `<div class="muted">
       ไม่มีรายการในช่วงนี้
     </div>`;
 
   }
+
 
   renderSummaryChart(data);
 
@@ -2587,6 +2881,7 @@ function renderSummary(){
 function renderSummaryChart(data){
 
   const groups={};
+
 
   data.forEach(t=>{
 
@@ -2607,12 +2902,15 @@ function renderSummaryChart(data){
 
   });
 
-  const keys=
+
+  const keys =
   Object.keys(groups).sort();
 
-  const max=Math.max(
+
+  const max =
+  Math.max(
     1,
-    ...keys.map(k=>
+    ...keys.map(k =>
       Math.max(
         groups[k].income,
         groups[k].expense
@@ -2620,9 +2918,12 @@ function renderSummaryChart(data){
     )
   );
 
-  $("summaryChart").innerHTML=
+
+  $("summaryChart").innerHTML =
   keys.length
+
   ?
+
   keys.map(k=>`
 
     <div class="chartCol">
@@ -2652,7 +2953,9 @@ function renderSummaryChart(data){
     </div>
 
   `).join("")
+
   :
+
   `<div class="muted">
     ไม่มีข้อมูลสำหรับกราฟ
   </div>`;
@@ -2661,26 +2964,29 @@ function renderSummaryChart(data){
 
 
 /* =====================================================
- รวมรายการ
+   ALL LIST
 ===================================================== */
 
-function renderAllTransactions(){
+function renderAllList(){
 
   const search =
   ($("allSearch")?.value || "")
   .trim()
   .toLowerCase();
 
+
   let list =
   [...transactions]
   .sort(
     (a,b)=>
-      new Date(b.date)-new Date(a.date)
+    new Date(b.date)-new Date(a.date)
   );
+
 
   if(search){
 
-    list=list.filter(t=>
+    list =
+    list.filter(t =>
       String(t.item)
       .toLowerCase()
       .includes(search)
@@ -2688,18 +2994,17 @@ function renderAllTransactions(){
 
   }
 
-  $("allTransactionList").innerHTML =
+
+  $("allList").innerHTML =
   list.length
+
   ?
+
   list.map(t=>`
 
-    <div class="tx">
+    <div class="allListItem">
 
-      <div class="ingredientIcon">
-        ${t.type==="income"?"💚":"❤️"}
-      </div>
-
-      <div class="txInfo">
+      <div class="allInfo">
 
         <strong>
           ${escapeHTML(t.item)}
@@ -2708,26 +3013,27 @@ function renderAllTransactions(){
         <small>
           ${t.date}
           ·
-          ${money(t.price)}
-          ×
-          ${Number(t.qty).toLocaleString("th-TH")}
+          ${num(t.qty)} × ${money(t.price)}
           =
           ${money(t.total)}
         </small>
 
       </div>
 
-      <div class="txAmount ${t.type==="income"?"in":"out"}">
+      <strong
+        class="${t.type==="income"?"in":"out"}">
 
         ${t.type==="income"?"+":"-"}
         ${money(t.total)}
 
-      </div>
+      </strong>
 
     </div>
 
   `).join("")
+
   :
+
   `<div class="muted">
     ไม่พบรายการ
   </div>`;
@@ -2736,7 +3042,7 @@ function renderAllTransactions(){
 
 
 /* =====================================================
- COST HOME
+   COST HOME
 ===================================================== */
 
 function showCostHome(){
@@ -2748,6 +3054,9 @@ function showCostHome(){
 
   $("ingredientDetail")
   .classList.remove("active");
+
+  currentMenuId=null;
+  currentIngredientId=null;
 
   renderMenus();
 
@@ -2780,7 +3089,7 @@ function addMenu(){
 
     name,
 
-    cover,
+    cover:cover || "",
 
     ingredients:[]
 
@@ -2800,12 +3109,12 @@ function addMenu(){
 function menuCost(menu){
 
   return (menu.ingredients||[])
-  .filter(
-    i=>i.include!=="no"
+  .filter(i =>
+    i.include !== "no"
   )
   .reduce(
     (sum,i)=>
-      sum+ingredientCost(i),
+    sum + ingredientCost(i),
     0
   );
 
@@ -2817,13 +3126,13 @@ function ingredientCost(i){
   if(i.include==="no")
     return 0;
 
+  const qty =
+  Number(i.pieces)||0;
+
   const price =
   Number(i.price)||0;
 
-  const pieces =
-  Number(i.pieces)||0;
-
-  return price*pieces;
+  return qty*price;
 
 }
 
@@ -2832,45 +3141,45 @@ function renderMenus(){
 
   $("menuList").innerHTML =
   menus.length
+
   ?
+
   menus.map(m=>{
 
-    const cost=menuCost(m);
+    const cost =
+    menuCost(m);
 
-    const count=
-    (m.ingredients||[])
-    .filter(
-      i=>i.include!=="no"
-    ).length;
+    const ingredients =
+    m.ingredients || [];
 
     return `
 
-      <div class="menuCard">
+      <div
+        class="menuCard"
+        onclick="openMenu('${m.id}')">
 
-        <div class="menuRow">
+        <div class="menuTop">
 
-          <div
-            class="menuLeft"
-            onclick="openMenu('${m.id}')">
+          <div class="menuLeft">
 
             <div class="menuCover">
 
-              ${safeCover(m.cover)}
+              ${
+                m.cover
+                ? escapeHTML(m.cover)
+                : "＋"
+              }
 
             </div>
 
-            <div style="min-width:0">
+            <div>
 
               <div class="menuName">
                 ${escapeHTML(m.name)}
               </div>
 
-              <div
-                class="muted"
-                style="margin-top:5px">
-
-                วัตถุดิบ ${count} รายการ
-
+              <div class="menuIngCount">
+                วัตถุดิบ ${ingredients.length} รายการ
               </div>
 
             </div>
@@ -2882,16 +3191,16 @@ function renderMenus(){
 
             <div class="menuCost">
 
-              <strong>
+              <div class="menuCostLabel">
                 รวมต้นทุน ${money(cost)}
-              </strong>
+              </div>
 
-              <small>
-                ${count} รายการ
-              </small>
+              <div class="menuIngCount">
+                ${ingredients.filter(i=>i.include!=="no").length}
+                รายการที่เปิดใช้
+              </div>
 
             </div>
-
 
             <button
               class="danger"
@@ -2906,12 +3215,46 @@ function renderMenus(){
 
         </div>
 
+
+        <div class="menuActions">
+
+          <button
+            class="smallBtn"
+            onclick="
+              event.stopPropagation();
+              editMenuNameById('${m.id}')
+            ">
+            ✏️ แก้ชื่อ
+          </button>
+
+          <button
+            class="smallBtn"
+            onclick="
+              event.stopPropagation();
+              editMenuCoverById('${m.id}')
+            ">
+            🖼️ รูป
+          </button>
+
+          <button
+            class="smallBtn"
+            onclick="
+              event.stopPropagation();
+              duplicateMenu('${m.id}')
+            ">
+            📋 ทำสำเนา
+          </button>
+
+        </div>
+
       </div>
 
     `;
 
   }).join("")
+
   :
+
   `<div class="muted">
     ยังไม่มีรายการขาย
   </div>`;
@@ -2926,10 +3269,12 @@ function deleteMenu(id){
   ))
     return;
 
-  menus=
+
+  menus =
   menus.filter(
     m=>m.id!==id
   );
+
 
   saveAll();
 
@@ -2938,11 +3283,191 @@ function deleteMenu(id){
 }
 
 
+function editMenuNameById(id){
+
+  const menu =
+  menus.find(m=>m.id===id);
+
+  if(!menu)
+    return;
+
+
+  const name =
+  prompt(
+    "แก้ไขชื่อรายการขาย",
+    menu.name
+  );
+
+
+  if(name===null)
+    return;
+
+
+  const value =
+  name.trim();
+
+
+  if(!value)
+    return;
+
+
+  menu.name=value;
+
+  saveAll();
+
+  renderMenus();
+
+
+  if(currentMenuId===id)
+    renderMenuDetail();
+
+}
+
+
+function editMenuName(){
+
+  if(currentMenuId)
+    editMenuNameById(
+      currentMenuId
+    );
+
+}
+
+
+function editMenuCoverById(id){
+
+  const menu =
+  menus.find(m=>m.id===id);
+
+  if(!menu)
+    return;
+
+
+  const cover =
+  prompt(
+    "ใส่รูป/อิโมจิที่ต้องการ\nเว้นว่างเพื่อลบ",
+    menu.cover || ""
+  );
+
+
+  if(cover===null)
+    return;
+
+
+  menu.cover =
+  cover.trim();
+
+
+  saveAll();
+
+  renderMenus();
+
+
+  if(currentMenuId===id)
+    renderMenuDetail();
+
+}
+
+
+function editMenuCover(){
+
+  if(currentMenuId)
+    editMenuCoverById(
+      currentMenuId
+    );
+
+}
+
+
+/* =====================================================
+   DUPLICATE MENU
+===================================================== */
+
+function duplicateMenu(id){
+
+  const original =
+  menus.find(
+    m=>m.id===id
+  );
+
+  if(!original)
+    return;
+
+
+  const copy = {
+
+    id:uid(),
+
+    name:
+      original.name +
+      " (สำเนา)",
+
+    cover:
+      original.cover || "",
+
+    ingredients:
+      (original.ingredients||[])
+      .map(i=>({
+
+        id:uid(),
+
+        name:
+          i.name || "",
+
+        cover:
+          i.cover || "",
+
+        pieces:
+          Number(i.pieces)||0,
+
+        price:
+          Number(i.price)||0,
+
+        include:
+          i.include==="no"
+          ? "no"
+          : "yes"
+
+      }))
+
+  };
+
+
+  menus.push(copy);
+
+  saveAll();
+
+  renderMenus();
+
+  alert(
+    "คัดลอกเรียบร้อยแล้ว 💗\nสามารถแก้ไขสำเนาได้โดยไม่กระทบต้นฉบับ"
+  );
+
+}
+
+
+function duplicateCurrentMenu(){
+
+  if(currentMenuId){
+
+    duplicateMenu(
+      currentMenuId
+    );
+
+  }
+
+}
+
+
+/* =====================================================
+   OPEN MENU
+===================================================== */
+
 function openMenu(id){
 
   currentMenuId=id;
 
-  const menu=
+  const menu =
   menus.find(
     m=>m.id===id
   );
@@ -2961,63 +3486,7 @@ function openMenu(id){
   .classList.remove("active");
 
 
-  $("editMenuName").value=
-  menu.name||"";
-
-  $("editMenuCover").value=
-  menu.cover||"";
-
-
-  updateMenuHeader();
-
   renderMenuDetail();
-
-}
-
-
-function updateMenuHeader(){
-
-  const name=
-  $("editMenuName").value ||
-  "รายการขาย";
-
-  const cover=
-  $("editMenuCover").value;
-
-  $("detailMenuName")
-  .textContent=name;
-
-  $("detailMenuCover")
-  .innerHTML=
-  safeCover(cover);
-
-}
-
-
-function saveMenuInfo(){
-
-  const menu=
-  menus.find(
-    m=>m.id===currentMenuId
-  );
-
-  if(!menu)
-    return;
-
-  menu.name=
-  $("editMenuName")
-  .value.trim() ||
-  "รายการขาย";
-
-  menu.cover=
-  $("editMenuCover")
-  .value.trim();
-
-
-  saveAll();
-
-  renderMenus();
-  updateMenuHeader();
 
 }
 
@@ -3029,26 +3498,13 @@ function backToMenus(){
 }
 
 
-function backToMenuDetail(){
-
-  $("ingredientDetail")
-  .classList.remove("active");
-
-  $("menuDetail")
-  .classList.add("active");
-
-  renderMenuDetail();
-
-}
-
-
 /* =====================================================
- MENU DETAIL
+   MENU DETAIL
 ===================================================== */
 
 function renderMenuDetail(){
 
-  const menu=
+  const menu =
   menus.find(
     m=>m.id===currentMenuId
   );
@@ -3057,168 +3513,200 @@ function renderMenuDetail(){
     return;
 
 
-  const active=
-  (menu.ingredients||[])
-  .filter(
-    i=>i.include!=="no"
-  );
+  $("detailMenuName")
+  .textContent =
+  menu.name;
 
-  const cost=
+
+  $("detailMenuCover")
+  .textContent =
+  menu.cover || "＋";
+
+
+  const cost =
   menuCost(menu);
 
 
-  $("menuCost").textContent=
-  money(cost);
+  const list =
+  menu.ingredients || [];
+
 
   $("menuIngredientCount")
-  .textContent=
-  active.length+" รายการ";
-
-  $("menuCostStatus")
-  .textContent=
-  active.length
-  ?"กำลังใช้งาน"
-  :"ยังไม่มี";
+  .textContent =
+  list.length+" รายการ";
 
 
-  renderIngredientList(menu);
+  $("menuCost")
+  .textContent =
+  money(cost);
+
+
+  $("menuNameSmall")
+  .textContent =
+  menu.name;
+
+
+  renderIngredientList();
 
 }
 
 
-function renderIngredientList(menu){
+/* =====================================================
+   INGREDIENT LIST
+===================================================== */
 
-  const arr=
-  menu.ingredients||[];
+function renderIngredientList(){
+
+  const menu =
+  menus.find(
+    m=>m.id===currentMenuId
+  );
+
+  if(!menu)
+    return;
 
 
-  $("ingredientList").innerHTML=
-  arr.length
+  const list =
+  menu.ingredients || [];
+
+
+  $("ingredientList").innerHTML =
+  list.length
+
   ?
-  arr.map((i,index)=>`
 
-    <div
-      class="ingredientCard"
-      draggable="false"
-      data-id="${i.id}"
-      ondragover="allowIngredientDrop(event)"
-      ondrop="dropIngredient(event,'${i.id}')"
-      ondragend="endIngredientDrag()">
+  list.map((i,index)=>{
 
-      <button
-        class="dragHandle"
-        draggable="true"
-        title="ลากเพื่อเปลี่ยนอันดับ"
-        ondragstart="startIngredientDrag(event,'${i.id}')">
-        ☰
-      </button>
+    const cost =
+    ingredientCost(i);
 
+    return `
 
       <div
-        class="ingredientIcon">
+        class="ingredientCard"
+        draggable="true"
+        data-id="${i.id}"
+        ondragstart="dragIngredient(event,'${i.id}')"
+        ondragover="allowIngredientDrop(event)"
+        ondrop="dropIngredient(event,'${i.id}')">
 
-        ${safeCover(i.cover)}
+        <div class="dragHandle">
+          ☰
+        </div>
 
-      </div>
 
+        <div class="ingredientInfo">
 
-      <div class="ingredientInfo">
+          <div class="ingredientName">
 
-        <div class="ingredientName">
+            ${
+              i.cover
+              ? escapeHTML(i.cover)+" "
+              : ""
+            }
 
-          ${escapeHTML(i.name || "วัตถุดิบ")}
+            ${escapeHTML(i.name)}
+
+          </div>
+
+          <div class="ingredientEquation">
+
+            ${num(i.pieces)}
+            ×
+            ${money(i.price)}
+            =
+            ${money(cost)}
+
+          </div>
 
         </div>
 
-        <div class="ingredientFormula">
 
-          ${Number(i.pieces||0).toLocaleString("th-TH")}
-          ×
-          ${money(i.price)}
-          =
-          ${money(ingredientCost(i))}
-
-        </div>
-
-      </div>
-
-
-      <div class="ingredientActions">
-
-        <button
-          class="smallAction"
-          onclick="openIngredient('${i.id}')">
-          รายละเอียด
-        </button>
-
-
-        <button
-          class="smallDelete"
-          onclick="deleteIngredient('${i.id}')">
-          ลบ
-        </button>
-
-
-        <label
-          class="switch"
-          title="เปิด / ปิด">
-
-          <input
-            type="checkbox"
-            ${i.include!=="no"?"checked":""}
-            onchange="
-              toggleIngredient(
-                '${i.id}',
-                this.checked
-              )
-            ">
-
-          <span class="slider"></span>
-
-        </label>
-
-
-        <div class="miniQty">
+        <div class="ingredientActions">
 
           <button
+            class="ingSmallBtn"
             onclick="
-              changeListIngredientQty(
-                '${i.id}',
-                -1
-              )
+              openIngredient('${i.id}')
             ">
-            −
+            รายละเอียด
           </button>
 
-          <input
-            type="number"
-            min="0"
-            value="${Number(i.pieces||0)}"
-            onchange="
-              setListIngredientQty(
-                '${i.id}',
-                this.value
-              )
-            ">
 
           <button
+            class="ingSmallBtn"
             onclick="
-              changeListIngredientQty(
-                '${i.id}',
-                1
-              )
+              deleteIngredient('${i.id}')
             ">
-            +
+            ลบ
           </button>
+
+
+          <label
+            class="switch"
+            title="เปิด/ปิดการคิดต้นทุน">
+
+            <input
+              type="checkbox"
+              ${i.include!=="no"?"checked":""}
+              onchange="
+                toggleIngredient(
+                  '${i.id}',
+                  this.checked
+                )
+              ">
+
+            <span class="slider"></span>
+
+          </label>
+
+
+          <div class="ingQty">
+
+            <button
+              onclick="
+                changeIngredientListQty(
+                  '${i.id}',
+                  -1
+                )
+              ">
+              −
+            </button>
+
+            <input
+              type="number"
+              min="0"
+              step=".01"
+              value="${i.pieces}"
+              onchange="
+                setIngredientListQty(
+                  '${i.id}',
+                  this.value
+                )
+              ">
+
+            <button
+              onclick="
+                changeIngredientListQty(
+                  '${i.id}',
+                  1
+                )
+              ">
+              +
+            </button>
+
+          </div>
 
         </div>
 
       </div>
 
-    </div>
+    `;
 
-  `).join("")
+  }).join("")
+
   :
+
   `<div class="muted">
     ยังไม่มีวัตถุดิบ
   </div>`;
@@ -3227,248 +3715,18 @@ function renderIngredientList(menu){
 
 
 /* =====================================================
- DRAG / SORT INGREDIENT
-===================================================== */
-
-function startIngredientDrag(event,id){
-
-  draggedIngredientId=id;
-
-  const card=
-  event.target
-  .closest(".ingredientCard");
-
-  if(card){
-
-    card.classList.add("dragging");
-
-  }
-
-  event.dataTransfer.effectAllowed="move";
-
-  event.dataTransfer.setData(
-    "text/plain",
-    id
-  );
-
-}
-
-
-function allowIngredientDrop(event){
-
-  event.preventDefault();
-
-  const card=
-  event.currentTarget;
-
-  card.classList.add("dragOver");
-
-  event.dataTransfer.dropEffect="move";
-
-}
-
-
-function dropIngredient(event,targetId){
-
-  event.preventDefault();
-
-  const card=
-  event.currentTarget;
-
-  card.classList.remove("dragOver");
-
-  const menu=
-  menus.find(
-    m=>m.id===currentMenuId
-  );
-
-  if(!menu)
-    return;
-
-  const sourceId=
-  draggedIngredientId ||
-  event.dataTransfer.getData(
-    "text/plain"
-  );
-
-  if(!sourceId || sourceId===targetId)
-    return;
-
-
-  const arr=
-  menu.ingredients||[];
-
-  const from=
-  arr.findIndex(
-    i=>i.id===sourceId
-  );
-
-  const to=
-  arr.findIndex(
-    i=>i.id===targetId
-  );
-
-  if(from<0 || to<0)
-    return;
-
-
-  const moved=
-  arr.splice(from,1)[0];
-
-  arr.splice(to,0,moved);
-
-  menu.ingredients=arr;
-
-  saveAll();
-
-  renderMenuDetail();
-
-}
-
-
-function endIngredientDrag(){
-
-  draggedIngredientId=null;
-
-  document
-  .querySelectorAll(".ingredientCard")
-  .forEach(card=>{
-    card.classList.remove(
-      "dragging",
-      "dragOver"
-    );
-  });
-
-}
-
-
-/* =====================================================
- INGREDIENT LIST CONTROLS
-===================================================== */
-
-function toggleIngredient(id,on){
-
-  const ingredient=
-  getIngredientById(id);
-
-  if(!ingredient)
-    return;
-
-  ingredient.include=
-  on ? "yes" : "no";
-
-  saveAll();
-
-  renderMenuDetail();
-
-}
-
-
-function getIngredientById(id){
-
-  const menu=
-  menus.find(
-    m=>m.id===currentMenuId
-  );
-
-  if(!menu)
-    return null;
-
-  return (menu.ingredients||[])
-  .find(
-    i=>i.id===id
-  );
-
-}
-
-
-function changeListIngredientQty(id,delta){
-
-  const i=
-  getIngredientById(id);
-
-  if(!i)
-    return;
-
-  let q=
-  Number(i.pieces)||0;
-
-  q+=delta;
-
-  if(q<0)
-    q=0;
-
-  i.pieces=q;
-
-  saveAll();
-
-  renderMenuDetail();
-
-}
-
-
-function setListIngredientQty(id,value){
-
-  const i=
-  getIngredientById(id);
-
-  if(!i)
-    return;
-
-  let q=
-  Number(value);
-
-  if(isNaN(q) || q<0)
-    q=0;
-
-  i.pieces=q;
-
-  saveAll();
-
-  renderMenuDetail();
-
-}
-
-
-function deleteIngredient(id){
-
-  const menu=
-  menus.find(
-    m=>m.id===currentMenuId
-  );
-
-  if(!menu)
-    return;
-
-  if(!confirm(
-    "ลบวัตถุดิบนี้ใช่ไหม?"
-  ))
-    return;
-
-  menu.ingredients=
-  (menu.ingredients||[])
-  .filter(
-    i=>i.id!==id
-  );
-
-  saveAll();
-
-  renderMenuDetail();
-
-}
-
-
-/* =====================================================
- ADD INGREDIENT
+   INGREDIENT ADD
 ===================================================== */
 
 function openIngredientModal(){
 
   $("newIngName").value="";
   $("newIngCover").value="";
-  $("newIngPrice").value="";
   $("newIngPieces").value=1;
+  $("newIngPrice").value=0;
   $("newIngInclude").value="yes";
+
+  calcNewIngredient();
 
   $("ingredientModal")
   .classList.remove("hidden");
@@ -3484,27 +3742,45 @@ function closeIngredientModal(){
 }
 
 
+function calcNewIngredient(){
+
+  const qty =
+  Number($("newIngPieces").value)||0;
+
+  const price =
+  Number($("newIngPrice").value)||0;
+
+
+  $("newIngEquation")
+  .textContent =
+  `${num(qty)} × ${money(price)} = ${money(qty*price)}`;
+
+}
+
+
 function changeNewIngQty(delta){
 
-  const input=
+  const input =
   $("newIngPieces");
 
-  let value=
+  let value =
   Number(input.value)||0;
 
-  value+=delta;
+  value += delta;
 
   if(value<0)
     value=0;
 
   input.value=value;
 
+  calcNewIngredient();
+
 }
 
 
 function createIngredient(){
 
-  const menu=
+  const menu =
   menus.find(
     m=>m.id===currentMenuId
   );
@@ -3513,9 +3789,10 @@ function createIngredient(){
     return;
 
 
-  const name=
+  const name =
   $("newIngName")
   .value.trim();
+
 
   if(!name){
 
@@ -3533,21 +3810,21 @@ function createIngredient(){
     name,
 
     cover:
-    $("newIngCover")
-    .value.trim(),
-
-    price:
-    Number(
-      $("newIngPrice").value
-    )||0,
+      $("newIngCover")
+      .value.trim(),
 
     pieces:
-    Number(
-      $("newIngPieces").value
-    )||0,
+      Number(
+        $("newIngPieces").value
+      )||0,
+
+    price:
+      Number(
+        $("newIngPrice").value
+      )||0,
 
     include:
-    $("newIngInclude").value
+      $("newIngInclude").value
 
   });
 
@@ -3562,13 +3839,42 @@ function createIngredient(){
 
 
 /* =====================================================
- OPEN INGREDIENT DETAIL
+   INGREDIENT DETAIL
 ===================================================== */
+
+function getCurrentIngredient(){
+
+  const menu =
+  menus.find(
+    m=>m.id===currentMenuId
+  );
+
+  if(!menu)
+    return null;
+
+
+  return menu.ingredients.find(
+    i=>i.id===currentIngredientId
+  );
+
+}
+
 
 function openIngredient(id){
 
-  const ingredient=
-  getIngredientById(id);
+  const menu =
+  menus.find(
+    m=>m.id===currentMenuId
+  );
+
+  if(!menu)
+    return;
+
+
+  const ingredient =
+  menu.ingredients.find(
+    i=>i.id===id
+  );
 
   if(!ingredient)
     return;
@@ -3584,117 +3890,112 @@ function openIngredient(id){
   .classList.add("active");
 
 
-  $("editIngName").value=
-  ingredient.name||"";
+  $("editIngName").value =
+  ingredient.name || "";
 
-  $("editIngCover").value=
-  ingredient.cover||"";
 
-  $("editIngPrice").value=
-  ingredient.price||"";
+  $("editIngCover").value =
+  ingredient.cover || "";
 
-  $("editIngPieces").value=
-  ingredient.pieces||0;
 
-  $("editIngInclude").value=
+  $("editIngPieces").value =
+  ingredient.pieces || 0;
+
+
+  $("editIngPrice").value =
+  ingredient.price || 0;
+
+
+  $("editIngInclude").value =
   ingredient.include==="no"
-  ?"no"
-  :"yes";
+  ? "no"
+  : "yes";
 
+
+  previewIngredientCover();
 
   renderIngredientDetail();
 
 }
 
 
-/* =====================================================
- INGREDIENT DETAIL
-===================================================== */
-
-function getCurrentIngredient(){
-
-  return getIngredientById(
-    currentIngredientId
-  );
-
-}
-
-
 function renderIngredientDetail(){
 
-  const ingredient=
+  const ingredient =
   getCurrentIngredient();
 
   if(!ingredient)
     return;
 
 
-  const name=
+  const name =
   $("editIngName").value.trim();
 
-  const price=
-  Number(
-    $("editIngPrice").value
-  )||0;
 
-  const pieces=
+  const cover =
+  $("editIngCover").value.trim();
+
+
+  const qty =
   Number(
     $("editIngPieces").value
   )||0;
 
-  const cost=
-  price*pieces;
+
+  const price =
+  Number(
+    $("editIngPrice").value
+  )||0;
+
+
+  const cost =
+  qty*price;
 
 
   $("ingredientDetailName")
-  .textContent=
-  (name||"วัตถุดิบ");
+  .textContent =
+  `${cover ? cover+" " : ""}${name || "วัตถุดิบ"}`;
 
 
-  $("ingPiecesShow")
-  .textContent=
-  pieces.toLocaleString("th-TH")+
-  " ชิ้น";
+  $("ingredientEquation")
+  .textContent =
+  `${num(qty)} × ${money(price)} = ${money(cost)}`;
 
 
-  $("ingPriceShow")
-  .textContent=
-  money(price);
+  $("ingredientTotalCost")
+  .textContent =
+  money(
+    $("editIngInclude").value==="no"
+    ? 0
+    : cost
+  );
+
+}
 
 
-  $("ingCostTotal")
-  .textContent=
-  money(cost);
+function previewIngredientCover(){
+
+  const cover =
+  $("editIngCover")
+  .value.trim();
 
 
-  $("ingFormula")
-  .textContent=
-  `${pieces.toLocaleString("th-TH")} × ${money(price)} = ${money(cost)}`;
-
-
-  $("ingredientSuggestion")
-  .innerHTML=
-  `
-    ${pieces.toLocaleString("th-TH")}
-    ชิ้น ×
-    ${money(price)}
-    =
-    <b>${money(cost)}</b>
-    ต้นทุนวัตถุดิบ
-  `;
+  $("ingCoverPreview")
+  .textContent =
+  cover || "🥕";
 
 }
 
 
 function changeIngredientPurchase(delta){
 
-  const input=
+  const input =
   $("editIngPieces");
 
-  let value=
+  let value =
   Number(input.value)||0;
 
-  value+=delta;
+  value += delta;
 
   if(value<0)
     value=0;
@@ -3708,39 +4009,41 @@ function changeIngredientPurchase(delta){
 
 function saveIngredientDetail(){
 
-  const ingredient=
+  const ingredient =
   getCurrentIngredient();
 
   if(!ingredient)
     return;
 
 
-  ingredient.name=
+  ingredient.name =
   $("editIngName")
-  .value.trim() ||
-  "วัตถุดิบ";
+  .value.trim()
+  || "วัตถุดิบ";
 
-  ingredient.cover=
+
+  ingredient.cover =
   $("editIngCover")
   .value.trim();
 
-  ingredient.price=
-  Number(
-    $("editIngPrice").value
-  )||0;
 
-  ingredient.pieces=
+  ingredient.pieces =
   Number(
     $("editIngPieces").value
   )||0;
 
-  ingredient.include=
+
+  ingredient.price =
+  Number(
+    $("editIngPrice").value
+  )||0;
+
+
+  ingredient.include =
   $("editIngInclude").value;
 
 
   saveAll();
-
-  alert("บันทึกวัตถุดิบแล้ว 💗");
 
   backToMenuDetail();
 
@@ -3748,22 +4051,347 @@ function saveIngredientDetail(){
 
 
 /* =====================================================
- INITIAL
+   INGREDIENT LIST ACTIONS
 ===================================================== */
 
-$("accountTitle")
-.textContent=
-shop.title ||
-"📒 สมุดบัญชี";
+function findIngredient(id){
+
+  const menu =
+  menus.find(
+    m=>m.id===currentMenuId
+  );
+
+  if(!menu)
+    return null;
+
+  return menu.ingredients.find(
+    i=>i.id===id
+  );
+
+}
 
 
-$("txDate").value=today();
+function changeIngredientListQty(id,delta){
+
+  const i =
+  findIngredient(id);
+
+  if(!i)
+    return;
+
+
+  i.pieces =
+  Math.max(
+    0,
+    (Number(i.pieces)||0)+delta
+  );
+
+
+  saveAll();
+
+  renderMenuDetail();
+
+}
+
+
+function setIngredientListQty(id,value){
+
+  const i =
+  findIngredient(id);
+
+  if(!i)
+    return;
+
+
+  i.pieces =
+  Math.max(
+    0,
+    Number(value)||0
+  );
+
+
+  saveAll();
+
+  renderMenuDetail();
+
+}
+
+
+function toggleIngredient(id,checked){
+
+  const i =
+  findIngredient(id);
+
+  if(!i)
+    return;
+
+
+  i.include =
+  checked ? "yes" : "no";
+
+
+  saveAll();
+
+  renderMenuDetail();
+
+}
+
+
+function deleteIngredient(id){
+
+  const menu =
+  menus.find(
+    m=>m.id===currentMenuId
+  );
+
+  if(!menu)
+    return;
+
+
+  const ingredient =
+  menu.ingredients.find(
+    i=>i.id===id
+  );
+
+  if(!ingredient)
+    return;
+
+
+  if(!confirm(
+    `ลบ "${ingredient.name}" ใช่ไหม?`
+  ))
+    return;
+
+
+  menu.ingredients =
+  menu.ingredients.filter(
+    i=>i.id!==id
+  );
+
+
+  saveAll();
+
+  renderMenuDetail();
+
+}
+
+
+/* =====================================================
+   DRAG / DROP INGREDIENT ORDER
+===================================================== */
+
+let draggedIngredientId=null;
+
+
+function dragIngredient(event,id){
+
+  draggedIngredientId=id;
+
+  event.dataTransfer.effectAllowed =
+  "move";
+
+  event.currentTarget
+  .classList.add("dragging");
+
+}
+
+
+function allowIngredientDrop(event){
+
+  event.preventDefault();
+
+  event.dataTransfer.dropEffect =
+  "move";
+
+}
+
+
+function dropIngredient(event,targetId){
+
+  event.preventDefault();
+
+  if(!draggedIngredientId)
+    return;
+
+  if(
+    draggedIngredientId ===
+    targetId
+  )
+    return;
+
+
+  const menu =
+  menus.find(
+    m=>m.id===currentMenuId
+  );
+
+  if(!menu)
+    return;
+
+
+  const list =
+  menu.ingredients;
+
+
+  const from =
+  list.findIndex(
+    i=>i.id===draggedIngredientId
+  );
+
+
+  const to =
+  list.findIndex(
+    i=>i.id===targetId
+  );
+
+
+  if(from<0 || to<0)
+    return;
+
+
+  const moved =
+  list.splice(from,1)[0];
+
+
+  list.splice(to,0,moved);
+
+
+  draggedIngredientId=null;
+
+  saveAll();
+
+  renderMenuDetail();
+
+}
+
+
+document.addEventListener(
+  "dragend",
+  ()=>{
+    draggedIngredientId=null;
+
+    document
+    .querySelectorAll(".ingredientCard")
+    .forEach(x =>
+      x.classList.remove("dragging")
+    );
+
+  }
+);
+
+
+/* =====================================================
+   BACK
+===================================================== */
+
+function backToMenuDetail(){
+
+  $("ingredientDetail")
+  .classList.remove("active");
+
+  $("menuDetail")
+  .classList.add("active");
+
+  renderMenuDetail();
+
+}
+
+
+/* =====================================================
+   MIGRATION
+   รองรับข้อมูลจากเวอร์ชันเก่าบางส่วน
+===================================================== */
+
+function normalizeData(){
+
+  menus.forEach(menu=>{
+
+    if(!menu.id)
+      menu.id=uid();
+
+    if(!menu.name)
+      menu.name="รายการขาย";
+
+    if(!("cover" in menu))
+      menu.cover="";
+
+    if(!Array.isArray(menu.ingredients))
+      menu.ingredients=[];
+
+
+    menu.ingredients.forEach(i=>{
+
+      if(!i.id)
+        i.id=uid();
+
+      if(!("cover" in i))
+        i.cover="";
+
+      if(!("pieces" in i)){
+
+        if("usable" in i)
+          i.pieces =
+          Number(i.usable)||0;
+
+        else
+          i.pieces=0;
+
+      }
+
+      if(!("price" in i))
+        i.price=0;
+
+      if(!("include" in i))
+        i.include="yes";
+
+    });
+
+  });
+
+
+  transactions.forEach(t=>{
+
+    if(!t.id)
+      t.id=uid();
+
+    if(!("qty" in t))
+      t.qty=1;
+
+    if(!("price" in t))
+      t.price=0;
+
+    t.total =
+    Number(t.qty||0) *
+    Number(t.price||0);
+
+  });
+
+
+  saveAll();
+
+}
+
+
+/* =====================================================
+   INITIAL
+===================================================== */
+
+normalizeData();
+
+
+$("shopTitle").value =
+shop.title || "สมุดบัญชี";
+
+
+$("txDate").value =
+today();
+
 
 renderAccount();
 
 renderSummary();
 
-renderAllTransactions();
+renderAllList();
 
 renderMenus();
 
