@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fff7fb">
 
@@ -11,1004 +11,1110 @@
 :root{
   --bg:#fff7fb;
   --card:#fff;
+  --soft:#fdf0f6;
   --ink:#29252b;
-  --muted:#8f8790;
-  --line:#eee5eb;
-  --pink:#cc6792;
-  --pink2:#f8e1eb;
-  --green:#60a97e;
-  --red:#d97884;
-  --yellow:#fff3d6;
-  --purple:#f1ebff;
-  --shadow:0 8px 25px rgba(90,50,70,.08);
+  --muted:#968d96;
+  --line:#eadfe6;
+  --pink:#ca6492;
+  --green:#63aa82;
+  --red:#d87979;
+  --shadow:0 8px 25px #6b3d570d
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box
+}
 
 body{
   margin:0;
   background:var(--bg);
   color:var(--ink);
   font-family:-apple-system,BlinkMacSystemFont,
-  "Segoe UI","Noto Sans Thai",sans-serif;
+  "Noto Sans Thai","Segoe UI",sans-serif
 }
 
-button,input,select{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-.wrap{
-  width:min(1000px,100%);
+.app{
+  max-width:1050px;
   margin:auto;
-  padding:14px;
+  padding:16px 18px 70px
 }
 
 .nav{
   position:sticky;
-  top:0;
-  z-index:20;
-  background:#ffffffee;
-  backdrop-filter:blur(12px);
-  border-radius:20px;
-  padding:7px;
+  top:6px;
+  z-index:10;
+  background:#fff;
+  border-radius:25px;
+  padding:9px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:5px;
-  box-shadow:var(--shadow);
-  margin-bottom:15px;
+  gap:8px;
+  box-shadow:var(--shadow)
 }
 
 .nav button{
   border:0;
-  background:transparent;
-  border-radius:15px;
-  padding:10px 5px;
+  background:#fff;
+  border-radius:20px;
+  padding:11px 4px;
   color:#777;
+  font:inherit
 }
 
-.nav button.active{
-  background:#f8e4ed;
-  color:var(--pink);
-  font-weight:700;
+.nav button.on{
+  background:#f7dfeb;
+  color:#b85683
 }
 
-.nav span{
+.ico{
   display:block;
-  font-size:21px;
+  font-size:24px
 }
 
-.nav small{
-  font-size:11px;
+.txt{
+  font-size:13px
 }
 
 .page{
-  display:none;
+  display:none
 }
 
-.page.active{
-  display:block;
+.page.on{
+  display:block
 }
 
 .card{
-  background:#fff;
-  border-radius:23px;
-  padding:18px;
-  box-shadow:var(--shadow);
-  margin-bottom:15px;
+  background:var(--card);
+  border-radius:27px;
+  padding:22px;
+  margin-top:20px;
+  box-shadow:var(--shadow)
 }
 
-h1,h2,h3{
-  margin-top:0;
+.soft{
+  background:linear-gradient(110deg,#fceaf3,#fff)
+}
+
+h1{
+  font-size:27px;
+  margin:0 0 10px
+}
+
+h2{
+  font-size:22px;
+  margin:0 0 13px
 }
 
 .muted{
-  color:var(--muted);
-  font-size:13px;
+  color:var(--muted)
 }
 
-input,select{
-  width:100%;
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:12px;
-  background:#fff;
-  outline:none;
-}
-
-input:focus,select:focus{
-  border-color:#e5a0bc;
-}
-
-label{
-  display:block;
-  font-size:12px;
-  color:var(--muted);
-  margin-bottom:5px;
-}
-
-.field{
-  margin-bottom:12px;
+.small{
+  font-size:13px
 }
 
 .grid2{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:10px;
+  gap:13px
+}
+
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:11px
+}
+
+label{
+  display:block;
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:6px
+}
+
+input,
+select{
+  width:100%;
+  padding:12px 13px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fff;
+  font:inherit;
+  outline:none
+}
+
+button{
+  font:inherit;
+  cursor:pointer
 }
 
 .btn{
-  border:1px solid var(--line);
-  background:#fff;
-  border-radius:13px;
-  padding:10px 14px;
-}
-
-.primary{
-  border:0;
   background:var(--pink);
   color:#fff;
-  border-radius:14px;
-  padding:12px 17px;
-  font-weight:700;
+  border:0;
+  border-radius:15px;
+  padding:11px 17px;
+  font-weight:700
+}
+
+.light{
+  background:#f4edf2;
+  color:#995c79
+}
+
+.gray{
+  background:#ece8ed;
+  color:#6e6870
 }
 
 .danger{
-  border:0;
-  background:#fff0f2;
-  color:#c75c6c;
-  border-radius:12px;
-  padding:8px 10px;
+  background:#fae7e9;
+  color:#bd6565
 }
 
-.back{
-  border:0;
-  background:#f6eef2;
-  border-radius:13px;
-  padding:10px 14px;
-  margin-bottom:12px;
-}
-
-/* ACCOUNT */
-
-.hero{
-  background:linear-gradient(135deg,#f8dce8,#fff);
-}
-
-.balance{
-  font-size:35px;
-  font-weight:800;
-}
-
-.money{
-  display:grid;
-  grid-template-columns:1fr 1fr;
+.row{
+  display:flex;
   gap:9px;
-}
-
-.moneyBox{
-  background:#ffffffbb;
-  border-radius:15px;
-  padding:13px;
-}
-
-.moneyBox small{
-  display:block;
-  color:#999;
-}
-
-.in{
-  color:var(--green);
-}
-
-.out{
-  color:var(--red);
-}
-
-.typeButtons{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-bottom:12px;
-}
-
-.typeBtn{
-  border:1px solid var(--line);
-  background:#fff;
-  border-radius:13px;
-  padding:12px;
-}
-
-.typeBtn.active.in{
-  background:#e9f6ee;
-  border-color:#a6d4b7;
-}
-
-.typeBtn.active.out{
-  background:#fbe9ed;
-  border-color:#e6b0b9;
-}
-
-.qtyControl{
-  display:flex;
   align-items:center;
-  gap:6px;
+  flex-wrap:wrap
 }
 
-.qtyControl button{
-  width:42px;
-  height:42px;
-  border:0;
-  background:#f5edf1;
-  border-radius:12px;
-  font-size:22px;
-}
-
-.qtyControl input{
-  text-align:center;
-  min-width:0;
-}
-
-.tx{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  padding:13px 0;
-  border-bottom:1px solid var(--line);
-}
-
-.tx:last-child{
-  border:0;
-}
-
-.txInfo{
-  flex:1;
-  min-width:0;
-}
-
-.txInfo strong{
-  display:block;
-  overflow:hidden;
-  white-space:nowrap;
-  text-overflow:ellipsis;
-}
-
-.txInfo small{
-  color:#999;
-}
-
-.txAmount{
-  text-align:right;
-  font-weight:700;
-}
-
-/* SUMMARY */
-
-.periods{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:7px;
-}
-
-.period{
-  border:1px solid var(--line);
-  background:#fff;
-  border-radius:13px;
-  padding:11px;
-}
-
-.period.active{
-  background:var(--pink2);
-  border-color:#e7a5bf;
-  color:var(--pink);
-  font-weight:700;
-}
-
-.summaryControls{
-  margin-top:14px;
-}
-
-.summaryMode{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:7px;
-}
-
-.modeBtn{
-  border:1px solid var(--line);
-  background:#fff;
-  border-radius:13px;
-  padding:10px;
-}
-
-.modeBtn.active{
-  background:var(--pink2);
-  border-color:#e7a5bf;
-  color:var(--pink);
-  font-weight:700;
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
-}
-
-.stat{
-  background:#faf7f9;
-  border-radius:14px;
-  padding:12px;
-}
-
-.stat small{
-  color:#999;
-}
-
-.stat strong{
-  display:block;
-  font-size:18px;
-  margin-top:4px;
-}
-
-.dateSelect{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:8px;
-}
-
-/* COST */
-
-.costHeader{
-  background:linear-gradient(135deg,#f8e1ea,#fff);
-}
-
-.menuList{
-  display:grid;
-  gap:10px;
-}
-
-.menuCard{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:15px;
-}
-
-.menuRow{
+.between{
   display:flex;
   justify-content:space-between;
   gap:12px;
-  align-items:center;
+  align-items:center
 }
 
-.menuLeft{
-  flex:1;
-  min-width:0;
-}
-
-.menuName{
-  font-size:22px;
-  font-weight:800;
-  line-height:1.15;
-  word-break:break-word;
-}
-
-.menuIngredientsCount{
-  color:#999;
-  font-size:12px;
-  margin-top:5px;
-}
-
-.menuRight{
-  display:flex;
-  align-items:center;
-  gap:7px;
-  flex-wrap:wrap;
-  justify-content:flex-end;
-}
-
-.menuCostTotal{
-  font-size:18px;
-  font-weight:800;
-}
-
-.iconBtn{
-  border:0;
-  background:#f5edf1;
-  border-radius:11px;
-  width:34px;
-  height:34px;
-}
-
-.detail{
-  display:none;
-}
-
-.detail.active{
-  display:block;
-}
-
-.detailHero{
-  background:linear-gradient(135deg,#f8e3ec,#fff);
-}
-
-.ingredientCard{
+.qty{
+  display:inline-flex;
   border:1px solid var(--line);
-  border-radius:17px;
-  padding:12px;
-  margin-bottom:9px;
+  border-radius:14px;
+  overflow:hidden
 }
 
-.ingredientMain{
+.qty button{
+  width:38px;
+  height:40px;
+  border:0;
+  background:#f8f2f5;
+  color:#b85883;
+  font-weight:900
+}
+
+.qty input{
+  width:62px;
+  border:0;
+  border-radius:0;
+  text-align:center;
+  padding:8px
+}
+
+.list{
   display:flex;
-  align-items:center;
-  gap:9px;
+  flex-direction:column;
+  gap:11px;
+  margin-top:14px
 }
 
-.ingredientName{
-  flex:1;
-  min-width:0;
-  font-size:19px;
-  font-weight:800;
-  word-break:break-word;
+.item{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:14px;
+  background:#fff
 }
 
-.ingredientActions{
+.title{
+  font-size:18px;
+  font-weight:800
+}
+
+.actions{
   display:flex;
+  gap:6px;
   align-items:center;
-  gap:4px;
-  flex-wrap:nowrap;
+  flex-wrap:wrap
 }
 
-.smallBtn{
-  width:30px;
-  height:30px;
+.mini{
   border:0;
   border-radius:9px;
-  background:#f5edf1;
-  font-size:16px;
+  padding:5px 8px;
+  background:#f4edf2;
+  color:#996078;
+  font-size:11px
+}
+
+.trash{
+  width:52px;
+  height:52px;
+  border:0;
+  border-radius:16px;
+  background:#fff0f2;
+  font-size:21px
+}
+
+.cover{
+  width:56px;
+  height:56px;
+  display:grid;
+  place-items:center;
+  border-radius:17px;
+  background:#fdf0f6;
+  font-size:28px;
+  flex:none
+}
+
+.empty{
+  padding:30px;
+  text-align:center;
+  color:var(--muted)
+}
+
+.kpi{
+  background:#faf7f9;
+  border-radius:17px;
+  padding:13px
+}
+
+.kpi .v{
+  font-size:20px;
+  font-weight:800;
+  margin-top:4px
 }
 
 .switch{
+  width:56px;
+  height:32px;
   position:relative;
-  width:38px;
-  height:22px;
-  flex:none;
+  display:inline-block
 }
 
 .switch input{
-  opacity:0;
-  width:0;
-  height:0;
+  display:none
 }
 
 .slider{
   position:absolute;
   inset:0;
-  background:#ddd;
-  border-radius:20px;
+  border-radius:30px;
+  background:#ddd5da
 }
 
 .slider:before{
   content:"";
   position:absolute;
-  width:16px;
-  height:16px;
-  left:3px;
-  top:3px;
-  background:white;
+  width:24px;
+  height:24px;
+  left:4px;
+  top:4px;
   border-radius:50%;
-  transition:.2s;
-}
-
-.switch input:checked + .slider{
-  background:var(--green);
-}
-
-.switch input:checked + .slider:before{
-  transform:translateX(16px);
-}
-
-.ingredientEquation{
-  margin-top:6px;
-  color:#777;
-  font-size:12px;
-}
-
-.modal{
-  position:fixed;
-  inset:0;
-  background:#2b273055;
-  z-index:50;
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  padding:10px;
-}
-
-.modal.hidden{
-  display:none;
-}
-
-.modalBox{
   background:#fff;
-  width:min(600px,100%);
-  max-height:92vh;
-  overflow:auto;
-  border-radius:25px;
-  padding:18px;
+  transition:.2s;
+  box-shadow:0 2px 5px #7774
 }
 
-.modalHead{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.switch input:checked+.slider{
+  background:#69ad89
 }
 
-.modalActions{
-  display:flex;
-  gap:8px;
-  margin-top:15px;
+.switch input:checked+.slider:before{
+  transform:translateX(24px)
 }
 
-.modalActions>*{
-  flex:1;
+.ingredient{
+  border:1px solid var(--line);
+  border-radius:19px;
+  padding:13px
 }
 
-.calcGrid{
+.sumrow{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:9px;
+  grid-template-columns:1fr auto;
+  gap:10px;
+  padding:11px 0;
+  border-bottom:1px dashed var(--line)
 }
 
-.calcBox{
-  background:#faf7f9;
-  border-radius:15px;
-  padding:13px;
+.search{
+  margin-top:10px
 }
 
-.calcBox small{
-  display:block;
-  color:#999;
+/* ปี */
+.yearSelect{
+  min-width:150px
 }
 
-.calcBox strong{
-  display:block;
-  font-size:20px;
-  margin-top:4px;
-}
+@media(max-width:700px){
 
-@media(max-width:650px){
-  .stats{
-    grid-template-columns:1fr;
+  .app{
+    padding:9px 10px 60px
   }
 
-  .calcGrid{
-    grid-template-columns:1fr 1fr;
+  .card{
+    padding:18px;
+    border-radius:23px
   }
-}
 
-@media(max-width:450px){
   .grid2,
-  .calcGrid{
-    grid-template-columns:1fr;
+  .grid3{
+    grid-template-columns:1fr
   }
 
-  .nav small{
-    font-size:9px;
-  }
-
-  .nav span{
-    font-size:18px;
-  }
-
-  .menuName{
-    font-size:20px;
-  }
-
-  .menuRight{
-    gap:4px;
+  h1{
+    font-size:24px
   }
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="wrap">
+<div class="app">
 
-<nav class="nav">
+<!-- ==================================================
+     NAV
+================================================== -->
 
-<button class="active" onclick="showPage('account',this)">
-<span>📒</span>
-<small>บัญชี</small>
+<div class="nav">
+
+<button
+class="on"
+data-p="account">
+
+<span class="ico">📒</span>
+<span class="txt">บัญชี</span>
+
 </button>
 
-<button onclick="showPage('summary',this)">
-<span>📊</span>
-<small>สรุป</small>
+<button
+data-p="summary">
+
+<span class="ico">📊</span>
+<span class="txt">สรุป</span>
+
 </button>
 
-<button onclick="showPage('all',this)">
-<span>📋</span>
-<small>รวมรายการ</small>
+<button
+data-p="all">
+
+<span class="ico">📋</span>
+<span class="txt">รวมรายการ</span>
+
 </button>
 
-<button onclick="showPage('cost',this)">
-<span>🧮</span>
-<small>ต้นทุน</small>
-</button>
+<button
+data-p="cost">
 
-</nav>
+<span class="ico">🧮</span>
+<span class="txt">ต้นทุน</span>
 
-
-<!-- ================= ACCOUNT ================= -->
-
-<section id="page-account" class="page active">
-
-<div class="card hero">
-
-<h2 id="shopTitle">📒 สมุดบัญชี</h2>
-
-<div class="muted">แตะชื่อด้านบนเพื่อแก้ไขชื่อร้าน</div>
-
-<div class="balance" id="balance">฿0.00</div>
-
-<div class="money">
-
-<div class="moneyBox">
-<small>รายรับ</small>
-<b class="in" id="income">฿0.00</b>
-</div>
-
-<div class="moneyBox">
-<small>รายจ่าย</small>
-<b class="out" id="expense">฿0.00</b>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h2>➕ เพิ่มรายการ</h2>
-
-<div class="typeButtons">
-
-<button id="incomeBtn"
-class="typeBtn active in"
-onclick="setTxType('income')">
-💚 รายรับ
-</button>
-
-<button id="expenseBtn"
-class="typeBtn out"
-onclick="setTxType('expense')">
-❤️ รายจ่าย
-</button>
-
-</div>
-
-<div class="grid2">
-
-<div class="field">
-<label>รายการ</label>
-<input id="txItem" placeholder="เช่น ข้าวเหนียวไก่ทอด">
-</div>
-
-<div class="field">
-<label>ราคา / หน่วย</label>
-<input id="txPrice" type="number" min="0" step=".01"
-oninput="calcTxTotal()">
-</div>
-
-</div>
-
-<div class="field">
-
-<label>จำนวน</label>
-
-<div class="qtyControl">
-
-<button onclick="changeTxQty(-1)">−</button>
-
-<input id="txQty"
-type="number"
-min=".01"
-step=".01"
-value="1"
-oninput="calcTxTotal">
-
-<button onclick="changeTxQty(1)">+</button>
-
-</div>
-
-</div>
-
-<div class="grid2">
-
-<div class="field">
-<label>วันที่</label>
-<input id="txDate" type="date">
-</div>
-
-<div class="field">
-<label>หมายเหตุ</label>
-<input id="txNote">
-</div>
-
-</div>
-
-<div class="card"
-style="background:#fff8fb;margin:0 0 12px">
-
-<div class="muted">ยอดรวม</div>
-
-<strong id="txTotal" style="font-size:22px">
-฿0.00
-</strong>
-
-</div>
-
-<button class="primary"
-style="width:100%"
-onclick="saveTx()">
-💾 บันทึกรายการ
 </button>
 
 </div>
 
 
-<div class="card">
+<!-- ==================================================
+     PAGE 1 : ACCOUNT
+================================================== -->
 
-<h2>📋 รายการล่าสุด</h2>
+<section
+id="account"
+class="page on">
 
-<div id="txList"></div>
+<div class="card soft">
 
-</div>
+<div class="between">
 
-</section>
+<div>
 
+<h1 id="shopTitle">
+สมุดบัญชี
+</h1>
 
-<!-- ================= SUMMARY ================= -->
-
-<section id="page-summary" class="page">
-
-<div class="card">
-
-<h2>📊 สรุปบัญชี</h2>
-
-<div class="periods">
-
-<button class="period active"
-data-period="day"
-onclick="setPeriod('day')">
-รายวัน
-</button>
-
-<button class="period"
-data-period="week"
-onclick="setPeriod('week')">
-สัปดาห์
-</button>
-
-<button class="period"
-data-period="month"
-onclick="setPeriod('month')">
-เดือน
-</button>
-
-<button class="period"
-data-period="year"
-onclick="setPeriod('year')">
-ปี
-</button>
-
+<div class="muted">
+บันทึกรายรับ รายจ่าย และรายการขาย
 </div>
 
 </div>
 
+<button
+class="btn light"
+onclick="editTitle()">
 
-<!-- DATE / MONTH / YEAR SELECTOR -->
+แก้ชื่อ
 
-<div class="card">
+</button>
 
-<h3 id="summarySelectTitle">📅 เลือกวันที่</h3>
+</div>
 
-<div id="summarySelector"></div>
 
-<div class="summaryControls">
+<div
+class="grid2"
+style="margin-top:17px">
 
-<label>รูปแบบการแสดงรายการ</label>
+<div>
 
-<div class="summaryMode">
+<label>
+วันที่
+</label>
 
-<button id="modeDetail"
-class="modeBtn active"
-onclick="setSummaryMode('detail')">
+<input
+id="aDate"
+type="date">
+
+</div>
+
+
+<div>
+
+<label>
+ประเภท
+</label>
+
+<select id="aType">
+
+<option value="income">
+รายรับ
+</option>
+
+<option value="expense">
+รายจ่าย
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div style="margin-top:13px">
+
+<label>
 ชื่อรายการ
+</label>
+
+<input
+id="aName"
+placeholder="เช่น ขายสตรอว์เบอร์รี่ / ซื้อของ">
+
+</div>
+
+
+<div
+class="grid2"
+style="margin-top:13px">
+
+<div>
+
+<label>
+จำนวน
+</label>
+
+<div class="qty">
+
+<button onclick="aq(-1)">
+−
 </button>
 
-<button id="modeNumber"
-class="modeBtn"
-onclick="setSummaryMode('number')">
-เฉพาะตัวเลข
+<input
+id="aQty"
+type="number"
+min="0"
+value="1"
+oninput="ap()">
+
+<button onclick="aq(1)">
++
 </button>
 
 </div>
 
 </div>
 
-<p class="muted" id="summaryText"></p>
+
+<div>
+
+<label>
+ราคาต่อชิ้น
+</label>
+
+<input
+id="aPrice"
+type="number"
+min="0"
+step="0.01"
+oninput="ap()">
+
+</div>
+
+</div>
+
+
+<div
+id="apreview"
+class="muted small"
+style="margin:11px 0">
+
+1 × 0 = 0
+
+</div>
+
+
+<button
+class="btn"
+onclick="addAccount()">
+
++ เพิ่มรายการ
+
+</button>
 
 </div>
 
 
 <div class="card">
 
-<div class="stats">
+<div class="between">
 
-<div class="stat">
-<small>รายรับ</small>
-<strong class="in" id="sumIncome">฿0.00</strong>
-</div>
+<h2>
+รายการบัญชี
+</h2>
 
-<div class="stat">
-<small>รายจ่าย</small>
-<strong class="out" id="sumExpense">฿0.00</strong>
-</div>
-
-<div class="stat">
-<small>คงเหลือ</small>
-<strong id="sumBalance">฿0.00</strong>
-</div>
+<b id="balance">
+฿0.00
+</b>
 
 </div>
 
+<div
+id="accountList"
+class="list">
 </div>
-
-
-<div class="card">
-
-<h3>📋 รายการ</h3>
-
-<div id="summaryList"></div>
 
 </div>
 
 </section>
 
 
-<!-- ================= ALL ================= -->
 
-<section id="page-all" class="page">
+<!-- ==================================================
+     PAGE 2 : SUMMARY
+================================================== -->
+
+<section
+id="summary"
+class="page">
+
+<div class="card soft">
+
+<h1>
+📊 สรุป
+</h1>
+
+
+<div class="grid2">
+
+<div>
+
+<label>
+ดูแบบ
+</label>
+
+<select
+id="sMode"
+onchange="summary()">
+
+<option value="day">
+วัน
+</option>
+
+<option value="week">
+สัปดาห์
+</option>
+
+<option value="month">
+เดือน
+</option>
+
+<option value="year">
+ปี
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label>
+แสดงรายการ
+</label>
+
+<select
+id="sDetail"
+onchange="summary()">
+
+<option value="detail">
+มีชื่อรายการ
+</option>
+
+<option value="number">
+เฉพาะตัวเลขรายรับรายจ่าย
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div
+id="picker"
+style="margin-top:13px">
+</div>
+
+</div>
+
 
 <div class="card">
 
-<h2>📋 รวมรายการ</h2>
+<div class="grid3">
 
-<input id="allSearch"
-placeholder="🔎 ค้นหารายการ..."
+<div class="kpi">
+
+รายรับ
+
+<div
+class="v"
+id="si">
+
+฿0.00
+
+</div>
+
+</div>
+
+
+<div class="kpi">
+
+รายจ่าย
+
+<div
+class="v"
+id="se">
+
+฿0.00
+
+</div>
+
+</div>
+
+
+<div class="kpi">
+
+คงเหลือ
+
+<div
+class="v"
+id="sn">
+
+฿0.00
+
+</div>
+
+</div>
+
+</div>
+
+
+<div
+id="srows"
+style="margin-top:13px">
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     PAGE 3 : ALL
+================================================== -->
+
+<section
+id="all"
+class="page">
+
+<div class="card soft">
+
+<h1>
+📋 รวมรายการ
+</h1>
+
+<div class="muted">
+ค้นหารายการทั้งหมด
+</div>
+
+<input
+id="search"
+class="search"
+placeholder="ค้นหาชื่อรายการ..."
 oninput="renderAll()">
 
 </div>
 
+
 <div class="card">
 
-<div id="allList"></div>
+<div class="grid3">
+
+<div class="kpi">
+
+รายรับทั้งหมด
+
+<div
+class="v"
+id="ai">
+
+฿0.00
+
+</div>
+
+</div>
+
+
+<div class="kpi">
+
+รายจ่ายทั้งหมด
+
+<div
+class="v"
+id="ae">
+
+฿0.00
+
+</div>
+
+</div>
+
+
+<div class="kpi">
+
+สุทธิ
+
+<div
+class="v"
+id="an">
+
+฿0.00
+
+</div>
+
+</div>
+
+</div>
+
+
+<div
+id="allList"
+class="list">
+</div>
 
 </div>
 
 </section>
 
 
-<!-- ================= COST ================= -->
 
-<section id="page-cost" class="page">
+<!-- ==================================================
+     PAGE 4 : COST
+================================================== -->
+
+<section
+id="cost"
+class="page">
+
+
+<!-- COST HOME -->
 
 <div id="costHome">
 
-<div class="card costHeader">
+<div class="card soft">
 
-<h2>🧮 ต้นทุนต่อรายการขาย</h2>
+<h1>
+🧮 ต้นทุนต่อเมนู
+</h1>
 
-<div class="grid2">
+<div class="muted">
+วัตถุดิบอยู่เป็นหน้าย่อยของชื่อรายการขาย
+</div>
 
-<div class="field">
 
-<label>ชื่อรายการขาย</label>
+<div
+class="grid2"
+style="margin-top:15px">
 
-<input id="newMenuName"
-placeholder="เช่น สตรอว์เบอร์รี">
+<div>
+
+<label>
+ชื่อรายการขาย
+</label>
+
+<input
+id="mName"
+placeholder="เช่น สตรอว์เบอร์รี่">
 
 </div>
 
-<div class="field">
 
-<label>สัญลักษณ์ / รูปโปร</label>
+<div>
 
-<input id="newMenuIcon"
-placeholder="🍓">
+<label>
+หน่วยขาย
+</label>
+
+<input
+id="mUnit"
+placeholder="เช่น แก้ว">
 
 </div>
 
 </div>
 
-<button class="primary"
+
+<div
+class="row"
+style="margin-top:13px">
+
+<div style="width:110px">
+
+<label>
+รูปปก / Emoji
+</label>
+
+<input
+id="mCover"
+maxlength="4"
+placeholder=" ">
+
+</div>
+
+
+<button
+class="btn"
 onclick="addMenu()">
-＋ เพิ่มรายการขาย
+
++ เพิ่มรายการ
+
 </button>
+
+</div>
 
 </div>
 
 
 <div class="card">
 
-<h2>🛍️ รายการขาย</h2>
+<h2>
+รายการขาย
+</h2>
 
-<div id="menuList" class="menuList"></div>
-
+<div
+id="menus"
+class="list">
 </div>
 
 </div>
+
+</div>
+
 
 
 <!-- MENU DETAIL -->
 
-<div id="menuDetail" class="detail">
+<div
+id="detail"
+style="display:none">
 
-<button class="back"
-onclick="backToMenus()">
+<div class="card soft">
+
+<button
+class="btn light"
+onclick="closeDetail()">
+
 ← กลับไปรายการขาย
+
 </button>
 
-<div class="card detailHero">
+
+<div
+class="between"
+style="margin-top:13px">
+
+<div>
+
+<h1 id="dName">
+</h1>
+
+<div
+class="muted"
+id="dUnit">
+</div>
+
+</div>
+
+
+<div
+id="dCover"
+class="cover">
+</div>
+
+</div>
+
+
+<div
+class="grid3"
+style="margin-top:16px">
+
+<div class="kpi">
+
+วัตถุดิบที่เปิดใช้
+
+<div
+class="v"
+id="dc">
+
+0
+
+</div>
+
+</div>
+
+
+<div class="kpi">
+
+ต้นทุนรวมทั้งหมด
+
+<div
+class="v"
+id="dt">
+
+฿0.00
+
+</div>
+
+</div>
+
+
+<div class="kpi">
+
+ต้นทุนต่อหน่วย
+
+<div
+class="v"
+id="du">
+
+฿0.00
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="between">
+
+<div>
+
+<h2>
+วัตถุดิบ
+</h2>
+
+<div class="muted small">
+เปิด = รวมในต้นทุน / ปิด = ไม่รวม
+</div>
+
+</div>
+
+
+<button
+class="btn light"
+onclick="openIng()">
+
++ เพิ่มวัตถุดิบ
+
+</button>
+
+</div>
+
+
+<div
+id="ings"
+class="list">
+</div>
+
+</div>
+
+
+<!-- INGREDIENT FORM -->
+
+<div
+id="ingForm"
+class="card"
+style="display:none">
+
+<h2 id="ingTitle">
+เพิ่มวัตถุดิบ
+</h2>
+
 
 <div class="grid2">
 
-<div class="field">
+<div>
 
-<label>ชื่อรายการขาย</label>
+<label>
+ชื่อวัตถุดิบ
+</label>
 
-<input id="detailMenuNameInput"
-oninput="updateMenuName()">
-
-</div>
-
-<div class="field">
-
-<label>สัญลักษณ์ / รูปโปร</label>
-
-<input id="detailMenuIconInput"
-placeholder="เช่น 🍓"
-oninput="updateMenuIcon()">
-
-</div>
-
-</div>
+<input
+id="iName"
+placeholder="เช่น แก้ว 100ml">
 
 </div>
 
 
-<div class="card">
+<div>
 
-<h3>🥕 วัตถุดิบ</h3>
+<label>
+จำนวนซื้อ
+</label>
 
-<p class="muted">
-เปิด = รวมต้นทุน / ปิด = ไม่รวมต้นทุน
-</p>
+<div class="qty">
 
-<div id="ingredientList"></div>
+<button onclick="iq(-1)">
+−
+</button>
 
-<button class="primary"
-style="width:100%;margin-top:8px"
-onclick="openIngredientModal()">
-＋ เพิ่มวัตถุดิบ
+<input
+id="iQty"
+type="number"
+min="0"
+step="0.01"
+value="1"
+oninput="ic()">
+
+<button onclick="iq(1)">
++
 </button>
 
 </div>
@@ -1016,95 +1122,62 @@ onclick="openIngredientModal()">
 </div>
 
 
-<!-- INGREDIENT DETAIL -->
+<div>
 
-<div id="ingredientDetail" class="detail">
+<label>
+ราคาต่อชิ้น
+</label>
 
-<button class="back"
-onclick="backToMenuDetail()">
-← กลับไปวัตถุดิบ
+<input
+id="iPrice"
+type="number"
+min="0"
+step="0.01"
+oninput="ic()">
+
+</div>
+
+
+<div>
+
+<label>
+ต้นทุนวัตถุดิบ
+</label>
+
+<input
+id="iTotal"
+readonly
+value="฿0.00">
+
+</div>
+
+</div>
+
+
+<div
+class="muted small"
+style="margin:10px 0">
+
+จำนวนซื้อ × ราคาต่อชิ้น = ต้นทุนวัตถุดิบ
+
+</div>
+
+
+<button
+class="btn"
+onclick="saveIng()">
+
+บันทึก
+
 </button>
 
-<div class="card">
+<button
+class="btn gray"
+onclick="closeIng()">
 
-<h2>📝 รายละเอียดวัตถุดิบ</h2>
-
-<div class="field">
-
-<label>ชื่อวัตถุดิบ</label>
-
-<input id="editIngName">
-
-</div>
-
-
-<div class="field">
-
-<label>จำนวนซื้อ</label>
-
-<div class="qtyControl">
-
-<button onclick="changeIngQty(-1)">−</button>
-
-<input id="editIngQty"
-type="number"
-min="0"
-step=".01"
-oninput="renderIngredientDetail()">
-
-<button onclick="changeIngQty(1)">+</button>
-
-</div>
-
-</div>
-
-
-<div class="field">
-
-<label>ราคาซื้อต่อชิ้น</label>
-
-<input id="editIngPrice"
-type="number"
-min="0"
-step=".01"
-oninput="renderIngredientDetail()">
-
-</div>
-
-
-<div class="card"
-style="background:#fff8fb">
-
-<div class="muted">
-ต้นทุนวัตถุดิบทั้งหมด
-</div>
-
-<strong id="ingredientTotalCost"
-style="font-size:27px">
-฿0.00
-</strong>
-
-<p class="muted"
-id="ingredientEquation">
-0 × ฿0.00 = ฿0.00
-</p>
-
-</div>
-
-
-<div class="modalActions">
-
-<button class="btn"
-onclick="backToMenuDetail()">
 ยกเลิก
-</button>
 
-<button class="primary"
-onclick="saveIngredientDetail()">
-💾 บันทึกวัตถุดิบ
 </button>
-
-</div>
 
 </div>
 
@@ -1115,1619 +1188,1806 @@ onclick="saveIngredientDetail()">
 </div>
 
 
-<!-- ================= INGREDIENT MODAL ================= -->
 
-<div id="ingredientModal" class="modal hidden">
+<!-- ==================================================
+     EDIT ACCOUNT MODAL
+================================================== -->
 
-<div class="modalBox">
+<div
+id="modal"
+style="
+display:none;
+position:fixed;
+inset:0;
+background:#30232c55;
+z-index:99;
+padding:18px;
+align-items:center;
+justify-content:center">
 
-<div class="modalHead">
+<div
+class="card"
+style="
+width:min(600px,100%);
+max-height:90vh;
+overflow:auto">
 
-<h2>🥕 เพิ่มวัตถุดิบ</h2>
+<div class="between">
 
-<button class="btn"
-onclick="closeIngredientModal()">
-✕
+<h2>
+แก้ไขรายการบัญชี
+</h2>
+
+<button
+class="btn gray"
+onclick="closeEdit()">
+
+ปิด
+
 </button>
 
 </div>
 
-<div class="field">
 
-<label>ชื่อวัตถุดิบ</label>
+<input
+type="hidden"
+id="eid">
 
-<input id="newIngName"
-placeholder="เช่น ซอส">
+
+<label>
+ชื่อรายการ
+</label>
+
+<input id="en">
+
+
+<div
+class="grid2"
+style="margin-top:10px">
+
+<div>
+
+<label>
+วันที่
+</label>
+
+<input
+id="ed"
+type="date">
 
 </div>
 
-<div class="field">
 
-<label>จำนวนซื้อ</label>
+<div>
 
-<input id="newIngQty"
+<label>
+ประเภท
+</label>
+
+<select id="et">
+
+<option value="income">
+รายรับ
+</option>
+
+<option value="expense">
+รายจ่าย
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div
+class="grid2"
+style="margin-top:10px">
+
+<div>
+
+<label>
+จำนวน
+</label>
+
+<div class="qty">
+
+<button onclick="eq(-1)">
+−
+</button>
+
+<input
+id="eqty"
+type="number"
+min="0">
+
+<button onclick="eq(1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<div>
+
+<label>
+ราคาต่อชิ้น
+</label>
+
+<input
+id="ep"
 type="number"
 min="0"
-step=".01"
-value="1">
+step="0.01">
 
 </div>
 
-<div class="field">
-
-<label>ราคาซื้อต่อชิ้น</label>
-
-<input id="newIngPrice"
-type="number"
-min="0"
-step=".01"
-placeholder="50">
-
 </div>
 
-<div class="modalActions">
 
-<button class="btn"
-onclick="closeIngredientModal()">
-ยกเลิก
-</button>
+<div
+id="eprev"
+class="muted small"
+style="margin:10px 0">
+</div>
 
-<button class="primary"
-onclick="createIngredient()">
-💾 บันทึกวัตถุดิบ
+
+<button
+class="btn"
+onclick="saveEdit()">
+
+บันทึกการแก้ไข
+
 </button>
 
 </div>
 
 </div>
 
-</div>
 
 
 <script>
 
-/* =====================================================
-   STORAGE
-===================================================== */
+/* ==================================================
+   DATABASE
+   ใช้ KEY เดิม เพื่อไม่รีเซ็ตข้อมูลเก่า
+================================================== */
 
-const TX_KEY = "myAccountTransactions_v5";
-const MENU_KEY = "myAccountMenus_v5";
+const K = 'accountBook_final_v1';
 
-let transactions =
-JSON.parse(localStorage.getItem(TX_KEY) || "[]");
+let db =
+JSON.parse(
+localStorage.getItem(K) || 'null'
+)
+||
+{
+  title:'สมุดบัญชี',
+  accounts:[],
+  menus:[]
+};
 
-let menus =
-JSON.parse(localStorage.getItem(MENU_KEY) || "[]");
-
-let shopName =
-localStorage.getItem("myShopName_v5") || "สมุดบัญชี";
-
-let txType = "income";
-
-let currentPeriod = "day";
-
-let summaryMode = "detail";
-
-let currentMenuId = null;
-
-let currentIngredientId = null;
+let mid = null;
+let eid = null;
+let iid = null;
 
 
-/* =====================================================
+/* ==================================================
    HELPERS
-===================================================== */
+================================================== */
 
-function $(id){
-  return document.getElementById(id);
-}
+const $ = id =>
+document.getElementById(id);
 
-function money(n){
-  return "฿" + Number(n || 0).toLocaleString("th-TH",{
-    minimumFractionDigits:2,
-    maximumFractionDigits:2
-  });
+
+const money = n =>
+'฿' +
+Number(n || 0).toLocaleString(
+'th-TH',
+{
+minimumFractionDigits:2,
+maximumFractionDigits:2
 }
+);
+
+
+const sum = a =>
+Number(a.qty || 0) *
+Number(a.price || 0);
+
+
+const uid = () =>
+Date.now().toString(36) +
+Math.random().toString(36).slice(2,7);
+
+
+const esc = s =>
+String(s ?? '').replace(
+/[&<>"']/g,
+m =>
+({
+'&':'&amp;',
+'<':'&lt;',
+'>':'&gt;',
+'"':'&quot;',
+"'":'&#39;'
+}[m])
+);
+
 
 function today(){
 
-  const d = new Date();
+let d = new Date();
 
-  return d.getFullYear()+"-"+
-  String(d.getMonth()+1).padStart(2,"0")+"-"+
-  String(d.getDate()).padStart(2,"0");
-
-}
-
-function uid(){
-
-  return Date.now()+
-  Math.random().toString(36).slice(2);
-
-}
-
-function saveAll(){
-
-  localStorage.setItem(
-    TX_KEY,
-    JSON.stringify(transactions)
-  );
-
-  localStorage.setItem(
-    MENU_KEY,
-    JSON.stringify(menus)
-  );
-
-}
-
-function escapeHTML(s){
-
-  const div=document.createElement("div");
-
-  div.textContent=s || "";
-
-  return div.innerHTML;
+return new Date(
+d - d.getTimezoneOffset()*60000
+)
+.toISOString()
+.slice(0,10);
 
 }
 
 
-/* =====================================================
-   SHOP NAME
-===================================================== */
+function iso(d){
 
-$("shopTitle").textContent="📒 "+shopName;
+return new Date(
+d - d.getTimezoneOffset()*60000
+)
+.toISOString()
+.slice(0,10);
 
-$("shopTitle").onclick=function(){
+}
 
-  const n=prompt(
-    "แก้ชื่อร้าน / ชื่อสมุดบัญชี",
-    shopName
-  );
 
-  if(n===null)return;
+function fd(s){
 
-  shopName=n.trim() || "สมุดบัญชี";
+return s
+?
+new Date(
+s+'T00:00:00'
+)
+.toLocaleDateString('th-TH')
+:
+'';
 
-  localStorage.setItem(
-    "myShopName_v5",
-    shopName
-  );
+}
 
-  $("shopTitle").textContent="📒 "+shopName;
+
+function save(){
+
+localStorage.setItem(
+K,
+JSON.stringify(db)
+);
+
+}
+
+
+/* ==================================================
+   NAVIGATION
+================================================== */
+
+document
+.querySelectorAll('.nav button')
+.forEach(b => {
+
+b.onclick = () => {
+
+document
+.querySelectorAll('.nav button')
+.forEach(x =>
+x.classList.remove('on')
+);
+
+b.classList.add('on');
+
+
+document
+.querySelectorAll('.page')
+.forEach(x =>
+x.classList.remove('on')
+);
+
+$(b.dataset.p)
+.classList.add('on');
+
+
+if(b.dataset.p === 'account')
+renderAccounts();
+
+if(b.dataset.p === 'summary')
+summary();
+
+if(b.dataset.p === 'all')
+renderAll();
+
+if(b.dataset.p === 'cost'){
+
+closeDetail();
+
+renderMenus();
+
+}
 
 };
 
+});
 
-/* =====================================================
-   NAV
-===================================================== */
 
-function showPage(page,button){
+/* ==================================================
+   SHOP TITLE
+================================================== */
 
-  document.querySelectorAll(".page")
-  .forEach(x=>x.classList.remove("active"));
+function editTitle(){
 
-  $("page-"+page).classList.add("active");
+let x =
+prompt(
+'ชื่อที่จะแสดงแทน “สมุดบัญชี”',
+db.title
+);
 
-  document.querySelectorAll(".nav button")
-  .forEach(x=>x.classList.remove("active"));
+if(
+x !== null &&
+x.trim()
+){
 
-  button.classList.add("active");
+db.title =
+x.trim();
 
-  if(page==="summary")
-    renderSummary();
+save();
 
-  if(page==="all")
-    renderAll();
+$('shopTitle').textContent =
+db.title;
 
-  if(page==="cost")
-    showCostHome();
+}
 
 }
 
 
-/* =====================================================
+/* ==================================================
    ACCOUNT
-===================================================== */
+================================================== */
 
-function setTxType(type){
+function aq(n){
 
-  txType=type;
+$('aQty').value =
+Math.max(
+0,
+Number($('aQty').value || 0)+n
+);
 
-  $("incomeBtn").classList.toggle(
-    "active",type==="income"
-  );
-
-  $("expenseBtn").classList.toggle(
-    "active",type==="expense"
-  );
-
-}
-
-function changeTxQty(n){
-
-  const input=$("txQty");
-
-  let v=Number(input.value)||0;
-
-  v+=n;
-
-  if(v<.01)v=.01;
-
-  input.value=v;
-
-  calcTxTotal();
-
-}
-
-function calcTxTotal(){
-
-  const q=Number($("txQty").value)||0;
-
-  const p=Number($("txPrice").value)||0;
-
-  $("txTotal").textContent=money(q*p);
-
-}
-
-function saveTx(){
-
-  const item=$("txItem").value.trim();
-
-  const qty=Number($("txQty").value);
-
-  const price=Number($("txPrice").value);
-
-  const date=$("txDate").value;
-
-  if(!item)
-    return alert("กรุณาใส่รายการ");
-
-  if(!qty || qty<=0)
-    return alert("กรุณาใส่จำนวน");
-
-  if(price<0 || isNaN(price))
-    return alert("กรุณาใส่ราคา");
-
-  if(!date)
-    return alert("กรุณาเลือกวันที่");
-
-  transactions.push({
-    id:uid(),
-    type:txType,
-    item:item,
-    qty:qty,
-    price:price,
-    total:qty*price,
-    date:date,
-    note:$("txNote").value.trim()
-  });
-
-  saveAll();
-
-  $("txItem").value="";
-  $("txQty").value=1;
-  $("txPrice").value="";
-  $("txNote").value="";
-  $("txDate").value=today();
-
-  calcTxTotal();
-  renderAccount();
-  renderSummary();
-  renderAll();
-
-}
-
-function deleteTx(id){
-
-  if(!confirm("ลบรายการนี้ใช่ไหม?"))
-    return;
-
-  transactions=
-    transactions.filter(x=>x.id!==id);
-
-  saveAll();
-
-  renderAccount();
-  renderSummary();
-  renderAll();
-
-}
-
-function renderAccount(){
-
-  let income=0;
-  let expense=0;
-
-  transactions.forEach(t=>{
-
-    if(t.type==="income")
-      income+=Number(t.total||0);
-    else
-      expense+=Number(t.total||0);
-
-  });
-
-  $("income").textContent=money(income);
-  $("expense").textContent=money(expense);
-  $("balance").textContent=money(income-expense);
-
-  const list=[...transactions].sort(
-    (a,b)=>new Date(b.date)-new Date(a.date)
-  );
-
-  $("txList").innerHTML=list.length?
-
-  list.map(t=>`
-
-    <div class="tx">
-
-      <div class="txInfo">
-
-        <strong>
-          ${escapeHTML(t.item)}
-        </strong>
-
-        <small>
-          ${t.date} ·
-          ${t.qty} × ${money(t.price)}
-          = ${money(t.total)}
-        </small>
-
-      </div>
-
-      <div>
-
-        <div class="txAmount ${t.type==="income"?"in":"out"}">
-          ${t.type==="income"?"+":"-"}${money(t.total)}
-        </div>
-
-        <button class="danger"
-        onclick="deleteTx('${t.id}')">
-        ลบ
-        </button>
-
-      </div>
-
-    </div>
-
-  `).join("")
-
-  :
-
-  `<div class="muted">ยังไม่มีรายการ</div>`;
+ap();
 
 }
 
 
-/* =====================================================
+function ap(){
+
+let q =
++$('aQty').value || 0;
+
+let p =
++$('aPrice').value || 0;
+
+$('apreview').textContent =
+`${q} × ${p} = ${q*p}`;
+
+}
+
+
+function addAccount(){
+
+let n =
+$('aName').value.trim();
+
+if(!n)
+return alert(
+'ใส่ชื่อรายการก่อน'
+);
+
+
+db.accounts.unshift({
+
+id:uid(),
+
+name:n,
+
+date:
+$('aDate').value ||
+today(),
+
+type:
+$('aType').value,
+
+qty:
++$('aQty').value || 0,
+
+price:
++$('aPrice').value || 0
+
+});
+
+
+save();
+
+
+$('aName').value='';
+
+$('aQty').value=1;
+
+$('aPrice').value='';
+
+ap();
+
+renderAccounts();
+
+renderAll();
+
+summary();
+
+}
+
+
+function renderAccounts(){
+
+let inc =
+db.accounts
+.filter(x=>x.type==='income')
+.reduce(
+(s,x)=>s+sum(x),
+0
+);
+
+
+let ex =
+db.accounts
+.filter(x=>x.type==='expense')
+.reduce(
+(s,x)=>s+sum(x),
+0
+);
+
+
+$('balance').textContent =
+money(inc-ex);
+
+
+$('accountList').innerHTML =
+db.accounts.length
+
+?
+
+db.accounts.map(a => `
+
+<div class="item">
+
+<div class="between">
+
+<div>
+
+<div class="title">
+${esc(a.name)}
+</div>
+
+<div class="muted small">
+${fd(a.date)}
+·
+${a.type==='income'
+?'รายรับ'
+:'รายจ่าย'}
+</div>
+
+<div class="small">
+
+${a.qty}
+×
+${money(a.price)}
+=
+<b>
+${money(sum(a))}
+</b>
+
+</div>
+
+</div>
+
+
+<div class="actions">
+
+<button
+class="mini"
+onclick="openEdit('${a.id}')">
+
+แก้
+
+</button>
+
+
+<button
+class="trash"
+onclick="delA('${a.id}')">
+
+🗑️
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`).join('')
+
+:
+
+'<div class="empty">ยังไม่มีรายการบัญชี</div>';
+
+}
+
+
+function delA(id){
+
+if(
+confirm(
+'ลบรายการนี้ใช่ไหม'
+)
+){
+
+db.accounts =
+db.accounts.filter(
+x=>x.id!==id
+);
+
+save();
+
+renderAccounts();
+
+renderAll();
+
+summary();
+
+}
+
+}
+
+
+/* ==================================================
+   EDIT ACCOUNT
+================================================== */
+
+function openEdit(id){
+
+let a =
+db.accounts.find(
+x=>x.id===id
+);
+
+if(!a)
+return;
+
+eid=id;
+
+$('en').value=a.name;
+
+$('ed').value=a.date;
+
+$('et').value=a.type;
+
+$('eqty').value=a.qty;
+
+$('ep').value=a.price;
+
+editPrev();
+
+$('modal').style.display='flex';
+
+}
+
+
+function closeEdit(){
+
+$('modal').style.display='none';
+
+}
+
+
+function eq(n){
+
+$('eqty').value =
+Math.max(
+0,
++$('eqty').value+n
+);
+
+editPrev();
+
+}
+
+
+function editPrev(){
+
+$('eprev').textContent =
+
+`${+$('eqty').value||0} × ${money($('ep').value||0)} = ${money(
+(+$('eqty').value||0) *
+(+$('ep').value||0)
+)}`;
+
+}
+
+
+$('ep').oninput =
+editPrev;
+
+$('eqty').oninput =
+editPrev;
+
+
+function saveEdit(){
+
+let a =
+db.accounts.find(
+x=>x.id===eid
+);
+
+if(!a)
+return;
+
+
+a.name =
+$('en').value.trim();
+
+a.date =
+$('ed').value;
+
+a.type =
+$('et').value;
+
+a.qty =
++$('eqty').value || 0;
+
+a.price =
++$('ep').value || 0;
+
+
+if(!a.name)
+return alert(
+'ชื่อรายการห้ามว่าง'
+);
+
+
+save();
+
+closeEdit();
+
+renderAccounts();
+
+renderAll();
+
+summary();
+
+}
+
+
+/* ==================================================
    SUMMARY
-===================================================== */
+================================================== */
 
-function setPeriod(p){
 
-  currentPeriod=p;
+/*
+  ปีที่ให้เลือก
+  2026 - 2035
+*/
+function years(){
 
-  document.querySelectorAll(".period")
-  .forEach(x=>{
-    x.classList.toggle(
-      "active",
-      x.dataset.period===p
-    );
-  });
-
-  renderSummary();
-
-}
-
-function setSummaryMode(mode){
-
-  summaryMode=mode;
-
-  $("modeDetail").classList.toggle(
-    "active",mode==="detail"
-  );
-
-  $("modeNumber").classList.toggle(
-    "active",mode==="number"
-  );
-
-  renderSummary();
+return Array.from(
+{length:10},
+(_,i)=>2026+i
+);
 
 }
 
 
-/* =====================================================
-   SUMMARY SELECTOR
-   แก้ตรงนี้เป็นหลักสำหรับ "รายปี"
-===================================================== */
+function summary(){
 
-function renderSummarySelector(){
+let mode =
+$('sMode').value;
 
-  const box=$("summarySelector");
+let det =
+$('sDetail').value;
 
-  if(currentPeriod==="day"){
+let n =
+today();
 
-    $("summarySelectTitle").textContent="📅 เลือกวันที่";
+let p =
+$('picker');
 
-    box.innerHTML=`
-      <input
-        id="summaryDate"
-        type="date"
-        value="${window.summaryDate || today()}"
-        onchange="window.summaryDate=this.value;renderSummary()">
-    `;
 
-  }
+/* ---------------- DAY ---------------- */
 
-  else if(currentPeriod==="week"){
+if(mode==='day'){
 
-    $("summarySelectTitle").textContent="📅 เลือกวันที่ในสัปดาห์";
+p.innerHTML = `
 
-    box.innerHTML=`
-      <input
-        id="summaryDate"
-        type="date"
-        value="${window.summaryDate || today()}"
-        onchange="window.summaryDate=this.value;renderSummary()">
-      <p class="muted">
-        ระบบจะแสดงตั้งแต่วันอาทิตย์ถึงวันเสาร์
-        ของสัปดาห์นั้น
-      </p>
-    `;
+<label>
+เลือกวันที่
+</label>
 
-  }
+<input
+id="sp"
+type="date"
+value="${n}"
+onchange="summary()">
 
-  else if(currentPeriod==="month"){
-
-    $("summarySelectTitle").textContent="🗓️ เลือกเดือน / ปี";
-
-    const now=new Date();
-
-    const currentMonth=
-      window.summaryMonth ??
-      now.getMonth();
-
-    const currentYear=
-      window.summaryYear ??
-      Math.max(2026,now.getFullYear());
-
-    box.innerHTML=`
-
-      <div class="grid2">
-
-        <select id="summaryMonth"
-        onchange="
-          window.summaryMonth=Number(this.value);
-          renderSummary()
-        ">
-
-          ${[
-            "มกราคม","กุมภาพันธ์","มีนาคม",
-            "เมษายน","พฤษภาคม","มิถุนายน",
-            "กรกฎาคม","สิงหาคม","กันยายน",
-            "ตุลาคม","พฤศจิกายน","ธันวาคม"
-          ].map((m,i)=>`
-            <option value="${i}"
-            ${i===currentMonth?"selected":""}>
-              ${m}
-            </option>
-          `).join("")}
-
-        </select>
-
-        <select id="summaryYear"
-        onchange="
-          window.summaryYear=Number(this.value);
-          renderSummary()
-        ">
-
-          ${yearOptions(currentYear)}
-
-        </select>
-
-      </div>
-
-    `;
-
-  }
-
-  else if(currentPeriod==="year"){
-
-    /*
-      ⭐ จุดที่เพิ่ม/แก้
-      รายปีเลือกปีได้โดยตรง
-      2026 - 2035
-    */
-
-    $("summarySelectTitle").textContent="📆 เลือกปี";
-
-    const currentYear=
-      window.summaryYear ??
-      new Date().getFullYear();
-
-    box.innerHTML=`
-
-      <select
-        id="summaryYear"
-        onchange="
-          window.summaryYear=Number(this.value);
-          renderSummary()
-        ">
-
-        ${yearOptions(currentYear)}
-
-      </select>
-
-    `;
-
-  }
+`;
 
 }
 
 
-/* =====================================================
-   YEAR OPTIONS
-===================================================== */
+/* ---------------- WEEK ---------------- */
 
-function yearOptions(selected){
+if(mode==='week'){
 
-  let html="";
+p.innerHTML = `
 
-  /*
-    ตั้งแต่ 2026 ถึง 2035
-  */
+<label>
+เลือกวันใดก็ได้ในสัปดาห์
+</label>
 
-  for(let y=2026;y<=2035;y++){
+<input
+id="sp"
+type="date"
+value="${n}"
+onchange="summary()">
 
-    html+=`
-      <option value="${y}"
-      ${Number(selected)===y?"selected":""}>
-        ${y}
-      </option>
-    `;
-
-  }
-
-  /*
-    ถ้าข้อมูลเก่ามีปีนอกช่วง
-    จะยังไม่ทำให้ข้อมูลหาย
-  */
-
-  if(selected<2026 || selected>2035){
-
-    html=`
-      <option value="${selected}" selected>
-        ${selected}
-      </option>
-    `+html;
-
-  }
-
-  return html;
+`;
 
 }
 
 
-/* =====================================================
-   SUMMARY FILTER
-===================================================== */
+/* ---------------- MONTH ---------------- */
 
-function getWeekStartSunday(date){
+if(mode==='month'){
 
-  const d=new Date(date);
+p.innerHTML = `
 
-  const day=d.getDay();
+<label>
+เลือกเดือน / ปี
+</label>
 
-  d.setDate(
-    d.getDate()-day
-  );
+<input
+id="sp"
+type="month"
+value="${n.slice(0,7)}"
+onchange="summary()">
 
-  d.setHours(0,0,0,0);
-
-  return d;
-
-}
-
-function filteredSummary(){
-
-  if(currentPeriod==="day"){
-
-    const d=
-      window.summaryDate || today();
-
-    return transactions.filter(
-      t=>t.date===d
-    );
-
-  }
-
-
-  if(currentPeriod==="week"){
-
-    const d=
-      new Date(
-        (window.summaryDate || today())+
-        "T00:00:00"
-      );
-
-    const start=
-      getWeekStartSunday(d);
-
-    const end=
-      new Date(start);
-
-    end.setDate(
-      end.getDate()+7
-    );
-
-    return transactions.filter(t=>{
-
-      const td=
-        new Date(t.date+"T00:00:00");
-
-      return td>=start && td<end;
-
-    });
-
-  }
-
-
-  if(currentPeriod==="month"){
-
-    const year=
-      Number(
-        window.summaryYear ??
-        new Date().getFullYear()
-      );
-
-    const month=
-      Number(
-        window.summaryMonth ??
-        new Date().getMonth()
-      );
-
-    return transactions.filter(t=>{
-
-      const d=
-        new Date(t.date+"T00:00:00");
-
-      return(
-        d.getFullYear()===year &&
-        d.getMonth()===month
-      );
-
-    });
-
-  }
-
-
-  /*
-    ⭐ รายปี
-    เลือกปีจาก select แล้วกรอง
-    ตั้งแต่ 1 มกราคม - 31 ธันวาคม
-  */
-
-  if(currentPeriod==="year"){
-
-    const year=
-      Number(
-        window.summaryYear ??
-        new Date().getFullYear()
-      );
-
-    return transactions.filter(t=>{
-
-      const d=
-        new Date(t.date+"T00:00:00");
-
-      return d.getFullYear()===year;
-
-    });
-
-  }
-
-  return [];
+`;
 
 }
 
 
-/* =====================================================
-   SUMMARY RENDER
-===================================================== */
+/* ---------------- YEAR ---------------- */
 
-function renderSummary(){
+if(mode==='year'){
 
-  renderSummarySelector();
+p.innerHTML = `
 
-  const data=
-    filteredSummary();
+<label>
+เลือกปี
+</label>
 
-  let income=0;
-  let expense=0;
+<select
+id="sp"
+class="yearSelect"
+onchange="summary()">
 
-  data.forEach(t=>{
+${years()
+.map(y => `
 
-    if(t.type==="income")
-      income+=Number(t.total||0);
-    else
-      expense+=Number(t.total||0);
+<option
+value="${y}">
 
-  });
+${y}
 
-  $("sumIncome").textContent=money(income);
-  $("sumExpense").textContent=money(expense);
-  $("sumBalance").textContent=
-    money(income-expense);
+</option>
 
+`)
+.join('')}
 
-  if(currentPeriod==="day"){
+</select>
 
-    $("summaryText").textContent=
-      "รายการของวันที่เลือก";
-
-  }
-
-  else if(currentPeriod==="week"){
-
-    $("summaryText").textContent=
-      "รายการตั้งแต่วันอาทิตย์ถึงวันเสาร์";
-
-  }
-
-  else if(currentPeriod==="month"){
-
-    const y=
-      Number(window.summaryYear);
-
-    const m=
-      Number(window.summaryMonth);
-
-    const names=[
-      "มกราคม","กุมภาพันธ์","มีนาคม",
-      "เมษายน","พฤษภาคม","มิถุนายน",
-      "กรกฎาคม","สิงหาคม","กันยายน",
-      "ตุลาคม","พฤศจิกายน","ธันวาคม"
-    ];
-
-    $("summaryText").textContent=
-      `รายการของเดือน${names[m]} ${y}`;
-
-  }
-
-  else{
-
-    const y=
-      Number(
-        window.summaryYear ??
-        new Date().getFullYear()
-      );
-
-    $("summaryText").textContent=
-      `รายการทั้งหมดของปี ${y}`;
-
-  }
-
-
-  if(summaryMode==="number"){
-
-    $("summaryList").innerHTML=`
-
-      <div class="money">
-
-        <div class="moneyBox">
-
-          <small>รายรับ</small>
-
-          <b class="in">
-            ${money(income)}
-          </b>
-
-        </div>
-
-        <div class="moneyBox">
-
-          <small>รายจ่าย</small>
-
-          <b class="out">
-            ${money(expense)}
-          </b>
-
-        </div>
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  $("summaryList").innerHTML=
-    data.length
-    ?
-    data.map(t=>`
-
-      <div class="tx">
-
-        <div class="txInfo">
-
-          <strong>
-            ${escapeHTML(t.item)}
-          </strong>
-
-          <small>
-            ${t.date}
-          </small>
-
-        </div>
-
-        <div
-        class="txAmount ${t.type==="income"?"in":"out"}">
-
-          ${t.type==="income"?"+":"-"}
-          ${money(t.total)}
-
-        </div>
-
-      </div>
-
-    `).join("")
-    :
-    `<div class="muted">
-      ไม่มีรายการในช่วงนี้
-    </div>`;
+`;
 
 }
 
 
-/* =====================================================
-   ALL LIST
-===================================================== */
+/* ==================================================
+   กำหนดช่วงเวลา
+================================================== */
+
+let v =
+$('sp').value;
+
+let start;
+let end;
+
+
+/* DAY */
+
+if(mode==='day'){
+
+start=v;
+end=v;
+
+}
+
+
+/* WEEK
+   อาทิตย์ - เสาร์
+*/
+
+if(mode==='week'){
+
+let d =
+new Date(
+v+'T00:00:00'
+);
+
+let w =
+d.getDay();
+
+let s =
+new Date(d);
+
+s.setDate(
+d.getDate()-w
+);
+
+let e =
+new Date(s);
+
+e.setDate(
+s.getDate()+6
+);
+
+start =
+iso(s);
+
+end =
+iso(e);
+
+}
+
+
+/* MONTH
+   วันที่ 1 - วันสุดท้าย
+*/
+
+if(mode==='month'){
+
+start =
+v+'-01';
+
+let d =
+new Date(
+v+'-01T00:00:00'
+);
+
+d.setMonth(
+d.getMonth()+1
+);
+
+d.setDate(0);
+
+end =
+iso(d);
+
+}
+
+
+/* ==================================================
+   YEAR
+   วันที่ 1 มกราคม - 31 ธันวาคม
+================================================== */
+
+if(mode==='year'){
+
+start =
+v+'-01-01';
+
+end =
+v+'-12-31';
+
+}
+
+
+/* ==================================================
+   FILTER
+================================================== */
+
+let r =
+db.accounts.filter(
+a =>
+a.date >= start &&
+a.date <= end
+);
+
+
+/* ==================================================
+   TOTAL
+================================================== */
+
+let inc =
+r
+.filter(
+a=>a.type==='income'
+)
+.reduce(
+(s,a)=>s+sum(a),
+0
+);
+
+
+let ex =
+r
+.filter(
+a=>a.type==='expense'
+)
+.reduce(
+(s,a)=>s+sum(a),
+0
+);
+
+
+$('si').textContent =
+money(inc);
+
+$('se').textContent =
+money(ex);
+
+$('sn').textContent =
+money(inc-ex);
+
+
+/* ==================================================
+   DISPLAY
+================================================== */
+
+if(det==='number'){
+
+$('srows').innerHTML = `
+
+<div class="sumrow">
+
+<span>
+รายรับ
+</span>
+
+<b>
+${money(inc)}
+</b>
+
+</div>
+
+
+<div class="sumrow">
+
+<span>
+รายจ่าย
+</span>
+
+<b>
+${money(ex)}
+</b>
+
+</div>
+
+
+<div class="sumrow">
+
+<span>
+คงเหลือ
+</span>
+
+<b>
+${money(inc-ex)}
+</b>
+
+</div>
+
+`;
+
+}
+
+else{
+
+$('srows').innerHTML =
+
+r.length
+
+?
+
+r.map(a=>`
+
+<div class="sumrow">
+
+<span>
+
+${esc(a.name)}
+
+<small class="muted">
+
+${fd(a.date)}
+·
+${a.qty}
+×
+${money(a.price)}
+
+</small>
+
+</span>
+
+
+<b>
+
+${a.type==='expense'
+?'-'
+:''}
+
+${money(sum(a))}
+
+</b>
+
+</div>
+
+`).join('')
+
+:
+
+'<div class="empty">ไม่มีรายการในช่วงที่เลือก</div>';
+
+}
+
+}
+
+
+/* ==================================================
+   ALL
+================================================== */
 
 function renderAll(){
 
-  const q=
-    ($("allSearch").value||"")
-    .trim()
-    .toLowerCase();
+let q =
+(
+$('search').value || ''
+)
+.toLowerCase();
 
-  const data=
-    transactions
-    .filter(t=>
-      !q ||
-      String(t.item).toLowerCase().includes(q)
-    )
-    .sort(
-      (a,b)=>
-      new Date(b.date)-new Date(a.date)
-    );
 
-  $("allList").innerHTML=
-    data.length
-    ?
-    data.map(t=>`
+let r =
+db.accounts.filter(
+a =>
+a.name
+.toLowerCase()
+.includes(q)
+);
 
-      <div class="tx">
 
-        <div class="txInfo">
+let inc =
+db.accounts
+.filter(
+a=>a.type==='income'
+)
+.reduce(
+(s,a)=>s+sum(a),
+0
+);
 
-          <strong>
-            ${escapeHTML(t.item)}
-          </strong>
 
-          <small>
-            ${t.date} ·
-            ${t.qty} × ${money(t.price)}
-            = ${money(t.total)}
-          </small>
+let ex =
+db.accounts
+.filter(
+a=>a.type==='expense'
+)
+.reduce(
+(s,a)=>s+sum(a),
+0
+);
 
-        </div>
 
-        <div
-        class="txAmount ${t.type==="income"?"in":"out"}">
+$('ai').textContent =
+money(inc);
 
-          ${t.type==="income"?"+":"-"}
-          ${money(t.total)}
+$('ae').textContent =
+money(ex);
 
-        </div>
+$('an').textContent =
+money(inc-ex);
 
-      </div>
 
-    `).join("")
-    :
-    `<div class="muted">
-      ไม่พบรายการ
-    </div>`;
+$('allList').innerHTML =
+
+r.length
+
+?
+
+r.map(a=>`
+
+<div class="item">
+
+<div class="between">
+
+<div>
+
+<div class="title">
+${esc(a.name)}
+</div>
+
+<div class="muted small">
+
+${fd(a.date)}
+·
+${a.type==='income'
+?'รายรับ'
+:'รายจ่าย'}
+
+</div>
+
+<div class="small">
+
+${a.qty}
+×
+${money(a.price)}
+=
+<b>
+${money(sum(a))}
+</b>
+
+</div>
+
+</div>
+
+
+<button
+class="mini"
+onclick="openEdit('${a.id}')">
+
+แก้
+
+</button>
+
+</div>
+
+</div>
+
+`).join('')
+
+:
+
+'<div class="empty">ไม่พบรายการ</div>';
 
 }
 
 
-/* =====================================================
-   COST HOME
-===================================================== */
-
-function showCostHome(){
-
-  $("costHome").style.display="block";
-
-  $("menuDetail").classList.remove("active");
-
-  $("ingredientDetail")
-    .classList.remove("active");
-
-  renderMenus();
-
-}
+/* ==================================================
+   COST
+================================================== */
 
 function addMenu(){
 
-  const name=
-    $("newMenuName").value.trim();
+let n =
+$('mName')
+.value.trim();
 
-  const icon=
-    $("newMenuIcon").value.trim();
+if(!n)
+return alert(
+'ใส่ชื่อรายการขายก่อน'
+);
 
-  if(!name)
-    return alert("กรุณาใส่ชื่อรายการขาย");
 
-  menus.push({
+db.menus.push({
 
-    id:uid(),
+id:uid(),
 
-    name:name,
+name:n,
 
-    icon:icon,
+unit:
+$('mUnit').value.trim()
+||
+'ชิ้น',
 
-    ingredients:[]
+cover:
+$('mCover').value.trim(),
 
-  });
+ingredients:[]
 
-  saveAll();
+});
 
-  $("newMenuName").value="";
-  $("newMenuIcon").value="";
 
-  renderMenus();
+save();
 
-}
 
-function menuTotalCost(menu){
+$('mName').value='';
 
-  return(menu.ingredients||[])
-  .filter(i=>i.include!=="no")
-  .reduce(
-    (sum,i)=>
-      sum+
-      Number(i.qty||0)*
-      Number(i.price||0),
-    0
-  );
+$('mUnit').value='';
+
+$('mCover').value='';
+
+renderMenus();
 
 }
+
 
 function renderMenus(){
 
-  $("menuList").innerHTML=
-    menus.length
-    ?
-    menus.map(m=>{
+$('menus').innerHTML =
 
-      const total=
-        menuTotalCost(m);
+db.menus.length
 
-      const count=
-        (m.ingredients||[]).length;
+?
 
-      return`
+db.menus.map(m=>{
 
-        <div class="menuCard">
-
-          <div class="menuRow">
-
-            <div class="menuLeft">
-
-              <div class="menuName">
-
-                ${escapeHTML(m.icon||"")}
-                ${escapeHTML(m.name)}
-
-              </div>
-
-              <div class="menuIngredientsCount">
-
-                ${count} รายการวัตถุดิบ
-
-              </div>
-
-            </div>
+let c =
+m.ingredients
+.filter(i=>i.on)
+.reduce(
+(s,i)=>
+s+i.qty*i.price,
+0
+);
 
 
-            <div class="menuRight">
+return `
 
-              <div class="menuCostTotal">
+<div class="item">
 
-                รวมต้นทุน ${money(total)}
+<div class="between">
 
-              </div>
+<div class="row">
 
-              <button
-              class="iconBtn"
-              onclick="openMenu('${m.id}')">
-              ✏️
-              </button>
+<div class="cover">
 
-              <button
-              class="iconBtn"
-              onclick="duplicateMenu('${m.id}')">
-              📋
-              </button>
+${m.cover
+?esc(m.cover)
+:''}
 
-              <button
-              class="iconBtn"
-              onclick="deleteMenu('${m.id}')">
-              🗑️
-              </button>
+</div>
 
-            </div>
 
-          </div>
+<div>
 
-        </div>
+<div class="title">
 
-      `;
+${esc(m.name)}
 
-    }).join("")
-    :
-    `<div class="muted">
-      ยังไม่มีรายการขาย
-    </div>`;
+</div>
+
+
+<div class="muted small">
+
+หน่วยขาย:
+${esc(m.unit)}
+
+</div>
+
+
+<div
+class="small"
+style="margin-top:5px">
+
+${m.ingredients.filter(i=>i.on).length}
+
+วัตถุดิบที่เปิดใช้
+
+·
+
+ต้นทุนรวม
+
+${money(c)}
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="actions">
+
+<button
+class="btn light"
+onclick="openDetail('${m.id}')">
+
+วัตถุดิบ
+
+</button>
+
+
+<button
+class="trash"
+onclick="delM('${m.id}')">
+
+🗑️
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}).join('')
+
+:
+
+'<div class="empty">ยังไม่มีรายการขาย</div>';
+
+}
+
+
+function delM(id){
+
+if(
+confirm(
+'ลบรายการขายและวัตถุดิบทั้งหมดใช่ไหม'
+)
+){
+
+db.menus =
+db.menus.filter(
+m=>m.id!==id
+);
+
+save();
+
+renderMenus();
+
+}
 
 }
 
 
-/* =====================================================
-   MENU
-===================================================== */
+function menu(){
 
-function openMenu(id){
-
-  currentMenuId=id;
-
-  const menu=
-    menus.find(m=>m.id===id);
-
-  if(!menu)return;
-
-  $("costHome").style.display="none";
-
-  $("menuDetail").classList.add("active");
-
-  $("ingredientDetail")
-    .classList.remove("active");
-
-  $("detailMenuNameInput").value=
-    menu.name||"";
-
-  $("detailMenuIconInput").value=
-    menu.icon||"";
-
-  renderIngredientList();
-
-}
-
-function updateMenuName(){
-
-  const menu=
-    menus.find(m=>m.id===currentMenuId);
-
-  if(!menu)return;
-
-  menu.name=
-    $("detailMenuNameInput").value;
-
-  saveAll();
-
-}
-
-function updateMenuIcon(){
-
-  const menu=
-    menus.find(m=>m.id===currentMenuId);
-
-  if(!menu)return;
-
-  menu.icon=
-    $("detailMenuIconInput").value;
-
-  saveAll();
-
-}
-
-function backToMenus(){
-
-  showCostHome();
-
-}
-
-function duplicateMenu(id){
-
-  const original=
-    menus.find(m=>m.id===id);
-
-  if(!original)return;
-
-  const copy=
-    JSON.parse(
-      JSON.stringify(original)
-    );
-
-  copy.id=uid();
-
-  copy.name=
-    original.name+" สำเนา";
-
-  copy.ingredients=
-    (original.ingredients||[])
-    .map(i=>({
-      ...i,
-      id:uid()
-    }));
-
-  menus.push(copy);
-
-  saveAll();
-
-  renderMenus();
-
-}
-
-function deleteMenu(id){
-
-  if(!confirm(
-    "ลบรายการขายนี้และวัตถุดิบทั้งหมดใช่ไหม?"
-  ))return;
-
-  menus=
-    menus.filter(m=>m.id!==id);
-
-  saveAll();
-
-  renderMenus();
+return db.menus.find(
+m=>m.id===mid
+);
 
 }
 
 
-/* =====================================================
-   INGREDIENT LIST
-===================================================== */
+/* ==================================================
+   MENU DETAIL
+================================================== */
 
-function renderIngredientList(){
+function openDetail(id){
 
-  const menu=
-    menus.find(m=>m.id===currentMenuId);
+mid=id;
 
-  if(!menu)return;
+$('costHome')
+.style.display='none';
 
-  const list=
-    menu.ingredients||[];
+$('detail')
+.style.display='block';
 
-  $("ingredientList").innerHTML=
-    list.length
-    ?
-    list.map((i,index)=>`
-
-      <div class="ingredientCard">
-
-        <div class="ingredientMain">
-
-          <div
-          class="ingredientName"
-          onclick="openIngredient('${i.id}')">
-
-            ${escapeHTML(i.name)}
-
-          </div>
-
-
-          <div class="ingredientActions">
-
-            <button
-            class="smallBtn"
-            onclick="moveIngredient('${i.id}',-1)">
-              ↑
-            </button>
-
-            <button
-            class="smallBtn"
-            onclick="moveIngredient('${i.id}',1)">
-              ↓
-            </button>
-
-            <button
-            class="smallBtn"
-            onclick="openIngredient('${i.id}')">
-              รายละเอียด
-            </button>
-
-            <button
-            class="smallBtn"
-            onclick="deleteIngredient('${i.id}')">
-              ลบ
-            </button>
-
-
-            <label class="switch"
-            onclick="event.stopPropagation()">
-
-              <input
-              type="checkbox"
-              ${i.include!=="no"?"checked":""}
-              onchange="toggleIngredient('${i.id}',this.checked)">
-
-              <span class="slider"></span>
-
-            </label>
-
-
-            <button
-            class="smallBtn"
-            onclick="changeIngredientQty('${i.id}',-1)">
-              −
-            </button>
-
-            <button
-            class="smallBtn"
-            onclick="changeIngredientQty('${i.id}',1)">
-              +
-            </button>
-
-          </div>
-
-        </div>
-
-
-        <div class="ingredientEquation">
-
-          ${Number(i.qty||0)}
-          ×
-          ${money(i.price)}
-          =
-          ${money(
-            Number(i.qty||0)*
-            Number(i.price||0)
-          )}
-
-        </div>
-
-      </div>
-
-    `).join("")
-    :
-    `<div class="muted">
-      ยังไม่มีวัตถุดิบ
-    </div>`;
+renderDetail();
 
 }
 
 
-/* =====================================================
+function closeDetail(){
+
+mid=null;
+
+$('costHome')
+.style.display='block';
+
+$('detail')
+.style.display='none';
+
+closeIng();
+
+}
+
+
+function renderDetail(){
+
+let m =
+menu();
+
+if(!m)
+return;
+
+
+$('dName').textContent =
+m.name;
+
+$('dUnit').textContent =
+'หน่วยขาย: '+m.unit;
+
+$('dCover').textContent =
+m.cover || '';
+
+
+let on =
+m.ingredients
+.filter(i=>i.on);
+
+
+let c =
+on.reduce(
+(s,i)=>
+s+i.qty*i.price,
+0
+);
+
+
+$('dc').textContent =
+on.length;
+
+$('dt').textContent =
+money(c);
+
+$('du').textContent =
+money(c);
+
+
+$('ings').innerHTML =
+
+m.ingredients.length
+
+?
+
+m.ingredients.map(i=>`
+
+<div class="ingredient">
+
+<div
+class="between">
+
+<div>
+
+<div class="title">
+
+${esc(i.name)}
+
+</div>
+
+
+<div class="small">
+
+${i.qty}
+×
+${money(i.price)}
+=
+<b>
+${money(i.qty*i.price)}
+</b>
+
+</div>
+
+
+<div class="muted small">
+
+${i.on
+?'ใช้ · รวมต้นทุน'
+:'ไม่ใช้ · ไม่รวมต้นทุน'}
+
+</div>
+
+</div>
+
+
+<label class="switch">
+
+<input
+type="checkbox"
+${i.on?'checked':''}
+onchange="toggleI(
+'${i.id}',
+this.checked
+)">
+
+<span class="slider">
+</span>
+
+</label>
+
+</div>
+
+
+<div
+class="actions"
+style="margin-top:9px">
+
+<button
+class="mini"
+onclick="editI('${i.id}')">
+
+แก้
+
+</button>
+
+
+<button
+class="mini"
+onclick="delI('${i.id}')">
+
+ลบ
+
+</button>
+
+</div>
+
+</div>
+
+`).join('')
+
+:
+
+'<div class="empty">ยังไม่มีวัตถุดิบ</div>';
+
+}
+
+
+/* ==================================================
    INGREDIENT
-===================================================== */
+================================================== */
 
-function openIngredientModal(){
+function toggleI(id,on){
 
-  $("newIngName").value="";
-  $("newIngQty").value=1;
-  $("newIngPrice").value="";
+let i =
+menu()
+.ingredients
+.find(
+x=>x.id===id
+);
 
-  $("ingredientModal")
-    .classList.remove("hidden");
+if(i)
+i.on=on;
 
-}
+save();
 
-function closeIngredientModal(){
+renderDetail();
 
-  $("ingredientModal")
-    .classList.add("hidden");
-
-}
-
-function createIngredient(){
-
-  const menu=
-    menus.find(m=>m.id===currentMenuId);
-
-  if(!menu)return;
-
-  const name=
-    $("newIngName").value.trim();
-
-  const qty=
-    Number($("newIngQty").value)||0;
-
-  const price=
-    Number($("newIngPrice").value)||0;
-
-  if(!name)
-    return alert("กรุณาใส่ชื่อวัตถุดิบ");
-
-  menu.ingredients.push({
-
-    id:uid(),
-
-    name:name,
-
-    qty:qty,
-
-    price:price,
-
-    include:"yes"
-
-  });
-
-  saveAll();
-
-  closeIngredientModal();
-
-  renderIngredientList();
+renderMenus();
 
 }
 
-function openIngredient(id){
 
-  const menu=
-    menus.find(m=>m.id===currentMenuId);
+function openIng(){
 
-  if(!menu)return;
+iid=null;
 
-  const ingredient=
-    menu.ingredients.find(i=>i.id===id);
+$('ingTitle').textContent =
+'เพิ่มวัตถุดิบ';
 
-  if(!ingredient)return;
+$('iName').value='';
 
-  currentIngredientId=id;
+$('iQty').value=1;
 
-  $("menuDetail")
-    .classList.remove("active");
+$('iPrice').value='';
 
-  $("ingredientDetail")
-    .classList.add("active");
+ic();
 
-  $("editIngName").value=
-    ingredient.name||"";
+$('ingForm')
+.style.display='block';
 
-  $("editIngQty").value=
-    ingredient.qty||0;
-
-  $("editIngPrice").value=
-    ingredient.price||0;
-
-  renderIngredientDetail();
-
-}
-
-function getCurrentIngredient(){
-
-  const menu=
-    menus.find(m=>m.id===currentMenuId);
-
-  if(!menu)return null;
-
-  return menu.ingredients.find(
-    i=>i.id===currentIngredientId
-  );
-
-}
-
-function renderIngredientDetail(){
-
-  const i=
-    getCurrentIngredient();
-
-  if(!i)return;
-
-  const qty=
-    Number($("editIngQty").value)||0;
-
-  const price=
-    Number($("editIngPrice").value)||0;
-
-  const total=qty*price;
-
-  $("ingredientTotalCost").textContent=
-    money(total);
-
-  $("ingredientEquation").textContent=
-    `${qty} × ${money(price)} = ${money(total)}`;
-
-}
-
-function changeIngQty(n){
-
-  const input=
-    $("editIngQty");
-
-  let v=
-    Number(input.value)||0;
-
-  v+=n;
-
-  if(v<0)v=0;
-
-  input.value=v;
-
-  renderIngredientDetail();
-
-}
-
-function saveIngredientDetail(){
-
-  const i=
-    getCurrentIngredient();
-
-  if(!i)return;
-
-  i.name=
-    $("editIngName").value.trim()||
-    "วัตถุดิบ";
-
-  i.qty=
-    Number($("editIngQty").value)||0;
-
-  i.price=
-    Number($("editIngPrice").value)||0;
-
-  saveAll();
-
-  backToMenuDetail();
-
-}
-
-function backToMenuDetail(){
-
-  $("ingredientDetail")
-    .classList.remove("active");
-
-  $("menuDetail")
-    .classList.add("active");
-
-  renderIngredientList();
-
-}
-
-function toggleIngredient(id,checked){
-
-  const menu=
-    menus.find(m=>m.id===currentMenuId);
-
-  if(!menu)return;
-
-  const i=
-    menu.ingredients.find(x=>x.id===id);
-
-  if(!i)return;
-
-  i.include=
-    checked?"yes":"no";
-
-  saveAll();
-
-  renderIngredientList();
-
-}
-
-function changeIngredientQty(id,n){
-
-  const menu=
-    menus.find(m=>m.id===currentMenuId);
-
-  if(!menu)return;
-
-  const i=
-    menu.ingredients.find(x=>x.id===id);
-
-  if(!i)return;
-
-  i.qty=
-    Math.max(
-      0,
-      Number(i.qty||0)+n
-    );
-
-  saveAll();
-
-  renderIngredientList();
-
-}
-
-function deleteIngredient(id){
-
-  const menu=
-    menus.find(m=>m.id===currentMenuId);
-
-  if(!menu)return;
-
-  if(!confirm("ลบวัตถุดิบนี้ใช่ไหม?"))
-    return;
-
-  menu.ingredients=
-    menu.ingredients.filter(
-      i=>i.id!==id
-    );
-
-  saveAll();
-
-  renderIngredientList();
+$('ingForm')
+.scrollIntoView({
+behavior:'smooth'
+});
 
 }
 
 
-/* =====================================================
-   MOVE INGREDIENT
-===================================================== */
+function closeIng(){
 
-function moveIngredient(id,direction){
+$('ingForm')
+.style.display='none';
 
-  const menu=
-    menus.find(m=>m.id===currentMenuId);
-
-  if(!menu)return;
-
-  const arr=
-    menu.ingredients;
-
-  const index=
-    arr.findIndex(i=>i.id===id);
-
-  if(index<0)return;
-
-  const next=
-    index+direction;
-
-  if(next<0 || next>=arr.length)
-    return;
-
-  [
-    arr[index],
-    arr[next]
-  ]=[
-    arr[next],
-    arr[index]
-  ];
-
-  saveAll();
-
-  renderIngredientList();
+iid=null;
 
 }
 
 
-/* =====================================================
+function iq(n){
+
+$('iQty').value =
+Math.max(
+0,
++$('iQty').value+n
+);
+
+ic();
+
+}
+
+
+function ic(){
+
+let q =
++$('iQty').value || 0;
+
+let p =
++$('iPrice').value || 0;
+
+$('iTotal').value =
+money(q*p);
+
+}
+
+
+function editI(id){
+
+let i =
+menu()
+.ingredients
+.find(
+x=>x.id===id
+);
+
+if(!i)
+return;
+
+iid=id;
+
+$('ingTitle').textContent =
+'แก้ไขวัตถุดิบ';
+
+$('iName').value =
+i.name;
+
+$('iQty').value =
+i.qty;
+
+$('iPrice').value =
+i.price;
+
+ic();
+
+$('ingForm')
+.style.display='block';
+
+$('ingForm')
+.scrollIntoView({
+behavior:'smooth'
+});
+
+}
+
+
+function saveIng(){
+
+let m =
+menu();
+
+let n =
+$('iName')
+.value
+.trim();
+
+
+if(!n)
+return alert(
+'ใส่ชื่อวัตถุดิบก่อน'
+);
+
+
+let q =
++$('iQty').value || 0;
+
+let p =
++$('iPrice').value || 0;
+
+
+if(iid){
+
+let i =
+m.ingredients.find(
+x=>x.id===iid
+);
+
+Object.assign(
+i,
+{
+name:n,
+qty:q,
+price:p
+}
+);
+
+}
+
+else{
+
+m.ingredients.push({
+
+id:uid(),
+
+name:n,
+
+qty:q,
+
+price:p,
+
+on:true
+
+});
+
+}
+
+
+save();
+
+closeIng();
+
+renderDetail();
+
+renderMenus();
+
+}
+
+
+function delI(id){
+
+if(
+confirm(
+'ลบวัตถุดิบนี้ใช่ไหม'
+)
+){
+
+let m =
+menu();
+
+m.ingredients =
+m.ingredients.filter(
+i=>i.id!==id
+);
+
+save();
+
+renderDetail();
+
+renderMenus();
+
+}
+
+}
+
+
+/* ==================================================
    INITIAL
-===================================================== */
+================================================== */
 
-$("txDate").value=today();
+$('aDate').value =
+today();
 
-window.summaryDate=today();
+$('shopTitle').textContent =
+db.title;
 
-const now=new Date();
+$('ep').oninput =
+editPrev;
 
-window.summaryMonth=
-  now.getMonth();
+$('eqty').oninput =
+editPrev;
 
-window.summaryYear=
-  now.getFullYear();
+ap();
 
-renderAccount();
+renderAccounts();
 
-renderSummary();
+summary();
 
 renderAll();
 
 renderMenus();
-
-calcTxTotal();
 
 </script>
 
