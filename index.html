@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fff7fb">
-
 <title>สมุดบัญชี</title>
 
 <style>
@@ -18,25 +17,45 @@
   --pink:#ca6492;
   --green:#63aa82;
   --red:#d87979;
-  --shadow:0 8px 25px #6b3d570d
+  --blue:#1687e8;
+  --shadow:0 8px 25px #6b3d570d;
 }
 
 *{
-  box-sizing:border-box
+  box-sizing:border-box;
 }
 
 body{
   margin:0;
   background:var(--bg);
   color:var(--ink);
-  font-family:-apple-system,BlinkMacSystemFont,"Noto Sans Thai","Segoe UI",sans-serif
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Noto Sans Thai",
+    "Segoe UI",
+    sans-serif;
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
 }
 
 .app{
   max-width:1050px;
   margin:auto;
-  padding:16px 18px 70px
+  padding:16px 18px 70px;
 }
+
+/* =========================
+   NAV
+========================= */
 
 .nav{
   position:sticky;
@@ -48,7 +67,7 @@ body{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:8px;
-  box-shadow:var(--shadow)
+  box-shadow:var(--shadow);
 }
 
 .nav button{
@@ -57,30 +76,37 @@ body{
   border-radius:20px;
   padding:11px 4px;
   color:#777;
-  font:inherit
 }
 
 .nav button.on{
   background:#f7dfeb;
-  color:#b85683
+  color:#b85683;
 }
 
-.ico{
+.nav button:first-child{
+  font-size:24px;
+}
+
+.nav button{
+  font-size:24px;
+}
+
+.nav .txt{
   display:block;
-  font-size:24px
+  font-size:13px;
+  margin-top:3px;
 }
 
-.txt{
-  font-size:13px;
-  display:block
-}
+/* =========================
+   PAGE
+========================= */
 
 .page{
-  display:none
+  display:none;
 }
 
 .page.on{
-  display:block
+  display:block;
 }
 
 .card{
@@ -88,48 +114,52 @@ body{
   border-radius:27px;
   padding:22px;
   margin-top:20px;
-  box-shadow:var(--shadow)
+  box-shadow:var(--shadow);
 }
 
 .soft{
-  background:linear-gradient(110deg,#fceaf3,#fff)
+  background:linear-gradient(110deg,#fceaf3,#fff);
 }
 
 h1{
   font-size:27px;
-  margin:0 0 10px
+  margin:0 0 10px;
 }
 
 h2{
   font-size:22px;
-  margin:0 0 13px
+  margin:0 0 13px;
 }
 
 .muted{
-  color:var(--muted)
+  color:var(--muted);
 }
 
 .small{
-  font-size:13px
+  font-size:13px;
+}
+
+.tiny{
+  font-size:11px;
 }
 
 .grid2{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:13px
+  gap:13px;
 }
 
 .grid3{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:11px
+  gap:11px;
 }
 
 label{
   display:block;
   color:var(--muted);
   font-size:13px;
-  margin-bottom:6px
+  margin-bottom:6px;
 }
 
 input,
@@ -139,13 +169,12 @@ select{
   border:1px solid var(--line);
   border-radius:16px;
   background:#fff;
-  font:inherit;
-  outline:none
+  outline:none;
 }
 
-button{
-  font:inherit;
-  cursor:pointer
+input:focus,
+select:focus{
+  border-color:#e7b8cd;
 }
 
 .btn{
@@ -154,86 +183,62 @@ button{
   border:0;
   border-radius:15px;
   padding:11px 17px;
-  font-weight:700
+  font-weight:700;
 }
 
 .light{
   background:#f4edf2;
-  color:#995c79
+  color:#995c79;
 }
 
 .gray{
   background:#ece8ed;
-  color:#6e6870
+  color:#6e6870;
 }
 
 .danger{
   background:#fae7e9;
-  color:#bd6565
+  color:#bd6565;
 }
 
 .row{
   display:flex;
   gap:9px;
   align-items:center;
-  flex-wrap:wrap
+  flex-wrap:wrap;
 }
 
 .between{
   display:flex;
   justify-content:space-between;
   gap:12px;
-  align-items:center
-}
-
-.qty{
-  display:inline-flex;
-  border:1px solid var(--line);
-  border-radius:14px;
-  overflow:hidden
-}
-
-.qty button{
-  width:38px;
-  height:40px;
-  border:0;
-  background:#f8f2f5;
-  color:#b85883;
-  font-weight:900
-}
-
-.qty input{
-  width:62px;
-  border:0;
-  border-radius:0;
-  text-align:center;
-  padding:8px
+  align-items:center;
 }
 
 .list{
   display:flex;
   flex-direction:column;
   gap:11px;
-  margin-top:14px
+  margin-top:14px;
 }
 
 .item{
   border:1px solid var(--line);
   border-radius:20px;
   padding:14px;
-  background:#fff
+  background:#fff;
 }
 
 .title{
   font-size:18px;
-  font-weight:800
+  font-weight:800;
 }
 
 .actions{
   display:flex;
   gap:6px;
   align-items:center;
-  flex-wrap:wrap
+  flex-wrap:wrap;
 }
 
 .mini{
@@ -242,7 +247,7 @@ button{
   padding:5px 8px;
   background:#f4edf2;
   color:#996078;
-  font-size:11px
+  font-size:11px;
 }
 
 .trash{
@@ -251,7 +256,7 @@ button{
   border:0;
   border-radius:16px;
   background:#fff0f2;
-  font-size:21px
+  font-size:21px;
 }
 
 .cover{
@@ -262,43 +267,410 @@ button{
   border-radius:17px;
   background:#fdf0f6;
   font-size:28px;
-  flex:none
+  flex:none;
 }
 
 .empty{
   padding:30px;
   text-align:center;
-  color:var(--muted)
+  color:var(--muted);
 }
 
 .kpi{
   background:#faf7f9;
   border-radius:17px;
-  padding:13px
+  padding:13px;
 }
 
 .kpi .v{
   font-size:20px;
   font-weight:800;
-  margin-top:4px
+  margin-top:4px;
 }
+
+/* =========================
+   QUANTITY
+========================= */
+
+.qty{
+  display:inline-flex;
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.qty button{
+  width:38px;
+  height:40px;
+  border:0;
+  background:#f8f2f5;
+  color:#1687e8;
+  font-weight:900;
+}
+
+.qty input{
+  width:62px;
+  border:0;
+  border-radius:0;
+  text-align:center;
+  padding:8px;
+}
+
+/* =========================
+   ACCOUNT
+========================= */
+
+.account-row{
+  border-bottom:1px solid #eee2e8;
+  padding:14px 0;
+}
+
+.account-symbol{
+  width:56px;
+  height:56px;
+  border-radius:17px;
+  background:#fff0f6;
+  display:grid;
+  place-items:center;
+  font-size:25px;
+  flex:none;
+  font-weight:700;
+}
+
+.account-main{
+  min-width:0;
+  flex:1;
+}
+
+.account-right{
+  text-align:right;
+  flex:none;
+}
+
+.income{
+  color:#58a779;
+}
+
+.expense{
+  color:#dd707f;
+}
+
+.account-amount{
+  font-size:20px;
+  font-weight:800;
+}
+
+.account-formula{
+  color:#a29ba1;
+  font-size:15px;
+  margin-top:3px;
+}
+
+/* =========================
+   SUMMARY
+========================= */
+
+.period-tabs{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  margin-top:15px;
+}
+
+.period-tabs button{
+  border:0;
+  background:#f7edf2;
+  color:#8d7883;
+  border-radius:15px;
+  padding:11px 5px;
+}
+
+.period-tabs button.on{
+  background:#f4d9e7;
+  color:#bd5d87;
+  font-weight:700;
+}
+
+.summary-mode{
+  display:flex;
+  gap:8px;
+  margin-top:14px;
+}
+
+.summary-mode button{
+  border:1px solid var(--line);
+  background:#fff;
+  color:#817780;
+  border-radius:14px;
+  padding:9px 14px;
+}
+
+.summary-mode button.on{
+  background:#f7dfeb;
+  color:#bd5d87;
+  border-color:#f0c5d8;
+}
+
+.summary-date{
+  margin-top:14px;
+}
+
+.summary-date input,
+.summary-date select{
+  max-width:100%;
+}
+
+.day-divider{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:22px 0 4px;
+  color:#9a7185;
+  font-weight:800;
+}
+
+.day-divider:before,
+.day-divider:after{
+  content:"";
+  height:1px;
+  background:#eadfe6;
+  flex:1;
+}
+
+.sumrow{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px;
+  padding:13px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.sumrow:last-child{
+  border-bottom:0;
+}
+
+/* =========================
+   COST MENU
+========================= */
+
+.menu-card{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:14px;
+  background:#fff;
+}
+
+.menu-left{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  min-width:0;
+  flex:1;
+}
+
+.menu-name{
+  font-size:21px;
+  font-weight:800;
+  line-height:1.2;
+}
+
+.menu-info{
+  color:#a19aa0;
+  font-size:13px;
+  margin-top:4px;
+}
+
+.menu-right{
+  text-align:right;
+  flex:none;
+}
+
+.menu-cost{
+  color:#b95c83;
+  font-size:18px;
+  font-weight:800;
+}
+
+.menu-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:5px;
+  margin-top:6px;
+}
+
+.menu-actions button{
+  border:0;
+  border-radius:9px;
+  padding:5px 8px;
+  font-size:11px;
+}
+
+/* =========================
+   COST DETAIL HEADER
+========================= */
+
+.cost-detail-head{
+  background:linear-gradient(110deg,#fceaf3,#fff);
+}
+
+.sale-name-box{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.sale-name-box input{
+  font-size:24px;
+  font-weight:800;
+}
+
+.sale-cover{
+  width:72px;
+  height:72px;
+  border-radius:20px;
+  background:#fff0f6;
+  border:1px solid #f0dbe5;
+  display:grid;
+  place-items:center;
+  font-size:38px;
+  flex:none;
+}
+
+/* =========================
+   INGREDIENTS
+========================= */
+
+.ingredient{
+  border:1px solid var(--line);
+  border-radius:19px;
+  padding:13px 14px;
+  background:#fff;
+}
+
+.ingredient-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.ingredient-cover{
+  width:56px;
+  height:56px;
+  border-radius:17px;
+  background:#fff0f6;
+  display:grid;
+  place-items:center;
+  font-size:27px;
+  flex:none;
+}
+
+.ingredient-info{
+  min-width:0;
+  flex:1;
+}
+
+.ingredient-name{
+  font-size:20px;
+  font-weight:800;
+  line-height:1.15;
+  word-break:break-word;
+}
+
+.ingredient-equation{
+  color:#a19aa0;
+  font-size:14px;
+  margin-top:4px;
+  white-space:nowrap;
+}
+
+/*
+  ด้านขวาของวัตถุดิบ
+  ทุกปุ่มอยู่บรรทัดเดียว
+*/
+
+.ingredient-tools{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:5px;
+  flex:none;
+  white-space:nowrap;
+}
+
+.order-btn,
+.detail-btn,
+.delete-btn,
+.ingredient-qty-btn{
+  height:36px;
+  min-width:36px;
+  border:0;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  padding:0 8px;
+}
+
+.order-btn{
+  background:#f7edf3;
+  color:var(--blue);
+  font-size:21px;
+}
+
+.detail-btn{
+  background:#f4edf2;
+  color:#8f7180;
+  font-size:11px;
+}
+
+.delete-btn{
+  background:#fff0f2;
+  color:#c96e77;
+  font-size:17px;
+}
+
+.ingredient-qty{
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+.ingredient-qty-btn{
+  background:#f5edf2;
+  color:var(--blue);
+  font-size:20px;
+  font-weight:800;
+}
+
+.ingredient-qty-input{
+  width:48px !important;
+  height:36px;
+  padding:5px !important;
+  border:0 !important;
+  border-radius:10px !important;
+  background:#fff0f6 !important;
+  text-align:center;
+  font-size:18px;
+}
+
+/* switch */
 
 .switch{
   width:56px;
   height:32px;
   position:relative;
-  display:inline-block
+  display:inline-block;
+  flex:none;
 }
 
 .switch input{
-  display:none
+  display:none;
 }
 
 .slider{
   position:absolute;
   inset:0;
   border-radius:30px;
-  background:#ddd5da
+  background:#ddd5da;
 }
 
 .slider:before{
@@ -311,180 +683,145 @@ button{
   border-radius:50%;
   background:#fff;
   transition:.2s;
-  box-shadow:0 2px 5px #7774
+  box-shadow:0 2px 5px #7774;
 }
 
 .switch input:checked+.slider{
-  background:#69ad89
+  background:#69ad89;
 }
 
 .switch input:checked+.slider:before{
-  transform:translateX(24px)
+  transform:translateX(24px);
 }
-
-.ingredient{
-  border:1px solid var(--line);
-  border-radius:19px;
-  padding:13px
-}
-
-.sumrow{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:10px;
-  padding:11px 0;
-  border-bottom:1px dashed var(--line)
-}
-
-.search{
-  margin-top:10px
-}
-
 
 /* =========================
-   ส่วนใหม่ของหน้าสรุป
+   MODAL
 ========================= */
 
-.summary-picker{
-  margin-top:15px
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#30232c55;
+  z-index:99;
+  padding:18px;
+  align-items:center;
+  justify-content:center;
 }
 
-.summary-group{
-  margin-top:18px;
-  border:1px solid #eadfe6;
-  border-radius:18px;
-  overflow:hidden;
-  background:#fff
+.modal-box{
+  width:min(600px,100%);
+  max-height:90vh;
+  overflow:auto;
 }
 
-.summary-group:first-child{
-  margin-top:8px
-}
+/* =========================
+   MOBILE
+========================= */
 
-.summary-group-title{
-  background:#fceaf3;
-  color:#a9567e;
-  padding:11px 14px;
-  font-weight:800;
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  align-items:center
-}
+@media(max-width:850px){
 
-.summary-group-total{
-  font-size:12px;
-  font-weight:600;
-  color:#8e7380;
-  white-space:nowrap
-}
+  .ingredient-row{
+    align-items:flex-start;
+  }
 
-.summary-group-body{
-  padding:0 14px
-}
+  .ingredient-tools{
+    flex-wrap:nowrap;
+  }
 
-.summary-item{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:10px;
-  padding:13px 0;
-  border-bottom:1px solid #eee5ea
-}
+  .ingredient-info{
+    min-width:180px;
+  }
 
-.summary-item:last-child{
-  border-bottom:0
-}
-
-.summary-item-name{
-  font-size:15px;
-  font-weight:700
-}
-
-.summary-item-meta{
-  margin-top:3px;
-  color:#aaa1a8;
-  font-size:12px
-}
-
-.summary-item-amount{
-  font-size:16px;
-  font-weight:800;
-  text-align:right;
-  white-space:nowrap
-}
-
-.summary-item-amount.in{
-  color:var(--green)
-}
-
-.summary-item-amount.out{
-  color:var(--red)
-}
-
-.summary-number-group{
-  padding:14px;
-  border-bottom:1px solid #eee5ea
-}
-
-.summary-number-group:last-child{
-  border-bottom:0
-}
-
-.summary-number-title{
-  font-weight:800;
-  color:#a9567e;
-  margin-bottom:8px
-}
-
-.summary-number-row{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  padding:5px 0
-}
-
-.summary-number-row b.in{
-  color:var(--green)
-}
-
-.summary-number-row b.out{
-  color:var(--red)
-}
-
-.summary-number-row b.balance{
-  color:#4d7890
 }
 
 @media(max-width:700px){
 
   .app{
-    padding:9px 10px 60px
+    padding:9px 10px 60px;
   }
 
   .card{
     padding:18px;
-    border-radius:23px
+    border-radius:23px;
   }
 
   .grid2,
   .grid3{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
   h1{
-    font-size:24px
+    font-size:24px;
   }
 
-  .summary-item{
-    grid-template-columns:minmax(0,1fr) auto
+  .account-right{
+    min-width:105px;
   }
 
-  .summary-group-title{
-    align-items:flex-start;
-    flex-direction:column;
-    gap:3px
+  .account-amount{
+    font-size:18px;
   }
 
+  .ingredient-row{
+    gap:8px;
+  }
+
+  .ingredient-cover{
+    width:52px;
+    height:52px;
+  }
+
+  .ingredient-name{
+    font-size:18px;
+  }
+
+  .ingredient-equation{
+    font-size:12px;
+  }
+
+  .ingredient-tools{
+    gap:4px;
+  }
+
+  .order-btn,
+  .detail-btn,
+  .delete-btn,
+  .ingredient-qty-btn{
+    height:34px;
+    min-width:34px;
+  }
+
+  .detail-btn{
+    padding:0 7px;
+  }
+
+  .ingredient-qty-input{
+    width:42px !important;
+    height:34px;
+  }
+
+  .switch{
+    width:52px;
+    height:30px;
+  }
+
+  .slider:before{
+    width:22px;
+    height:22px;
+  }
+
+  .switch input:checked+.slider:before{
+    transform:translateX(22px);
+  }
+
+  .menu-name{
+    font-size:18px;
+  }
+
+  .menu-cost{
+    font-size:16px;
+  }
 }
 </style>
 </head>
@@ -522,9 +859,9 @@ button{
 </div>
 
 
-<!-- =========================
+<!-- =========================================================
      PAGE 1 : ACCOUNT
-========================= -->
+========================================================= -->
 
 <section id="account" class="page on">
 
@@ -533,43 +870,27 @@ button{
     <div class="between">
 
       <div>
-
-        <h1 id="shopTitle">
-          สมุดบัญชี
-        </h1>
-
+        <h1 id="shopTitle">สมุดบัญชี</h1>
         <div class="muted">
           บันทึกรายรับ รายจ่าย และรายการขาย
         </div>
-
       </div>
 
-      <button
-        class="btn light"
-        onclick="editTitle()">
+      <button class="btn light" onclick="editTitle()">
         แก้ชื่อ
       </button>
 
     </div>
 
 
-    <div
-      class="grid2"
-      style="margin-top:17px">
+    <div class="grid2" style="margin-top:17px">
 
       <div>
-
         <label>วันที่</label>
-
-        <input
-          id="aDate"
-          type="date">
-
+        <input id="aDate" type="date">
       </div>
 
-
       <div>
-
         <label>ประเภท</label>
 
         <select id="aType">
@@ -597,14 +918,13 @@ button{
 
       <input
         id="aName"
-        placeholder="เช่น ขายสตรอว์เบอร์รี่ / ซื้อของ">
+        placeholder="เช่น ขายสตรอว์เบอร์รี่ / ซื้อของ"
+      >
 
     </div>
 
 
-    <div
-      class="grid2"
-      style="margin-top:13px">
+    <div class="grid2" style="margin-top:13px">
 
       <div>
 
@@ -623,7 +943,8 @@ button{
             type="number"
             min="0"
             value="1"
-            oninput="ap()">
+            oninput="ap()"
+          >
 
           <button onclick="aq(1)">
             +
@@ -645,7 +966,8 @@ button{
           type="number"
           min="0"
           step="0.01"
-          oninput="ap()">
+          oninput="ap()"
+        >
 
       </div>
 
@@ -655,14 +977,16 @@ button{
     <div
       id="apreview"
       class="muted small"
-      style="margin:11px 0">
+      style="margin:11px 0"
+    >
       1 × 0 = 0
     </div>
 
 
     <button
       class="btn"
-      onclick="addAccount()">
+      onclick="addAccount()"
+    >
       + เพิ่มรายการ
     </button>
 
@@ -674,7 +998,7 @@ button{
     <div class="between">
 
       <h2>
-        รายการบัญชี
+        📋 รายการล่าสุด
       </h2>
 
       <b id="balance">
@@ -685,89 +1009,82 @@ button{
 
     <div
       id="accountList"
-      class="list">
-    </div>
+      class="list"
+    ></div>
 
   </div>
 
 </section>
 
 
-
-<!-- =========================
+<!-- =========================================================
      PAGE 2 : SUMMARY
-========================= -->
+========================================================= -->
 
 <section id="summary" class="page">
 
   <div class="card soft">
 
     <h1>
-      📊 สรุป
+      📊 สรุปบัญชี
     </h1>
 
 
-    <div class="grid2">
+    <div class="period-tabs">
 
-      <div>
+      <button
+        id="pDay"
+        onclick="setSummaryMode('day')"
+      >
+        วัน
+      </button>
 
-        <label>
-          ดูแบบ
-        </label>
+      <button
+        id="pWeek"
+        onclick="setSummaryMode('week')"
+      >
+        สัปดาห์
+      </button>
 
-        <select
-          id="sMode"
-          onchange="changeSummaryMode()">
+      <button
+        id="pMonth"
+        onclick="setSummaryMode('month')"
+      >
+        เดือน
+      </button>
 
-          <option value="day">
-            วัน
-          </option>
-
-          <option value="week">
-            สัปดาห์
-          </option>
-
-          <option value="month">
-            เดือน
-          </option>
-
-          <option value="year">
-            ปี
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <div>
-
-        <label>
-          แสดงรายการ
-        </label>
-
-        <select
-          id="sDetail"
-          onchange="summary()">
-
-          <option value="detail">
-            มีชื่อรายการ
-          </option>
-
-          <option value="number">
-            เฉพาะตัวเลขรายรับรายจ่าย
-          </option>
-
-        </select>
-
-      </div>
+      <button
+        id="pYear"
+        onclick="setSummaryMode('year')"
+      >
+        ปี
+      </button>
 
     </div>
 
 
     <div
-      id="picker"
-      class="summary-picker">
+      id="summaryPicker"
+      class="summary-date"
+    ></div>
+
+
+    <div class="summary-mode">
+
+      <button
+        id="detailBtn"
+        onclick="setSummaryDetail('detail')"
+      >
+        รายการ
+      </button>
+
+      <button
+        id="numberBtn"
+        onclick="setSummaryDetail('number')"
+      >
+        ตัวเลข
+      </button>
+
     </div>
 
   </div>
@@ -778,41 +1095,33 @@ button{
     <div class="grid3">
 
       <div class="kpi">
-
         รายรับ
-
         <div
-          class="v"
-          id="si">
+          class="v income"
+          id="si"
+        >
           ฿0.00
         </div>
-
       </div>
 
-
       <div class="kpi">
-
         รายจ่าย
-
         <div
-          class="v"
-          id="se">
+          class="v expense"
+          id="se"
+        >
           ฿0.00
         </div>
-
       </div>
 
-
       <div class="kpi">
-
         คงเหลือ
-
         <div
           class="v"
-          id="sn">
+          id="sn"
+        >
           ฿0.00
         </div>
-
       </div>
 
     </div>
@@ -820,18 +1129,17 @@ button{
 
     <div
       id="srows"
-      style="margin-top:13px">
-    </div>
+      style="margin-top:13px"
+    ></div>
 
   </div>
 
 </section>
 
 
-
-<!-- =========================
+<!-- =========================================================
      PAGE 3 : ALL
-========================= -->
+========================================================= -->
 
 <section id="all" class="page">
 
@@ -849,7 +1157,9 @@ button{
       id="search"
       class="search"
       placeholder="ค้นหาชื่อรายการ..."
-      oninput="renderAll()">
+      oninput="renderAll()"
+      style="margin-top:10px"
+    >
 
   </div>
 
@@ -859,41 +1169,33 @@ button{
     <div class="grid3">
 
       <div class="kpi">
-
         รายรับทั้งหมด
-
         <div
-          class="v"
-          id="ai">
+          class="v income"
+          id="ai"
+        >
           ฿0.00
         </div>
-
       </div>
 
-
       <div class="kpi">
-
         รายจ่ายทั้งหมด
-
         <div
-          class="v"
-          id="ae">
+          class="v expense"
+          id="ae"
+        >
           ฿0.00
         </div>
-
       </div>
 
-
       <div class="kpi">
-
         สุทธิ
-
         <div
           class="v"
-          id="an">
+          id="an"
+        >
           ฿0.00
         </div>
-
       </div>
 
     </div>
@@ -901,37 +1203,37 @@ button{
 
     <div
       id="allList"
-      class="list">
-    </div>
+      class="list"
+    ></div>
 
   </div>
 
 </section>
 
 
-
-<!-- =========================
+<!-- =========================================================
      PAGE 4 : COST
-========================= -->
+========================================================= -->
 
 <section id="cost" class="page">
+
+
+  <!-- COST HOME -->
 
   <div id="costHome">
 
     <div class="card soft">
 
       <h1>
-        🧮 ต้นทุนต่อเมนู
+        🧮 ต้นทุน
       </h1>
 
       <div class="muted">
-        วัตถุดิบอยู่เป็นหน้าย่อยของชื่อรายการขาย
+        รายการขายและวัตถุดิบ
       </div>
 
 
-      <div
-        class="grid2"
-        style="margin-top:15px">
+      <div class="grid2" style="margin-top:15px">
 
         <div>
 
@@ -941,7 +1243,8 @@ button{
 
           <input
             id="mName"
-            placeholder="เช่น สตรอว์เบอร์รี่">
+            placeholder="เช่น สตรอว์เบอร์รี่"
+          >
 
         </div>
 
@@ -949,12 +1252,14 @@ button{
         <div>
 
           <label>
-            หน่วยขาย
+            รูปปก / Emoji
           </label>
 
           <input
-            id="mUnit"
-            placeholder="เช่น แก้ว">
+            id="mCover"
+            maxlength="8"
+            placeholder="🍓"
+          >
 
         </div>
 
@@ -963,26 +1268,14 @@ button{
 
       <div
         class="row"
-        style="margin-top:13px">
-
-        <div style="width:110px">
-
-          <label>
-            รูปปก / Emoji
-          </label>
-
-          <input
-            id="mCover"
-            maxlength="4"
-            placeholder=" ">
-
-        </div>
-
+        style="margin-top:13px"
+      >
 
         <button
           class="btn"
-          onclick="addMenu()">
-          + เพิ่มรายการ
+          onclick="addMenu()"
+        >
+          + เพิ่มรายการขาย
         </button>
 
       </div>
@@ -998,55 +1291,69 @@ button{
 
       <div
         id="menus"
-        class="list">
-      </div>
+        class="list"
+      ></div>
 
     </div>
 
   </div>
 
 
+  <!-- COST DETAIL / INGREDIENT PAGE -->
 
   <div
     id="detail"
-    style="display:none">
+    style="display:none"
+  >
 
-    <div class="card soft">
+    <div class="card cost-detail-head">
 
       <button
         class="btn light"
-        onclick="closeDetail()">
+        onclick="closeDetail()"
+      >
         ← กลับไปรายการขาย
       </button>
 
 
       <div
-        class="between"
-        style="margin-top:13px">
-
-        <div>
-
-          <h1 id="dName"></h1>
-
-          <div
-            class="muted"
-            id="dUnit">
-          </div>
-
-        </div>
-
+        class="sale-name-box"
+        style="margin-top:15px"
+      >
 
         <div
           id="dCover"
-          class="cover">
+          class="sale-cover"
+        ></div>
+
+        <div style="flex:1">
+
+          <label>
+            ชื่อรายการขาย
+          </label>
+
+          <input
+            id="dNameInput"
+            oninput="updateMenuName()"
+          >
+
+          <div
+            class="muted small"
+            id="dCount"
+            style="margin-top:6px"
+          >
+            วัตถุดิบ 0 รายการ
+          </div>
+
         </div>
 
       </div>
 
 
       <div
-        class="grid3"
-        style="margin-top:16px">
+        class="grid2"
+        style="margin-top:15px"
+      >
 
         <div class="kpi">
 
@@ -1054,7 +1361,8 @@ button{
 
           <div
             class="v"
-            id="dc">
+            id="dc"
+          >
             0
           </div>
 
@@ -1063,24 +1371,12 @@ button{
 
         <div class="kpi">
 
-          ต้นทุนรวมทั้งหมด
+          รวมต้นทุนทั้งหมด
 
           <div
             class="v"
-            id="dt">
-            ฿0.00
-          </div>
-
-        </div>
-
-
-        <div class="kpi">
-
-          ต้นทุนต่อหน่วย
-
-          <div
-            class="v"
-            id="du">
+            id="dt"
+          >
             ฿0.00
           </div>
 
@@ -1091,6 +1387,7 @@ button{
     </div>
 
 
+    <!-- INGREDIENT LIST -->
 
     <div class="card">
 
@@ -1099,38 +1396,42 @@ button{
         <div>
 
           <h2>
-            วัตถุดิบ
+            🥕 วัตถุดิบ
           </h2>
 
           <div class="muted small">
-            เปิด = รวมในต้นทุน / ปิด = ไม่รวม
+            เปิด = รวมต้นทุน / ปิด = ไม่รวมต้นทุน
           </div>
 
         </div>
 
-
-        <button
-          class="btn light"
-          onclick="openIng()">
-          + เพิ่มวัตถุดิบ
-        </button>
-
       </div>
+
+
+      <button
+        class="btn light"
+        onclick="openIng()"
+        style="margin-top:13px"
+      >
+        ＋ เพิ่มวัตถุดิบ
+      </button>
 
 
       <div
         id="ings"
-        class="list">
-      </div>
+        class="list"
+      ></div>
 
     </div>
 
 
+    <!-- INGREDIENT FORM -->
 
     <div
       id="ingForm"
       class="card"
-      style="display:none">
+      style="display:none"
+    >
 
       <h2 id="ingTitle">
         เพิ่มวัตถุดิบ
@@ -1147,7 +1448,23 @@ button{
 
           <input
             id="iName"
-            placeholder="เช่น แก้ว 100ml">
+            placeholder="เช่น แก้ว 100ml"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label>
+            รูป / สัญลักษณ์
+          </label>
+
+          <input
+            id="iCover"
+            maxlength="8"
+            placeholder="🥕"
+          >
 
         </div>
 
@@ -1170,7 +1487,8 @@ button{
               min="0"
               step="0.01"
               value="1"
-              oninput="ic()">
+              oninput="ic()"
+            >
 
             <button onclick="iq(1)">
               +
@@ -1184,7 +1502,7 @@ button{
         <div>
 
           <label>
-            ราคาต่อชิ้น
+            ราคาซื้อต่อชิ้น
           </label>
 
           <input
@@ -1192,21 +1510,8 @@ button{
             type="number"
             min="0"
             step="0.01"
-            oninput="ic()">
-
-        </div>
-
-
-        <div>
-
-          <label>
-            ต้นทุนวัตถุดิบ
-          </label>
-
-          <input
-            id="iTotal"
-            readonly
-            value="฿0.00">
+            oninput="ic()"
+          >
 
         </div>
 
@@ -1214,25 +1519,49 @@ button{
 
 
       <div
-        class="muted small"
-        style="margin:10px 0">
+        class="kpi"
+        style="margin-top:14px"
+      >
 
-        จำนวนซื้อ × ราคาต่อชิ้น = ต้นทุนวัตถุดิบ
+        ต้นทุนวัตถุดิบ
+
+        <div
+          class="v"
+          id="iTotal"
+        >
+          ฿0.00
+        </div>
+
+        <div
+          class="muted small"
+          style="margin-top:4px"
+        >
+          จำนวนซื้อ × ราคาซื้อ
+        </div>
 
       </div>
 
 
-      <button
-        class="btn"
-        onclick="saveIng()">
-        บันทึก
-      </button>
+      <div
+        class="row"
+        style="margin-top:14px"
+      >
 
-      <button
-        class="btn gray"
-        onclick="closeIng()">
-        ยกเลิก
-      </button>
+        <button
+          class="btn"
+          onclick="saveIng()"
+        >
+          บันทึก
+        </button>
+
+        <button
+          class="btn gray"
+          onclick="closeIng()"
+        >
+          ยกเลิก
+        </button>
+
+      </div>
 
     </div>
 
@@ -1243,31 +1572,16 @@ button{
 </div>
 
 
-
-<!-- =========================
-     EDIT ACCOUNT MODAL
-========================= -->
+<!-- =========================================================
+     ACCOUNT EDIT MODAL
+========================================================= -->
 
 <div
-  id="modal"
-  style="
-    display:none;
-    position:fixed;
-    inset:0;
-    background:#30232c55;
-    z-index:99;
-    padding:18px;
-    align-items:center;
-    justify-content:center;
-  ">
+  id="editModal"
+  class="modal"
+>
 
-  <div
-    class="card"
-    style="
-      width:min(600px,100%);
-      max-height:90vh;
-      overflow:auto
-    ">
+  <div class="card modal-box">
 
     <div class="between">
 
@@ -1277,7 +1591,8 @@ button{
 
       <button
         class="btn gray"
-        onclick="closeEdit()">
+        onclick="closeEdit()"
+      >
         ปิด
       </button>
 
@@ -1286,7 +1601,8 @@ button{
 
     <input
       type="hidden"
-      id="eid">
+      id="eid"
+    >
 
 
     <label>
@@ -1298,7 +1614,8 @@ button{
 
     <div
       class="grid2"
-      style="margin-top:10px">
+      style="margin-top:10px"
+    >
 
       <div>
 
@@ -1308,7 +1625,8 @@ button{
 
         <input
           id="ed"
-          type="date">
+          type="date"
+        >
 
       </div>
 
@@ -1338,7 +1656,8 @@ button{
 
     <div
       class="grid2"
-      style="margin-top:10px">
+      style="margin-top:10px"
+    >
 
       <div>
 
@@ -1355,7 +1674,8 @@ button{
           <input
             id="eqty"
             type="number"
-            min="0">
+            min="0"
+          >
 
           <button onclick="eq(1)">
             +
@@ -1376,7 +1696,8 @@ button{
           id="ep"
           type="number"
           min="0"
-          step="0.01">
+          step="0.01"
+        >
 
       </div>
 
@@ -1386,13 +1707,14 @@ button{
     <div
       id="eprev"
       class="muted small"
-      style="margin:10px 0">
-    </div>
+      style="margin:10px 0"
+    ></div>
 
 
     <button
       class="btn"
-      onclick="saveEdit()">
+      onclick="saveEdit()"
+    >
       บันทึกการแก้ไข
     </button>
 
@@ -1401,11 +1723,10 @@ button{
 </div>
 
 
-
 <script>
 
 /* =========================================================
-   DATA
+   DATABASE
 ========================================================= */
 
 const K = 'accountBook_final_v1';
@@ -1419,15 +1740,61 @@ let db =
     menus:[]
   };
 
+
+/* =========================================================
+   MIGRATION / SAFETY
+========================================================= */
+
+db.accounts = Array.isArray(db.accounts)
+  ? db.accounts
+  : [];
+
+db.menus = Array.isArray(db.menus)
+  ? db.menus
+  : [];
+
+db.menus.forEach(m=>{
+
+  if(!Array.isArray(m.ingredients)){
+    m.ingredients=[];
+  }
+
+  m.ingredients.forEach(i=>{
+
+    if(typeof i.on !== 'boolean'){
+      i.on=true;
+    }
+
+    if(typeof i.qty !== 'number'){
+      i.qty=Number(i.qty)||0;
+    }
+
+    if(typeof i.price !== 'number'){
+      i.price=Number(i.price)||0;
+    }
+
+    if(typeof i.cover !== 'string'){
+      i.cover='';
+    }
+
+  });
+
+});
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
 let mid = null;
-let eid = null;
 let iid = null;
 
 
 /* =========================================================
    SUMMARY STATE
-   สำคัญมาก:
-   ไม่ใช้ new Date() ทับค่าที่ผู้ใช้เลือกอีกแล้ว
+   สำคัญ:
+   ไม่สร้างวันที่ใหม่ทุกครั้ง
+   จึงไม่เด้งกลับวันที่ปัจจุบัน
 ========================================================= */
 
 const summaryState = {
@@ -1455,46 +1822,73 @@ const $ = id =>
   document.getElementById(id);
 
 
-const money = n =>
-  '฿' +
-  Number(n || 0).toLocaleString(
-    'th-TH',
-    {
-      minimumFractionDigits:2,
-      maximumFractionDigits:2
-    }
+function save(){
+
+  localStorage.setItem(
+    K,
+    JSON.stringify(db)
   );
 
+}
 
-const sum = a =>
-  Number(a.qty || 0) *
+
+function money(n){
+
+  return '฿' + Number(n || 0)
+    .toLocaleString(
+      'th-TH',
+      {
+        minimumFractionDigits:2,
+        maximumFractionDigits:2
+      }
+    );
+
+}
+
+
+function totalOf(a){
+
+  return Number(a.qty || 0)
+    *
   Number(a.price || 0);
 
-
-const uid = () =>
-  Date.now().toString(36) +
-  Math.random().toString(36).slice(2,7);
+}
 
 
-const esc = s =>
-  String(s ?? '').replace(
-    /[&<>"']/g,
-    m => ({
-      '&':'&amp;',
-      '<':'&lt;',
-      '>':'&gt;',
-      '"':'&quot;',
-      "'":'&#39;'
-    }[m])
-  );
+function uid(){
+
+  return Date.now().toString(36)
+    +
+  Math.random()
+    .toString(36)
+    .slice(2,8);
+
+}
+
+
+function esc(s){
+
+  return String(s ?? '')
+    .replace(
+      /[&<>"']/g,
+      m=>({
+        '&':'&amp;',
+        '<':'&lt;',
+        '>':'&gt;',
+        '"':'&quot;',
+        "'":'&#39;'
+      }[m])
+    );
+
+}
 
 
 function today(){
 
-  let d = new Date();
+  const d = new Date();
 
   return new Date(
-    d - d.getTimezoneOffset() * 60000
+    d - d.getTimezoneOffset()*60000
   )
   .toISOString()
   .slice(0,10);
@@ -1505,7 +1899,7 @@ function today(){
 function iso(d){
 
   return new Date(
-    d - d.getTimezoneOffset() * 60000
+    d - d.getTimezoneOffset()*60000
   )
   .toISOString()
   .slice(0,10);
@@ -1518,84 +1912,30 @@ function fd(s){
   if(!s) return '';
 
   return new Date(
-    s + 'T00:00:00'
-  ).toLocaleDateString('th-TH');
-
-}
-
-
-function save(){
-
-  localStorage.setItem(
-    K,
-    JSON.stringify(db)
+    s+'T00:00:00'
+  ).toLocaleDateString(
+    'th-TH'
   );
 
 }
 
 
+function normalizeName(s){
 
-/* =========================================================
-   NAV
-========================================================= */
+  return String(s || '')
+    .trim()
+    .toLowerCase();
 
-document
-.querySelectorAll('.nav button')
-.forEach(b => {
-
-  b.onclick = () => {
-
-    document
-    .querySelectorAll('.nav button')
-    .forEach(x =>
-      x.classList.remove('on')
-    );
-
-    b.classList.add('on');
-
-
-    document
-    .querySelectorAll('.page')
-    .forEach(x =>
-      x.classList.remove('on')
-    );
-
-    $(b.dataset.p).classList.add('on');
-
-
-    if(b.dataset.p === 'account')
-      renderAccounts();
-
-
-    if(b.dataset.p === 'summary')
-      summary();
-
-
-    if(b.dataset.p === 'all')
-      renderAll();
-
-
-    if(b.dataset.p === 'cost'){
-
-      closeDetail();
-
-      renderMenus();
-
-    }
-
-  };
-
-});
-
+}
 
 
 /* =========================================================
-   ACCOUNT
+   TITLE
 ========================================================= */
 
 function editTitle(){
 
-  let x = prompt(
+  const x = prompt(
     'ชื่อที่จะแสดงแทน “สมุดบัญชี”',
     db.title
   );
@@ -1617,12 +1957,78 @@ function editTitle(){
 }
 
 
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+document
+  .querySelectorAll('.nav button')
+  .forEach(btn=>{
+
+    btn.onclick=()=>{
+
+      document
+        .querySelectorAll('.nav button')
+        .forEach(x=>
+          x.classList.remove('on')
+        );
+
+      btn.classList.add('on');
+
+      document
+        .querySelectorAll('.page')
+        .forEach(x=>
+          x.classList.remove('on')
+        );
+
+      $(btn.dataset.p)
+        .classList.add('on');
+
+
+      if(btn.dataset.p==='account'){
+
+        renderAccounts();
+
+      }
+
+
+      if(btn.dataset.p==='summary'){
+
+        renderSummaryPicker();
+        summary();
+
+      }
+
+
+      if(btn.dataset.p==='all'){
+
+        renderAll();
+
+      }
+
+
+      if(btn.dataset.p==='cost'){
+
+        closeDetail();
+        renderMenus();
+
+      }
+
+    };
+
+  });
+
+
+/* =========================================================
+   ACCOUNT
+========================================================= */
+
 function aq(n){
 
   $('aQty').value =
     Math.max(
       0,
-      Number($('aQty').value || 0) + n
+      Number($('aQty').value || 0)+n
     );
 
   ap();
@@ -1632,47 +2038,52 @@ function aq(n){
 
 function ap(){
 
-  let q =
-    +$('aQty').value || 0;
+  const q =
+    Number($('aQty').value || 0);
 
-  let p =
-    +$('aPrice').value || 0;
+  const p =
+    Number($('aPrice').value || 0);
 
   $('apreview').textContent =
-    `${q} × ${p} = ${q*p}`;
+    `${q} × ${money(p)} = ${money(q*p)}`;
 
 }
 
 
 function addAccount(){
 
-  let n =
+  const name =
     $('aName').value.trim();
 
-  if(!n)
-    return alert(
-      'ใส่ชื่อรายการก่อน'
-    );
+  if(!name){
+
+    alert('ใส่ชื่อรายการก่อน');
+
+    return;
+
+  }
+
+
+  const qty =
+    Number($('aQty').value || 0);
+
+  const price =
+    Number($('aPrice').value || 0);
 
 
   db.accounts.unshift({
 
     id:uid(),
 
-    name:n,
+    name:name,
 
-    date:
-      $('aDate').value ||
-      today(),
+    date:$('aDate').value || today(),
 
-    type:
-      $('aType').value,
+    type:$('aType').value,
 
-    qty:
-      +$('aQty').value || 0,
+    qty:qty,
 
-    price:
-      +$('aPrice').value || 0
+    price:price
 
   });
 
@@ -1680,14 +2091,12 @@ function addAccount(){
   save();
 
 
-  $('aName').value = '';
+  $('aName').value='';
+  $('aQty').value=1;
+  $('aPrice').value='';
 
-  $('aQty').value = 1;
-
-  $('aPrice').value = '';
 
   ap();
-
 
   renderAccounts();
 
@@ -1700,79 +2109,118 @@ function addAccount(){
 
 function renderAccounts(){
 
-  let inc =
+  const inc =
     db.accounts
-    .filter(x => x.type === 'income')
-    .reduce(
-      (s,x) => s + sum(x),
-      0
-    );
+      .filter(x=>x.type==='income')
+      .reduce(
+        (s,x)=>s+totalOf(x),
+        0
+      );
 
-
-  let ex =
+  const ex =
     db.accounts
-    .filter(x => x.type === 'expense')
-    .reduce(
-      (s,x) => s + sum(x),
-      0
-    );
+      .filter(x=>x.type==='expense')
+      .reduce(
+        (s,x)=>s+totalOf(x),
+        0
+      );
 
 
   $('balance').textContent =
-    money(inc - ex);
+    money(inc-ex);
+
+
+  if(!db.accounts.length){
+
+    $('accountList').innerHTML =
+      '<div class="empty">ยังไม่มีรายการบัญชี</div>';
+
+    return;
+
+  }
 
 
   $('accountList').innerHTML =
-    db.accounts.length
+    db.accounts.map(a=>{
 
-    ?
+      const isIncome =
+        a.type==='income';
 
-    db.accounts.map(a => `
+      const symbol =
+        isIncome ? '+' : '−';
 
-      <div class="item">
+      return `
+
+      <div class="account-row">
 
         <div class="between">
 
-          <div>
+          <div
+            style="
+              display:flex;
+              gap:12px;
+              align-items:center;
+              min-width:0;
+              flex:1;
+            "
+          >
 
-            <div class="title">
-              ${esc(a.name)}
+            <div class="account-symbol">
+              ${symbol}
             </div>
 
-            <div class="muted small">
-              ${fd(a.date)}
-              ·
-              ${a.type === 'income'
-                ? 'รายรับ'
-                : 'รายจ่าย'}
-            </div>
+            <div class="account-main">
 
-            <div class="small">
-              ${a.qty}
-              ×
-              ${money(a.price)}
-              =
-              <b>
-                ${money(sum(a))}
-              </b>
+              <div class="title">
+                ${esc(a.name)}
+              </div>
+
+              <div class="account-formula">
+                ${a.qty}
+                ×
+                ${money(a.price)}
+                =
+                ${money(totalOf(a))}
+                ·
+                ${esc(a.date)}
+              </div>
+
             </div>
 
           </div>
 
 
-          <div class="actions">
+          <div class="account-right">
 
-            <button
-              class="mini"
-              onclick="openEdit('${a.id}')">
-              แก้
-            </button>
+            <div
+              class="account-amount ${
+                isIncome
+                ? 'income'
+                : 'expense'
+              }"
+            >
+              ${isIncome ? '+' : '−'}
+              ${money(totalOf(a))}
+            </div>
 
-            <button
-              class="trash"
-              onclick="delA('${a.id}')">
-              🗑️
-            </button>
+
+            <div class="actions">
+
+              <button
+                class="mini"
+                onclick="openEdit('${a.id}')"
+              >
+                แก้ไข
+              </button>
+
+              <button
+                class="mini danger"
+                onclick="delA('${a.id}')"
+              >
+                ลบ
+              </button>
+
+            </div>
 
           </div>
 
@@ -1780,11 +2228,9 @@ function renderAccounts(){
 
       </div>
 
-    `).join('')
+      `;
 
-    :
-
-    '<div class="empty">ยังไม่มีรายการบัญชี</div>';
+    }).join('');
 
 }
 
@@ -1792,75 +2238,62 @@ function renderAccounts(){
 function delA(id){
 
   if(
-    confirm(
+    !confirm(
       'ลบรายการนี้ใช่ไหม'
     )
-  ){
+  ) return;
 
-    db.accounts =
-      db.accounts.filter(
-        x => x.id !== id
-      );
 
-    save();
+  db.accounts =
+    db.accounts.filter(
+      x=>x.id!==id
+    );
 
-    renderAccounts();
 
-    renderAll();
+  save();
 
-    summary();
-
-  }
+  renderAccounts();
+  renderAll();
+  summary();
 
 }
 
 
 /* =========================================================
-   EDIT ACCOUNT
+   ACCOUNT EDIT
 ========================================================= */
 
 function openEdit(id){
 
-  let a =
+  const a =
     db.accounts.find(
-      x => x.id === id
+      x=>x.id===id
     );
 
   if(!a) return;
 
 
-  eid = id;
-
-
-  $('en').value =
-    a.name;
-
-  $('ed').value =
-    a.date;
-
-  $('et').value =
-    a.type;
-
-  $('eqty').value =
-    a.qty;
-
-  $('ep').value =
-    a.price;
+  $('eid').value=a.id;
+  $('en').value=a.name;
+  $('ed').value=a.date;
+  $('et').value=a.type;
+  $('eqty').value=a.qty;
+  $('ep').value=a.price;
 
 
   editPrev();
 
 
-  $('modal').style.display =
-    'flex';
+  $('editModal')
+    .style.display='flex';
 
 }
 
 
 function closeEdit(){
 
-  $('modal').style.display =
-    'none';
+  $('editModal')
+    .style.display='none';
 
 }
 
@@ -1870,7 +2303,7 @@ function eq(n){
   $('eqty').value =
     Math.max(
       0,
-      +$('eqty').value + n
+      Number($('eqty').value || 0)+n
     );
 
   editPrev();
@@ -1880,54 +2313,56 @@ function eq(n){
 
 function editPrev(){
 
+  const q =
+    Number($('eqty').value || 0);
+
+  const p =
+    Number($('ep').value || 0);
+
+
   $('eprev').textContent =
-    `${+$('eqty').value || 0} × ` +
-    `${money($('ep').value || 0)} = ` +
-    `${money(
-      (+$('eqty').value || 0) *
-      (+$('ep').value || 0)
-    )}`;
+    `${q} × ${money(p)} = ${money(q*p)}`;
 
 }
 
 
-$('ep').oninput =
-  editPrev;
-
-$('eqty').oninput =
-  editPrev;
+$('ep').oninput=editPrev;
+$('eqty').oninput=editPrev;
 
 
 function saveEdit(){
 
-  let a =
+  const id =
+    $('eid').value;
+
+  const a =
     db.accounts.find(
-      x => x.id === eid
+      x=>x.id===id
     );
 
   if(!a) return;
 
 
-  a.name =
+  const name =
     $('en').value.trim();
 
-  a.date =
-    $('ed').value;
 
-  a.type =
-    $('et').value;
+  if(!name){
 
-  a.qty =
-    +$('eqty').value || 0;
+    alert('ชื่อรายการห้ามว่าง');
 
-  a.price =
-    +$('ep').value || 0;
+    return;
+
+  }
 
 
-  if(!a.name)
-    return alert(
-      'ชื่อรายการห้ามว่าง'
-    );
+  a.name=name;
+  a.date=$('ed').value;
+  a.type=$('et').value;
+  a.qty=
+    Number($('eqty').value || 0);
+  a.price=
+    Number($('ep').value || 0);
 
 
   save();
@@ -1935,67 +2370,88 @@ function saveEdit(){
   closeEdit();
 
   renderAccounts();
-
   renderAll();
-
   summary();
 
 }
-
 
 
 /* =========================================================
    SUMMARY
 ========================================================= */
 
+function setSummaryMode(mode){
 
-/* เปลี่ยน วัน / สัปดาห์ / เดือน / ปี */
+  summaryState.mode=mode;
 
-function changeSummaryMode(){
-
-  const mode =
-    $('sMode').value;
-
-  summaryState.mode =
-    mode;
+  renderSummaryPicker();
 
   summary();
 
 }
 
 
-/* ปี 2026 - 2035 */
+function setSummaryDetail(detail){
 
-function years(){
+  summaryState.detail=detail;
 
-  return Array.from(
-    {length:10},
-    (_,i) => 2026 + i
-  );
+  renderSummaryPicker();
+
+  summary();
 
 }
 
 
-/* =========================================================
-   สร้างตัวเลือกตามโหมด
-========================================================= */
-
-function renderPicker(){
+function renderSummaryPicker(){
 
   const mode =
     summaryState.mode;
 
-  const p =
-    $('picker');
+
+  $('pDay')
+    .classList.toggle(
+      'on',
+      mode==='day'
+    );
+
+  $('pWeek')
+    .classList.toggle(
+      'on',
+      mode==='week'
+    );
+
+  $('pMonth')
+    .classList.toggle(
+      'on',
+      mode==='month'
+    );
+
+  $('pYear')
+    .classList.toggle(
+      'on',
+      mode==='year'
+    );
 
 
-  /* -------------------------
-     วัน
-  ------------------------- */
+  $('detailBtn')
+    .classList.toggle(
+      'on',
+      summaryState.detail==='detail'
+    );
 
-  if(mode === 'day'){
+  $('numberBtn')
+    .classList.toggle(
+      'on',
+      summaryState.detail==='number'
+    );
 
-    p.innerHTML = `
+
+  let html='';
+
+
+  if(mode==='day'){
+
+    html=`
 
       <label>
         เลือกวันที่
@@ -2004,31 +2460,18 @@ function renderPicker(){
       <input
         id="sp"
         type="date"
-        value="${summaryState.day}">
+        value="${summaryState.day}"
+        onchange="summaryState.day=this.value;summary()"
+      >
 
     `;
-
-
-    $('sp').onchange = () => {
-
-      summaryState.day =
-        $('sp').value ||
-        summaryState.day;
-
-      summary();
-
-    };
 
   }
 
 
-  /* -------------------------
-     สัปดาห์
-  ------------------------- */
+  if(mode==='week'){
 
-  if(mode === 'week'){
-
-    p.innerHTML = `
+    html=`
 
       <label>
         เลือกวันใดก็ได้ในสัปดาห์
@@ -2037,31 +2480,18 @@ function renderPicker(){
       <input
         id="sp"
         type="date"
-        value="${summaryState.week}">
+        value="${summaryState.week}"
+        onchange="summaryState.week=this.value;summary()"
+      >
 
     `;
-
-
-    $('sp').onchange = () => {
-
-      summaryState.week =
-        $('sp').value ||
-        summaryState.week;
-
-      summary();
-
-    };
 
   }
 
 
-  /* -------------------------
-     เดือน
-  ------------------------- */
+  if(mode==='month'){
 
-  if(mode === 'month'){
-
-    p.innerHTML = `
+    html=`
 
       <label>
         เลือกเดือน / ปี
@@ -2070,655 +2500,254 @@ function renderPicker(){
       <input
         id="sp"
         type="month"
-        value="${summaryState.month}">
+        value="${summaryState.month}"
+        onchange="summaryState.month=this.value;summary()"
+      >
 
     `;
-
-
-    $('sp').onchange = () => {
-
-      summaryState.month =
-        $('sp').value ||
-        summaryState.month;
-
-      summary();
-
-    };
 
   }
 
 
-  /* -------------------------
-     ปี
-  ------------------------- */
+  if(mode==='year'){
 
-  if(mode === 'year'){
+    const ys =
+      years();
 
-    p.innerHTML = `
+
+    html=`
 
       <label>
         เลือกปี
       </label>
 
-      <select id="sp">
+      <select
+        id="sp"
+        onchange="summaryState.year=this.value;summary()"
+      >
 
-        ${years()
-          .map(y => `
+        ${
+          ys.map(y=>`
 
             <option
               value="${y}"
-              ${String(y) === String(summaryState.year)
+              ${String(y)===String(summaryState.year)
                 ? 'selected'
-                : ''}>
-
+                : ''}
+            >
               ${y}
-
             </option>
 
-          `)
-          .join('')}
+          `).join('')
+        }
 
       </select>
 
     `;
 
-
-    $('sp').onchange = () => {
-
-      summaryState.year =
-        $('sp').value;
-
-      summary();
-
-    };
-
   }
+
+
+  $('summaryPicker').innerHTML =
+    html;
 
 }
 
 
+function years(){
 
-/* =========================================================
-   WEEK RANGE
-   อาทิตย์ → เสาร์
-========================================================= */
+  return Array.from(
+    {length:10},
+    (_,i)=>2026+i
+  );
 
-function getWeekRange(dateString){
+}
 
-  let d =
+
+function getWeekRange(dateStr){
+
+  const d =
     new Date(
-      dateString + 'T00:00:00'
+      dateStr+'T00:00:00'
     );
 
-  let day =
+
+  const day =
     d.getDay();
 
 
-  let start =
+  const start =
     new Date(d);
 
   start.setDate(
-    d.getDate() - day
-  );
-
-  start.setHours(
-    0,0,0,0
+    d.getDate()-day
   );
 
 
-  let end =
+  const end =
     new Date(start);
 
   end.setDate(
-    start.getDate() + 6
-  );
-
-  end.setHours(
-    0,0,0,0
+    start.getDate()+6
   );
 
 
   return {
-
     start:iso(start),
-
     end:iso(end)
-
   };
 
 }
 
 
-
-/* =========================================================
-   กำหนดช่วงวันที่
-========================================================= */
-
-function getSummaryRange(){
+function summary(){
 
   const mode =
     summaryState.mode;
 
 
-  if(mode === 'day'){
-
-    return {
-
-      start:summaryState.day,
-
-      end:summaryState.day
-
-    };
-
-  }
+  let start='';
+  let end='';
 
 
-  if(mode === 'week'){
+  if(mode==='day'){
 
-    return getWeekRange(
-      summaryState.week
-    );
+    start=
+      summaryState.day;
+
+    end=
+      summaryState.day;
 
   }
 
 
-  if(mode === 'month'){
+  if(mode==='week'){
 
-    const start =
-      summaryState.month + '-01';
+    const r =
+      getWeekRange(
+        summaryState.week
+      );
+
+    start=r.start;
+    end=r.end;
+
+  }
+
+
+  if(mode==='month'){
+
+    start=
+      summaryState.month+'-01';
 
 
     const d =
       new Date(
-        summaryState.month +
+        summaryState.month+
         '-01T00:00:00'
       );
 
-
     d.setMonth(
-      d.getMonth() + 1
+      d.getMonth()+1
     );
 
     d.setDate(0);
 
-
-    return {
-
-      start:start,
-
-      end:iso(d)
-
-    };
+    end=iso(d);
 
   }
 
 
-  if(mode === 'year'){
+  if(mode==='year'){
 
-    return {
+    start=
+      summaryState.year+'-01-01';
 
-      start:
-        summaryState.year +
-        '-01-01',
-
-      end:
-        summaryState.year +
-        '-12-31'
-
-    };
+    end=
+      summaryState.year+'-12-31';
 
   }
 
-}
 
-
-
-/* =========================================================
-   ชื่อเดือนภาษาไทย
-========================================================= */
-
-function thaiMonth(dateString){
-
-  const d =
-    new Date(
-      dateString + 'T00:00:00'
-    );
-
-
-  return d.toLocaleDateString(
-    'th-TH',
-    {
-      month:'long',
-      year:'numeric'
-    }
-  );
-
-}
-
-
-/* =========================================================
-   วันที่แบบอ่านง่าย
-========================================================= */
-
-function thaiDate(dateString){
-
-  const d =
-    new Date(
-      dateString + 'T00:00:00'
-    );
-
-
-  return d.toLocaleDateString(
-    'th-TH',
-    {
-      day:'numeric',
-      month:'short',
-      year:'numeric'
-    }
-  );
-
-}
-
-
-
-/* =========================================================
-   แบ่งกลุ่มรายการ
-========================================================= */
-
-function groupSummaryData(data){
-
-  const mode =
-    summaryState.mode;
-
-
-  /*
-    วัน / สัปดาห์
-    → แบ่งคั่นตามวัน
-  */
-
-  if(
-    mode === 'day' ||
-    mode === 'week'
-  ){
-
-    const groups = {};
-
-    data.forEach(a => {
-
-      const key =
-        a.date;
-
-      if(!groups[key])
-        groups[key] = [];
-
-      groups[key].push(a);
-
-    });
-
-
-    return Object.keys(groups)
-      .sort((a,b) =>
-        b.localeCompare(a)
+  const records =
+    db.accounts
+      .filter(
+        a=>
+          a.date>=start &&
+          a.date<=end
       )
-      .map(key => ({
-
-        key:key,
-
-        title:
-          thaiDate(key),
-
-        items:
-          groups[key]
-
-      }));
-
-  }
-
-
-  /*
-    เดือน / ปี
-    → แบ่งคั่นตามเดือน
-  */
-
-  const groups = {};
-
-
-  data.forEach(a => {
-
-    const key =
-      a.date.slice(0,7);
-
-    if(!groups[key])
-      groups[key] = [];
-
-    groups[key].push(a);
-
-  });
-
-
-  return Object.keys(groups)
-    .sort((a,b) =>
-      b.localeCompare(a)
-    )
-    .map(key => ({
-
-      key:key,
-
-      title:
-        thaiMonth(key + '-01'),
-
-      items:
-        groups[key]
-
-    }));
-
-}
-
-
-
-/* =========================================================
-   รวมยอดกลุ่ม
-========================================================= */
-
-function groupTotals(items){
-
-  let income = 0;
-
-  let expense = 0;
-
-
-  items.forEach(a => {
-
-    if(a.type === 'income')
-      income += sum(a);
-
-    else
-      expense += sum(a);
-
-  });
-
-
-  return {
-
-    income,
-
-    expense,
-
-    balance:
-      income - expense
-
-  };
-
-}
-
-
-
-/* =========================================================
-   แสดงรายละเอียด
-========================================================= */
-
-function renderSummaryDetail(groups){
-
-  return groups.map(g => {
-
-    const totals =
-      groupTotals(g.items);
-
-
-    return `
-
-      <div class="summary-group">
-
-        <div class="summary-group-title">
-
-          <span>
-            ${esc(g.title)}
-          </span>
-
-          <span class="summary-group-total">
-
-            รับ ${money(totals.income)}
-            ·
-            จ่าย ${money(totals.expense)}
-
-          </span>
-
-        </div>
-
-
-        <div class="summary-group-body">
-
-          ${g.items
-            .slice()
-            .sort((a,b) => {
-
-              if(a.date !== b.date)
-                return b.date.localeCompare(a.date);
-
-              return String(b.id)
-                .localeCompare(String(a.id));
-
-            })
-            .map(a => `
-
-              <div class="summary-item">
-
-                <div>
-
-                  <div class="summary-item-name">
-                    ${esc(a.name)}
-                  </div>
-
-                  <div class="summary-item-meta">
-
-                    ${a.qty}
-                    ×
-                    ${money(a.price)}
-
-                  </div>
-
-                </div>
-
-
-                <div
-                  class="
-                    summary-item-amount
-                    ${a.type === 'income'
-                      ? 'in'
-                      : 'out'}
-                  ">
-
-                  ${a.type === 'income'
-                    ? '+'
-                    : '-'}${money(sum(a))}
-
-                </div>
-
-              </div>
-
-            `)
-            .join('')}
-
-        </div>
-
-      </div>
-
-    `;
-
-  }).join('');
-
-}
-
-
-
-/* =========================================================
-   แสดงเฉพาะตัวเลข
-========================================================= */
-
-function renderSummaryNumbers(groups){
-
-  return groups.map(g => {
-
-    const totals =
-      groupTotals(g.items);
-
-
-    return `
-
-      <div class="summary-group">
-
-        <div class="summary-number-group">
-
-          <div class="summary-number-title">
-            ${esc(g.title)}
-          </div>
-
-
-          <div class="summary-number-row">
-
-            <span>
-              รายรับ
-            </span>
-
-            <b class="in">
-              ${money(totals.income)}
-            </b>
-
-          </div>
-
-
-          <div class="summary-number-row">
-
-            <span>
-              รายจ่าย
-            </span>
-
-            <b class="out">
-              ${money(totals.expense)}
-            </b>
-
-          </div>
-
-
-          <div class="summary-number-row">
-
-            <span>
-              คงเหลือ
-            </span>
-
-            <b class="balance">
-              ${money(totals.balance)}
-            </b>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    `;
-
-  }).join('');
-
-}
-
-
-
-/* =========================================================
-   SUMMARY MAIN
-========================================================= */
-
-function summary(){
-
-  /*
-    สำคัญ:
-    ไม่กำหนดวันที่เป็น today() ตรงนี้แล้ว
-    จึงไม่รีเซ็ตวันที่ของผู้ใช้
-  */
-
-
-  const mode =
-    $('sMode').value;
-
-  const detail =
-    $('sDetail').value;
-
-
-  summaryState.mode =
-    mode;
-
-  summaryState.detail =
-    detail;
-
-
-  renderPicker();
-
-
-  const range =
-    getSummaryRange();
-
-
-  /*
-    ดึงข้อมูลจากบัญชีจริง
-    ดังนั้นรายเดือน / รายปี
-    จะรวมข้อมูลรายวันทั้งหมดโดยอัตโนมัติ
-  */
-
-  let r =
-    db.accounts.filter(a =>
-      a.date >= range.start &&
-      a.date <= range.end
-    );
-
-
-  /*
-    เรียงใหม่ → เก่า
-  */
-
-  r = r.sort((a,b) => {
-
-    if(a.date !== b.date)
-      return b.date.localeCompare(a.date);
-
-    return String(b.id)
-      .localeCompare(String(a.id));
-
-  });
-
-
-  let inc = 0;
-
-  let ex = 0;
-
-
-  r.forEach(a => {
-
-    if(a.type === 'income')
-      inc += sum(a);
-
-    else
-      ex += sum(a);
-
-  });
-
-
-  const balance =
-    inc - ex;
-
-
-  $('si').textContent =
+      .sort(
+        (a,b)=>
+          b.date.localeCompare(a.date)
+      );
+
+
+  const inc =
+    records
+      .filter(
+        x=>x.type==='income'
+      )
+      .reduce(
+        (s,x)=>s+totalOf(x),
+        0
+      );
+
+
+  const ex =
+    records
+      .filter(
+        x=>x.type==='expense'
+      )
+      .reduce(
+        (s,x)=>s+totalOf(x),
+        0
+      );
+
+
+  $('si').textContent=
     money(inc);
 
-  $('se').textContent =
+  $('se').textContent=
     money(ex);
 
-  $('sn').textContent =
-    money(balance);
+  $('sn').textContent=
+    money(inc-ex);
 
 
-  if(!r.length){
+  if(summaryState.detail==='number'){
 
-    $('srows').innerHTML =
+    $('srows').innerHTML=`
+
+      <div class="sumrow">
+        <span>รายรับ</span>
+        <b class="income">
+          ${money(inc)}
+        </b>
+      </div>
+
+      <div class="sumrow">
+        <span>รายจ่าย</span>
+        <b class="expense">
+          ${money(ex)}
+        </b>
+      </div>
+
+      <div class="sumrow">
+        <span>คงเหลือ</span>
+        <b>
+          ${money(inc-ex)}
+        </b>
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  if(!records.length){
+
+    $('srows').innerHTML=
       '<div class="empty">ไม่มีรายการในช่วงที่เลือก</div>';
 
     return;
@@ -2726,80 +2755,208 @@ function summary(){
   }
 
 
-  const groups =
-    groupSummaryData(r);
+  /*
+    วัน / สัปดาห์
+    แบ่งคั่นเป็นวัน
+
+    เดือน / ปี
+    แบ่งคั่นเป็นเดือน
+  */
+
+  const groups={};
 
 
-  if(detail === 'number'){
+  records.forEach(a=>{
 
-    $('srows').innerHTML =
-      renderSummaryNumbers(groups);
+    let key='';
 
-  }
-  else{
 
-    $('srows').innerHTML =
-      renderSummaryDetail(groups);
+    if(
+      mode==='day' ||
+      mode==='week'
+    ){
 
-  }
+      key=a.date;
+
+    }else{
+
+      key=a.date.slice(0,7);
+
+    }
+
+
+    if(!groups[key]){
+      groups[key]=[];
+    }
+
+
+    groups[key].push(a);
+
+  });
+
+
+  const keys =
+    Object.keys(groups)
+      .sort(
+        (a,b)=>
+          b.localeCompare(a)
+      );
+
+
+  let html='';
+
+
+  keys.forEach(key=>{
+
+    let label='';
+
+
+    if(
+      mode==='day' ||
+      mode==='week'
+    ){
+
+      label=fd(key);
+
+    }else{
+
+      const d =
+        new Date(
+          key+'-01T00:00:00'
+        );
+
+      label=
+        d.toLocaleDateString(
+          'th-TH',
+          {
+            month:'long',
+            year:'numeric'
+          }
+        );
+
+    }
+
+
+    html+=`
+
+      <div class="day-divider">
+        ${esc(label)}
+      </div>
+
+    `;
+
+
+    groups[key]
+      .forEach(a=>{
+
+        html+=`
+
+          <div class="sumrow">
+
+            <span>
+
+              ${esc(a.name)}
+
+              <small
+                class="muted"
+                style="display:block;margin-top:3px"
+              >
+                ${a.qty}
+                ×
+                ${money(a.price)}
+              </small>
+
+            </span>
+
+
+            <b
+              class="${
+                a.type==='income'
+                ? 'income'
+                : 'expense'
+              }"
+            >
+              ${a.type==='expense'?'−':'+'}
+              ${money(totalOf(a))}
+            </b>
+
+          </div>
+
+        `;
+
+      });
+
+  });
+
+
+  $('srows').innerHTML=html;
 
 }
 
 
-
 /* =========================================================
-   PAGE 3 : ALL
+   ALL LIST
 ========================================================= */
 
 function renderAll(){
 
-  let q =
-    ($('search').value || '')
+  const q =
+    (
+      $('search').value || ''
+    )
+    .trim()
     .toLowerCase();
 
 
-  let r =
-    db.accounts.filter(a =>
-      a.name
-      .toLowerCase()
-      .includes(q)
+  const records =
+    db.accounts.filter(
+      a=>
+        a.name
+          .toLowerCase()
+          .includes(q)
     );
 
 
-  let inc =
+  const inc =
     db.accounts
-    .filter(x => x.type === 'income')
-    .reduce(
-      (s,a) => s + sum(a),
-      0
-    );
+      .filter(x=>x.type==='income')
+      .reduce(
+        (s,x)=>s+totalOf(x),
+        0
+      );
 
 
-  let ex =
+  const ex =
     db.accounts
-    .filter(x => x.type === 'expense')
-    .reduce(
-      (s,a) => s + sum(a),
-      0
-    );
+      .filter(x=>x.type==='expense')
+      .reduce(
+        (s,x)=>s+totalOf(x),
+        0
+      );
 
 
-  $('ai').textContent =
+  $('ai').textContent=
     money(inc);
 
-  $('ae').textContent =
+  $('ae').textContent=
     money(ex);
 
-  $('an').textContent =
+  $('an').textContent=
     money(inc-ex);
 
 
+  if(!records.length){
+
+    $('allList').innerHTML=
+      '<div class="empty">ไม่พบรายการ</div>';
+
+    return;
+
+  }
+
+
   $('allList').innerHTML =
-    r.length
-
-    ?
-
-    r.map(a => `
+    records.map(a=>`
 
       <div class="item">
 
@@ -2812,25 +2969,21 @@ function renderAll(){
             </div>
 
             <div class="muted small">
-
               ${fd(a.date)}
               ·
-              ${a.type === 'income'
+              ${a.type==='income'
                 ? 'รายรับ'
                 : 'รายจ่าย'}
-
             </div>
 
             <div class="small">
-
               ${a.qty}
               ×
               ${money(a.price)}
               =
               <b>
-                ${money(sum(a))}
+                ${money(totalOf(a))}
               </b>
-
             </div>
 
           </div>
@@ -2838,7 +2991,8 @@ function renderAll(){
 
           <button
             class="mini"
-            onclick="openEdit('${a.id}')">
+            onclick="openEdit('${a.id}')"
+          >
             แก้
           </button>
 
@@ -2846,14 +3000,9 @@ function renderAll(){
 
       </div>
 
-    `).join('')
-
-    :
-
-    '<div class="empty">ไม่พบรายการ</div>';
+    `).join('');
 
 }
-
 
 
 /* =========================================================
@@ -2862,25 +3011,26 @@ function renderAll(){
 
 function addMenu(){
 
-  let n =
+  const name =
     $('mName').value.trim();
 
 
-  if(!n)
-    return alert(
+  if(!name){
+
+    alert(
       'ใส่ชื่อรายการขายก่อน'
     );
+
+    return;
+
+  }
 
 
   db.menus.push({
 
     id:uid(),
 
-    name:n,
-
-    unit:
-      $('mUnit').value.trim() ||
-      'ชิ้น',
+    name:name,
 
     cover:
       $('mCover').value.trim(),
@@ -2893,11 +3043,8 @@ function addMenu(){
   save();
 
 
-  $('mName').value = '';
-
-  $('mUnit').value = '';
-
-  $('mCover').value = '';
+  $('mName').value='';
+  $('mCover').value='';
 
 
   renderMenus();
@@ -2905,71 +3052,84 @@ function addMenu(){
 }
 
 
+function menu(){
+
+  return db.menus.find(
+    m=>m.id===mid
+  );
+
+}
+
+
+function menuCost(m){
+
+  if(!m) return 0;
+
+
+  return m.ingredients
+    .filter(i=>i.on)
+    .reduce(
+      (s,i)=>
+        s+
+        Number(i.qty||0)*
+        Number(i.price||0),
+      0
+    );
+
+}
+
+
 function renderMenus(){
 
-  $('menus').innerHTML =
-    db.menus.length
-
-    ?
-
-    db.menus.map(m => {
-
-      m.ingredients =
-        Array.isArray(m.ingredients)
-          ? m.ingredients
-          : [];
+  const box =
+    $('menus');
 
 
-      let c =
-        m.ingredients
-        .filter(i => i.on)
-        .reduce(
-          (s,i) =>
-            s +
-            Number(i.qty || 0) *
-            Number(i.price || 0),
-          0
-        );
+  if(!db.menus.length){
+
+    box.innerHTML=
+      '<div class="empty">ยังไม่มีรายการขาย</div>';
+
+    return;
+
+  }
+
+
+  box.innerHTML =
+    db.menus.map(m=>{
+
+      if(!Array.isArray(m.ingredients)){
+        m.ingredients=[];
+      }
+
+
+      const cost =
+        menuCost(m);
 
 
       return `
 
-        <div class="item">
+        <div class="menu-card">
 
           <div class="between">
 
-            <div class="row">
+            <div class="menu-left">
 
               <div class="cover">
-
                 ${m.cover
                   ? esc(m.cover)
                   : ''}
-
               </div>
 
 
               <div>
 
-                <div class="title">
+                <div class="menu-name">
                   ${esc(m.name)}
                 </div>
 
-                <div class="muted small">
-                  หน่วยขาย:
-                  ${esc(m.unit)}
-                </div>
-
-                <div
-                  class="small"
-                  style="margin-top:5px">
-
-                  ${m.ingredients.filter(i => i.on).length}
-                  วัตถุดิบที่เปิดใช้
-                  ·
-                  ต้นทุนรวม
-                  ${money(c)}
-
+                <div class="menu-info">
+                  วัตถุดิบ ${m.ingredients.length} รายการ
                 </div>
 
               </div>
@@ -2977,19 +3137,38 @@ function renderMenus(){
             </div>
 
 
-            <div class="actions">
+            <div class="menu-right">
 
-              <button
-                class="btn light"
-                onclick="openDetail('${m.id}')">
-                วัตถุดิบ
-              </button>
+              <div class="menu-cost">
+                รวมต้นทุน
+                ${money(cost)}
+              </div>
 
-              <button
-                class="trash"
-                onclick="delM('${m.id}')">
-                🗑️
-              </button>
+
+              <div class="menu-actions">
+
+                <button
+                  class="light"
+                  onclick="openDetail('${m.id}')"
+                >
+                  วัตถุดิบ
+                </button>
+
+                <button
+                  class="light"
+                  onclick="duplicateMenu('${m.id}')"
+                >
+                  คัดลอก
+                </button>
+
+                <button
+                  class="danger"
+                  onclick="delM('${m.id}')"
+                >
+                  ลบ
+                </button>
+
+              </div>
 
             </div>
 
@@ -2999,233 +3178,433 @@ function renderMenus(){
 
       `;
 
-    }).join('')
-
-    :
-
-    '<div class="empty">ยังไม่มีรายการขาย</div>';
+    }).join('');
 
 }
 
+
+/* =========================================================
+   DUPLICATE MENU
+========================================================= */
+
+function duplicateMenu(id){
+
+  const original =
+    db.menus.find(
+      m=>m.id===id
+    );
+
+  if(!original) return;
+
+
+  const copy =
+    JSON.parse(
+      JSON.stringify(original)
+    );
+
+
+  copy.id=uid();
+
+  copy.name=
+    original.name+' (สำเนา)';
+
+
+  copy.ingredients =
+    Array.isArray(copy.ingredients)
+      ? copy.ingredients
+      : [];
+
+
+  copy.ingredients =
+    copy.ingredients.map(i=>({
+
+      ...i,
+
+      id:uid()
+
+    }));
+
+
+  db.menus.push(copy);
+
+  save();
+
+  renderMenus();
+
+}
+
+
+/* =========================================================
+   DELETE MENU
+========================================================= */
 
 function delM(id){
 
   if(
-    confirm(
+    !confirm(
       'ลบรายการขายและวัตถุดิบทั้งหมดใช่ไหม'
     )
-  ){
-
-    db.menus =
-      db.menus.filter(
-        m => m.id !== id
-      );
-
-    save();
-
-    renderMenus();
-
-  }
-
-}
+  ) return;
 
 
-function menu(){
+  db.menus =
+    db.menus.filter(
+      m=>m.id!==id
+    );
 
-  return db.menus.find(
-    m => m.id === mid
-  );
+
+  save();
+
+  renderMenus();
 
 }
-
 
 
 /* =========================================================
-   COST : DETAIL
+   OPEN / CLOSE INGREDIENT PAGE
 ========================================================= */
 
 function openDetail(id){
 
-  mid = id;
+  mid=id;
 
-  $('costHome').style.display =
-    'none';
+  $('costHome')
+    .style.display='none';
 
-  $('detail').style.display =
-    'block';
+  $('detail')
+    .style.display='block';
+
+  closeIng();
 
   renderDetail();
+
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  });
 
 }
 
 
 function closeDetail(){
 
-  mid = null;
+  mid=null;
 
-  $('costHome').style.display =
-    'block';
+  $('costHome')
+    .style.display='block';
 
-  $('detail').style.display =
-    'none';
+  $('detail')
+    .style.display='none';
 
   closeIng();
 
 }
 
 
-function renderDetail(){
+/* =========================================================
+   MENU NAME
+========================================================= */
 
-  let m =
-    menu();
+function updateMenuName(){
+
+  const m=menu();
 
   if(!m) return;
 
 
-  m.ingredients =
-    Array.isArray(m.ingredients)
-      ? m.ingredients
-      : [];
+  const value =
+    $('dNameInput')
+      .value
+      .trim();
 
 
-  $('dName').textContent =
+  if(value){
+
+    m.name=value;
+
+    save();
+
+  }
+
+
+  renderDetail();
+
+}
+
+
+/* =========================================================
+   INGREDIENT DETAIL PAGE
+========================================================= */
+
+function renderDetail(){
+
+  const m=menu();
+
+  if(!m) return;
+
+
+  if(!Array.isArray(m.ingredients)){
+    m.ingredients=[];
+  }
+
+
+  $('dNameInput').value=
     m.name;
 
-  $('dUnit').textContent =
-    'หน่วยขาย: ' + m.unit;
 
-  $('dCover').textContent =
+  $('dCover').textContent=
     m.cover || '';
 
 
-  let on =
-    m.ingredients.filter(
-      i => i.on
-    );
+  $('dCount').textContent=
+    `วัตถุดิบ ${m.ingredients.length} รายการ`;
 
 
-  let c =
-    on.reduce(
-      (s,i) =>
-        s +
-        Number(i.qty || 0) *
-        Number(i.price || 0),
-      0
-    );
+  const enabled =
+    m.ingredients
+      .filter(i=>i.on);
 
 
-  $('dc').textContent =
-    on.length;
+  const cost =
+    menuCost(m);
 
-  $('dt').textContent =
-    money(c);
 
-  $('du').textContent =
-    money(c);
+  $('dc').textContent=
+    enabled.length;
+
+
+  $('dt').textContent=
+    money(cost);
+
+
+  renderIngredients();
+
+}
+
+
+/* =========================================================
+   INGREDIENT LIST
+========================================================= */
+
+function renderIngredients(){
+
+  const m=menu();
+
+  if(!m) return;
+
+
+  if(!Array.isArray(m.ingredients)){
+    m.ingredients=[];
+  }
+
+
+  if(!m.ingredients.length){
+
+    $('ings').innerHTML=
+      '<div class="empty">ยังไม่มีวัตถุดิบ</div>';
+
+    return;
+
+  }
 
 
   $('ings').innerHTML =
-    m.ingredients.length
+    m.ingredients.map(
+      (i,index)=>{
 
-    ?
+        const total =
+          Number(i.qty||0)*
+          Number(i.price||0);
 
-    m.ingredients.map(i => `
 
-      <div class="ingredient">
+        return `
 
-        <div class="between">
+        <div class="ingredient">
 
-          <div>
+          <div class="ingredient-row">
 
-            <div class="title">
-              ${esc(i.name)}
+
+            <!-- COVER -->
+
+            <div class="ingredient-cover">
+              ${i.cover
+                ? esc(i.cover)
+                : ''}
             </div>
 
-            <div class="small">
 
-              ${i.qty}
-              ×
-              ${money(i.price)}
-              =
-              <b>
-                ${money(
-                  Number(i.qty || 0) *
-                  Number(i.price || 0)
-                )}
-              </b>
+            <!-- NAME + EQUATION -->
+
+            <div class="ingredient-info">
+
+              <div class="ingredient-name">
+                ${esc(i.name)}
+              </div>
+
+              <div class="ingredient-equation">
+                ${i.qty}
+                ×
+                ${money(i.price)}
+                =
+                ${money(total)}
+              </div>
 
             </div>
 
-            <div class="muted small">
 
-              ${i.on
-                ? 'ใช้ · รวมต้นทุน'
-                : 'ไม่ใช้ · ไม่รวมต้นทุน'}
+            <!-- ALL CONTROLS : ONE LINE -->
+
+            <div class="ingredient-tools">
+
+
+              <!-- UP -->
+
+              <button
+                class="order-btn"
+                title="เลื่อนขึ้น"
+                onclick="moveIngredient(${index},-1)"
+              >
+                ↑
+              </button>
+
+
+              <!-- DOWN -->
+
+              <button
+                class="order-btn"
+                title="เลื่อนลง"
+                onclick="moveIngredient(${index},1)"
+              >
+                ↓
+              </button>
+
+
+              <!-- DETAIL -->
+
+              <button
+                class="detail-btn"
+                onclick="editI('${i.id}')"
+              >
+                รายละเอียด
+              </button>
+
+
+              <!-- DELETE -->
+
+              <button
+                class="delete-btn"
+                onclick="delI('${i.id}')"
+                title="ลบ"
+              >
+                🗑️
+              </button>
+
+
+              <!-- SWITCH -->
+
+              <label
+                class="switch"
+                title="${
+                  i.on
+                  ? 'รวมต้นทุน'
+                  : 'ไม่รวมต้นทุน'
+                }"
+              >
+
+                <input
+                  type="checkbox"
+                  ${i.on?'checked':''}
+                  onchange="toggleI('${i.id}',this.checked)"
+                >
+
+                <span class="slider"></span>
+
+              </label>
+
+
+              <!-- QUANTITY -->
+
+              <div class="ingredient-qty">
+
+
+                <button
+                  class="ingredient-qty-btn"
+                  onclick="changeIngredientQty('${i.id}',-1)"
+                >
+                  −
+                </button>
+
+
+                <input
+                  class="ingredient-qty-input"
+                  type="number"
+                  min="0"
+                  step="0.01"
+                  value="${i.qty}"
+                  onchange="setIngredientQty('${i.id}',this.value)"
+                  oninput="setIngredientQty('${i.id}',this.value)"
+                >
+
+
+                <button
+                  class="ingredient-qty-btn"
+                  onclick="changeIngredientQty('${i.id}',1)"
+                >
+                  +
+                </button>
+
+
+              </div>
+
 
             </div>
 
           </div>
 
-
-          <label class="switch">
-
-            <input
-              type="checkbox"
-              ${i.on ? 'checked' : ''}
-              onchange="toggleI('${i.id}',this.checked)">
-
-            <span class="slider"></span>
-
-          </label>
-
         </div>
 
+        `;
 
-        <div
-          class="actions"
-          style="margin-top:9px">
-
-          <button
-            class="mini"
-            onclick="editI('${i.id}')">
-            แก้
-          </button>
-
-          <button
-            class="mini"
-            onclick="delI('${i.id}')">
-            ลบ
-          </button>
-
-        </div>
-
-      </div>
-
-    `).join('')
-
-    :
-
-    '<div class="empty">ยังไม่มีวัตถุดิบ</div>';
+      }
+    ).join('');
 
 }
 
 
-function toggleI(id,on){
+/* =========================================================
+   MOVE INGREDIENT
+========================================================= */
 
-  let m =
-    menu();
+function moveIngredient(index,direction){
+
+  const m=menu();
 
   if(!m) return;
 
 
-  let i =
-    m.ingredients.find(
-      x => x.id === id
-    );
+  const newIndex =
+    index+direction;
 
 
-  if(i)
-    i.on = on;
+  if(
+    newIndex<0 ||
+    newIndex>=m.ingredients.length
+  ){
+
+    return;
+
+  }
+
+
+  const temp =
+    m.ingredients[index];
+
+
+  m.ingredients[index]=
+    m.ingredients[newIndex];
+
+  m.ingredients[newIndex]=
+    temp;
 
 
   save();
@@ -3237,57 +3616,160 @@ function toggleI(id,on){
 }
 
 
+/* =========================================================
+   TOGGLE INGREDIENT
+========================================================= */
+
+function toggleI(id,on){
+
+  const m=menu();
+
+  if(!m) return;
+
+
+  const i =
+    m.ingredients.find(
+      x=>x.id===id
+    );
+
+
+  if(!i) return;
+
+
+  i.on=!!on;
+
+  save();
+
+  renderDetail();
+
+  renderMenus();
+
+}
+
 
 /* =========================================================
-   INGREDIENT
+   INGREDIENT QUANTITY
+========================================================= */
+
+function changeIngredientQty(id,n){
+
+  const m=menu();
+
+  if(!m) return;
+
+
+  const i =
+    m.ingredients.find(
+      x=>x.id===id
+    );
+
+
+  if(!i) return;
+
+
+  i.qty =
+    Math.max(
+      0,
+      Number(i.qty||0)+n
+    );
+
+
+  save();
+
+  renderDetail();
+
+  renderMenus();
+
+}
+
+
+function setIngredientQty(id,value){
+
+  const m=menu();
+
+  if(!m) return;
+
+
+  const i =
+    m.ingredients.find(
+      x=>x.id===id
+    );
+
+
+  if(!i) return;
+
+
+  i.qty =
+    Math.max(
+      0,
+      Number(value)||0
+    );
+
+
+  save();
+
+  renderDetail();
+
+  renderMenus();
+
+}
+
+
+/* =========================================================
+   ADD INGREDIENT
 ========================================================= */
 
 function openIng(){
 
-  iid = null;
+  iid=null;
 
 
-  $('ingTitle').textContent =
+  $('ingTitle').textContent=
     'เพิ่มวัตถุดิบ';
 
 
-  $('iName').value = '';
-
-  $('iQty').value = 1;
-
-  $('iPrice').value = '';
+  $('iName').value='';
+  $('iCover').value='';
+  $('iQty').value=1;
+  $('iPrice').value='';
 
 
   ic();
 
 
-  $('ingForm').style.display =
-    'block';
+  $('ingForm')
+    .style.display='block';
 
 
-  $('ingForm').scrollIntoView({
-    behavior:'smooth'
-  });
+  $('ingForm')
+    .scrollIntoView({
+      behavior:'smooth',
+      block:'start'
+    });
 
 }
 
 
 function closeIng(){
 
-  $('ingForm').style.display =
-    'none';
+  $('ingForm')
+    .style.display='none';
 
-  iid = null;
+  iid=null;
 
 }
 
+
+/* =========================================================
+   INGREDIENT FORM QUANTITY
+========================================================= */
 
 function iq(n){
 
   $('iQty').value =
     Math.max(
       0,
-      +$('iQty').value + n
+      Number($('iQty').value||0)+n
     );
 
   ic();
@@ -3297,119 +3779,161 @@ function iq(n){
 
 function ic(){
 
-  $('iTotal').value =
-    money(
-      (+$('iQty').value || 0) *
-      (+$('iPrice').value || 0)
-    );
+  const q =
+    Number($('iQty').value||0);
+
+  const p =
+    Number($('iPrice').value||0);
+
+
+  $('iTotal').textContent=
+    money(q*p);
 
 }
 
 
+/* =========================================================
+   EDIT INGREDIENT
+========================================================= */
+
 function editI(id){
 
-  let m =
-    menu();
+  const m=menu();
 
   if(!m) return;
 
 
-  let i =
+  const i =
     m.ingredients.find(
-      x => x.id === id
+      x=>x.id===id
     );
+
 
   if(!i) return;
 
 
-  iid = id;
+  iid=id;
 
 
-  $('ingTitle').textContent =
+  $('ingTitle').textContent=
     'แก้ไขวัตถุดิบ';
 
 
-  $('iName').value =
+  $('iName').value=
     i.name;
 
-  $('iQty').value =
+
+  $('iCover').value=
+    i.cover || '';
+
+
+  $('iQty').value=
     i.qty;
 
-  $('iPrice').value =
+
+  $('iPrice').value=
     i.price;
 
 
   ic();
 
 
-  $('ingForm').style.display =
-    'block';
+  $('ingForm')
+    .style.display='block';
 
 
-  $('ingForm').scrollIntoView({
-    behavior:'smooth'
-  });
+  $('ingForm')
+    .scrollIntoView({
+      behavior:'smooth',
+      block:'start'
+    });
 
 }
 
 
+/* =========================================================
+   SAVE INGREDIENT
+========================================================= */
+
 function saveIng(){
 
-  let m =
-    menu();
+  const m=menu();
 
   if(!m) return;
 
 
-  let n =
-    $('iName').value.trim();
+  if(!Array.isArray(m.ingredients)){
+    m.ingredients=[];
+  }
 
 
-  if(!n)
-    return alert(
+  const name =
+    $('iName')
+      .value
+      .trim();
+
+
+  if(!name){
+
+    alert(
       'ใส่ชื่อวัตถุดิบก่อน'
     );
 
+    return;
 
-  let q =
-    +$('iQty').value || 0;
+  }
 
-  let p =
-    +$('iPrice').value || 0;
+
+  const cover =
+    $('iCover')
+      .value
+      .trim();
+
+
+  const qty =
+    Math.max(
+      0,
+      Number($('iQty').value||0)
+    );
+
+
+  const price =
+    Math.max(
+      0,
+      Number($('iPrice').value||0)
+    );
 
 
   if(iid){
 
-    let i =
+    const i =
       m.ingredients.find(
-        x => x.id === iid
+        x=>x.id===iid
       );
+
 
     if(i){
 
-      Object.assign(
-        i,
-        {
-          name:n,
-          qty:q,
-          price:p
-        }
-      );
+      i.name=name;
+      i.cover=cover;
+      i.qty=qty;
+      i.price=price;
 
     }
 
-  }
-  else{
+  }else{
 
     m.ingredients.push({
 
       id:uid(),
 
-      name:n,
+      name:name,
 
-      qty:q,
+      cover:cover,
 
-      price:p,
+      qty:qty,
+
+      price:price,
 
       on:true
 
@@ -3429,51 +3953,57 @@ function saveIng(){
 }
 
 
+/* =========================================================
+   DELETE INGREDIENT
+========================================================= */
+
 function delI(id){
 
   if(
-    confirm(
+    !confirm(
       'ลบวัตถุดิบนี้ใช่ไหม'
     )
-  ){
-
-    let m =
-      menu();
-
-    if(!m) return;
+  ) return;
 
 
-    m.ingredients =
-      m.ingredients.filter(
-        i => i.id !== id
-      );
+  const m=menu();
+
+  if(!m) return;
 
 
-    save();
+  m.ingredients =
+    m.ingredients.filter(
+      x=>x.id!==id
+    );
 
-    renderDetail();
 
-    renderMenus();
+  save();
 
-  }
+  renderDetail();
+
+  renderMenus();
 
 }
 
 
-
 /* =========================================================
-   START
+   INITIAL
 ========================================================= */
 
-$('aDate').value =
+$('aDate').value=
   today();
 
-$('shopTitle').textContent =
+$('shopTitle').textContent=
   db.title;
+
 
 ap();
 
+editPrev();
+
 renderAccounts();
+
+renderSummaryPicker();
 
 summary();
 
