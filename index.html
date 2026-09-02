@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fff7fb">
 <title>สมุดบัญชี</title>
@@ -10,19 +10,16 @@
 :root{
   --bg:#fff7fb;
   --card:#fff;
+  --soft:#fdf0f6;
   --ink:#29252b;
-  --muted:#aaa3aa;
-  --line:#f0e2e9;
-  --pink:#f8e1eb;
-  --pink2:#f5d5e3;
-  --pink3:#fff0f6;
-  --pinkText:#bd668c;
-  --green:#58a77a;
-  --red:#df6d7e;
-  --blue:#1687ee;
-  --blueSoft:#edf6ff;
-  --shadow:0 10px 30px rgba(104,70,91,.07);
-  --radius:28px;
+  --muted:#a39aa1;
+  --line:#eadfe6;
+  --pink:#ca6492;
+  --pink2:#f7dfeb;
+  --green:#62aa82;
+  --red:#dc7880;
+  --blue:#168cff;
+  --shadow:0 8px 25px rgba(107,61,87,.07);
 }
 
 *{
@@ -30,21 +27,11 @@
   -webkit-tap-highlight-color:transparent;
 }
 
-html,body{
+body{
   margin:0;
-  padding:0;
   background:var(--bg);
   color:var(--ink);
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Noto Sans Thai",
-    "Noto Sans",
-    sans-serif;
-}
-
-body{
-  min-height:100vh;
+  font-family:-apple-system,BlinkMacSystemFont,"Noto Sans Thai","Segoe UI",sans-serif;
 }
 
 button,
@@ -58,10 +45,9 @@ button{
 }
 
 .app{
-  width:100%;
-  max-width:1100px;
-  margin:0 auto;
-  padding:16px 18px 50px;
+  max-width:1050px;
+  margin:auto;
+  padding:12px 18px 70px;
 }
 
 /* =========================
@@ -70,80 +56,98 @@ button{
 
 .nav{
   position:sticky;
-  top:0;
-  z-index:50;
+  top:5px;
+  z-index:20;
+  background:#fff;
+  border-radius:25px;
+  padding:8px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:8px;
-  padding:8px;
-  background:rgba(255,255,255,.94);
-  border-radius:28px;
   box-shadow:var(--shadow);
-  backdrop-filter:blur(12px);
-  margin-bottom:18px;
 }
 
-.nav-btn{
+.nav button{
   border:0;
-  background:transparent;
-  min-height:82px;
-  border-radius:24px;
+  background:#fff;
+  border-radius:20px;
+  padding:10px 4px;
   color:#777;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:5px;
+  min-height:74px;
 }
 
-.nav-btn .icon{
-  font-size:28px;
-  line-height:1;
+.nav button.on{
+  background:var(--pink2);
+  color:#b85683;
 }
 
-.nav-btn .label{
-  font-size:15px;
+.nav .ico{
+  display:block;
+  font-size:27px;
+  line-height:30px;
+  margin-bottom:3px;
 }
 
-.nav-btn.active{
-  background:var(--pink);
-  color:var(--pinkText);
-  font-weight:700;
+.nav .txt{
+  display:block;
+  font-size:14px;
 }
 
 /* =========================
-   COMMON
+   GENERAL
 ========================= */
 
 .page{
   display:none;
 }
 
-.page.active{
+.page.on{
   display:block;
 }
 
 .card{
-  background:var(--card);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-}
-
-.section{
   background:#fff;
-  border-radius:var(--radius);
-  padding:24px;
-  margin-bottom:18px;
+  border-radius:27px;
+  padding:22px;
+  margin-top:20px;
   box-shadow:var(--shadow);
 }
 
-h1,h2,h3,p{
-  margin-top:0;
+.soft{
+  background:linear-gradient(110deg,#fceaf3,#fff);
 }
 
-.page-title{
-  font-size:29px;
-  margin:0 0 20px;
+h1{
+  font-size:28px;
+  margin:0 0 10px;
+}
+
+h2{
+  font-size:23px;
+  margin:0 0 14px;
+}
+
+label{
+  display:block;
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:7px;
+}
+
+input,
+select{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fff;
+  color:var(--ink);
+  outline:none;
+}
+
+input:focus,
+select:focus{
+  border-color:#e5b8cd;
 }
 
 .muted{
@@ -154,10 +158,156 @@ h1,h2,h3,p{
   font-size:13px;
 }
 
+.tiny{
+  font-size:11px;
+}
+
+.grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:11px;
+}
+
+.row{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.between{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:center;
+}
+
+.btn{
+  border:0;
+  background:var(--pink);
+  color:#fff;
+  border-radius:15px;
+  padding:11px 17px;
+  font-weight:700;
+}
+
+.light{
+  background:#f4edf2;
+  color:#995c79;
+}
+
+.gray{
+  background:#ece8ed;
+  color:#6e6870;
+}
+
+.danger{
+  background:#fae7e9;
+  color:#bd6565;
+}
+
+.list{
+  display:flex;
+  flex-direction:column;
+  gap:11px;
+  margin-top:14px;
+}
+
+.item{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:14px;
+  background:#fff;
+}
+
+.title{
+  font-size:19px;
+  font-weight:800;
+}
+
+.actions{
+  display:flex;
+  gap:6px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.mini{
+  border:0;
+  border-radius:9px;
+  padding:6px 9px;
+  background:#f4edf2;
+  color:#996078;
+  font-size:12px;
+}
+
 .empty{
+  padding:30px;
   text-align:center;
-  padding:35px 15px;
-  color:#aaa;
+  color:var(--muted);
+}
+
+.cover{
+  width:56px;
+  height:56px;
+  display:grid;
+  place-items:center;
+  border-radius:17px;
+  background:#fdf0f6;
+  font-size:28px;
+  flex:none;
+}
+
+.kpi{
+  background:#faf7f9;
+  border-radius:19px;
+  padding:14px;
+}
+
+.kpi .v{
+  font-size:22px;
+  font-weight:800;
+  margin-top:4px;
+}
+
+/* =========================
+   QUANTITY
+========================= */
+
+.qty{
+  display:inline-flex;
+  align-items:center;
+  border:0;
+  border-radius:14px;
+  overflow:hidden;
+  background:#f8f0f5;
+}
+
+.qty button{
+  width:38px;
+  height:40px;
+  border:0;
+  background:#f8f0f5;
+  color:#168cff;
+  font-weight:900;
+  font-size:20px;
+}
+
+.qty input{
+  width:62px;
+  height:40px;
+  border:0;
+  border-radius:0;
+  background:#f8f0f5;
+  text-align:center;
+  padding:7px;
+  font-size:18px;
 }
 
 /* =========================
@@ -166,629 +316,309 @@ h1,h2,h3,p{
 
 .account-head{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:10px;
-}
-
-.account-title{
-  font-size:29px;
-  font-weight:800;
-  margin:0;
-}
-
-.title-edit{
-  border:1px solid var(--line);
-  background:#fff;
-  color:var(--blue);
-  border-radius:12px;
-  padding:7px 10px;
-  font-size:13px;
-}
-
-.account-form{
-  background:#fff;
-  border-radius:28px;
-  padding:20px;
-  box-shadow:var(--shadow);
-  margin-bottom:18px;
-}
-
-.type-buttons{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-bottom:15px;
-}
-
-.type-btn{
-  border:1px solid var(--line);
-  background:#fff;
-  padding:13px;
-  border-radius:16px;
-  font-weight:700;
-}
-
-.type-btn.income.active{
-  background:#edf8f1;
-  color:var(--green);
-}
-
-.type-btn.expense.active{
-  background:#fff0f3;
-  color:var(--red);
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
+  align-items:center;
   gap:12px;
 }
 
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
+.account-list{
+  margin-top:12px;
 }
 
-.field.full{
-  grid-column:1/-1;
-}
-
-.field label{
-  color:#888;
-  font-size:14px;
-}
-
-.field input,
-.field select{
-  width:100%;
-  border:1px solid var(--line);
-  border-radius:15px;
-  padding:12px 13px;
-  background:#fff;
-  outline:none;
-}
-
-.field input:focus,
-.field select:focus{
-  border-color:#e7aac3;
-}
-
-.qty-control{
-  display:grid;
-  grid-template-columns:42px 1fr 42px;
-  gap:7px;
-}
-
-.qty-control button{
-  border:0;
-  background:var(--pink3);
-  color:var(--blue);
-  border-radius:13px;
-  font-size:22px;
-}
-
-.qty-control input{
-  text-align:center;
-}
-
-.primary-btn{
-  width:100%;
-  border:0;
-  background:var(--pink);
-  color:var(--pinkText);
-  border-radius:16px;
-  padding:14px;
-  font-weight:800;
-  margin-top:15px;
-}
-
-.tx-list{
-  background:#fff;
-  border-radius:28px;
-  padding:12px 22px;
-  box-shadow:var(--shadow);
-}
-
-.tx-row{
+.account-item{
   display:grid;
   grid-template-columns:58px 1fr auto;
   gap:10px;
   align-items:center;
-  padding:15px 0;
+  padding:13px 0;
   border-bottom:1px solid var(--line);
 }
 
-.tx-row:last-child{
-  border-bottom:0;
-}
-
-.tx-sign{
-  width:58px;
-  height:58px;
-  border-radius:18px;
+.account-symbol{
+  width:56px;
+  height:56px;
+  display:grid;
+  place-items:center;
+  border-radius:17px;
   background:#fff0f6;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:29px;
+  font-size:27px;
 }
 
-.tx-main{
-  min-width:0;
-}
-
-.tx-name{
+.account-name{
   font-size:18px;
-  font-weight:700;
-  overflow-wrap:anywhere;
+  font-weight:800;
 }
 
-.tx-formula{
-  margin-top:3px;
-  color:#aaa;
+.account-formula{
+  color:#aaa4a9;
   font-size:15px;
+  margin-top:3px;
 }
 
-.tx-right{
+.account-money{
   text-align:right;
-}
-
-.tx-amount{
-  font-size:19px;
+  font-size:20px;
   font-weight:800;
   white-space:nowrap;
 }
 
-.tx-amount.income{
+.income{
   color:var(--green);
 }
 
-.tx-amount.expense{
+.expense{
   color:var(--red);
 }
 
-.tx-actions{
+.account-actions{
   display:flex;
   justify-content:flex-end;
   gap:5px;
   margin-top:5px;
 }
 
-.small-btn{
-  border:1px solid var(--line);
+.account-edit{
+  border:1px solid #eadfe6;
   background:#fff;
-  color:var(--blue);
+  color:#168cff;
   border-radius:11px;
   padding:5px 9px;
   font-size:12px;
 }
 
-.small-btn.delete{
+.account-delete{
   border:0;
   background:#fff0f3;
-  color:var(--red);
+  color:#dc7880;
+  border-radius:50%;
+  width:32px;
+  height:32px;
+  font-size:13px;
 }
 
 /* =========================
    SUMMARY
 ========================= */
 
-.summary-page{
-  padding-bottom:10px;
+.summary-picker{
+  margin-top:14px;
 }
 
-.summary-title{
-  font-size:30px;
-  margin:0 0 18px;
-}
-
-.summary-controls{
-  background:#fff;
-  border-radius:25px;
-  padding:15px;
-  box-shadow:var(--shadow);
-  margin-bottom:15px;
-}
-
-.period-buttons{
+.summary-tabs{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:8px;
-  margin-bottom:12px;
+  margin-bottom:13px;
 }
 
-.period-btn{
-  border:1px solid var(--line);
-  background:#fff;
-  color:#777;
-  border-radius:14px;
-  padding:11px 5px;
-}
-
-.period-btn.active{
-  background:var(--pink);
-  color:var(--pinkText);
-  font-weight:800;
-}
-
-.period-inputs{
-  display:flex;
-  gap:9px;
-  flex-wrap:wrap;
-}
-
-.period-inputs input,
-.period-inputs select{
-  flex:1;
-  min-width:130px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:#fff;
-  padding:11px 12px;
-  outline:none;
-}
-
-.display-mode{
-  display:flex;
-  gap:8px;
-  margin-top:11px;
-}
-
-.mode-btn{
-  border:1px solid var(--line);
-  background:#fff;
-  border-radius:13px;
-  padding:9px 15px;
-  color:#777;
-}
-
-.mode-btn.active{
-  background:var(--pink);
-  color:var(--pinkText);
+.summary-tabs button{
+  border:0;
+  border-radius:15px;
+  background:#f7edf3;
+  color:#987d8c;
+  padding:12px 8px;
   font-weight:700;
 }
 
-/* Summary total */
+.summary-tabs button.on{
+  background:#f5d8e7;
+  color:#bb5d87;
+}
+
+.detail-tabs{
+  display:flex;
+  gap:8px;
+  margin-top:13px;
+}
+
+.detail-tabs button{
+  border:1px solid var(--line);
+  background:#fff;
+  color:#8d7883;
+  border-radius:14px;
+  padding:9px 15px;
+}
+
+.detail-tabs button.on{
+  background:#f8dce9;
+  color:#b85c84;
+  border-color:#efc8da;
+}
+
+.month-picker{
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:9px;
+}
+
+.week-label{
+  padding:10px 13px;
+  background:#fdf0f6;
+  border-radius:14px;
+  color:#9d7889;
+  margin-top:9px;
+  font-size:13px;
+}
 
 .summary-total{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-bottom:18px;
+  margin-top:15px;
 }
 
-.total-box{
-  background:#fff;
-  border-radius:24px;
-  padding:18px 15px;
-  box-shadow:var(--shadow);
+.summary-total .kpi{
+  text-align:left;
 }
-
-.total-label{
-  color:#777;
-  font-size:16px;
-}
-
-.total-value{
-  font-size:26px;
-  font-weight:900;
-  margin-top:5px;
-}
-
-.total-value.income{
-  color:var(--green);
-}
-
-.total-value.expense{
-  color:var(--red);
-}
-
-.total-value.balance{
-  color:#527f98;
-}
-
-/* Month / Day groups */
 
 .summary-groups{
-  display:flex;
-  flex-direction:column;
-  gap:22px;
+  margin-top:18px;
 }
 
 .summary-group{
-  background:#fff;
-  border:1px solid #ecdde5;
-  border-radius:23px;
+  border:1px solid #ead9e3;
+  border-radius:20px;
   overflow:hidden;
+  margin-bottom:22px;
+  background:#fff;
 }
 
 .summary-group-head{
-  background:#fdebf3;
-  padding:13px 18px;
+  background:#fbe7f0;
+  padding:13px 17px;
   display:flex;
   justify-content:space-between;
-  align-items:center;
   gap:10px;
-}
-
-.summary-group-title{
-  color:#b75f87;
-  font-size:19px;
+  align-items:center;
+  color:#b25a82;
   font-weight:800;
 }
 
 .summary-group-total{
-  color:#9b7c8b;
-  font-size:14px;
-  font-weight:700;
-  white-space:nowrap;
+  color:#9c7d8b;
+  font-size:13px;
+  font-weight:600;
 }
 
-.summary-items{
-  padding:0 18px;
-}
-
-.summary-item{
+.summary-row{
   display:grid;
   grid-template-columns:1fr auto;
-  gap:10px;
-  align-items:center;
-  padding:14px 0;
+  gap:12px;
+  padding:14px 17px;
   border-bottom:1px solid var(--line);
 }
 
-.summary-item:last-child{
+.summary-row:last-child{
   border-bottom:0;
 }
 
-.summary-item-left{
-  min-width:0;
-}
-
-.summary-item-cover{
-  font-size:22px;
-  line-height:1;
-  margin-bottom:4px;
-}
-
-.summary-item-name{
+.summary-row-name{
   font-size:16px;
-  font-weight:600;
-  overflow-wrap:anywhere;
+  font-weight:700;
 }
 
-.summary-item-detail{
-  color:#aaa;
+.summary-row-sub{
+  color:#aaa4a9;
   font-size:14px;
   margin-top:3px;
 }
 
-.summary-item-amount{
+.summary-row-money{
+  text-align:right;
   font-size:19px;
   font-weight:800;
   white-space:nowrap;
 }
 
-.summary-item-amount.income{
-  color:var(--green);
-}
-
-.summary-item-amount.expense{
-  color:var(--red);
-}
-
-.summary-number-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-
-.number-card{
-  background:#fff7fa;
-  border-radius:18px;
-  padding:18px;
-}
-
-.number-card .label{
-  color:#999;
-}
-
-.number-card .value{
-  font-size:24px;
-  font-weight:900;
-  margin-top:5px;
-}
-
-.number-card.income .value{
-  color:var(--green);
-}
-
-.number-card.expense .value{
-  color:var(--red);
-}
-
 /* =========================
-   COMBINED
+   ALL
 ========================= */
 
-.search-box{
-  margin-bottom:15px;
-}
-
-.search-box input{
-  width:100%;
-  border:1px solid var(--line);
-  border-radius:17px;
-  padding:14px;
-  outline:none;
-}
-
-.combined-list{
-  background:#fff;
-  border-radius:28px;
-  padding:0 22px;
-  box-shadow:var(--shadow);
+.search{
+  margin-top:10px;
 }
 
 /* =========================
    COST
 ========================= */
 
-.cost-sales{
-  background:#fff;
-  border-radius:28px;
-  padding:20px;
-  box-shadow:var(--shadow);
-}
-
-.sales-card{
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:14px;
-  margin-bottom:12px;
+.cost-sale-head{
   display:grid;
   grid-template-columns:1fr auto;
   gap:15px;
   align-items:center;
 }
 
-.sales-left{
+.cost-sale-left{
+  min-width:0;
+}
+
+.cost-sale-name{
+  font-size:24px;
+  font-weight:900;
+  line-height:1.15;
+  word-break:break-word;
+}
+
+.cost-sale-sub{
+  color:var(--muted);
+  font-size:14px;
+  margin-top:4px;
+}
+
+.cost-sale-right{
+  text-align:right;
+  min-width:145px;
+}
+
+.cost-total{
+  font-size:21px;
+  font-weight:900;
+  color:#4d7f96;
+}
+
+.cost-count{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:3px;
+}
+
+.cost-buttons{
+  display:flex;
+  justify-content:flex-end;
+  gap:5px;
+  margin-top:8px;
+}
+
+.cost-cover{
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  border-radius:17px;
+  background:#fdf0f6;
+  font-size:30px;
+  margin-bottom:7px;
+}
+
+.cost-sale-main{
   display:flex;
   align-items:center;
   gap:12px;
   min-width:0;
 }
 
-.sales-cover{
-  width:58px;
-  height:58px;
-  border-radius:18px;
-  background:var(--pink3);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:29px;
-  flex:none;
+.cost-sale-text{
+  min-width:0;
 }
 
-.sales-name{
-  font-size:22px;
-  font-weight:900;
-  overflow-wrap:anywhere;
-}
-
-.sales-info{
-  margin-top:3px;
-  color:#999;
-  font-size:13px;
-}
-
-.sales-right{
-  text-align:right;
-}
-
-.sales-cost{
-  color:#5aa779;
-  font-size:19px;
-  font-weight:900;
-}
-
-.sales-count{
-  color:#aaa;
-  font-size:12px;
-  margin-top:2px;
-}
-
-.sales-actions{
-  display:flex;
-  justify-content:flex-end;
-  flex-wrap:wrap;
-  gap:5px;
-  margin-top:7px;
-}
-
-.cost-add{
-  width:100%;
-  border:0;
-  background:var(--pink);
-  color:var(--pinkText);
-  padding:14px;
-  border-radius:17px;
-  font-weight:800;
-  margin-bottom:15px;
-}
-
-/* Ingredients */
-
-.ingredient-page-head{
-  background:#fff;
-  border-radius:28px;
-  padding:18px;
-  box-shadow:var(--shadow);
-  margin-bottom:18px;
-}
-
-.back-btn{
-  border:0;
-  background:var(--pink3);
-  color:var(--blue);
-  border-radius:13px;
-  padding:8px 13px;
-  margin-bottom:13px;
-}
-
-.sales-edit-box{
-  display:flex;
-  gap:12px;
-  align-items:center;
-}
-
-.sales-edit-cover{
-  width:72px;
-  height:72px;
-  border-radius:20px;
-  background:var(--pink3);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:35px;
-  flex:none;
-}
-
-.sales-edit-name{
-  font-size:26px;
-  font-weight:900;
-}
-
-.ingredient-section{
-  background:#fff;
-  border-radius:28px;
-  padding:20px;
-  box-shadow:var(--shadow);
-}
-
-.ingredient-heading{
-  font-size:25px;
-  margin:0 0 10px;
-}
-
-.ingredient-note{
-  color:#aaa;
-  margin-bottom:18px;
-}
-
-.ingredient-row{
+.ingredient{
   border:1px solid var(--line);
-  border-radius:22px;
+  border-radius:20px;
   padding:14px;
-  margin-bottom:11px;
+  background:#fff;
 }
 
-.ingredient-inner{
+.ingredient-line{
   display:grid;
-  grid-template-columns:1fr auto;
+  grid-template-columns:minmax(150px,1fr) auto;
   gap:12px;
   align-items:center;
 }
@@ -797,32 +627,20 @@ h1,h2,h3,p{
   min-width:0;
 }
 
-.ingredient-cover{
-  width:56px;
-  height:56px;
-  border-radius:17px;
-  background:var(--pink3);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:28px;
-  float:left;
-  margin-right:11px;
-}
-
 .ingredient-name{
   font-size:21px;
   font-weight:900;
-  overflow-wrap:anywhere;
+  line-height:1.15;
+  word-break:break-word;
 }
 
 .ingredient-equation{
-  color:#aaa;
+  color:#aaa4a9;
   font-size:14px;
   margin-top:5px;
 }
 
-.ingredient-tools{
+.ingredient-right{
   display:flex;
   align-items:center;
   justify-content:flex-end;
@@ -830,85 +648,106 @@ h1,h2,h3,p{
   flex-wrap:nowrap;
 }
 
-.arrow-btn,
-.detail-btn,
-.delete-ing-btn,
-.qty-btn{
-  border:0;
-  background:#f8eff4;
-  color:var(--blue);
-  min-width:35px;
+.arrow-btn{
+  width:35px;
   height:35px;
+  border:0;
   border-radius:10px;
-  padding:0 9px;
-}
-
-.delete-ing-btn{
-  color:#777;
+  background:#f5eef3;
+  color:#168cff;
+  font-size:20px;
+  line-height:35px;
+  padding:0;
 }
 
 .detail-btn{
-  color:#777;
+  height:35px;
+  border:0;
+  border-radius:10px;
+  background:#f5eef3;
+  color:#806c77;
+  padding:0 10px;
   font-size:12px;
+  white-space:nowrap;
+}
+
+.ing-trash{
+  width:35px;
+  height:35px;
+  border:0;
+  border-radius:10px;
+  background:#fff0f3;
+  font-size:16px;
+}
+
+.ing-qty{
+  display:inline-flex;
+  align-items:center;
+  border-radius:10px;
+  overflow:hidden;
+  background:#f5eef3;
+}
+
+.ing-qty button{
+  width:35px;
+  height:35px;
+  border:0;
+  background:#f5eef3;
+  color:#168cff;
+  font-size:19px;
+  padding:0;
+}
+
+.ing-qty input{
+  width:42px;
+  height:35px;
+  border:0;
+  border-radius:0;
+  background:#f5eef3;
+  text-align:center;
+  padding:4px;
+  font-size:15px;
 }
 
 .switch{
-  width:53px;
+  width:55px;
   height:31px;
-  background:#d7d7d7;
-  border-radius:30px;
   position:relative;
-  border:0;
-  padding:0;
+  display:inline-block;
   flex:none;
+  margin:0;
 }
 
-.switch::after{
-  content:"";
-  width:25px;
-  height:25px;
-  background:#fff;
-  border-radius:50%;
+.switch input{
+  display:none;
+}
+
+.slider{
   position:absolute;
-  top:3px;
-  left:3px;
-  transition:.2s;
-  box-shadow:0 1px 4px rgba(0,0,0,.15);
+  inset:0;
+  border-radius:30px;
+  background:#ddd5da;
 }
 
-.switch.on{
-  background:#66b38a;
-}
-
-.switch.on::after{
-  left:25px;
-}
-
-.qty-mini{
-  display:flex;
-  align-items:center;
-  gap:4px;
-}
-
-.qty-number{
-  width:38px;
-  height:35px;
-  border:0;
+.slider:before{
+  content:"";
+  position:absolute;
+  width:23px;
+  height:23px;
+  left:4px;
+  top:4px;
+  border-radius:50%;
   background:#fff;
-  text-align:center;
-  border-radius:10px;
-  font-size:17px;
+  transition:.2s;
+  box-shadow:0 2px 5px rgba(119,119,119,.25);
 }
 
-.add-ingredient{
-  width:100%;
-  border:0;
-  background:var(--pink);
-  color:var(--pinkText);
-  border-radius:17px;
-  padding:14px;
-  font-weight:800;
-  margin-top:8px;
+.switch input:checked+.slider{
+  background:#69ad89;
+}
+
+.switch input:checked+.slider:before{
+  transform:translateX(24px);
 }
 
 /* =========================
@@ -916,14 +755,14 @@ h1,h2,h3,p{
 ========================= */
 
 .modal{
+  display:none;
   position:fixed;
   inset:0;
-  z-index:100;
-  background:rgba(40,30,38,.35);
-  display:none;
-  align-items:flex-end;
+  background:rgba(48,35,44,.34);
+  z-index:99;
+  padding:18px;
+  align-items:center;
   justify-content:center;
-  padding:12px;
 }
 
 .modal.show{
@@ -931,188 +770,92 @@ h1,h2,h3,p{
 }
 
 .modal-box{
-  width:100%;
-  max-width:620px;
-  max-height:92vh;
+  width:min(600px,100%);
+  max-height:90vh;
   overflow:auto;
   background:#fff;
-  border-radius:28px;
+  border-radius:27px;
   padding:22px;
-}
-
-.modal-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:18px;
-}
-
-.modal-head h3{
-  margin:0;
-  font-size:24px;
-}
-
-.close-btn{
-  border:0;
-  background:var(--pink3);
-  border-radius:12px;
-  width:38px;
-  height:38px;
-}
-
-.modal-actions{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:9px;
-  margin-top:18px;
-}
-
-.cancel-btn{
-  border:1px solid var(--line);
-  background:#fff;
-  border-radius:15px;
-  padding:13px;
-}
-
-.save-btn{
-  border:0;
-  background:var(--pink);
-  color:var(--pinkText);
-  border-radius:15px;
-  padding:13px;
-  font-weight:800;
+  box-shadow:0 20px 60px rgba(50,30,40,.18);
 }
 
 /* =========================
-   RESPONSIVE
+   MOBILE
 ========================= */
 
 @media(max-width:700px){
 
   .app{
-    padding:8px 16px 35px;
+    padding:8px 10px 60px;
   }
 
-  .nav{
-    border-radius:24px;
-    padding:6px;
+  .card{
+    padding:18px;
+    border-radius:23px;
   }
 
-  .nav-btn{
-    min-height:72px;
-    border-radius:20px;
-  }
-
-  .nav-btn .icon{
+  h1{
     font-size:25px;
   }
 
-  .nav-btn .label{
-    font-size:13px;
+  h2{
+    font-size:21px;
   }
 
-  .section{
-    padding:18px;
-  }
-
-  .summary-total{
-    gap:8px;
-  }
-
-  .total-box{
-    padding:14px 10px;
-  }
-
-  .total-label{
-    font-size:13px;
-  }
-
-  .total-value{
-    font-size:20px;
-  }
-
-  .summary-group-head{
-    padding:12px 14px;
-  }
-
-  .summary-group-title{
-    font-size:17px;
-  }
-
-  .summary-group-total{
-    font-size:12px;
-  }
-
-  .summary-items{
-    padding:0 14px;
-  }
-
-  .summary-item-amount{
-    font-size:17px;
-  }
-
-  .ingredient-inner{
+  .grid2,
+  .grid3{
     grid-template-columns:1fr;
   }
 
-  .ingredient-tools{
-    justify-content:flex-end;
-    overflow-x:auto;
-    padding-top:4px;
-  }
-
-  .sales-card{
-    grid-template-columns:1fr;
-  }
-
-  .sales-right{
-    text-align:left;
-  }
-
-  .sales-actions{
-    justify-content:flex-start;
-  }
-}
-
-@media(max-width:470px){
-
-  .period-buttons{
+  .summary-tabs{
     gap:5px;
   }
 
-  .period-btn{
+  .summary-tabs button{
+    padding:10px 4px;
     font-size:13px;
   }
 
-  .form-grid{
+  .month-picker{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .account-item{
+    grid-template-columns:52px 1fr auto;
+  }
+
+  .account-symbol{
+    width:52px;
+    height:52px;
+  }
+
+  .account-name{
+    font-size:16px;
+  }
+
+  .account-money{
+    font-size:18px;
+  }
+
+  .ingredient-line{
     grid-template-columns:1fr;
   }
 
-  .field.full{
-    grid-column:auto;
+  .ingredient-right{
+    justify-content:flex-end;
+    width:100%;
   }
 
-  .tx-row{
-    grid-template-columns:48px 1fr;
-  }
-
-  .tx-sign{
-    width:48px;
-    height:48px;
-    border-radius:15px;
-  }
-
-  .tx-right{
-    grid-column:2;
-  }
-
-  .summary-total{
+  .cost-sale-head{
     grid-template-columns:1fr;
   }
 
-  .summary-number-row{
-    grid-template-columns:1fr;
+  .cost-sale-right{
+    text-align:left;
+  }
+
+  .cost-buttons{
+    justify-content:flex-start;
   }
 }
 </style>
@@ -1122,607 +865,886 @@ h1,h2,h3,p{
 
 <div class="app">
 
-  <!-- ================= NAV ================= -->
-
-  <nav class="nav">
-
-    <button class="nav-btn active" data-page="account">
-      <span class="icon">📒</span>
-      <span class="label">บัญชี</span>
-    </button>
-
-    <button class="nav-btn" data-page="summary">
-      <span class="icon">📊</span>
-      <span class="label">สรุป</span>
-    </button>
-
-    <button class="nav-btn" data-page="combined">
-      <span class="icon">📋</span>
-      <span class="label">รวมรายการ</span>
-    </button>
-
-    <button class="nav-btn" data-page="cost">
-      <span class="icon">🧮</span>
-      <span class="label">ต้นทุน</span>
-    </button>
-
-  </nav>
-
-
-  <!-- =====================================================
-       PAGE 1 : ACCOUNT
-  ====================================================== -->
-
-  <main id="page-account" class="page active">
-
-    <section class="section">
-
-      <div class="account-head">
-        <h1 class="account-title" id="accountTitle">📋 รายการล่าสุด</h1>
-        <button class="title-edit" onclick="editTitle()">แก้ชื่อ</button>
-      </div>
-
-    </section>
-
-
-    <section class="account-form">
-
-      <div class="type-buttons">
-
-        <button
-          id="incomeTypeBtn"
-          class="type-btn income active"
-          onclick="setAccountType('income')">
-          ＋ รายรับ
-        </button>
-
-        <button
-          id="expenseTypeBtn"
-          class="type-btn expense"
-          onclick="setAccountType('expense')">
-          − รายจ่าย
-        </button>
-
-      </div>
-
-
-      <div class="form-grid">
-
-        <div class="field full">
-          <label>รายการ</label>
-          <input
-            id="txName"
-            type="text"
-            placeholder="ชื่อรายการ">
-        </div>
-
-
-        <div class="field">
-          <label>จำนวน</label>
-
-          <div class="qty-control">
-
-            <button onclick="changeTxQty(-1)">−</button>
-
-            <input
-              id="txQty"
-              type="number"
-              value="1"
-              min="0.01"
-              step="any">
-
-            <button onclick="changeTxQty(1)">＋</button>
-
-          </div>
-        </div>
-
-
-        <div class="field">
-          <label>ราคาต่อหน่วย</label>
-          <input
-            id="txPrice"
-            type="number"
-            min="0"
-            step="any"
-            placeholder="0.00">
-        </div>
-
-
-        <div class="field">
-          <label>วันที่</label>
-          <input
-            id="txDate"
-            type="date">
-        </div>
-
-
-        <div class="field">
-          <label>รูป / สัญลักษณ์ (ใส่หรือไม่ใส่ก็ได้)</label>
-          <input
-            id="txCover"
-            type="text"
-            maxlength="8"
-            placeholder="เช่น 🍓">
-        </div>
-
-
-        <div class="field full">
-          <label>หมายเหตุ</label>
-          <input
-            id="txNote"
-            type="text"
-            placeholder="หมายเหตุ (ถ้ามี)">
-        </div>
-
-      </div>
-
-
-      <button class="primary-btn" onclick="saveTx()">
-        ＋ บันทึกรายการ
-      </button>
-
-    </section>
-
-
-    <section class="tx-list">
-
-      <div id="accountList"></div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =====================================================
-       PAGE 2 : SUMMARY
-       แก้เฉพาะหน้านี้
-  ====================================================== -->
-
-  <main id="page-summary" class="page summary-page">
-
-    <section class="section">
-
-      <h1 class="summary-title">📊 สรุปบัญชี</h1>
-
-
-      <!-- PERIOD -->
-
-      <div class="summary-controls">
-
-        <div class="period-buttons">
-
-          <button
-            class="period-btn active"
-            data-period="day"
-            onclick="setSummaryPeriod('day')">
-            วัน
-          </button>
-
-          <button
-            class="period-btn"
-            data-period="week"
-            onclick="setSummaryPeriod('week')">
-            สัปดาห์
-          </button>
-
-          <button
-            class="period-btn"
-            data-period="month"
-            onclick="setSummaryPeriod('month')">
-            เดือน
-          </button>
-
-          <button
-            class="period-btn"
-            data-period="year"
-            onclick="setSummaryPeriod('year')">
-            ปี
-          </button>
-
-        </div>
-
-
-        <div id="summaryInputs" class="period-inputs"></div>
-
-
-        <div class="display-mode">
-
-          <button
-            id="detailModeBtn"
-            class="mode-btn active"
-            onclick="setSummaryMode('detail')">
-            รายการ
-          </button>
-
-          <button
-            id="numberModeBtn"
-            class="mode-btn"
-            onclick="setSummaryMode('number')">
-            ตัวเลข
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <!-- TOTAL -->
-
-      <div class="summary-total">
-
-        <div class="total-box">
-
-          <div class="total-label">รายรับ</div>
-
-          <div
-            id="summaryIncome"
-            class="total-value income">
-            ฿0.00
-          </div>
-
-        </div>
-
-
-        <div class="total-box">
-
-          <div class="total-label">รายจ่าย</div>
-
-          <div
-            id="summaryExpense"
-            class="total-value expense">
-            ฿0.00
-          </div>
-
-        </div>
-
-
-        <div class="total-box">
-
-          <div class="total-label">คงเหลือ</div>
-
-          <div
-            id="summaryBalance"
-            class="total-value balance">
-            ฿0.00
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- GROUPS -->
-
-      <div id="summaryContent"></div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =====================================================
-       PAGE 3 : COMBINED
-  ====================================================== -->
-
-  <main id="page-combined" class="page">
-
-    <section class="section">
-
-      <h1 class="page-title">📋 รวมรายการ</h1>
-
-      <div class="search-box">
-
-        <input
-          id="searchCombined"
-          type="search"
-          placeholder="ค้นหารายการ..."
-          oninput="renderCombined()">
-
-      </div>
-
-    </section>
-
-
-    <section class="combined-list">
-
-      <div id="combinedList"></div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =====================================================
-       PAGE 4 : COST
-  ====================================================== -->
-
-  <main id="page-cost" class="page">
-
-    <section class="cost-sales">
-
-      <h1 class="page-title">🧮 ต้นทุน</h1>
-
-      <button
-        class="cost-add"
-        onclick="openSalesModal()">
-        ＋ เพิ่มรายการขาย
-      </button>
-
-      <div id="salesList"></div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =====================================================
-       INGREDIENT SUBPAGE
-  ====================================================== -->
-
-  <main id="page-ingredients" class="page">
-
-    <section class="ingredient-page-head">
-
-      <button
-        class="back-btn"
-        onclick="backToCost()">
-        ← กลับรายการขาย
-      </button>
-
-      <div class="sales-edit-box">
-
-        <div
-          id="ingredientSalesCover"
-          class="sales-edit-cover">
-          ○
-        </div>
-
-        <div>
-
-          <div
-            id="ingredientSalesName"
-            class="sales-edit-name">
-          </div>
-
-          <div
-            id="ingredientSalesCost"
-            class="muted">
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <section class="ingredient-section">
-
-      <h2 class="ingredient-heading">
-        🥕 วัตถุดิบ
-      </h2>
-
-      <div class="ingredient-note">
-        เปิด = รวมต้นทุน / ปิด = ไม่รวมต้นทุน
-      </div>
-
-      <div id="ingredientList"></div>
-
-      <button
-        class="add-ingredient"
-        onclick="openIngredientModal()">
-        ＋ เพิ่มวัตถุดิบ
-      </button>
-
-    </section>
-
-  </main>
+<!-- =========================
+     NAV
+========================= -->
+
+<div class="nav">
+
+  <button class="on" data-page="account">
+    <span class="ico">📒</span>
+    <span class="txt">บัญชี</span>
+  </button>
+
+  <button data-page="summary">
+    <span class="ico">📊</span>
+    <span class="txt">สรุป</span>
+  </button>
+
+  <button data-page="all">
+    <span class="ico">📋</span>
+    <span class="txt">รวมรายการ</span>
+  </button>
+
+  <button data-page="cost">
+    <span class="ico">🧮</span>
+    <span class="txt">ต้นทุน</span>
+  </button>
 
 </div>
 
 
-<!-- =====================================================
-     SALES MODAL
-====================================================== -->
+<!-- =========================================================
+     PAGE 1 : ACCOUNT
+========================================================= -->
 
-<div id="salesModal" class="modal">
+<section id="account" class="page on">
 
-  <div class="modal-box">
+  <div class="card soft">
 
-    <div class="modal-head">
+    <div class="account-head">
 
-      <h3 id="salesModalTitle">
-        เพิ่มรายการขาย
-      </h3>
+      <div>
+        <h1 id="shopTitle">สมุดบัญชี</h1>
+        <div class="muted">
+          บันทึกรายรับ รายจ่าย และรายการขาย
+        </div>
+      </div>
 
-      <button
-        class="close-btn"
-        onclick="closeModal('salesModal')">
-        ✕
+      <button class="btn light" onclick="editTitle()">
+        แก้ชื่อ
       </button>
 
     </div>
 
 
-    <div class="field">
-      <label>ชื่อรายการขาย</label>
+    <div class="grid2" style="margin-top:17px">
 
-      <input
-        id="salesName"
-        type="text"
-        placeholder="เช่น สตรอว์เบอร์รี">
-    </div>
+      <div>
+        <label>วันที่</label>
+        <input id="aDate" type="date">
+      </div>
 
-
-    <div class="field" style="margin-top:12px">
-
-      <label>รูป / สัญลักษณ์</label>
-
-      <input
-        id="salesCover"
-        type="text"
-        maxlength="8"
-        placeholder="เช่น 🍓">
+      <div>
+        <label>ประเภท</label>
+        <select id="aType">
+          <option value="income">รายรับ</option>
+          <option value="expense">รายจ่าย</option>
+        </select>
+      </div>
 
     </div>
 
 
-    <div class="modal-actions">
+    <div style="margin-top:13px">
+
+      <label>ชื่อรายการ</label>
+      <input
+        id="aName"
+        placeholder="เช่น สตรอว์เบอร์รี่ / ซื้อของ"
+      >
+
+    </div>
+
+
+    <div class="grid2" style="margin-top:13px">
+
+      <div>
+
+        <label>จำนวน</label>
+
+        <div class="qty">
+
+          <button onclick="accountQty(-1)">
+            −
+          </button>
+
+          <input
+            id="aQty"
+            type="number"
+            min="0"
+            value="1"
+            oninput="accountPreview()"
+          >
+
+          <button onclick="accountQty(1)">
+            +
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <label>ราคาต่อชิ้น</label>
+
+        <input
+          id="aPrice"
+          type="number"
+          min="0"
+          step="0.01"
+          oninput="accountPreview()"
+        >
+
+      </div>
+
+    </div>
+
+
+    <div
+      id="accountPreview"
+      class="muted small"
+      style="margin:11px 0"
+    >
+      1 × ฿0.00 = ฿0.00
+    </div>
+
+
+    <button class="btn" onclick="addAccount()">
+      + เพิ่มรายการ
+    </button>
+
+  </div>
+
+
+  <div class="card">
+
+    <div class="between">
+
+      <h2 style="margin:0">
+        📋 รายการล่าสุด
+      </h2>
+
+      <b id="accountBalance">
+        ฿0.00
+      </b>
+
+    </div>
+
+    <div id="accountList" class="account-list"></div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PAGE 2 : SUMMARY
+========================================================= -->
+
+<section id="summary" class="page">
+
+  <div class="card soft">
+
+    <h1>
+      📊 สรุปบัญชี
+    </h1>
+
+
+    <!-- เลือก วัน / สัปดาห์ / เดือน / ปี -->
+
+    <div class="summary-tabs">
 
       <button
-        class="cancel-btn"
-        onclick="closeModal('salesModal')">
-        ยกเลิก
+        id="sumTabDay"
+        onclick="changeSummaryMode('day')"
+      >
+        วัน
       </button>
 
       <button
-        class="save-btn"
-        onclick="saveSales()">
-        บันทึก
+        id="sumTabWeek"
+        onclick="changeSummaryMode('week')"
+      >
+        สัปดาห์
+      </button>
+
+      <button
+        id="sumTabMonth"
+        onclick="changeSummaryMode('month')"
+      >
+        เดือน
+      </button>
+
+      <button
+        id="sumTabYear"
+        onclick="changeSummaryMode('year')"
+      >
+        ปี
+      </button>
+
+    </div>
+
+
+    <!-- ตัวเลือกช่วงเวลา -->
+
+    <div id="summaryPicker" class="summary-picker"></div>
+
+
+    <!-- รายการ / ตัวเลข -->
+
+    <div class="detail-tabs">
+
+      <button
+        id="detailTab"
+        class="on"
+        onclick="changeSummaryDetail('detail')"
+      >
+        รายการ
+      </button>
+
+      <button
+        id="numberTab"
+        onclick="changeSummaryDetail('number')"
+      >
+        ตัวเลข
       </button>
 
     </div>
 
   </div>
 
-</div>
+
+  <div class="card">
+
+    <div class="grid3 summary-total">
+
+      <div class="kpi">
+
+        <div class="muted">
+          รายรับ
+        </div>
+
+        <div
+          class="v income"
+          id="summaryIncome"
+        >
+          ฿0.00
+        </div>
+
+      </div>
 
 
-<!-- =====================================================
-     INGREDIENT MODAL
-====================================================== -->
+      <div class="kpi">
 
-<div id="ingredientModal" class="modal">
+        <div class="muted">
+          รายจ่าย
+        </div>
 
-  <div class="modal-box">
+        <div
+          class="v expense"
+          id="summaryExpense"
+        >
+          ฿0.00
+        </div>
 
-    <div class="modal-head">
-
-      <h3 id="ingredientModalTitle">
-        เพิ่มวัตถุดิบ
-      </h3>
-
-      <button
-        class="close-btn"
-        onclick="closeModal('ingredientModal')">
-        ✕
-      </button>
-
-    </div>
+      </div>
 
 
-    <div class="field">
+      <div class="kpi">
 
-      <label>ชื่อวัตถุดิบ</label>
+        <div class="muted">
+          คงเหลือ
+        </div>
 
-      <input
-        id="ingredientName"
-        type="text"
-        placeholder="ชื่อวัตถุดิบ">
-
-    </div>
-
-
-    <div class="field" style="margin-top:12px">
-
-      <label>รูป / สัญลักษณ์</label>
-
-      <input
-        id="ingredientCover"
-        type="text"
-        maxlength="8"
-        placeholder="เช่น 🥕">
-
-    </div>
-
-
-    <div class="field" style="margin-top:12px">
-
-      <label>จำนวนซื้อ</label>
-
-      <div class="qty-control">
-
-        <button onclick="changeIngredientQty(-1)">
-          −
-        </button>
-
-        <input
-          id="ingredientQty"
-          type="number"
-          min="0.01"
-          step="any"
-          value="1">
-
-        <button onclick="changeIngredientQty(1)">
-          ＋
-        </button>
+        <div
+          class="v"
+          id="summaryBalance"
+        >
+          ฿0.00
+        </div>
 
       </div>
 
     </div>
 
 
-    <div class="field" style="margin-top:12px">
+    <div
+      id="summaryGroups"
+      class="summary-groups"
+    ></div>
 
-      <label>ราคาซื้อต่อชิ้น</label>
+  </div>
 
-      <input
-        id="ingredientPrice"
-        type="number"
-        min="0"
-        step="any"
-        placeholder="0.00">
+</section>
+
+
+<!-- =========================================================
+     PAGE 3 : ALL
+========================================================= -->
+
+<section id="all" class="page">
+
+  <div class="card soft">
+
+    <h1>
+      📋 รวมรายการ
+    </h1>
+
+    <div class="muted">
+      ค้นหารายการทั้งหมด
+    </div>
+
+    <input
+      id="allSearch"
+      class="search"
+      placeholder="ค้นหาชื่อรายการ..."
+      oninput="renderAll()"
+    >
+
+  </div>
+
+
+  <div class="card">
+
+    <div class="grid3">
+
+      <div class="kpi">
+
+        <div class="muted">
+          รายรับทั้งหมด
+        </div>
+
+        <div
+          class="v income"
+          id="allIncome"
+        >
+          ฿0.00
+        </div>
+
+      </div>
+
+
+      <div class="kpi">
+
+        <div class="muted">
+          รายจ่ายทั้งหมด
+        </div>
+
+        <div
+          class="v expense"
+          id="allExpense"
+        >
+          ฿0.00
+        </div>
+
+      </div>
+
+
+      <div class="kpi">
+
+        <div class="muted">
+          สุทธิ
+        </div>
+
+        <div
+          class="v"
+          id="allBalance"
+        >
+          ฿0.00
+        </div>
+
+      </div>
 
     </div>
 
 
-    <div class="field" style="margin-top:12px">
+    <div id="allList" class="list"></div>
 
-      <label>รวมต้นทุนวัตถุดิบ</label>
+  </div>
 
-      <input
-        id="ingredientTotal"
-        type="text"
-        value="฿0.00"
-        readonly>
+</section>
+
+
+<!-- =========================================================
+     PAGE 4 : COST
+========================================================= -->
+
+<section id="cost" class="page">
+
+  <div id="costHome">
+
+    <div class="card soft">
+
+      <h1>
+        🧮 ต้นทุน
+      </h1>
+
+      <div class="muted">
+        รายการขาย → วัตถุดิบ
+      </div>
+
+
+      <div style="margin-top:15px">
+
+        <label>
+          ชื่อรายการขาย
+        </label>
+
+        <input
+          id="menuName"
+          placeholder="เช่น สตรอว์เบอร์รี่"
+        >
+
+      </div>
+
+
+      <div class="grid2" style="margin-top:13px">
+
+        <div>
+
+          <label>
+            รูป / สัญลักษณ์
+          </label>
+
+          <input
+            id="menuCover"
+            maxlength="4"
+            placeholder="🍓"
+          >
+
+        </div>
+
+        <div style="display:flex;align-items:end">
+
+          <button
+            class="btn"
+            style="width:100%"
+            onclick="addMenu()"
+          >
+            + เพิ่มรายการขาย
+          </button>
+
+        </div>
+
+      </div>
 
     </div>
 
 
-    <div class="field" style="margin-top:12px">
+    <div class="card">
 
-      <label>นำไปรวมในต้นทุน</label>
+      <h2>
+        รายการขาย
+      </h2>
 
-      <select id="ingredientEnabled">
-
-        <option value="true">
-          เปิด
-        </option>
-
-        <option value="false">
-          ปิด
-        </option>
-
-      </select>
+      <div id="menuList" class="list"></div>
 
     </div>
 
+  </div>
 
-    <div class="modal-actions">
+
+  <!-- หน้าวัตถุดิบ -->
+
+  <div
+    id="costDetail"
+    style="display:none"
+  >
+
+    <div class="card soft">
 
       <button
-        class="cancel-btn"
-        onclick="closeModal('ingredientModal')">
-        ยกเลิก
+        class="btn light"
+        onclick="closeCostDetail()"
+      >
+        ← กลับไปรายการขาย
       </button>
 
+
+      <div
+        class="cost-sale-main"
+        style="margin-top:15px"
+      >
+
+        <div
+          id="detailCover"
+          class="cost-cover"
+        ></div>
+
+        <div class="cost-sale-text">
+
+          <h1
+            id="detailMenuName"
+            style="margin:0"
+          ></h1>
+
+          <div
+            class="muted"
+            style="margin-top:4px"
+          >
+            วัตถุดิบ
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="grid2"
+        style="margin-top:15px"
+      >
+
+        <div class="kpi">
+
+          <div class="muted">
+            วัตถุดิบที่เปิดใช้
+          </div>
+
+          <div
+            class="v"
+            id="detailIngredientCount"
+          >
+            0
+          </div>
+
+        </div>
+
+
+        <div class="kpi">
+
+          <div class="muted">
+            รวมต้นทุนทั้งหมด
+          </div>
+
+          <div
+            class="v"
+            id="detailCost"
+          >
+            ฿0.00
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="between">
+
+        <div>
+
+          <h2 style="margin-bottom:4px">
+            🥕 วัตถุดิบ
+          </h2>
+
+          <div class="muted small">
+            เปิด = รวมต้นทุน / ปิด = ไม่รวมต้นทุน
+          </div>
+
+        </div>
+
+
+        <button
+          class="btn light"
+          onclick="openIngredientForm()"
+        >
+          ＋ เพิ่มวัตถุดิบ
+        </button>
+
+      </div>
+
+
+      <div
+        id="ingredientList"
+        class="list"
+      ></div>
+
+    </div>
+
+
+    <!-- ฟอร์มวัตถุดิบ -->
+
+    <div
+      id="ingredientForm"
+      class="card"
+      style="display:none"
+    >
+
+      <h2 id="ingredientFormTitle">
+        เพิ่มวัตถุดิบ
+      </h2>
+
+
+      <div>
+
+        <label>
+          ชื่อวัตถุดิบ
+        </label>
+
+        <input
+          id="ingredientName"
+          placeholder="เช่น แก้ว 100ml/50"
+        >
+
+      </div>
+
+
+      <div style="margin-top:13px">
+
+        <label>
+          รูป / สัญลักษณ์
+        </label>
+
+        <input
+          id="ingredientCover"
+          maxlength="4"
+          placeholder="🥕"
+        >
+
+      </div>
+
+
+      <div class="grid2" style="margin-top:13px">
+
+        <div>
+
+          <label>
+            จำนวนซื้อ
+          </label>
+
+          <div class="qty">
+
+            <button onclick="ingredientQty(-1)">
+              −
+            </button>
+
+            <input
+              id="ingredientQty"
+              type="number"
+              min="0"
+              step="0.01"
+              value="1"
+              oninput="ingredientPreview()"
+            >
+
+            <button onclick="ingredientQty(1)">
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <label>
+            ราคาซื้อต่อชิ้น
+          </label>
+
+          <input
+            id="ingredientPrice"
+            type="number"
+            min="0"
+            step="0.01"
+            oninput="ingredientPreview()"
+          >
+
+        </div>
+
+      </div>
+
+
+      <div style="margin-top:13px">
+
+        <label>
+          ต้นทุนวัตถุดิบ
+        </label>
+
+        <input
+          id="ingredientTotal"
+          readonly
+          value="฿0.00"
+        >
+
+      </div>
+
+
+      <div
+        class="muted small"
+        style="margin:10px 0 15px"
+      >
+        จำนวนซื้อ × ราคาซื้อ = ต้นทุนวัตถุดิบ
+      </div>
+
+
       <button
-        class="save-btn"
-        onclick="saveIngredient()">
+        class="btn"
+        onclick="saveIngredient()"
+      >
         บันทึก
       </button>
 
+      <button
+        class="btn gray"
+        onclick="closeIngredientForm()"
+      >
+        ยกเลิก
+      </button>
+
     </div>
+
+  </div>
+
+</section>
+
+</div>
+
+
+<!-- =========================================================
+     ACCOUNT EDIT MODAL
+========================================================= -->
+
+<div
+  id="accountModal"
+  class="modal"
+>
+
+  <div class="modal-box">
+
+    <div class="between">
+
+      <h2>
+        แก้ไขรายการบัญชี
+      </h2>
+
+      <button
+        class="btn gray"
+        onclick="closeAccountEdit()"
+      >
+        ปิด
+      </button>
+
+    </div>
+
+
+    <input
+      type="hidden"
+      id="editAccountId"
+    >
+
+
+    <div style="margin-top:12px">
+
+      <label>
+        ชื่อรายการ
+      </label>
+
+      <input id="editAccountName">
+
+    </div>
+
+
+    <div class="grid2" style="margin-top:12px">
+
+      <div>
+
+        <label>
+          วันที่
+        </label>
+
+        <input
+          id="editAccountDate"
+          type="date"
+        >
+
+      </div>
+
+
+      <div>
+
+        <label>
+          ประเภท
+        </label>
+
+        <select id="editAccountType">
+
+          <option value="income">
+            รายรับ
+          </option>
+
+          <option value="expense">
+            รายจ่าย
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <div class="grid2" style="margin-top:12px">
+
+      <div>
+
+        <label>
+          จำนวน
+        </label>
+
+        <div class="qty">
+
+          <button onclick="editAccountQty(-1)">
+            −
+          </button>
+
+          <input
+            id="editAccountQty"
+            type="number"
+            min="0"
+            oninput="editAccountPreview()"
+          >
+
+          <button onclick="editAccountQty(1)">
+            +
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <label>
+          ราคาต่อชิ้น
+        </label>
+
+        <input
+          id="editAccountPrice"
+          type="number"
+          min="0"
+          step="0.01"
+          oninput="editAccountPreview()"
+        >
+
+      </div>
+
+    </div>
+
+
+    <div
+      id="editAccountPreview"
+      class="muted small"
+      style="margin:12px 0"
+    >
+      0 × ฿0.00 = ฿0.00
+    </div>
+
+
+    <button
+      class="btn"
+      onclick="saveAccountEdit()"
+    >
+      บันทึกการแก้ไข
+    </button>
 
   </div>
 
@@ -1732,223 +1754,99 @@ h1,h2,h3,p{
 <script>
 
 /* =========================================================
-   DATA
+   STORAGE
 ========================================================= */
 
-const STORAGE_KEY = "myAccountBook_final_v10";
+const STORAGE_KEY = "myAccountBook_final_v9";
 
-let state = {
+let db = {
   title:"สมุดบัญชี",
-  transactions:[],
-  menus:[],
-  covers:{}
+  accounts:[],
+  menus:[]
 };
 
-let accountType = "income";
+try{
 
-let summaryPeriod = "day";
+  const oldData =
+    localStorage.getItem(STORAGE_KEY);
 
-let summaryMode = "detail";
-
-let selectedIngredientMenuId = null;
-
-let editingSalesId = null;
-
-let editingIngredientId = null;
-
-
-/* =========================================================
-   LOAD / SAVE
-========================================================= */
-
-function loadState(){
-
-  try{
-
-    const raw = localStorage.getItem(STORAGE_KEY);
-
-    if(raw){
-
-      const saved = JSON.parse(raw);
-
-      state = {
-        ...state,
-        ...saved
-      };
-
-    }
-
-  }catch(e){
-
-    console.error(e);
-
+  if(oldData){
+    db = JSON.parse(oldData);
   }
 
-
-  migrateOldData();
-
-  saveState();
-
-}
-
-
-function saveState(){
-
-  localStorage.setItem(
-    STORAGE_KEY,
-    JSON.stringify(state)
-  );
-
-}
+}catch(e){}
 
 
 /* =========================================================
    MIGRATION
-   รองรับข้อมูลจากเวอร์ชันเก่า
 ========================================================= */
 
-function migrateOldData(){
+if(!db || typeof db!=="object"){
+  db = {
+    title:"สมุดบัญชี",
+    accounts:[],
+    menus:[]
+  };
+}
 
-  if(!Array.isArray(state.transactions)){
-    state.transactions = [];
+if(!Array.isArray(db.accounts)){
+  db.accounts=[];
+}
+
+if(!Array.isArray(db.menus)){
+  db.menus=[];
+}
+
+db.menus.forEach(menu=>{
+  if(!Array.isArray(menu.ingredients)){
+    menu.ingredients=[];
   }
 
-  if(!Array.isArray(state.menus)){
-    state.menus = [];
-  }
+  menu.ingredients.forEach(ing=>{
 
-  if(!state.covers || typeof state.covers !== "object"){
-    state.covers = {};
-  }
+    if(typeof ing.on!=="boolean"){
+      ing.on=true;
+    }
 
+    if(typeof ing.qty!=="number"){
+      ing.qty=Number(ing.qty)||0;
+    }
 
-  state.transactions =
-    state.transactions.map(t => {
+    if(typeof ing.price!=="number"){
+      ing.price=Number(ing.price)||0;
+    }
 
-      return {
+    if(!ing.id){
+      ing.id=uid();
+    }
 
-        id:t.id || uid(),
-
-        type:
-          t.type === "expense"
-            ? "expense"
-            : "income",
-
-        name:
-          t.name ||
-          t.description ||
-          "รายการ",
-
-        qty:
-          Number(t.qty ?? t.quantity ?? 1) || 1,
-
-        price:
-          Number(t.price ?? t.amount ?? 0) || 0,
-
-        date:
-          t.date ||
-          today(),
-
-        note:
-          t.note || "",
-
-        cover:
-          t.cover || ""
-
-      };
-
-    });
+  });
+});
 
 
-  state.menus =
-    state.menus.map(menu => {
-
-      return {
-
-        id:menu.id || uid(),
-
-        name:
-          menu.name ||
-          menu.title ||
-          "รายการขาย",
-
-        cover:
-          menu.cover || "",
-
-        ingredients:
-          Array.isArray(menu.ingredients)
-            ? menu.ingredients.map(ing => {
-
-                return {
-
-                  id:ing.id || uid(),
-
-                  name:
-                    ing.name ||
-                    "วัตถุดิบ",
-
-                  cover:
-                    ing.cover || "",
-
-                  qty:
-                    Number(
-                      ing.qty ??
-                      ing.purchaseQty ??
-                      1
-                    ) || 1,
-
-                  price:
-                    Number(
-                      ing.price ??
-                      ing.purchasePrice ??
-                      0
-                    ) || 0,
-
-                  enabled:
-                    ing.enabled !== false
-
-                };
-
-              })
-            : []
-
-      };
-
-    });
-
+function saveDB(){
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(db)
+  );
 }
 
 
 /* =========================================================
-   BASIC HELPERS
+   HELPERS
 ========================================================= */
 
 function uid(){
 
-  return Date.now().toString(36) +
-    Math.random().toString(36).slice(2);
-
-}
-
-
-function today(){
-
-  const d = new Date();
-
-  const y = d.getFullYear();
-
-  const m = String(d.getMonth()+1).padStart(2,"0");
-
-  const day = String(d.getDate()).padStart(2,"0");
-
-  return `${y}-${m}-${day}`;
+  return Date.now().toString(36)
+    +Math.random().toString(36).slice(2,8);
 
 }
 
 
 function money(n){
 
-  return Number(n || 0).toLocaleString(
+  return "฿"+Number(n||0).toLocaleString(
     "th-TH",
     {
       minimumFractionDigits:2,
@@ -1959,753 +1857,82 @@ function money(n){
 }
 
 
-function moneyBaht(n){
+function esc(value){
 
-  return "฿" + money(n);
-
-}
-
-
-function escapeHtml(str){
-
-  return String(str ?? "")
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
+  return String(value??"")
+    .replace(/[&<>"']/g,m=>({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#39;"
+    }[m]));
 
 }
 
 
-function normName(name){
+function today(){
 
-  return String(name || "")
-    .trim()
-    .toLowerCase();
+  const d=new Date();
 
-}
-
-
-function getCover(name, ownCover=""){
-
-  const key = normName(name);
-
-  if(ownCover){
-
-    state.covers[key] = ownCover;
-
-    return ownCover;
-
-  }
-
-  return state.covers[key] || "";
+  return new Date(
+    d-d.getTimezoneOffset()*60000
+  )
+  .toISOString()
+  .slice(0,10);
 
 }
 
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+function isoDate(d){
 
-document.querySelectorAll(".nav-btn")
-  .forEach(btn => {
+  const x=new Date(d);
 
-    btn.addEventListener("click",() => {
-
-      const page = btn.dataset.page;
-
-      showPage(page);
-
-    });
-
-  });
-
-
-function showPage(page){
-
-  document
-    .querySelectorAll(".page")
-    .forEach(p => p.classList.remove("active"));
-
-
-  const target =
-    document.getElementById(
-      "page-" + page
-    );
-
-  if(target){
-
-    target.classList.add("active");
-
-  }
-
-
-  document
-    .querySelectorAll(".nav-btn")
-    .forEach(btn => {
-
-      btn.classList.toggle(
-        "active",
-        btn.dataset.page === page
-      );
-
-    });
-
-
-  if(page === "account"){
-    renderAccount();
-  }
-
-  if(page === "summary"){
-    renderSummary();
-  }
-
-  if(page === "combined"){
-    renderCombined();
-  }
-
-  if(page === "cost"){
-    renderSales();
-  }
+  return new Date(
+    x-x.getTimezoneOffset()*60000
+  )
+  .toISOString()
+  .slice(0,10);
 
 }
 
 
-/* =========================================================
-   ACCOUNT
-========================================================= */
+function accountTotal(a){
 
-function setAccountType(type){
-
-  accountType = type;
-
-  document
-    .getElementById("incomeTypeBtn")
-    .classList.toggle(
-      "active",
-      type === "income"
-    );
-
-  document
-    .getElementById("expenseTypeBtn")
-    .classList.toggle(
-      "active",
-      type === "expense"
-    );
+  return (
+    Number(a.qty||0) *
+    Number(a.price||0)
+  );
 
 }
 
 
-function changeTxQty(delta){
-
-  const input =
-    document.getElementById("txQty");
-
-  let value =
-    Number(input.value) || 0;
-
-  value += delta;
-
-  if(value < 0.01){
-    value = 0.01;
-  }
-
-  input.value = value;
-
-}
-
-
-function saveTx(){
-
-  const name =
-    document.getElementById("txName")
-      .value.trim();
-
-  const qty =
-    Number(
-      document.getElementById("txQty")
-        .value
-    );
-
-  const price =
-    Number(
-      document.getElementById("txPrice")
-        .value
-    );
-
-  const date =
-    document.getElementById("txDate")
-      .value || today();
-
-  const cover =
-    document.getElementById("txCover")
-      .value.trim();
-
-  const note =
-    document.getElementById("txNote")
-      .value.trim();
-
-
-  if(!name){
-
-    alert("กรุณาใส่ชื่อรายการ");
-
-    return;
-
-  }
-
-
-  if(!qty || qty <= 0){
-
-    alert("กรุณาใส่จำนวน");
-
-    return;
-
-  }
-
-
-  if(price < 0 || Number.isNaN(price)){
-
-    alert("กรุณาใส่ราคา");
-
-    return;
-
-  }
-
-
-  const tx = {
-
-    id:uid(),
-
-    type:accountType,
-
-    name:name,
-
-    qty:qty,
-
-    price:price,
-
-    date:date,
-
-    note:note,
-
-    cover:cover
-
-  };
-
-
-  state.transactions.unshift(tx);
-
-
-  if(cover){
-
-    state.covers[
-      normName(name)
-    ] = cover;
-
-  }
-
-
-  saveState();
-
-  clearTxForm();
-
-  renderAccount();
-
-  renderSummary();
-
-  renderCombined();
-
-}
-
-
-function clearTxForm(){
-
-  document.getElementById("txName").value = "";
-
-  document.getElementById("txQty").value = "1";
-
-  document.getElementById("txPrice").value = "";
-
-  document.getElementById("txDate").value = today();
-
-  document.getElementById("txCover").value = "";
-
-  document.getElementById("txNote").value = "";
-
-}
-
-
-function editTitle(){
-
-  const oldTitle =
-    state.title || "สมุดบัญชี";
-
-  const value =
-    prompt(
-      "แก้ชื่อหัวข้อ",
-      oldTitle
-    );
-
-  if(value === null){
-    return;
-  }
-
-  const text =
-    value.trim();
-
-  if(!text){
-    return;
-  }
-
-  state.title = text;
-
-  saveState();
-
-  renderAccount();
-
-}
-
-
-function renderAccount(){
-
-  document.getElementById("accountTitle")
-    .textContent =
-      "📋 " +
-      (state.title || "รายการล่าสุด");
-
-
-  const box =
-    document.getElementById("accountList");
-
-
-  if(!state.transactions.length){
-
-    box.innerHTML =
-      `<div class="empty">
-        ยังไม่มีรายการ
-      </div>`;
-
-    return;
-
-  }
-
-
-  box.innerHTML =
-    state.transactions
-      .map(tx => transactionHtml(tx))
-      .join("");
-
-}
-
-
-function transactionHtml(tx){
-
-  const cover =
-    getCover(tx.name,tx.cover);
-
-
-  const sign =
-    tx.type === "income"
-      ? "+"
-      : "−";
-
-
-  const total =
-    Number(tx.qty || 0) *
-    Number(tx.price || 0);
-
-
-  return `
-
-    <div class="tx-row">
-
-      <div class="tx-sign">
-        ${cover
-          ? escapeHtml(cover)
-          : sign}
-      </div>
-
-
-      <div class="tx-main">
-
-        <div class="tx-name">
-          ${escapeHtml(tx.name)}
-        </div>
-
-        <div class="tx-formula">
-          ${formatNumber(tx.qty)}
-          ×
-          ${moneyBaht(tx.price)}
-          =
-          ${moneyBaht(total)}
-          ·
-          ${escapeHtml(tx.date)}
-        </div>
-
-        ${
-          tx.note
-            ? `<div class="small muted">
-                ${escapeHtml(tx.note)}
-              </div>`
-            : ""
-        }
-
-      </div>
-
-
-      <div class="tx-right">
-
-        <div class="tx-amount ${tx.type}">
-          ${tx.type === "income" ? "+" : "−"}
-          ${moneyBaht(total)}
-        </div>
-
-
-        <div class="tx-actions">
-
-          <button
-            class="small-btn"
-            onclick="editTx('${tx.id}')">
-            แก้ไข
-          </button>
-
-          <button
-            class="small-btn delete"
-            onclick="deleteTx('${tx.id}')">
-            ลบ
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  `;
-
-}
-
-
-function formatNumber(n){
-
-  return Number(n || 0)
-    .toLocaleString(
-      "th-TH",
-      {
-        maximumFractionDigits:6
-      }
-    );
-
-}
-
-
-function editTx(id){
-
-  const tx =
-    state.transactions.find(
-      t => t.id === id
-    );
-
-  if(!tx){
-    return;
-  }
-
-
-  const name =
-    prompt(
-      "ชื่อรายการ",
-      tx.name
-    );
-
-  if(name === null){
-    return;
-  }
-
-
-  const qty =
-    prompt(
-      "จำนวน",
-      tx.qty
-    );
-
-  if(qty === null){
-    return;
-  }
-
-
-  const price =
-    prompt(
-      "ราคาต่อหน่วย",
-      tx.price
-    );
-
-  if(price === null){
-    return;
-  }
-
-
-  const date =
-    prompt(
-      "วันที่ YYYY-MM-DD",
-      tx.date
-    );
-
-  if(date === null){
-    return;
-  }
-
-
-  const cover =
-    prompt(
-      "รูป / สัญลักษณ์ (เว้นว่างเพื่อลบ)",
-      getCover(tx.name,tx.cover)
-    );
-
-  if(cover === null){
-    return;
-  }
-
-
-  tx.name =
-    name.trim() || tx.name;
-
-  tx.qty =
-    Number(qty) || 1;
-
-  tx.price =
-    Number(price) || 0;
-
-  tx.date =
-    date || tx.date;
-
-  tx.cover =
-    cover.trim();
-
-
-  if(tx.cover){
-
-    state.covers[
-      normName(tx.name)
-    ] = tx.cover;
-
-  }else{
-
-    delete state.covers[
-      normName(tx.name)
-    ];
-
-  }
-
-
-  saveState();
-
-  renderAll();
-
-}
-
-
-function deleteTx(id){
-
-  if(!confirm("ลบรายการนี้หรือไม่?")){
-    return;
-  }
-
-  state.transactions =
-    state.transactions.filter(
-      t => t.id !== id
-    );
-
-  saveState();
-
-  renderAll();
-
-}
-
-
-/* =========================================================
-   SUMMARY
-   ⭐ ส่วนที่ปรับตามภาพ
-========================================================= */
-
-function setSummaryPeriod(period){
-
-  summaryPeriod = period;
-
-  document
-    .querySelectorAll(".period-btn")
-    .forEach(btn => {
-
-      btn.classList.toggle(
-        "active",
-        btn.dataset.period === period
-      );
-
-    });
-
-
-  renderSummaryInputs();
-
-  renderSummary();
-
-}
-
-
-function setSummaryMode(mode){
-
-  summaryMode = mode;
-
-  document
-    .getElementById("detailModeBtn")
-    .classList.toggle(
-      "active",
-      mode === "detail"
-    );
-
-  document
-    .getElementById("numberModeBtn")
-    .classList.toggle(
-      "active",
-      mode === "number"
-    );
-
-
-  renderSummary();
-
-}
-
-
-/* ---------- Inputs ---------- */
-
-function renderSummaryInputs(){
-
-  const box =
-    document.getElementById(
-      "summaryInputs"
-    );
-
-
-  if(summaryPeriod === "day"){
-
-    box.innerHTML = `
-      <input
-        id="summaryDate"
-        type="date"
-        value="${summarySelectedDate}"
-        onchange="summaryInputChanged()">
-    `;
-
-    return;
-
-  }
-
-
-  if(summaryPeriod === "week"){
-
-    box.innerHTML = `
-      <input
-        id="summaryWeekDate"
-        type="date"
-        value="${summarySelectedDate}"
-        onchange="summaryInputChanged()">
-    `;
-
-    return;
-
-  }
-
-
-  if(summaryPeriod === "month"){
-
-    box.innerHTML = `
-
-      <select
-        id="summaryMonth"
-        onchange="summaryInputChanged()">
-
-        ${monthOptions()}
-
-      </select>
-
-
-      <select
-        id="summaryMonthYear"
-        onchange="summaryInputChanged()">
-
-        ${yearOptions()}
-
-      </select>
-
-    `;
-
-    return;
-
-  }
-
-
-  if(summaryPeriod === "year"){
-
-    box.innerHTML = `
-
-      <select
-        id="summaryYear"
-        onchange="summaryInputChanged()">
-
-        ${yearOptions()}
-
-      </select>
-
-    `;
-
-  }
-
-}
-
-
-/* ---------- Selected date ---------- */
-
-let summarySelectedDate = today();
-
-
-function summaryInputChanged(){
-
-  if(summaryPeriod === "day"){
-
-    const value =
-      document.getElementById(
-        "summaryDate"
-      ).value;
-
-    if(value){
-      summarySelectedDate = value;
+function formatDate(date){
+
+  if(!date)return "";
+
+  const d=new Date(
+    date+"T00:00:00"
+  );
+
+  return d.toLocaleDateString(
+    "th-TH",
+    {
+      day:"numeric",
+      month:"short",
+      year:"numeric"
     }
-
-  }
-
-
-  if(summaryPeriod === "week"){
-
-    const value =
-      document.getElementById(
-        "summaryWeekDate"
-      ).value;
-
-    if(value){
-      summarySelectedDate = value;
-    }
-
-  }
-
-
-  renderSummary();
+  );
 
 }
 
 
-function monthOptions(){
+function formatMonthYear(value){
 
-  const months = [
+  const [y,m]=value.split("-");
+
+  const names=[
+    "",
     "มกราคม",
     "กุมภาพันธ์",
     "มีนาคม",
@@ -2720,910 +1947,16 @@ function monthOptions(){
     "ธันวาคม"
   ];
 
-
-  const current =
-    Number(
-      summaryMonthValue()
-    );
-
-
-  return months
-    .map(
-      (name,index) =>
-        `<option
-          value="${index}"
-          ${index === current ? "selected" : ""}>
-          ${name}
-        </option>`
-    )
-    .join("");
+  return `${names[Number(m)]} ${Number(y)+543}`;
 
 }
 
 
-function summaryMonthValue(){
+function formatThaiDay(date){
 
-  const d =
-    new Date(
-      summarySelectedDate +
-      "T00:00:00"
-    );
-
-  return d.getMonth();
-
-}
-
-
-function summaryYearValue(){
-
-  const d =
-    new Date(
-      summarySelectedDate +
-      "T00:00:00"
-    );
-
-  return d.getFullYear();
-
-}
-
-
-function yearOptions(){
-
-  const selected =
-    summaryYearValue();
-
-
-  let html = "";
-
-
-  for(
-    let y = 2026;
-    y <= 2035;
-    y++
-  ){
-
-    html += `
-      <option
-        value="${y}"
-        ${y === selected ? "selected" : ""}>
-        ${y + 543}
-      </option>
-    `;
-
-  }
-
-
-  return html;
-
-}
-
-
-/* =========================================================
-   SUMMARY DATA FILTER
-========================================================= */
-
-function txTotal(tx){
-
-  return Number(tx.qty || 0) *
-         Number(tx.price || 0);
-
-}
-
-
-function transactionIncome(txs){
-
-  return txs
-    .filter(t => t.type === "income")
-    .reduce(
-      (sum,t) => sum + txTotal(t),
-      0
-    );
-
-}
-
-
-function transactionExpense(txs){
-
-  return txs
-    .filter(t => t.type === "expense")
-    .reduce(
-      (sum,t) => sum + txTotal(t),
-      0
-    );
-
-}
-
-
-function getDayRange(date){
-
-  return {
-    start:date,
-    end:date
-  };
-
-}
-
-
-function getWeekRange(dateString){
-
-  const d =
-    new Date(
-      dateString + "T00:00:00"
-    );
-
-
-  const day =
-    d.getDay();
-
-
-  const start =
-    new Date(d);
-
-  start.setDate(
-    d.getDate() - day
+  const d=new Date(
+    date+"T00:00:00"
   );
-
-
-  const end =
-    new Date(start);
-
-  end.setDate(
-    start.getDate() + 6
-  );
-
-
-  return {
-    start:dateStringLocal(start),
-    end:dateStringLocal(end)
-  };
-
-}
-
-
-function dateStringLocal(d){
-
-  const y =
-    d.getFullYear();
-
-  const m =
-    String(
-      d.getMonth()+1
-    ).padStart(2,"0");
-
-  const day =
-    String(
-      d.getDate()
-    ).padStart(2,"0");
-
-
-  return `${y}-${m}-${day}`;
-
-}
-
-
-/* =========================================================
-   SUMMARY MAIN
-========================================================= */
-
-function renderSummary(){
-
-  renderSummaryInputs();
-
-
-  let txs = [];
-
-
-  if(summaryPeriod === "day"){
-
-    txs =
-      state.transactions.filter(
-        t =>
-          t.date === summarySelectedDate
-      );
-
-  }
-
-
-  if(summaryPeriod === "week"){
-
-    const range =
-      getWeekRange(
-        summarySelectedDate
-      );
-
-
-    txs =
-      state.transactions.filter(
-        t =>
-          t.date >= range.start &&
-          t.date <= range.end
-      );
-
-  }
-
-
-  if(summaryPeriod === "month"){
-
-    const monthEl =
-      document.getElementById(
-        "summaryMonth"
-      );
-
-    const yearEl =
-      document.getElementById(
-        "summaryMonthYear"
-      );
-
-
-    let month =
-      monthEl
-        ? Number(monthEl.value)
-        : summaryMonthValue();
-
-
-    let year =
-      yearEl
-        ? Number(yearEl.value)
-        : summaryYearValue();
-
-
-    txs =
-      state.transactions.filter(t => {
-
-        if(!t.date){
-          return false;
-        }
-
-        const d =
-          new Date(
-            t.date + "T00:00:00"
-          );
-
-        return (
-          d.getFullYear() === year &&
-          d.getMonth() === month
-        );
-
-      });
-
-  }
-
-
-  if(summaryPeriod === "year"){
-
-    const yearEl =
-      document.getElementById(
-        "summaryYear"
-      );
-
-
-    const year =
-      yearEl
-        ? Number(yearEl.value)
-        : summaryYearValue();
-
-
-    txs =
-      state.transactions.filter(t => {
-
-        if(!t.date){
-          return false;
-        }
-
-        return (
-          Number(
-            t.date.slice(0,4)
-          ) === year
-        );
-
-      });
-
-  }
-
-
-  const income =
-    transactionIncome(txs);
-
-
-  const expense =
-    transactionExpense(txs);
-
-
-  const balance =
-    income - expense;
-
-
-  document.getElementById(
-    "summaryIncome"
-  ).textContent =
-    moneyBaht(income);
-
-
-  document.getElementById(
-    "summaryExpense"
-  ).textContent =
-    moneyBaht(expense);
-
-
-  document.getElementById(
-    "summaryBalance"
-  ).textContent =
-    moneyBaht(balance);
-
-
-  const content =
-    document.getElementById(
-      "summaryContent"
-    );
-
-
-  if(!txs.length){
-
-    content.innerHTML =
-      `<div class="empty">
-        ไม่มีรายการในช่วงเวลานี้
-      </div>`;
-
-    return;
-
-  }
-
-
-  /*
-    ⭐ สำคัญ
-
-    ปี = แบ่งเป็นเดือน
-    เดือน = แบ่งเป็นเดือนเดียว
-    สัปดาห์ = แบ่งเป็นวัน
-    วัน = แบ่งเป็นวันเดียว
-  */
-
-  if(summaryPeriod === "year"){
-
-    renderYearSummary(
-      content,
-      txs
-    );
-
-    return;
-
-  }
-
-
-  if(summaryPeriod === "month"){
-
-    renderMonthSummary(
-      content,
-      txs
-    );
-
-    return;
-
-  }
-
-
-  if(
-    summaryPeriod === "week" ||
-    summaryPeriod === "day"
-  ){
-
-    renderDaySummary(
-      content,
-      txs
-    );
-
-    return;
-
-  }
-
-}
-
-
-/* =========================================================
-   YEAR
-   แบ่งคั่นเดือน
-========================================================= */
-
-function renderYearSummary(container,txs){
-
-  const groups = {};
-
-
-  txs.forEach(tx => {
-
-    const month =
-      tx.date.slice(0,7);
-
-
-    if(!groups[month]){
-      groups[month] = [];
-    }
-
-
-    groups[month].push(tx);
-
-  });
-
-
-  const months =
-    Object.keys(groups)
-      .sort()
-      .reverse();
-
-
-  if(summaryMode === "number"){
-
-    container.innerHTML = `
-
-      <div class="summary-number-row">
-
-        <div class="number-card income">
-
-          <div class="label">
-            รายรับทั้งปี
-          </div>
-
-          <div class="value">
-            ${moneyBaht(
-              transactionIncome(txs)
-            )}
-          </div>
-
-        </div>
-
-
-        <div class="number-card expense">
-
-          <div class="label">
-            รายจ่ายทั้งปี
-          </div>
-
-          <div class="value">
-            ${moneyBaht(
-              transactionExpense(txs)
-            )}
-          </div>
-
-        </div>
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  container.innerHTML = `
-
-    <div class="summary-groups">
-
-      ${months
-        .map(
-          month =>
-            summaryMonthGroupHtml(
-              month,
-              groups[month]
-            )
-        )
-        .join("")}
-
-    </div>
-
-  `;
-
-}
-
-
-/* =========================================================
-   MONTH
-   แสดงเดือนที่เลือก
-========================================================= */
-
-function renderMonthSummary(container,txs){
-
-  if(summaryMode === "number"){
-
-    container.innerHTML = `
-
-      <div class="summary-number-row">
-
-        <div class="number-card income">
-
-          <div class="label">
-            รายรับ
-          </div>
-
-          <div class="value">
-            ${moneyBaht(
-              transactionIncome(txs)
-            )}
-          </div>
-
-        </div>
-
-
-        <div class="number-card expense">
-
-          <div class="label">
-            รายจ่าย
-          </div>
-
-          <div class="value">
-            ${moneyBaht(
-              transactionExpense(txs)
-            )}
-          </div>
-
-        </div>
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  const month =
-    txs.length
-      ? txs[0].date.slice(0,7)
-      : "";
-
-
-  container.innerHTML = `
-
-    <div class="summary-groups">
-
-      ${
-        month
-          ? summaryMonthGroupHtml(
-              month,
-              txs
-            )
-          : ""
-      }
-
-    </div>
-
-  `;
-
-}
-
-
-/* =========================================================
-   WEEK / DAY
-   แบ่งคั่นวัน
-========================================================= */
-
-function renderDaySummary(container,txs){
-
-  if(summaryMode === "number"){
-
-    container.innerHTML = `
-
-      <div class="summary-number-row">
-
-        <div class="number-card income">
-
-          <div class="label">
-            รายรับ
-          </div>
-
-          <div class="value">
-            ${moneyBaht(
-              transactionIncome(txs)
-            )}
-          </div>
-
-        </div>
-
-
-        <div class="number-card expense">
-
-          <div class="label">
-            รายจ่าย
-          </div>
-
-          <div class="value">
-            ${moneyBaht(
-              transactionExpense(txs)
-            )}
-          </div>
-
-        </div>
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  const groups = {};
-
-
-  txs.forEach(tx => {
-
-    if(!groups[tx.date]){
-      groups[tx.date] = [];
-    }
-
-    groups[tx.date].push(tx);
-
-  });
-
-
-  const dates =
-    Object.keys(groups)
-      .sort()
-      .reverse();
-
-
-  container.innerHTML = `
-
-    <div class="summary-groups">
-
-      ${dates
-        .map(
-          date =>
-            summaryDayGroupHtml(
-              date,
-              groups[date]
-            )
-        )
-        .join("")}
-
-    </div>
-
-  `;
-
-}
-
-
-/* =========================================================
-   MONTH GROUP
-========================================================= */
-
-function summaryMonthGroupHtml(
-  monthKey,
-  txs
-){
-
-  const [year,month] =
-    monthKey.split("-");
-
-
-  const date =
-    new Date(
-      Number(year),
-      Number(month)-1,
-      1
-    );
-
-
-  const monthName =
-    date.toLocaleDateString(
-      "th-TH",
-      {
-        month:"long"
-      }
-    );
-
-
-  const income =
-    transactionIncome(txs);
-
-
-  const expense =
-    transactionExpense(txs);
-
-
-  const groups = {};
-
-
-  txs.forEach(tx => {
-
-    if(!groups[tx.date]){
-      groups[tx.date] = [];
-    }
-
-    groups[tx.date].push(tx);
-
-  });
-
-
-  const dates =
-    Object.keys(groups)
-      .sort()
-      .reverse();
-
-
-  return `
-
-    <div class="summary-group">
-
-      <div class="summary-group-head">
-
-        <div class="summary-group-title">
-
-          ${monthName}
-          ${Number(year) + 543}
-
-        </div>
-
-
-        <div class="summary-group-total">
-
-          รับ ${moneyBaht(income)}
-          ·
-          จ่าย ${moneyBaht(expense)}
-
-        </div>
-
-      </div>
-
-
-      <div class="summary-items">
-
-        ${
-          dates
-            .map(
-              date =>
-                groups[date]
-                  .map(
-                    tx =>
-                      summaryItemHtml(
-                        tx
-                      )
-                  )
-                  .join("")
-            )
-            .join("")
-        }
-
-      </div>
-
-    </div>
-
-  `;
-
-}
-
-
-/* =========================================================
-   DAY GROUP
-========================================================= */
-
-function summaryDayGroupHtml(
-  date,
-  txs
-){
-
-  const income =
-    transactionIncome(txs);
-
-
-  const expense =
-    transactionExpense(txs);
-
-
-  const display =
-    formatThaiDate(date);
-
-
-  return `
-
-    <div class="summary-group">
-
-      <div class="summary-group-head">
-
-        <div class="summary-group-title">
-          ${display}
-        </div>
-
-
-        <div class="summary-group-total">
-
-          รับ ${moneyBaht(income)}
-          ·
-          จ่าย ${moneyBaht(expense)}
-
-        </div>
-
-      </div>
-
-
-      <div class="summary-items">
-
-        ${txs
-          .map(
-            tx =>
-              summaryItemHtml(tx)
-          )
-          .join("")}
-
-      </div>
-
-    </div>
-
-  `;
-
-}
-
-
-/* =========================================================
-   SUMMARY ITEM
-========================================================= */
-
-function summaryItemHtml(tx){
-
-  const total =
-    txTotal(tx);
-
-
-  const cover =
-    getCover(tx.name,tx.cover);
-
-
-  return `
-
-    <div class="summary-item">
-
-      <div class="summary-item-left">
-
-        ${
-          cover
-            ? `<div class="summary-item-cover">
-                ${escapeHtml(cover)}
-              </div>`
-            : ""
-        }
-
-
-        ${
-          summaryMode === "detail"
-            ? `<div class="summary-item-name">
-                ${escapeHtml(tx.name)}
-              </div>
-
-              <div class="summary-item-detail">
-                ${formatNumber(tx.qty)}
-                ×
-                ${moneyBaht(tx.price)}
-              </div>`
-            : ""
-        }
-
-      </div>
-
-
-      <div
-        class="summary-item-amount ${tx.type}">
-
-        ${tx.type === "income" ? "+" : "−"}
-        ${moneyBaht(total)}
-
-      </div>
-
-    </div>
-
-  `;
-
-}
-
-
-function formatThaiDate(dateString){
-
-  const d =
-    new Date(
-      dateString + "T00:00:00"
-    );
-
 
   return d.toLocaleDateString(
     "th-TH",
@@ -3637,153 +1970,1571 @@ function formatThaiDate(dateString){
 }
 
 
-/* =========================================================
-   COMBINED
-========================================================= */
+function monthKey(date){
 
-function renderCombined(){
-
-  const keyword =
-    document.getElementById(
-      "searchCombined"
-    )?.value
-      .trim()
-      .toLowerCase() || "";
-
-
-  const txs =
-    state.transactions.filter(tx => {
-
-      if(!keyword){
-        return true;
-      }
-
-      return (
-        tx.name
-          .toLowerCase()
-          .includes(keyword) ||
-
-        tx.note
-          .toLowerCase()
-          .includes(keyword)
-      );
-
-    });
-
-
-  const box =
-    document.getElementById(
-      "combinedList"
-    );
-
-
-  if(!txs.length){
-
-    box.innerHTML =
-      `<div class="empty">
-        ไม่พบรายการ
-      </div>`;
-
-    return;
-
-  }
-
-
-  box.innerHTML =
-    txs
-      .map(
-        tx =>
-          transactionHtml(tx)
-      )
-      .join("");
+  return String(date).slice(0,7);
 
 }
 
 
 /* =========================================================
-   COST : SALES
+   NAVIGATION
 ========================================================= */
 
-function renderSales(){
+document.querySelectorAll(".nav button")
+.forEach(button=>{
 
-  const box =
-    document.getElementById(
-      "salesList"
+  button.addEventListener("click",()=>{
+
+    document.querySelectorAll(".nav button")
+    .forEach(x=>x.classList.remove("on"));
+
+    button.classList.add("on");
+
+    document.querySelectorAll(".page")
+    .forEach(page=>page.classList.remove("on"));
+
+    const page =
+      document.getElementById(
+        button.dataset.page
+      );
+
+    page.classList.add("on");
+
+
+    if(button.dataset.page==="account"){
+      renderAccounts();
+    }
+
+    if(button.dataset.page==="summary"){
+      renderSummary();
+    }
+
+    if(button.dataset.page==="all"){
+      renderAll();
+    }
+
+    if(button.dataset.page==="cost"){
+      closeCostDetail();
+      renderMenus();
+    }
+
+  });
+
+});
+
+
+/* =========================================================
+   PAGE 1 ACCOUNT
+========================================================= */
+
+document.getElementById("shopTitle")
+.textContent=db.title||"สมุดบัญชี";
+
+document.getElementById("aDate")
+.value=today();
+
+
+function editTitle(){
+
+  const value=prompt(
+    "ชื่อที่จะแสดงแทน “สมุดบัญชี”",
+    db.title
+  );
+
+  if(
+    value!==null &&
+    value.trim()
+  ){
+
+    db.title=value.trim();
+
+    saveDB();
+
+    document.getElementById("shopTitle")
+      .textContent=db.title;
+
+  }
+
+}
+
+
+function accountQty(n){
+
+  const input=
+    document.getElementById("aQty");
+
+  input.value=
+    Math.max(
+      0,
+      Number(input.value||0)+n
     );
 
+  accountPreview();
 
-  if(!state.menus.length){
+}
 
-    box.innerHTML =
-      `<div class="empty">
-        ยังไม่มีรายการขาย
-      </div>`;
+
+function accountPreview(){
+
+  const q=
+    Number(
+      document.getElementById("aQty").value||0
+    );
+
+  const p=
+    Number(
+      document.getElementById("aPrice").value||0
+    );
+
+  document.getElementById("accountPreview")
+    .textContent=
+      `${q} × ${money(p)} = ${money(q*p)}`;
+
+}
+
+
+function addAccount(){
+
+  const name=
+    document.getElementById("aName")
+      .value.trim();
+
+  if(!name){
+    alert("ใส่ชื่อรายการก่อน");
+    return;
+  }
+
+  const account={
+
+    id:uid(),
+
+    name:name,
+
+    date:
+      document.getElementById("aDate")
+        .value||today(),
+
+    type:
+      document.getElementById("aType")
+        .value,
+
+    qty:
+      Number(
+        document.getElementById("aQty")
+          .value
+      )||0,
+
+    price:
+      Number(
+        document.getElementById("aPrice")
+          .value
+      )||0
+
+  };
+
+
+  db.accounts.unshift(account);
+
+  saveDB();
+
+
+  document.getElementById("aName").value="";
+
+  document.getElementById("aQty").value=1;
+
+  document.getElementById("aPrice").value="";
+
+  accountPreview();
+
+  renderAccounts();
+
+  renderAll();
+
+  renderSummary();
+
+}
+
+
+function renderAccounts(){
+
+  const income=
+    db.accounts
+      .filter(a=>a.type==="income")
+      .reduce(
+        (s,a)=>s+accountTotal(a),
+        0
+      );
+
+  const expense=
+    db.accounts
+      .filter(a=>a.type==="expense")
+      .reduce(
+        (s,a)=>s+accountTotal(a),
+        0
+      );
+
+
+  document.getElementById("accountBalance")
+    .textContent=
+      money(income-expense);
+
+
+  const list=
+    document.getElementById("accountList");
+
+
+  if(!db.accounts.length){
+
+    list.innerHTML=
+      '<div class="empty">ยังไม่มีรายการบัญชี</div>';
 
     return;
 
   }
 
 
-  box.innerHTML =
-    state.menus
-      .map(menu => {
+  list.innerHTML=
+    db.accounts.map(a=>{
 
-        const ingredients =
-          Array.isArray(menu.ingredients)
-            ? menu.ingredients
-            : [];
+      const isIncome=
+        a.type==="income";
+
+      const symbol=
+        isIncome?"＋":"−";
+
+      const color=
+        isIncome?"income":"expense";
+
+      const amount=
+        accountTotal(a);
 
 
-        const enabled =
-          ingredients.filter(
-            i => i.enabled !== false
-          );
+      return `
+
+        <div class="account-item">
+
+          <div class="account-symbol ${color}">
+            ${symbol}
+          </div>
 
 
-        const total =
-          enabled.reduce(
-            (sum,i) =>
-              sum +
-              Number(i.qty || 0) *
-              Number(i.price || 0),
+          <div>
+
+            <div class="account-name">
+              ${esc(a.name)}
+            </div>
+
+            <div class="account-formula">
+              ${a.qty} × ${money(a.price)}
+              = ${money(amount)}
+              · ${a.date}
+            </div>
+
+            <div class="account-actions">
+
+              <button
+                class="account-edit"
+                onclick="openAccountEdit('${a.id}')"
+              >
+                แก้ไข
+              </button>
+
+              <button
+                class="account-delete"
+                onclick="deleteAccount('${a.id}')"
+              >
+                ลบ
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="account-money ${color}">
+            ${isIncome?"+":"−"} ${money(amount)}
+          </div>
+
+        </div>
+
+      `;
+
+    }).join("");
+
+}
+
+
+function deleteAccount(id){
+
+  if(!confirm("ลบรายการนี้ใช่ไหม")){
+    return;
+  }
+
+  db.accounts=
+    db.accounts.filter(
+      a=>a.id!==id
+    );
+
+  saveDB();
+
+  renderAccounts();
+  renderAll();
+  renderSummary();
+
+}
+
+
+function openAccountEdit(id){
+
+  const a=
+    db.accounts.find(
+      x=>x.id===id
+    );
+
+  if(!a)return;
+
+
+  document.getElementById("editAccountId")
+    .value=a.id;
+
+  document.getElementById("editAccountName")
+    .value=a.name;
+
+  document.getElementById("editAccountDate")
+    .value=a.date;
+
+  document.getElementById("editAccountType")
+    .value=a.type;
+
+  document.getElementById("editAccountQty")
+    .value=a.qty;
+
+  document.getElementById("editAccountPrice")
+    .value=a.price;
+
+  editAccountPreview();
+
+
+  document.getElementById("accountModal")
+    .classList.add("show");
+
+}
+
+
+function closeAccountEdit(){
+
+  document.getElementById("accountModal")
+    .classList.remove("show");
+
+}
+
+
+function editAccountQty(n){
+
+  const input=
+    document.getElementById(
+      "editAccountQty"
+    );
+
+  input.value=
+    Math.max(
+      0,
+      Number(input.value||0)+n
+    );
+
+  editAccountPreview();
+
+}
+
+
+function editAccountPreview(){
+
+  const q=
+    Number(
+      document.getElementById(
+        "editAccountQty"
+      ).value||0
+    );
+
+  const p=
+    Number(
+      document.getElementById(
+        "editAccountPrice"
+      ).value||0
+    );
+
+  document.getElementById(
+    "editAccountPreview"
+  ).textContent=
+    `${q} × ${money(p)} = ${money(q*p)}`;
+
+}
+
+
+function saveAccountEdit(){
+
+  const id=
+    document.getElementById(
+      "editAccountId"
+    ).value;
+
+  const a=
+    db.accounts.find(
+      x=>x.id===id
+    );
+
+  if(!a)return;
+
+
+  const name=
+    document.getElementById(
+      "editAccountName"
+    ).value.trim();
+
+  if(!name){
+
+    alert("ชื่อรายการห้ามว่าง");
+
+    return;
+
+  }
+
+
+  a.name=name;
+
+  a.date=
+    document.getElementById(
+      "editAccountDate"
+    ).value;
+
+  a.type=
+    document.getElementById(
+      "editAccountType"
+    ).value;
+
+  a.qty=
+    Number(
+      document.getElementById(
+        "editAccountQty"
+      ).value
+    )||0;
+
+  a.price=
+    Number(
+      document.getElementById(
+        "editAccountPrice"
+      ).value
+    )||0;
+
+
+  saveDB();
+
+  closeAccountEdit();
+
+  renderAccounts();
+  renderAll();
+  renderSummary();
+
+}
+
+
+/* =========================================================
+   PAGE 2 SUMMARY
+   *** FIX เดือนเปลี่ยนไม่ได้ ***
+========================================================= */
+
+
+/*
+  สำคัญ:
+  เราไม่สร้าง input เดือนใหม่พร้อมค่า today ทุกครั้งแล้ว
+
+  แต่เก็บค่าที่ผู้ใช้เลือกไว้ใน summaryState
+  ทำให้กดเปลี่ยนเดือนแล้วค่าไม่ถูกรีเซ็ต
+*/
+
+const summaryState={
+
+  mode:"day",
+
+  detail:"detail",
+
+  day:today(),
+
+  week:today(),
+
+  month:
+    today().slice(0,7),
+
+  year:
+    String(
+      new Date().getFullYear()
+    )
+
+};
+
+
+function changeSummaryMode(mode){
+
+  summaryState.mode=mode;
+
+  renderSummary();
+
+}
+
+
+function changeSummaryDetail(detail){
+
+  summaryState.detail=detail;
+
+  renderSummary();
+
+}
+
+
+function setSummaryDay(value){
+
+  if(value){
+    summaryState.day=value;
+  }
+
+  renderSummary();
+
+}
+
+
+function setSummaryWeek(value){
+
+  if(value){
+    summaryState.week=value;
+  }
+
+  renderSummary();
+
+}
+
+
+function setSummaryMonth(value){
+
+  /*
+    จุดสำคัญของบั๊กเดิม:
+    ห้ามเรียก today() กลับมาใส่ใหม่
+
+    ใช้ค่าที่ผู้ใช้เลือกโดยตรง
+  */
+
+  if(value){
+    summaryState.month=value;
+  }
+
+  renderSummary();
+
+}
+
+
+function setSummaryYear(value){
+
+  if(value){
+    summaryState.year=value;
+  }
+
+  renderSummary();
+
+}
+
+
+/* ---------- years ---------- */
+
+function summaryYears(){
+
+  const start=2026;
+
+  const current=
+    new Date().getFullYear();
+
+  const end=
+    Math.max(2035,current);
+
+  const arr=[];
+
+  for(let y=start;y<=end;y++){
+    arr.push(y);
+  }
+
+  return arr;
+
+}
+
+
+/* ---------- picker ---------- */
+
+function renderSummaryPicker(){
+
+  const box=
+    document.getElementById(
+      "summaryPicker"
+    );
+
+
+  /*
+    DAY
+  */
+
+  if(summaryState.mode==="day"){
+
+    box.innerHTML=`
+
+      <label>
+        เลือกวันที่
+      </label>
+
+      <input
+        type="date"
+        value="${summaryState.day}"
+        onchange="setSummaryDay(this.value)"
+      >
+
+    `;
+
+  }
+
+
+  /*
+    WEEK
+  */
+
+  else if(summaryState.mode==="week"){
+
+    const range=
+      getWeekRange(
+        summaryState.week
+      );
+
+    box.innerHTML=`
+
+      <label>
+        เลือกวันใดก็ได้ในสัปดาห์
+      </label>
+
+      <input
+        type="date"
+        value="${summaryState.week}"
+        onchange="setSummaryWeek(this.value)"
+      >
+
+      <div class="week-label">
+        สัปดาห์นี้:
+        ${formatThaiDay(range.start)}
+        – 
+        ${formatThaiDay(range.end)}
+      </div>
+
+    `;
+
+  }
+
+
+  /*
+    MONTH
+    ใช้ select แยกเดือน/ปี
+    เพื่อแก้ปัญหา iPad กดเปลี่ยนเดือนแล้วเด้งกลับ
+  */
+
+  else if(summaryState.mode==="month"){
+
+    const selectedYear=
+      Number(
+        summaryState.month.slice(0,4)
+      );
+
+    const selectedMonth=
+      Number(
+        summaryState.month.slice(5,7)
+      );
+
+
+    const years=
+      summaryYears();
+
+
+    const monthNames=[
+      "มกราคม",
+      "กุมภาพันธ์",
+      "มีนาคม",
+      "เมษายน",
+      "พฤษภาคม",
+      "มิถุนายน",
+      "กรกฎาคม",
+      "สิงหาคม",
+      "กันยายน",
+      "ตุลาคม",
+      "พฤศจิกายน",
+      "ธันวาคม"
+    ];
+
+
+    box.innerHTML=`
+
+      <label>
+        เลือกเดือน / ปี
+      </label>
+
+      <div class="month-picker">
+
+        <select id="summaryMonthSelect">
+          ${
+            monthNames.map(
+              (name,index)=>`
+                <option
+                  value="${index+1}"
+                  ${selectedMonth===index+1?"selected":""}
+                >
+                  ${name}
+                </option>
+              `
+            ).join("")
+          }
+        </select>
+
+
+        <select id="summaryYearSelect">
+
+          ${
+            years.map(
+              y=>`
+                <option
+                  value="${y}"
+                  ${selectedYear===y?"selected":""}
+                >
+                  ${y+543}
+                </option>
+              `
+            ).join("")
+          }
+
+        </select>
+
+      </div>
+
+    `;
+
+
+    /*
+      ต้องผูก onchange หลังจากสร้าง select
+      เพื่อให้เลือกแล้วอัปเดตทันที
+    */
+
+    document.getElementById(
+      "summaryMonthSelect"
+    ).onchange=function(){
+
+      const month=
+        String(
+          Number(this.value)
+        ).padStart(2,"0");
+
+      const year=
+        document.getElementById(
+          "summaryYearSelect"
+        ).value;
+
+      summaryState.month=
+        `${year}-${month}`;
+
+      renderSummary();
+
+    };
+
+
+    document.getElementById(
+      "summaryYearSelect"
+    ).onchange=function(){
+
+      const year=this.value;
+
+      const month=
+        String(
+          Number(
+            document.getElementById(
+              "summaryMonthSelect"
+            ).value
+          )
+        ).padStart(2,"0");
+
+      summaryState.month=
+        `${year}-${month}`;
+
+      renderSummary();
+
+    };
+
+  }
+
+
+  /*
+    YEAR
+  */
+
+  else if(summaryState.mode==="year"){
+
+    box.innerHTML=`
+
+      <label>
+        เลือกปี
+      </label>
+
+      <select
+        id="summaryYearOnly"
+        onchange="setSummaryYear(this.value)"
+      >
+
+        ${
+          summaryYears().map(
+            y=>`
+              <option
+                value="${y}"
+                ${Number(summaryState.year)===y?"selected":""}
+              >
+                ${y+543}
+              </option>
+            `
+          ).join("")
+        }
+
+      </select>
+
+    `;
+
+  }
+
+}
+
+
+/* ---------- week ---------- */
+
+function getWeekRange(dateString){
+
+  const d=
+    new Date(
+      dateString+"T00:00:00"
+    );
+
+  const day=d.getDay();
+
+  const start=
+    new Date(d);
+
+  start.setDate(
+    d.getDate()-day
+  );
+
+  const end=
+    new Date(start);
+
+  end.setDate(
+    start.getDate()+6
+  );
+
+  return {
+    start:isoDate(start),
+    end:isoDate(end)
+  };
+
+}
+
+
+/* ---------- filtered records ---------- */
+
+function getSummaryRecords(){
+
+  const mode=
+    summaryState.mode;
+
+
+  if(mode==="day"){
+
+    const date=
+      summaryState.day;
+
+    return db.accounts.filter(
+      a=>a.date===date
+    );
+
+  }
+
+
+  if(mode==="week"){
+
+    const range=
+      getWeekRange(
+        summaryState.week
+      );
+
+    return db.accounts.filter(
+      a=>
+        a.date>=range.start &&
+        a.date<=range.end
+    );
+
+  }
+
+
+  if(mode==="month"){
+
+    const prefix=
+      summaryState.month;
+
+    return db.accounts.filter(
+      a=>a.date.startsWith(prefix)
+    );
+
+  }
+
+
+  if(mode==="year"){
+
+    const year=
+      String(summaryState.year);
+
+    return db.accounts.filter(
+      a=>a.date.startsWith(year)
+    );
+
+  }
+
+
+  return [];
+
+}
+
+
+/* ---------- group records ---------- */
+
+function groupSummaryRecords(records){
+
+  const mode=
+    summaryState.mode;
+
+
+  const groups={};
+
+
+  /*
+    รายวัน
+    = แบ่งคั่นตามวัน
+  */
+
+  if(mode==="day"){
+
+    groups[summaryState.day]=records;
+
+  }
+
+
+  /*
+    รายสัปดาห์
+    = แบ่งคั่นทุกวัน
+  */
+
+  else if(mode==="week"){
+
+    records.forEach(a=>{
+
+      if(!groups[a.date]){
+        groups[a.date]=[];
+      }
+
+      groups[a.date].push(a);
+
+    });
+
+  }
+
+
+  /*
+    รายเดือน
+    = หนึ่งคั่นของเดือนที่เลือก
+  */
+
+  else if(mode==="month"){
+
+    groups[summaryState.month]=records;
+
+  }
+
+
+  /*
+    รายปี
+    = แบ่งคั่นตามเดือน
+  */
+
+  else if(mode==="year"){
+
+    records.forEach(a=>{
+
+      const key=
+        monthKey(a.date);
+
+      if(!groups[key]){
+        groups[key]=[];
+      }
+
+      groups[key].push(a);
+
+    });
+
+  }
+
+
+  return groups;
+
+}
+
+
+/* ---------- render summary ---------- */
+
+function renderSummary(){
+
+  renderSummaryPicker();
+
+
+  document.querySelectorAll(
+    ".summary-tabs button"
+  ).forEach(button=>{
+    button.classList.remove("on");
+  });
+
+
+  const modeButton={
+    day:"sumTabDay",
+    week:"sumTabWeek",
+    month:"sumTabMonth",
+    year:"sumTabYear"
+  }[summaryState.mode];
+
+
+  document.getElementById(
+    modeButton
+  ).classList.add("on");
+
+
+  document.getElementById(
+    "detailTab"
+  ).classList.toggle(
+    "on",
+    summaryState.detail==="detail"
+  );
+
+
+  document.getElementById(
+    "numberTab"
+  ).classList.toggle(
+    "on",
+    summaryState.detail==="number"
+  );
+
+
+  const records=
+    getSummaryRecords();
+
+
+  const income=
+    records
+      .filter(a=>a.type==="income")
+      .reduce(
+        (s,a)=>s+accountTotal(a),
+        0
+      );
+
+
+  const expense=
+    records
+      .filter(a=>a.type==="expense")
+      .reduce(
+        (s,a)=>s+accountTotal(a),
+        0
+      );
+
+
+  document.getElementById(
+    "summaryIncome"
+  ).textContent=
+    money(income);
+
+
+  document.getElementById(
+    "summaryExpense"
+  ).textContent=
+    money(expense);
+
+
+  document.getElementById(
+    "summaryBalance"
+  ).textContent=
+    money(income-expense);
+
+
+  const container=
+    document.getElementById(
+      "summaryGroups"
+    );
+
+
+  if(!records.length){
+
+    container.innerHTML=
+      '<div class="empty">ไม่มีรายการในช่วงเวลานี้</div>';
+
+    return;
+
+  }
+
+
+  const groups=
+    groupSummaryRecords(records);
+
+
+  /*
+    เรียงจากใหม่ → เก่า
+  */
+
+  const keys=
+    Object.keys(groups)
+      .sort()
+      .reverse();
+
+
+  container.innerHTML=
+    keys.map(key=>{
+
+      const groupRecords=
+        groups[key];
+
+
+      const gi=
+        groupRecords
+          .filter(
+            a=>a.type==="income"
+          )
+          .reduce(
+            (s,a)=>s+accountTotal(a),
             0
           );
 
 
-        const cover =
-          getCover(
-            menu.name,
-            menu.cover
+      const ge=
+        groupRecords
+          .filter(
+            a=>a.type==="expense"
+          )
+          .reduce(
+            (s,a)=>s+accountTotal(a),
+            0
           );
 
 
-        return `
+      let title="";
 
-          <div class="sales-card">
 
-            <div
-              class="sales-left"
-              onclick="openIngredients('${menu.id}')">
+      if(
+        summaryState.mode==="day" ||
+        summaryState.mode==="week"
+      ){
 
-              <div class="sales-cover">
+        title=
+          formatThaiDay(key);
 
-                ${
-                  cover
-                    ? escapeHtml(cover)
-                    : "○"
-                }
+      }
+      else{
+
+        title=
+          formatMonthYear(key);
+
+      }
+
+
+      /*
+        หัวคั่นของแต่ละวัน/เดือน
+      */
+
+      const rows=
+        summaryState.detail==="number"
+
+        ?
+
+        `
+          <div class="summary-row">
+
+            <span>
+              รายรับ
+            </span>
+
+            <b class="summary-row-money income">
+              +${money(gi)}
+            </b>
+
+          </div>
+
+
+          <div class="summary-row">
+
+            <span>
+              รายจ่าย
+            </span>
+
+            <b class="summary-row-money expense">
+              −${money(ge)}
+            </b>
+
+          </div>
+
+
+          <div class="summary-row">
+
+            <span>
+              คงเหลือ
+            </span>
+
+            <b class="summary-row-money">
+              ${money(gi-ge)}
+            </b>
+
+          </div>
+        `
+
+        :
+
+        groupRecords
+          .sort(
+            (a,b)=>
+              b.date.localeCompare(a.date)
+          )
+          .map(a=>{
+
+            const amount=
+              accountTotal(a);
+
+            const isIncome=
+              a.type==="income";
+
+
+            return `
+
+              <div class="summary-row">
+
+                <div>
+
+                  <div class="summary-row-name">
+                    ${esc(a.name)}
+                  </div>
+
+                  <div class="summary-row-sub">
+                    ${a.qty} × ${money(a.price)}
+                  </div>
+
+                </div>
+
+
+                <div
+                  class="summary-row-money ${
+                    isIncome
+                    ?"income"
+                    :"expense"
+                  }"
+                >
+                  ${isIncome?"+":"−"}${money(amount)}
+                </div>
+
+              </div>
+
+            `;
+
+          }).join("");
+
+
+      return `
+
+        <div class="summary-group">
+
+          <div class="summary-group-head">
+
+            <span>
+              ${esc(title)}
+            </span>
+
+            <span class="summary-group-total">
+              รับ ${money(gi)}
+              ·
+              จ่าย ${money(ge)}
+            </span>
+
+          </div>
+
+          ${rows}
+
+        </div>
+
+      `;
+
+    }).join("");
+
+}
+
+
+/* =========================================================
+   PAGE 3 ALL
+========================================================= */
+
+function renderAll(){
+
+  const query=
+    (
+      document.getElementById(
+        "allSearch"
+      ).value||""
+    ).trim().toLowerCase();
+
+
+  const records=
+    db.accounts.filter(a=>
+      a.name.toLowerCase()
+        .includes(query)
+    );
+
+
+  const income=
+    db.accounts
+      .filter(a=>a.type==="income")
+      .reduce(
+        (s,a)=>s+accountTotal(a),
+        0
+      );
+
+
+  const expense=
+    db.accounts
+      .filter(a=>a.type==="expense")
+      .reduce(
+        (s,a)=>s+accountTotal(a),
+        0
+      );
+
+
+  document.getElementById(
+    "allIncome"
+  ).textContent=money(income);
+
+
+  document.getElementById(
+    "allExpense"
+  ).textContent=money(expense);
+
+
+  document.getElementById(
+    "allBalance"
+  ).textContent=
+    money(income-expense);
+
+
+  const list=
+    document.getElementById(
+      "allList"
+    );
+
+
+  if(!records.length){
+
+    list.innerHTML=
+      '<div class="empty">ไม่พบรายการ</div>';
+
+    return;
+
+  }
+
+
+  list.innerHTML=
+    records.map(a=>{
+
+      const amount=
+        accountTotal(a);
+
+      const isIncome=
+        a.type==="income";
+
+
+      return `
+
+        <div class="item">
+
+          <div class="between">
+
+            <div>
+
+              <div class="title">
+                ${esc(a.name)}
+              </div>
+
+              <div class="muted small">
+                ${a.qty}
+                ×
+                ${money(a.price)}
+                =
+                ${money(amount)}
+                ·
+                ${a.date}
+              </div>
+
+            </div>
+
+
+            <b class="${isIncome?"income":"expense"}">
+              ${isIncome?"+":"−"} ${money(amount)}
+            </b>
+
+          </div>
+
+        </div>
+
+      `;
+
+    }).join("");
+
+}
+
+
+/* =========================================================
+   PAGE 4 COST
+========================================================= */
+
+let currentMenuId=null;
+
+let editingIngredientId=null;
+
+
+function addMenu(){
+
+  const name=
+    document.getElementById(
+      "menuName"
+    ).value.trim();
+
+
+  if(!name){
+
+    alert("ใส่ชื่อรายการขายก่อน");
+
+    return;
+
+  }
+
+
+  const cover=
+    document.getElementById(
+      "menuCover"
+    ).value.trim();
+
+
+  db.menus.push({
+
+    id:uid(),
+
+    name:name,
+
+    cover:cover,
+
+    ingredients:[]
+
+  });
+
+
+  saveDB();
+
+
+  document.getElementById(
+    "menuName"
+  ).value="";
+
+  document.getElementById(
+    "menuCover"
+  ).value="";
+
+
+  renderMenus();
+
+}
+
+
+function menuCost(menu){
+
+  return menu.ingredients
+    .filter(i=>i.on)
+    .reduce(
+      (s,i)=>
+        s+
+        Number(i.qty||0)*
+        Number(i.price||0),
+      0
+    );
+
+}
+
+
+function renderMenus(){
+
+  const list=
+    document.getElementById(
+      "menuList"
+    );
+
+
+  if(!db.menus.length){
+
+    list.innerHTML=
+      '<div class="empty">ยังไม่มีรายการขาย</div>';
+
+    return;
+
+  }
+
+
+  list.innerHTML=
+    db.menus.map(menu=>{
+
+      const total=
+        menuCost(menu);
+
+      const count=
+        menu.ingredients.length;
+
+
+      return `
+
+        <div class="item">
+
+          <div class="cost-sale-head">
+
+            <div class="cost-sale-main">
+
+              <div>
+
+                <div class="cost-cover">
+                  ${menu.cover
+                    ?esc(menu.cover)
+                    :""
+                  }
+                </div>
 
               </div>
 
 
-              <div>
+              <div class="cost-sale-text">
 
-                <div class="sales-name">
-                  ${escapeHtml(menu.name)}
+                <div class="cost-sale-name">
+                  ${esc(menu.name)}
                 </div>
 
-                <div class="sales-info">
-                  วัตถุดิบ ${ingredients.length} รายการ
+                <div class="cost-sale-sub">
+                  วัตถุดิบ ${count} รายการ
                 </div>
 
               </div>
@@ -3791,36 +3542,407 @@ function renderSales(){
             </div>
 
 
-            <div class="sales-right">
+            <div class="cost-sale-right">
 
-              <div class="sales-cost">
-                รวมต้นทุน ${moneyBaht(total)}
+              <div class="cost-total">
+                รวมต้นทุน ${money(total)}
               </div>
 
-              <div class="sales-count">
-                วัตถุดิบ ${ingredients.length} รายการ
+              <div class="cost-count">
+                วัตถุดิบ ${count} รายการ
               </div>
 
-
-              <div class="sales-actions">
+              <div class="cost-buttons">
 
                 <button
-                  class="small-btn"
-                  onclick="event.stopPropagation();editSales('${menu.id}')">
+                  class="mini"
+                  onclick="openCostDetail('${menu.id}')"
+                >
+                  วัตถุดิบ
+                </button>
+
+                <button
+                  class="mini"
+                  onclick="renameMenu('${menu.id}')"
+                >
                   แก้ไข
                 </button>
 
                 <button
-                  class="small-btn"
-                  onclick="event.stopPropagation();duplicateSales('${menu.id}')">
+                  class="mini"
+                  onclick="duplicateMenu('${menu.id}')"
+                >
                   สำเนา
                 </button>
 
                 <button
-                  class="small-btn delete"
-                  onclick="event.stopPropagation();deleteSales('${menu.id}')">
-                  ลบ
+                  class="ing-trash"
+                  onclick="deleteMenu('${menu.id}')"
+                >
+                  🗑️
                 </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      `;
+
+    }).join("");
+
+}
+
+
+function renameMenu(id){
+
+  const menu=
+    db.menus.find(
+      m=>m.id===id
+    );
+
+  if(!menu)return;
+
+
+  const name=
+    prompt(
+      "แก้ชื่อรายการขาย",
+      menu.name
+    );
+
+
+  if(
+    name!==null &&
+    name.trim()
+  ){
+
+    menu.name=name.trim();
+
+    saveDB();
+
+    renderMenus();
+
+    if(currentMenuId===id){
+      renderCostDetail();
+    }
+
+  }
+
+}
+
+
+function deleteMenu(id){
+
+  if(!confirm(
+    "ลบรายการขายและวัตถุดิบทั้งหมดใช่ไหม"
+  )){
+    return;
+  }
+
+
+  db.menus=
+    db.menus.filter(
+      m=>m.id!==id
+    );
+
+
+  saveDB();
+
+  renderMenus();
+
+}
+
+
+function duplicateMenu(id){
+
+  const original=
+    db.menus.find(
+      m=>m.id===id
+    );
+
+  if(!original)return;
+
+
+  const copy={
+
+    id:uid(),
+
+    name:
+      original.name+
+      " (สำเนา)",
+
+    cover:
+      original.cover||"",
+
+    ingredients:
+      original.ingredients.map(i=>({
+
+        id:uid(),
+
+        name:i.name,
+
+        cover:i.cover||"",
+
+        qty:Number(i.qty||0),
+
+        price:Number(i.price||0),
+
+        on:i.on!==false
+
+      }))
+
+  };
+
+
+  db.menus.push(copy);
+
+  saveDB();
+
+  renderMenus();
+
+}
+
+
+/* =========================================================
+   COST DETAIL
+========================================================= */
+
+function openCostDetail(id){
+
+  currentMenuId=id;
+
+  document.getElementById(
+    "costHome"
+  ).style.display="none";
+
+  document.getElementById(
+    "costDetail"
+  ).style.display="block";
+
+
+  renderCostDetail();
+
+}
+
+
+function closeCostDetail(){
+
+  currentMenuId=null;
+
+  document.getElementById(
+    "costHome"
+  ).style.display="block";
+
+  document.getElementById(
+    "costDetail"
+  ).style.display="none";
+
+  closeIngredientForm();
+
+}
+
+
+function currentMenu(){
+
+  return db.menus.find(
+    m=>m.id===currentMenuId
+  );
+
+}
+
+
+function renderCostDetail(){
+
+  const menu=
+    currentMenu();
+
+  if(!menu)return;
+
+
+  if(!Array.isArray(menu.ingredients)){
+    menu.ingredients=[];
+  }
+
+
+  document.getElementById(
+    "detailMenuName"
+  ).textContent=
+    menu.name;
+
+
+  document.getElementById(
+    "detailCover"
+  ).textContent=
+    menu.cover||"";
+
+
+  const enabled=
+    menu.ingredients.filter(
+      i=>i.on
+    );
+
+
+  const total=
+    menuCost(menu);
+
+
+  document.getElementById(
+    "detailIngredientCount"
+  ).textContent=
+    enabled.length;
+
+
+  document.getElementById(
+    "detailCost"
+  ).textContent=
+    money(total);
+
+
+  const list=
+    document.getElementById(
+      "ingredientList"
+    );
+
+
+  if(!menu.ingredients.length){
+
+    list.innerHTML=
+      '<div class="empty">ยังไม่มีวัตถุดิบ</div>';
+
+    return;
+
+  }
+
+
+  list.innerHTML=
+    menu.ingredients.map(
+      (ing,index)=>{
+
+        const totalIng=
+          Number(ing.qty||0)*
+          Number(ing.price||0);
+
+
+        return `
+
+          <div class="ingredient">
+
+            <div class="ingredient-line">
+
+              <div class="ingredient-left">
+
+                <div
+                  class="ingredient-name"
+                >
+                  ${
+                    ing.cover
+                    ?esc(ing.cover)+" "
+                    :""
+                  }${esc(ing.name)}
+                </div>
+
+                <div class="ingredient-equation">
+
+                  ${ing.qty}
+                  ×
+                  ${money(ing.price)}
+                  =
+                  ${money(totalIng)}
+
+                </div>
+
+              </div>
+
+
+              <div class="ingredient-right">
+
+                <!-- เลื่อนขึ้น -->
+
+                <button
+                  class="arrow-btn"
+                  onclick="moveIngredient(${index},-1)"
+                  title="เลื่อนขึ้น"
+                >
+                  ↑
+                </button>
+
+
+                <!-- เลื่อนลง -->
+
+                <button
+                  class="arrow-btn"
+                  onclick="moveIngredient(${index},1)"
+                  title="เลื่อนลง"
+                >
+                  ↓
+                </button>
+
+
+                <!-- รายละเอียด -->
+
+                <button
+                  class="detail-btn"
+                  onclick="editIngredient('${ing.id}')"
+                >
+                  รายละเอียด
+                </button>
+
+
+                <!-- ลบ -->
+
+                <button
+                  class="ing-trash"
+                  onclick="deleteIngredient('${ing.id}')"
+                >
+                  🗑️
+                </button>
+
+
+                <!-- เปิด / ปิด -->
+
+                <label class="switch">
+
+                  <input
+                    type="checkbox"
+                    ${ing.on?"checked":""}
+                    onchange="toggleIngredient('${ing.id}',this.checked)"
+                  >
+
+                  <span class="slider"></span>
+
+                </label>
+
+
+                <!-- จำนวน - -->
+
+                <div class="ing-qty">
+
+                  <button
+                    onclick="changeIngredientQty('${ing.id}',-1)"
+                  >
+                    −
+                  </button>
+
+
+                  <input
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    value="${ing.qty}"
+                    onchange="setIngredientQty('${ing.id}',this.value)"
+                  >
+
+
+                  <button
+                    onclick="changeIngredientQty('${ing.id}',1)"
+                  >
+                    +
+                  </button>
+
+                </div>
 
               </div>
 
@@ -3830,532 +3952,8 @@ function renderSales(){
 
         `;
 
-      })
-      .join("");
-
-}
-
-
-/* =========================================================
-   SALES MODAL
-========================================================= */
-
-function openSalesModal(id=null){
-
-  editingSalesId = id;
-
-
-  document.getElementById(
-    "salesModalTitle"
-  ).textContent =
-    id
-      ? "แก้ไขรายการขาย"
-      : "เพิ่มรายการขาย";
-
-
-  if(id){
-
-    const menu =
-      state.menus.find(
-        m => m.id === id
-      );
-
-
-    document.getElementById(
-      "salesName"
-    ).value =
-      menu?.name || "";
-
-
-    document.getElementById(
-      "salesCover"
-    ).value =
-      getCover(
-        menu?.name,
-        menu?.cover
-      );
-
-  }else{
-
-    document.getElementById(
-      "salesName"
-    ).value = "";
-
-
-    document.getElementById(
-      "salesCover"
-    ).value = "";
-
-  }
-
-
-  document
-    .getElementById("salesModal")
-    .classList.add("show");
-
-}
-
-
-function saveSales(){
-
-  const name =
-    document.getElementById(
-      "salesName"
-    ).value.trim();
-
-
-  const cover =
-    document.getElementById(
-      "salesCover"
-    ).value.trim();
-
-
-  if(!name){
-
-    alert("กรุณาใส่ชื่อรายการขาย");
-
-    return;
-
-  }
-
-
-  if(editingSalesId){
-
-    const menu =
-      state.menus.find(
-        m => m.id === editingSalesId
-      );
-
-
-    if(menu){
-
-      menu.name = name;
-
-      menu.cover = cover;
-
-
-      if(cover){
-
-        state.covers[
-          normName(name)
-        ] = cover;
-
-      }else{
-
-        delete state.covers[
-          normName(name)
-        ];
-
       }
-
-    }
-
-  }else{
-
-    const menu = {
-
-      id:uid(),
-
-      name:name,
-
-      cover:cover,
-
-      ingredients:[]
-
-    };
-
-
-    state.menus.push(menu);
-
-
-    if(cover){
-
-      state.covers[
-        normName(name)
-      ] = cover;
-
-    }
-
-  }
-
-
-  saveState();
-
-  closeModal("salesModal");
-
-  renderSales();
-
-}
-
-
-function editSales(id){
-
-  openSalesModal(id);
-
-}
-
-
-function duplicateSales(id){
-
-  const original =
-    state.menus.find(
-      m => m.id === id
-    );
-
-
-  if(!original){
-    return;
-  }
-
-
-  const copy = {
-
-    id:uid(),
-
-    name:
-      original.name +
-      " (สำเนา)",
-
-    cover:
-      original.cover || "",
-
-    ingredients:
-      (original.ingredients || [])
-        .map(i => ({
-
-          ...i,
-
-          id:uid()
-
-        }))
-
-  };
-
-
-  state.menus.push(copy);
-
-  saveState();
-
-  renderSales();
-
-}
-
-
-function deleteSales(id){
-
-  if(!confirm(
-    "ลบรายการขายนี้หรือไม่?"
-  )){
-    return;
-  }
-
-
-  state.menus =
-    state.menus.filter(
-      m => m.id !== id
-    );
-
-
-  saveState();
-
-  renderSales();
-
-}
-
-
-/* =========================================================
-   INGREDIENT PAGE
-========================================================= */
-
-function openIngredients(menuId){
-
-  selectedIngredientMenuId =
-    menuId;
-
-
-  document
-    .querySelectorAll(".page")
-    .forEach(p =>
-      p.classList.remove("active")
-    );
-
-
-  document
-    .getElementById(
-      "page-ingredients"
-    )
-    .classList.add("active");
-
-
-  document
-    .querySelectorAll(".nav-btn")
-    .forEach(btn =>
-      btn.classList.remove("active")
-    );
-
-
-  document
-    .querySelector(
-      '.nav-btn[data-page="cost"]'
-    )
-    .classList.add("active");
-
-
-  renderIngredients();
-
-}
-
-
-function backToCost(){
-
-  selectedIngredientMenuId =
-    null;
-
-  showPage("cost");
-
-}
-
-
-/* =========================================================
-   INGREDIENT RENDER
-========================================================= */
-
-function renderIngredients(){
-
-  const menu =
-    state.menus.find(
-      m =>
-        m.id ===
-        selectedIngredientMenuId
-    );
-
-
-  if(!menu){
-
-    backToCost();
-
-    return;
-
-  }
-
-
-  if(!Array.isArray(menu.ingredients)){
-
-    menu.ingredients = [];
-
-    saveState();
-
-  }
-
-
-  const cover =
-    getCover(
-      menu.name,
-      menu.cover
-    );
-
-
-  document.getElementById(
-    "ingredientSalesCover"
-  ).textContent =
-    cover || "○";
-
-
-  document.getElementById(
-    "ingredientSalesName"
-  ).textContent =
-    menu.name;
-
-
-  const total =
-    menu.ingredients
-      .filter(
-        i => i.enabled !== false
-      )
-      .reduce(
-        (sum,i) =>
-          sum +
-          Number(i.qty || 0) *
-          Number(i.price || 0),
-        0
-      );
-
-
-  document.getElementById(
-    "ingredientSalesCost"
-  ).textContent =
-    "รวมต้นทุน " +
-    moneyBaht(total);
-
-
-  const box =
-    document.getElementById(
-      "ingredientList"
-    );
-
-
-  if(!menu.ingredients.length){
-
-    box.innerHTML =
-      `<div class="empty">
-        ยังไม่มีวัตถุดิบ
-      </div>`;
-
-    return;
-
-  }
-
-
-  box.innerHTML =
-    menu.ingredients
-      .map(
-        (ing,index) =>
-          ingredientHtml(
-            menu,
-            ing,
-            index
-          )
-      )
-      .join("");
-
-}
-
-
-function ingredientHtml(
-  menu,
-  ing,
-  index
-){
-
-  const total =
-    Number(ing.qty || 0) *
-    Number(ing.price || 0);
-
-
-  const cover =
-    getCover(
-      ing.name,
-      ing.cover
-    );
-
-
-  const isOn =
-    ing.enabled !== false;
-
-
-  return `
-
-    <div class="ingredient-row">
-
-      <div class="ingredient-inner">
-
-
-        <div class="ingredient-left">
-
-          <div
-            class="ingredient-cover">
-
-            ${
-              cover
-                ? escapeHtml(cover)
-                : "○"
-            }
-
-          </div>
-
-
-          <div class="ingredient-name">
-
-            ${escapeHtml(ing.name)}
-
-          </div>
-
-
-          <div class="ingredient-equation">
-
-            ${formatNumber(ing.qty)}
-            ×
-            ${moneyBaht(ing.price)}
-            =
-            ${moneyBaht(total)}
-
-          </div>
-
-        </div>
-
-
-        <div class="ingredient-tools">
-
-          <button
-            class="arrow-btn"
-            title="เลื่อนขึ้น"
-            onclick="moveIngredient('${menu.id}',${index},-1)">
-            ↑
-          </button>
-
-
-          <button
-            class="arrow-btn"
-            title="เลื่อนลง"
-            onclick="moveIngredient('${menu.id}',${index},1)">
-            ↓
-          </button>
-
-
-          <button
-            class="detail-btn"
-            onclick="editIngredient('${menu.id}','${ing.id}')">
-            รายละเอียด
-          </button>
-
-
-          <button
-            class="delete-ing-btn"
-            onclick="deleteIngredient('${menu.id}','${ing.id}')">
-            🗑
-          </button>
-
-
-          <button
-            class="switch ${isOn ? "on" : ""}"
-            onclick="toggleIngredient('${menu.id}','${ing.id}')"
-            aria-label="เปิดปิด">
-          </button>
-
-
-          <div class="qty-mini">
-
-            <button
-              class="qty-btn"
-              onclick="changeIngredientInline('${menu.id}','${ing.id}',-1)">
-              −
-            </button>
-
-
-            <input
-              class="qty-number"
-              type="number"
-              min="0.01"
-              step="any"
-              value="${ing.qty}"
-              onchange="setIngredientQty('${menu.id}','${ing.id}',this.value)">
-
-
-            <button
-              class="qty-btn"
-              onclick="changeIngredientInline('${menu.id}','${ing.id}',1)">
-              ＋
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  `;
+    ).join("");
 
 }
 
@@ -4364,298 +3962,183 @@ function ingredientHtml(
    INGREDIENT ADD / EDIT
 ========================================================= */
 
-function openIngredientModal(id=null){
+function openIngredientForm(){
 
-  editingIngredientId = id;
+  editingIngredientId=null;
 
 
   document.getElementById(
-    "ingredientModalTitle"
-  ).textContent =
-    id
-      ? "รายละเอียดวัตถุดิบ"
-      : "เพิ่มวัตถุดิบ";
+    "ingredientFormTitle"
+  ).textContent=
+    "เพิ่มวัตถุดิบ";
 
 
-  if(id){
-
-    const menu =
-      state.menus.find(
-        m =>
-          m.id ===
-          selectedIngredientMenuId
-      );
+  document.getElementById(
+    "ingredientName"
+  ).value="";
 
 
-    const ing =
-      menu?.ingredients?.find(
-        i => i.id === id
-      );
+  document.getElementById(
+    "ingredientCover"
+  ).value="";
 
 
-    if(!ing){
-      return;
-    }
+  document.getElementById(
+    "ingredientQty"
+  ).value=1;
 
 
-    document.getElementById(
-      "ingredientName"
-    ).value =
-      ing.name;
+  document.getElementById(
+    "ingredientPrice"
+  ).value="";
 
 
-    document.getElementById(
-      "ingredientCover"
-    ).value =
-      getCover(
-        ing.name,
-        ing.cover
-      );
+  ingredientPreview();
 
 
-    document.getElementById(
-      "ingredientQty"
-    ).value =
-      ing.qty;
+  document.getElementById(
+    "ingredientForm"
+  ).style.display="block";
 
 
-    document.getElementById(
-      "ingredientPrice"
-    ).value =
-      ing.price;
-
-
-    document.getElementById(
-      "ingredientEnabled"
-    ).value =
-      String(
-        ing.enabled !== false
-      );
-
-
-    updateIngredientTotal();
-
-  }else{
-
-    document.getElementById(
-      "ingredientName"
-    ).value = "";
-
-
-    document.getElementById(
-      "ingredientCover"
-    ).value = "";
-
-
-    document.getElementById(
-      "ingredientQty"
-    ).value = "1";
-
-
-    document.getElementById(
-      "ingredientPrice"
-    ).value = "";
-
-
-    document.getElementById(
-      "ingredientEnabled"
-    ).value = "true";
-
-
-    updateIngredientTotal();
-
-  }
-
-
-  document
-    .getElementById(
-      "ingredientModal"
-    )
-    .classList.add("show");
+  document.getElementById(
+    "ingredientForm"
+  ).scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
 
 }
 
 
-function updateIngredientTotal(){
+function closeIngredientForm(){
 
-  const qty =
+  document.getElementById(
+    "ingredientForm"
+  ).style.display="none";
+
+  editingIngredientId=null;
+
+}
+
+
+function ingredientQty(n){
+
+  const input=
+    document.getElementById(
+      "ingredientQty"
+    );
+
+
+  input.value=
+    Math.max(
+      0,
+      Number(input.value||0)+n
+    );
+
+
+  ingredientPreview();
+
+}
+
+
+function ingredientPreview(){
+
+  const q=
     Number(
       document.getElementById(
         "ingredientQty"
-      ).value
-    ) || 0;
+      ).value||0
+    );
 
 
-  const price =
+  const p=
     Number(
       document.getElementById(
         "ingredientPrice"
-      ).value
-    ) || 0;
+      ).value||0
+    );
 
 
   document.getElementById(
     "ingredientTotal"
-  ).value =
-    moneyBaht(
-      qty * price
-    );
-
-}
-
-
-document.addEventListener(
-  "input",
-  e => {
-
-    if(
-      e.target.id ===
-        "ingredientQty" ||
-      e.target.id ===
-        "ingredientPrice"
-    ){
-
-      updateIngredientTotal();
-
-    }
-
-  }
-);
-
-
-function changeIngredientQty(delta){
-
-  const input =
-    document.getElementById(
-      "ingredientQty"
-    );
-
-
-  let value =
-    Number(input.value) || 0;
-
-
-  value += delta;
-
-
-  if(value < 0.01){
-    value = 0.01;
-  }
-
-
-  input.value = value;
-
-  updateIngredientTotal();
+  ).value=
+    money(q*p);
 
 }
 
 
 function saveIngredient(){
 
-  const menu =
-    state.menus.find(
-      m =>
-        m.id ===
-        selectedIngredientMenuId
-    );
+  const menu=
+    currentMenu();
 
-
-  if(!menu){
-    return;
-  }
+  if(!menu)return;
 
 
   if(!Array.isArray(menu.ingredients)){
-    menu.ingredients = [];
+    menu.ingredients=[];
   }
 
 
-  const name =
+  const name=
     document.getElementById(
       "ingredientName"
     ).value.trim();
 
 
-  const cover =
+  if(!name){
+
+    alert("ใส่ชื่อวัตถุดิบก่อน");
+
+    return;
+
+  }
+
+
+  const cover=
     document.getElementById(
       "ingredientCover"
     ).value.trim();
 
 
-  const qty =
+  const qty=
     Number(
       document.getElementById(
         "ingredientQty"
       ).value
-    );
+    )||0;
 
 
-  const price =
+  const price=
     Number(
       document.getElementById(
         "ingredientPrice"
       ).value
-    );
-
-
-  const enabled =
-    document.getElementById(
-      "ingredientEnabled"
-    ).value === "true";
-
-
-  if(!name){
-
-    alert("กรุณาใส่ชื่อวัตถุดิบ");
-
-    return;
-
-  }
-
-
-  if(!qty || qty <= 0){
-
-    alert("กรุณาใส่จำนวนซื้อ");
-
-    return;
-
-  }
-
-
-  if(price < 0 || Number.isNaN(price)){
-
-    alert("กรุณาใส่ราคาซื้อ");
-
-    return;
-
-  }
+    )||0;
 
 
   if(editingIngredientId){
 
-    const ing =
+    const ing=
       menu.ingredients.find(
-        i =>
-          i.id ===
-          editingIngredientId
+        x=>x.id===editingIngredientId
       );
-
 
     if(ing){
 
-      ing.name = name;
+      ing.name=name;
 
-      ing.cover = cover;
+      ing.cover=cover;
 
-      ing.qty = qty;
+      ing.qty=qty;
 
-      ing.price = price;
-
-      ing.enabled = enabled;
+      ing.price=price;
 
     }
 
-  }else{
+  }
+  else{
 
     menu.ingredients.push({
 
@@ -4669,339 +4152,272 @@ function saveIngredient(){
 
       price:price,
 
-      enabled:enabled
+      on:true
 
     });
 
   }
 
 
-  if(cover){
+  saveDB();
 
-    state.covers[
-      normName(name)
-    ] = cover;
+  closeIngredientForm();
 
-  }else{
+  renderCostDetail();
 
-    delete state.covers[
-      normName(name)
-    ];
+  renderMenus();
 
-  }
+}
 
 
-  saveState();
+function editIngredient(id){
 
-  closeModal(
-    "ingredientModal"
-  );
+  const menu=
+    currentMenu();
 
-  renderIngredients();
+  if(!menu)return;
+
+
+  const ing=
+    menu.ingredients.find(
+      x=>x.id===id
+    );
+
+  if(!ing)return;
+
+
+  editingIngredientId=id;
+
+
+  document.getElementById(
+    "ingredientFormTitle"
+  ).textContent=
+    "รายละเอียดวัตถุดิบ";
+
+
+  document.getElementById(
+    "ingredientName"
+  ).value=
+    ing.name;
+
+
+  document.getElementById(
+    "ingredientCover"
+  ).value=
+    ing.cover||"";
+
+
+  document.getElementById(
+    "ingredientQty"
+  ).value=
+    ing.qty;
+
+
+  document.getElementById(
+    "ingredientPrice"
+  ).value=
+    ing.price;
+
+
+  ingredientPreview();
+
+
+  document.getElementById(
+    "ingredientForm"
+  ).style.display="block";
+
+
+  document.getElementById(
+    "ingredientForm"
+  ).scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
 
 }
 
 
 /* =========================================================
-   INGREDIENT EDIT
+   INGREDIENT ACTIONS
 ========================================================= */
 
-function editIngredient(
-  menuId,
-  ingredientId
-){
+function toggleIngredient(id,on){
 
-  selectedIngredientMenuId =
-    menuId;
+  const menu=
+    currentMenu();
 
-  openIngredientModal(
-    ingredientId
-  );
+  if(!menu)return;
+
+
+  const ing=
+    menu.ingredients.find(
+      x=>x.id===id
+    );
+
+  if(!ing)return;
+
+
+  ing.on=on;
+
+  saveDB();
+
+  renderCostDetail();
+
+  renderMenus();
 
 }
 
 
-/* =========================================================
-   INGREDIENT DELETE
-========================================================= */
+function changeIngredientQty(id,n){
 
-function deleteIngredient(
-  menuId,
-  ingredientId
-){
+  const menu=
+    currentMenu();
 
-  const menu =
-    state.menus.find(
-      m => m.id === menuId
+  if(!menu)return;
+
+
+  const ing=
+    menu.ingredients.find(
+      x=>x.id===id
+    );
+
+  if(!ing)return;
+
+
+  ing.qty=
+    Math.max(
+      0,
+      Number(ing.qty||0)+n
     );
 
 
-  if(!menu){
-    return;
-  }
+  saveDB();
 
+  renderCostDetail();
+
+  renderMenus();
+
+}
+
+
+function setIngredientQty(id,value){
+
+  const menu=
+    currentMenu();
+
+  if(!menu)return;
+
+
+  const ing=
+    menu.ingredients.find(
+      x=>x.id===id
+    );
+
+  if(!ing)return;
+
+
+  ing.qty=
+    Math.max(
+      0,
+      Number(value)||0
+    );
+
+
+  saveDB();
+
+  renderCostDetail();
+
+  renderMenus();
+
+}
+
+
+function deleteIngredient(id){
 
   if(!confirm(
-    "ลบวัตถุดิบนี้หรือไม่?"
+    "ลบวัตถุดิบนี้ใช่ไหม"
   )){
     return;
   }
 
 
-  menu.ingredients =
+  const menu=
+    currentMenu();
+
+  if(!menu)return;
+
+
+  menu.ingredients=
     menu.ingredients.filter(
-      i =>
-        i.id !== ingredientId
+      x=>x.id!==id
     );
 
 
-  saveState();
+  saveDB();
 
-  renderIngredients();
+  renderCostDetail();
+
+  renderMenus();
 
 }
 
 
 /* =========================================================
-   INGREDIENT MOVE
+   MOVE INGREDIENT ↑ ↓
 ========================================================= */
 
-function moveIngredient(
-  menuId,
-  index,
-  direction
-){
+function moveIngredient(index,direction){
 
-  const menu =
-    state.menus.find(
-      m => m.id === menuId
-    );
+  const menu=
+    currentMenu();
+
+  if(!menu)return;
 
 
-  if(!menu){
-    return;
-  }
-
-
-  const newIndex =
-    index + direction;
+  const target=
+    index+direction;
 
 
   if(
-    newIndex < 0 ||
-    newIndex >= menu.ingredients.length
+    target<0 ||
+    target>=menu.ingredients.length
   ){
-
     return;
-
   }
 
 
-  const temp =
+  const temp=
     menu.ingredients[index];
 
 
-  menu.ingredients[index] =
-    menu.ingredients[newIndex];
+  menu.ingredients[index]=
+    menu.ingredients[target];
 
 
-  menu.ingredients[newIndex] =
+  menu.ingredients[target]=
     temp;
 
 
-  saveState();
+  saveDB();
 
-  renderIngredients();
-
-}
-
-
-/* =========================================================
-   INGREDIENT TOGGLE
-========================================================= */
-
-function toggleIngredient(
-  menuId,
-  ingredientId
-){
-
-  const menu =
-    state.menus.find(
-      m => m.id === menuId
-    );
-
-
-  const ing =
-    menu?.ingredients?.find(
-      i => i.id === ingredientId
-    );
-
-
-  if(!ing){
-    return;
-  }
-
-
-  ing.enabled =
-    ing.enabled === false;
-
-
-  saveState();
-
-  renderIngredients();
+  renderCostDetail();
 
 }
 
 
 /* =========================================================
-   INLINE QUANTITY
+   INITIAL
 ========================================================= */
 
-function changeIngredientInline(
-  menuId,
-  ingredientId,
-  delta
-){
+accountPreview();
 
-  const menu =
-    state.menus.find(
-      m => m.id === menuId
-    );
-
-
-  const ing =
-    menu?.ingredients?.find(
-      i => i.id === ingredientId
-    );
-
-
-  if(!ing){
-    return;
-  }
-
-
-  let value =
-    Number(ing.qty) || 0;
-
-
-  value += delta;
-
-
-  if(value < 0.01){
-    value = 0.01;
-  }
-
-
-  ing.qty = value;
-
-
-  saveState();
-
-  renderIngredients();
-
-}
-
-
-function setIngredientQty(
-  menuId,
-  ingredientId,
-  value
-){
-
-  const menu =
-    state.menus.find(
-      m => m.id === menuId
-    );
-
-
-  const ing =
-    menu?.ingredients?.find(
-      i => i.id === ingredientId
-    );
-
-
-  if(!ing){
-    return;
-  }
-
-
-  let number =
-    Number(value);
-
-
-  if(!number || number < 0.01){
-    number = 0.01;
-  }
-
-
-  ing.qty = number;
-
-
-  saveState();
-
-  renderIngredients();
-
-}
-
-
-/* =========================================================
-   MODAL
-========================================================= */
-
-function closeModal(id){
-
-  document
-    .getElementById(id)
-    .classList.remove("show");
-
-}
-
-
-/* =========================================================
-   RENDER ALL
-========================================================= */
-
-function renderAll(){
-
-  renderAccount();
-
-  renderSummary();
-
-  renderCombined();
-
-  renderSales();
-
-
-  if(
-    selectedIngredientMenuId
-  ){
-
-    renderIngredients();
-
-  }
-
-}
-
-
-/* =========================================================
-   INIT
-========================================================= */
-
-loadState();
-
-
-document.getElementById(
-  "txDate"
-).value = today();
-
-
-renderAccount();
+renderAccounts();
 
 renderSummary();
 
-renderCombined();
+renderAll();
 
-renderSales();
+renderMenus();
 
 </script>
 
